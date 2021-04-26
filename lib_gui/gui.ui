@@ -311,7 +311,7 @@ outline:none;</string>
        <string/>
       </property>
      </widget>
-     <widget class="QPushButton" name="cancel_order_num_btn">
+     <widget class="QPushButton" name="order_num_cancel_btn">
       <property name="geometry">
        <rect>
         <x>1300</x>
@@ -1078,7 +1078,7 @@ outline:none;</string>
           </font>
          </property>
          <property name="text">
-          <string>Total THC: </string>
+          <string></string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -1093,7 +1093,7 @@ outline:none;</string>
           </font>
          </property>
          <property name="text">
-          <string>THC-A</string>
+          <string></string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -1108,7 +1108,7 @@ outline:none;</string>
           </font>
          </property>
          <property name="text">
-          <string>Delta-9 THC</string>
+          <string></string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -1123,7 +1123,7 @@ outline:none;</string>
           </font>
          </property>
          <property name="text">
-          <string>CBD-A</string>
+          <string></string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -1138,7 +1138,7 @@ outline:none;</string>
           </font>
          </property>
          <property name="text">
-          <string>CBD</string>
+          <string></string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -1153,7 +1153,7 @@ outline:none;</string>
           </font>
          </property>
          <property name="text">
-          <string>CBG-A</string>
+          <string></string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>

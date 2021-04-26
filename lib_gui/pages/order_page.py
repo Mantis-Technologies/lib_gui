@@ -14,15 +14,13 @@ def connect_order_buttons(self):
         if len(self.get_order_num()) > 0:
             self.switch_to_load_page()
     self.order_num_next_btn.clicked.connect(next_page)
-    self.cancel_order_num_btn.clicked.connect(self.switch_to_start_page)
+    self.order_num_cancel_btn.clicked.connect(self.switch_to_start_page)
 
 def connect_num_buttons(self):
-    num_btns = [self.one_btn, self.two_btn, self.three_btn, self.four_btn,
-                self.five_btn, self.six_btn, self.seven_btn, self.eight_btn,
-                self.nine_btn]
-    # note: for some reason this fails in a loop.
-    # no clue why, but no time to investigate
-    # so i have coded it as such
+    # Note: for some reason this fails in a loop.
+    # No clue why, it appears to be a pyqt5 bug
+    # I cannot get it to work even when I processEvents
+    # So i have coded it as such
 
     self.one_btn.clicked.connect(lambda: self.set_order_num(
         self.get_order_num() + self.one_btn.text()))
@@ -50,6 +48,10 @@ def connect_del_btn(self):
         self.set_order_num(self.get_order_num()[:-1])
     self.delete_btn.clicked.connect(func)
 
+def set_visibility_of_prep_combo_box(self, visible=False):
+    self.prep_combo_box.setVisible(visible)
+    self.prep_combo_box.setEnabled(visible)
+
 def get_order_num(self):
     return self.order_num_entry.text()
 
@@ -61,9 +63,6 @@ def change_order_id_lbl(self):
     """Changes order id for mcr lab techs"""
 
     self.enter_id_lbl.setText("Enter sample ID")
-
-def remove_order_id_cancel(self):
-    self.cancel_order_num_btn.setVisible(False)
 
 def get_prep(self):
     text = self.prep_combo_box.currentText()

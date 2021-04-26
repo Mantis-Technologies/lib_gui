@@ -31,6 +31,7 @@ setup(
     install_requires=[
         'PyQt5',
         'pytest',
+        'pytest-qt',
     ],
     classifiers=[
         'Environment :: Console',
@@ -40,8 +41,7 @@ setup(
         'Programming Language :: Python :: 3'],
     entry_points={
         'console_scripts': [
-            'gui = lib_gui.__main__:gui',
-            'mcr = lib_gui.__main__:mcr',
+            'lib_gui = lib_gui.__main__:main',
         ]},
     setup_requires=['pytest-runner'],
     tests_require=['pytest'],

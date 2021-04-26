@@ -11,11 +11,11 @@ class GUI(QtWidgets.QMainWindow):
 
     gui_ui_fname = "gui.ui"
 
-    def __init__(self, mcr=False):
-        self.mcr = mcr
-        self.app = QApplication(sys.argv)
+    def __init__(self, debug=False):
         super(GUI, self).__init__()
-        _dir = os.path.dirname(os.path.realpath(__file__))
+
+        self.debug = debug
+
         self.ui = uic.loadUi(self.ui_path, self)
 
         # Connect start buttons
@@ -29,21 +29,33 @@ class GUI(QtWidgets.QMainWindow):
         # Connect Order Buttons
         self.connect_order_buttons()
         self.setWindowFlag(Qt.FramelessWindowHint)
-        if mcr:
-            self.change_order_id_lbl()
-            self.remove_order_id_cancel()
-        else:
-            self.comboBox.setVisible(False)
-            self.comboBox.setEnabled(False)
+        self.set_visibility_of_prep_combo_box(visible=False)
+        self.connect_shortcuts()
+        self.switch_to_boot_page()
 
     def _switch_to_page(self, page: Page):
-        self.setCursor(Qt.BlankCursor)
+        if not self.debug:
+            self.setCursor(Qt.BlankCursor)
         self.stackedWidget.setCurrentIndex(page.value)
         self.update()
         self.show()
-        # If you don't do this it waits until it's completely done w callback
-        # https://stackoverflow.com/a/2066916/8903959
-        self.app.processEvents()
+
+        # Don't bother with this in pytest since we use pytest-qt
+        if hasattr(self, "app") and "PYTEST_CURRENT_TEST" not in os.environ:
+            # If you don't do this it waits until it's completely done w callback
+            # https://stackoverflow.com/a/2066916/8903959
+            self.app.processEvents()
+        else:
+            assert self.current_page == page
+
+    @property
+    def current_page(self):
+        return Page(self.stackedWidget.currentIndex())
+
+    def close(self):
+        """Closes the GUI. Done here for easy inheritance"""
+
+        super(GUI, self).close()
 
     # Boot page methods
     from .pages.boot_page import switch_to_boot_page
@@ -64,7 +76,7 @@ class GUI(QtWidgets.QMainWindow):
     from .pages.order_page import get_order_num
     from .pages.order_page import set_order_num
     from .pages.order_page import change_order_id_lbl
-    from .pages.order_page import remove_order_id_cancel
+    from .pages.order_page import set_visibility_of_prep_combo_box
     from .pages.order_page import get_prep
 
     # Loading page methods (for loading sample)
@@ -83,9 +95,12 @@ class GUI(QtWidgets.QMainWindow):
 
     from .pages.error_page import switch_to_error_page
 
+    from .actions import connect_shortcuts
+    from .actions import _move_to_next_screen
+
     def run(self):
+        self.app = QApplication(sys.argv)
         self.showFullScreen()
-        self.switch_to_boot_page()
         sys.exit(self.app.exec_())
 
     @property
