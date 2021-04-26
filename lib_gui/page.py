@@ -1,14 +1,12 @@
 from enum import Enum
 
 class Page(Enum):
-    START = 0
-    LOAD = 1
-    SCANNING = 2
-    RESULTS = 3
-    MAINTENANCE = 4
-    BOOTING = 5
-    ERROR = 6
-    # Over 21
-    CONFIRMATION = 7
-    ORDER = 8
-    INVALID_CODE = 9
+    BOOTING = 0
+    START = 1
+    # Over 21 page
+    CONFIRMATION = 2
+    ORDER = 3
+    LOAD = 4
+    SCANNING = 5
+    RESULTS = 6
+    ERROR = 7

@@ -26,12 +26,8 @@ class GUI(QtWidgets.QMainWindow):
         self.connect_load_buttons()
         # Connect results buttons
         self.connect_results_buttons()
-        # Connect maintenange buttons
-        # self.connect_maintenance_buttons()
         # Connect Order Buttons
         self.connect_order_buttons()
-        # Connect invalid code buttons
-        # self.connect_invalid_code_buttons()
         self.setWindowFlag(Qt.FramelessWindowHint)
         if mcr:
             self.change_order_id_lbl()
@@ -85,7 +81,7 @@ class GUI(QtWidgets.QMainWindow):
     from .pages.results_page import connect_results_buttons
     from .pages.results_page import done_w_results
 
-    from .pages.spectrometer_error_page import switch_to_spectrometer_error_page
+    from .pages.error_page import switch_to_error_page
 
     def run(self):
         self.showFullScreen()

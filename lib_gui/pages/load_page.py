@@ -12,5 +12,5 @@ def finished_load(self):
     self.switch_to_scanning_page()
 
 def connect_load_buttons(self):
-    self.SampleLoadedBTN.clicked.connect(self.finished_load)
-    self.CancelLoadingBTN.clicked.connect(self.cancel_load)
+    self.sample_loaded_btn.clicked.connect(self.finished_load)
+    self.cancel_load_btn.clicked.connect(self.cancel_load)
