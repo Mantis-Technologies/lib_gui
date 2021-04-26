@@ -12,12 +12,15 @@ class GUI(QtWidgets.QMainWindow):
     gui_ui_fname = "gui.ui"
 
     def __init__(self, debug=False):
+        if "PYTEST_CURRENT_TEST" not in os.environ:
+            self.app = QApplication(sys.argv)
         super(GUI, self).__init__()
+
 
         self.debug = debug
 
         self.ui = uic.loadUi(self.ui_path, self)
-
+        print("here")
         # Connect start buttons
         self.connect_start_buttons()
         # Connect confirmation buttons
@@ -41,7 +44,7 @@ class GUI(QtWidgets.QMainWindow):
         self.show()
 
         # Don't bother with this in pytest since we use pytest-qt
-        if hasattr(self, "app") and "PYTEST_CURRENT_TEST" not in os.environ:
+        if "PYTEST_CURRENT_TEST" not in os.environ:
             # If you don't do this it waits until it's completely done w callback
             # https://stackoverflow.com/a/2066916/8903959
             self.app.processEvents()
@@ -99,7 +102,7 @@ class GUI(QtWidgets.QMainWindow):
     from .actions import _move_to_next_screen
 
     def run(self):
-        self.app = QApplication(sys.argv)
+
         self.showFullScreen()
         sys.exit(self.app.exec_())
 

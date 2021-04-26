@@ -9,10 +9,7 @@ class MCRGUI(GUI):
         self.set_visibility_of_prep_combo_box(visible=True)
 
     def switch_to_confirmation_page(self):
-        self._switch_to_order_page()
+        self.switch_to_order_page()
 
     def switch_to_results_page(self):
-        self._switch_to_order_page()
-
-    def done_w_results(self):
-        self._switch_to_order_page()
+        self.switch_to_order_page()
