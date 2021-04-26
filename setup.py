@@ -40,7 +40,8 @@ setup(
         'Programming Language :: Python :: 3'],
     entry_points={
         'console_scripts': [
-            'gui = lib_gui.__main__:main'
+            'gui = lib_gui.__main__:gui',
+            'mcr = lib_gui.__main__:mcr',
         ]},
     setup_requires=['pytest-runner'],
     tests_require=['pytest'],
