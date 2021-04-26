@@ -1,1 +1,1 @@
-Docs: https://github.com/jfuruness/lib_gui/wiki
+Docs: https://github.com/Mantis-Technologies/lib_gui/wiki

@@ -14,7 +14,6 @@ __email__ = "jfuruness@gmail.com"
 from PyQt5 import QtCore
 import pytest
 
-from ..gui import GUI
 from ..mcr_gui import MCRGUI
 from ..page import Page
 
@@ -53,7 +52,7 @@ class TestGUI:
         assert gui.current_page == Page.ORDER
 
     @pytest.mark.parametrize("order, new_order",
-                             [[None, ''], ["123", "12"]]) 
+                             [[None, ''], ["123", "12"]])
     def test_gui_order_delete(self, gui, qtbot, order, new_order):
         """Tests functionality of the delete button for the order form
 
@@ -69,7 +68,6 @@ class TestGUI:
         self._click(gui.delete_btn, qtbot)
 
         assert gui.get_order_num() == new_order
-        
 
     def test_gui_order_nums(self, gui, qtbot):
         """Tests all of the order buttons"""
@@ -77,7 +75,7 @@ class TestGUI:
         num_btns = [gui.zero_btn, gui.one_btn, gui.two_btn, gui.three_btn,
                     gui.four_btn, gui.five_btn, gui.six_btn, gui.seven_btn,
                     gui.eight_btn, gui.nine_btn]
-    
+
         total_text = ""
         for i, btn in enumerate(num_btns):
             self._click(btn, qtbot)
@@ -92,13 +90,13 @@ class TestGUI:
         """
 
         gui.switch_to_order_page()
-    
+
         gui.set_order_num(order)
 
         self._click(gui.order_num_next_btn, qtbot)
 
         correct_page = Page.LOAD if order else Page.ORDER
-        
+
         assert gui.current_page == correct_page
 
     def test_order_num_cancel_btn(self, gui, qtbot):

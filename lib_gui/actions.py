@@ -1,9 +1,21 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""This file contains shortcuts for the GUI and MCR classes"""
+
+__author__ = "Justin Furuness"
+__credits__ = ["Justin Furuness"]
+__maintainer__ = "Justin Furuness"
+__email__ = "jfuruness@gmail.com"
+
+
 import logging
 
 from PyQt5.QtGui import QKeySequence
 from PyQt5.QtWidgets import QShortcut
 
 from .page import Page
+
 
 def connect_shortcuts(self):
     """Connects all possible shortcuts"""
@@ -13,6 +25,7 @@ def connect_shortcuts(self):
 
     self.close_shortcut = QShortcut(QKeySequence("q"), self)
     self.close_shortcut.activated.connect(self.close)
+
 
 def _move_to_next_screen(self):
     """Moves to the next screen for shortcuts"""

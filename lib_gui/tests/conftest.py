@@ -11,8 +11,6 @@ __email__ = "jfuruness@gmail.com"
 import pytest
 
 from ..gui import GUI
-from ..mcr_gui import MCRGUI
-
 
 
 @pytest.fixture(scope="function")
@@ -20,9 +18,3 @@ def gui(qtbot):
     gui = GUI()
     qtbot.addWidget(gui)
     return gui
-
-@pytest.fixture(scope="function")
-def mcr_gui(qtbot):
-    mcr_gui = MCRGUI()
-    qtbot.addWidget(mcr_gui)
-    return mcr_gui

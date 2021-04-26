@@ -1,26 +1,41 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""This file contains a GUI class"""
+
+__author__ = "Justin Furuness, Nicholas Lanotte"
+__credits__ = ["Justin Furuness", "Nicholas Lanotte"]
+__maintainer__ = "Justin Furuness"
+__email__ = "jfuruness@gmail.com"
+
+
 import os
 import sys
 
-from PyQt5 import QtCore, QtWidgets, uic
+from PyQt5 import QtWidgets, uic
 from PyQt5.QtWidgets import QApplication
-from PyQt5.QtCore import QThread, pyqtSignal, Qt
+from PyQt5.QtCore import Qt
 
 from .page import Page
+
 
 class GUI(QtWidgets.QMainWindow):
 
     gui_ui_fname = "gui.ui"
 
     def __init__(self, debug=False):
+        """Connects all buttons and switches to boot page"""
+
+        # Pytest cannot run if this is enabled
         if "PYTEST_CURRENT_TEST" not in os.environ:
             self.app = QApplication(sys.argv)
         super(GUI, self).__init__()
 
-
+        # If in debug mode, typing n moves to next screen
         self.debug = debug
 
+        # Load the UI
         self.ui = uic.loadUi(self.ui_path, self)
-        print("here")
         # Connect start buttons
         self.connect_start_buttons()
         # Connect confirmation buttons
@@ -31,28 +46,40 @@ class GUI(QtWidgets.QMainWindow):
         self.connect_results_buttons()
         # Connect Order Buttons
         self.connect_order_buttons()
+        # Remove pointless info
         self.setWindowFlag(Qt.FramelessWindowHint)
+        # This is only for when in use by MCR
         self.set_visibility_of_prep_combo_box(visible=False)
+        # Connect keyboard shortcuts
         self.connect_shortcuts()
+        # Move to booting page
         self.switch_to_boot_page()
 
     def _switch_to_page(self, page: Page):
+        """Switches to a page"""
+
         if not self.debug:
+            # Remove cursor unless debugging
             self.setCursor(Qt.BlankCursor)
+        # Move to the next page
         self.stackedWidget.setCurrentIndex(page.value)
+        # Update and show the new screen
         self.update()
         self.show()
 
         # Don't bother with this in pytest since we use pytest-qt
         if "PYTEST_CURRENT_TEST" not in os.environ:
-            # If you don't do this it waits until it's completely done w callback
+            # If you don't do this it waits until func's done w callbacK
             # https://stackoverflow.com/a/2066916/8903959
             self.app.processEvents()
         else:
+            # Testing
             assert self.current_page == page
 
     @property
     def current_page(self):
+        """Returns the current page based on the stackwidget index"""
+
         return Page(self.stackedWidget.currentIndex())
 
     def close(self):
@@ -91,22 +118,28 @@ class GUI(QtWidgets.QMainWindow):
     # Scanning page methods (while sample is being scanned)
     from .pages.scanning_page import switch_to_scanning_page
 
+    # Results page methods
     from .pages.results_page import switch_to_results_page
     from .pages.results_page import set_results_labels
     from .pages.results_page import connect_results_buttons
     from .pages.results_page import done_w_results
 
+    # Error page
     from .pages.error_page import switch_to_error_page
 
+    # Keyboard shortcut methods
     from .actions import connect_shortcuts
     from .actions import _move_to_next_screen
 
     def run(self):
+        """Runs the app"""
 
         self.showFullScreen()
         sys.exit(self.app.exec_())
 
     @property
     def ui_path(self):
+        """Path to the UI file"""
+
         _dir = os.path.dirname(os.path.realpath(__file__))
         return os.path.join(_dir, self.gui_ui_fname)

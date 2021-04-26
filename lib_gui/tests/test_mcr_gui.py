@@ -11,7 +11,6 @@ __credits__ = ["Justin Furuness"]
 __maintainer__ = "Justin Furuness"
 __email__ = "jfuruness@gmail.com"
 
-from PyQt5 import QtCore
 import pytest
 
 from .test_gui import TestGUI
@@ -19,6 +18,7 @@ from .test_gui import TestGUI
 from ..mcr_gui import MCRGUI
 from ..page import Page
 from ..prep import Prep
+
 
 # Overrides the gui fixture for the mcr_gui fixture
 @pytest.fixture(scope="function")
@@ -31,7 +31,6 @@ def gui(qtbot):
 @pytest.mark.mcr
 class TestMCRGUI(TestGUI):
     """Tests all funcs within the MCRGUI class"""
-
 
     def test_prep_combo_box(self, gui, qtbot):
         """Tests that the GUI combo box methods work"""
