@@ -27,7 +27,7 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="currentIndex">
-     <number>7</number>
+     <number>5</number>
     </property>
     <widget class="QWidget" name="BootingScreen">
      <widget class="QLabel" name="label_8">
@@ -888,7 +888,7 @@ outline:none;</string>
         <x>460</x>
         <y>700</y>
         <width>1000</width>
-        <height>320</height>
+        <height>161</height>
        </rect>
       </property>
       <property name="font">
@@ -903,7 +903,7 @@ outline:none;</string>
     padding: 6px;</string>
       </property>
       <property name="text">
-       <string>Testing Your Flower. Please Wait. This Will Take About 1 Minute</string>
+       <string>Perfoming Analysis</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -951,6 +951,19 @@ outline:none;</string>
       </property>
       <property name="text">
        <string>By Mantis Technologies</string>
+      </property>
+     </widget>
+     <widget class="QProgressBar" name="pbar">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>870</y>
+        <width>1001</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="value">
+       <number>0</number>
       </property>
      </widget>
     </widget>
@@ -1078,7 +1091,7 @@ outline:none;</string>
           </font>
          </property>
          <property name="text">
-          <string></string>
+          <string/>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -1093,7 +1106,7 @@ outline:none;</string>
           </font>
          </property>
          <property name="text">
-          <string></string>
+          <string/>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -1108,7 +1121,7 @@ outline:none;</string>
           </font>
          </property>
          <property name="text">
-          <string></string>
+          <string/>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -1123,7 +1136,7 @@ outline:none;</string>
           </font>
          </property>
          <property name="text">
-          <string></string>
+          <string/>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -1138,7 +1151,7 @@ outline:none;</string>
           </font>
          </property>
          <property name="text">
-          <string></string>
+          <string/>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -1153,7 +1166,7 @@ outline:none;</string>
           </font>
          </property>
          <property name="text">
-          <string></string>
+          <string/>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
