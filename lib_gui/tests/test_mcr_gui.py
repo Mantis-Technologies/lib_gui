@@ -13,11 +13,12 @@ __email__ = "jfuruness@gmail.com"
 
 import pytest
 
+from lib_enums import Prep
+
 from .test_gui import TestGUI
 
 from ..mcr_gui import MCRGUI
 from ..page import Page
-from ..prep import Prep
 
 
 # Overrides the gui fixture for the mcr_gui fixture

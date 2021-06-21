@@ -8,8 +8,9 @@ __credits__ = ["Justin Furuness"]
 __maintainer__ = "Justin Furuness"
 __email__ = "jfuruness@gmail.com"
 
+from lib_enums import Prep
+
 from ..page import Page
-from ..prep import Prep
 
 
 def switch_to_order_page(self):
