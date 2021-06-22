@@ -9,13 +9,14 @@ __maintainer__ = "Justin Furuness"
 __email__ = "jfuruness@gmail.com"
 
 from ..page import Page
-from ..prep import Prep
+from lib_enums import Prep
 
 
 def switch_to_order_page(self):
     """Switches to order page and clears prev order"""
 
     self.order_num_entry.clear()
+    self.notes_entry.clear()
     self._switch_to_page(Page.ORDER)
 
 
@@ -30,8 +31,11 @@ def connect_order_buttons(self):
 
     # If there is no order number, do nothing
     def next_page():
-        if len(self.get_order_num()) > 0:
+        try:
+            int(self.get_order_num())
             self.switch_to_load_page()
+        except (ValueError, TypeError):
+            pass
     self.order_num_next_btn.clicked.connect(next_page)
     self.order_num_cancel_btn.clicked.connect(self.switch_to_start_page)
 
@@ -76,15 +80,17 @@ def connect_del_btn(self):
     self.delete_btn.clicked.connect(func)
 
 
-def set_visibility_of_prep_combo_box(self, visible=False):
+def set_visibility_of_lab_items(self, visible=False):
     """Sets and enables preparation methods combo box
 
-    Set visible when in MCR mode since we need that data
+    Set visible when in Lab mode since we need that data
     otherwise it defaults to hand grind
     """
 
-    self.prep_combo_box.setVisible(visible)
-    self.prep_combo_box.setEnabled(visible)
+    for box in [self.prep_combo_box,
+                self.notes_entry]:
+        box.setVisible(visible)
+        box.setEnabled(visible)
 
 
 def get_order_num(self):
@@ -121,3 +127,9 @@ def get_prep(self):
         return Prep.INTACT
     else:
         raise NotImplementedError
+
+
+def get_notes(self):
+    """Returns the notes that were input"""
+
+    return self.notes_entry.toPlainText()

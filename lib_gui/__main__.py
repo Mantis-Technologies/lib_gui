@@ -11,7 +11,7 @@ __email__ = "jfuruness@gmail.com"
 from argparse import ArgumentParser
 
 from .gui import GUI
-from .mcr_gui import MCRGUI
+from .lab_gui import LabGUI
 
 
 def main():
@@ -19,7 +19,7 @@ def main():
 
     parser = ArgumentParser(description="Runs GUI")
     parser.add_argument("--gui", default=False, action="store_true")
-    parser.add_argument("--mcr", default=False, action="store_true")
+    parser.add_argument("--lab", default=False, action="store_true")
     # If debug is on, typing n will move to next screen, and cursor remains
     parser.add_argument("--debug", default=False, action="store_true")
 
@@ -28,6 +28,8 @@ def main():
     # Run the normal gui
     if args.gui:
         GUI(debug=args.debug).run()
-    # Run the mcr gui
-    elif args.mcr:
-        MCRGUI(debug=args.debug).run()
+    # Run the lab gui
+    elif args.lab:
+        LabGUI(debug=args.debug).run()
+    else:
+        parser.print_help()

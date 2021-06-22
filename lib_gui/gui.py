@@ -48,8 +48,8 @@ class GUI(QtWidgets.QMainWindow):
         self.connect_order_buttons()
         # Remove pointless info
         self.setWindowFlag(Qt.FramelessWindowHint)
-        # This is only for when in use by MCR
-        self.set_visibility_of_prep_combo_box(visible=False)
+        # This is only for when in use by a lab
+        self.set_visibility_of_lab_items(visible=False)
         # Connect keyboard shortcuts
         self.connect_shortcuts()
         # Move to booting page
@@ -106,8 +106,9 @@ class GUI(QtWidgets.QMainWindow):
     from .pages.order_page import get_order_num
     from .pages.order_page import set_order_num
     from .pages.order_page import change_order_id_lbl
-    from .pages.order_page import set_visibility_of_prep_combo_box
+    from .pages.order_page import set_visibility_of_lab_items
     from .pages.order_page import get_prep
+    from .pages.order_page import get_notes
 
     # Loading page methods (for loading sample)
     from .pages.load_page import switch_to_load_page

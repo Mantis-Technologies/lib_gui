@@ -14,7 +14,7 @@ __email__ = "jfuruness@gmail.com"
 from PyQt5 import QtCore
 import pytest
 
-from ..mcr_gui import MCRGUI
+from ..lab_gui import LabGUI
 from ..page import Page
 
 
@@ -25,7 +25,7 @@ class TestGUI:
     def test_gui_start(self, gui, qtbot):
         """Tests boot, start"""
 
-        if isinstance(gui, MCRGUI):
+        if isinstance(gui, LabGUI):
             # Weird issue with inheritance
             return
 

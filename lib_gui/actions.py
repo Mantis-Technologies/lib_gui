@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-"""This file contains shortcuts for the GUI and MCR classes"""
+"""This file contains shortcuts for the GUI and Lab classes"""
 
 __author__ = "Justin Furuness"
 __credits__ = ["Justin Furuness"]
