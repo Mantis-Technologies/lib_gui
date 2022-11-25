@@ -58,7 +58,7 @@ class GUI(QtWidgets.QMainWindow):
     def _switch_to_page(self, page: Page):
         """Switches to a page"""
 
-        if not self.debug:
+        if not self.debug and False:
             # Remove cursor unless debugging
             self.setCursor(Qt.BlankCursor)
         # Move to the next page
