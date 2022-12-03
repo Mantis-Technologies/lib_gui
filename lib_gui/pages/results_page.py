@@ -28,7 +28,7 @@ def set_results_labels(self, analytes):
         results = "Aveda Tea"
     else:
         results = "Mint Tea"
-    results = "Analytical Results Displayed Here"
+    results = ""
 
     self.results_1_lbl.setText(results)
     #self.results_1_lbl.setText(str(analytes[0]))
