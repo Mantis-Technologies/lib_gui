@@ -907,7 +907,7 @@ outline:none;</string>
     padding: 6px;</string>
       </property>
       <property name="text">
-       <string>Perfoming Analysis</string>
+       <string>Performing Analysis</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
