@@ -32,10 +32,11 @@ def connect_order_buttons(self):
     # If there is no order number, do nothing
     def next_page():
         try:
-            int(self.get_order_num())
-            self.switch_to_load_page()
-        except (ValueError, TypeError):
-            pass
+            order_num = self.get_order_num()
+            if order_num:
+                self.switch_to_load_page()
+        except Exception as e:
+            print("order num failed with ", str(e))
     self.order_num_next_btn.clicked.connect(next_page)
     self.order_num_cancel_btn.clicked.connect(self.switch_to_start_page)
 
