@@ -35,7 +35,7 @@ def set_results_labels(self, analytes):
     # results = ""
 
     # self.results_1_lbl.setText(results)
-    elf.results_1_lbl.setText(str(analytes[0]))
+    self.results_1_lbl.setText(str(analytes[0]))
     self.results_1_lbl.setStyleSheet("color:black")
 
 
