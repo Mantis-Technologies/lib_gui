@@ -23,9 +23,10 @@ def set_results_labels(self, analytes):
     for lbl in [self.results_1_lbl, self.results_2_lbl, self.results_3_lbl,
                 self.results_4_lbl, self.results_5_lbl, self.results_6_lbl]:
         lbl.setText("")
-    concentration = analytes[0].analyte_concentration
 
-    # For mint tea:
+
+    # For mint tea
+    # concentration = analytes[0].analyte_concentration * 100
     # concentration = analytes[0].analyte_concentration * 100
     # if concentration <= -11:
     #     results = "Aveda Tea"
@@ -33,8 +34,8 @@ def set_results_labels(self, analytes):
     #     results = "Mint Tea"
     # results = ""
 
-    self.results_1_lbl.setText(concentration)
-    #self.results_1_lbl.setText(str(analytes[0]))
+    # self.results_1_lbl.setText(results)
+    elf.results_1_lbl.setText(str(analytes[0]))
     self.results_1_lbl.setStyleSheet("color:black")
 
 
