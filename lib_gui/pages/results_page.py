@@ -33,7 +33,7 @@ def set_results_labels(self, analytes):
     #     results = "Mint Tea"
     # results = ""
 
-    self.results_1_lbl.setText(results[0])
+    self.results_1_lbl.setText(concentration)
     #self.results_1_lbl.setText(str(analytes[0]))
     self.results_1_lbl.setStyleSheet("color:black")
 
