@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1950</width>
-    <height>950</height>
+    <width>1728</width>
+    <height>990</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -32,7 +32,7 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>6</number>
     </property>
     <widget class="QWidget" name="BootingScreen">
      <widget class="QLabel" name="label_8">
@@ -76,7 +76,7 @@
        </font>
       </property>
       <property name="text">
-       <string>CannaCheck</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Canna&lt;/span&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;Check&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="textFormat">
        <enum>Qt::AutoText</enum>
@@ -130,30 +130,33 @@ outline:none;</string>
      <widget class="QLabel" name="label_12">
       <property name="geometry">
        <rect>
-        <x>460</x>
-        <y>480</y>
-        <width>1000</width>
-        <height>130</height>
+        <x>640</x>
+        <y>420</y>
+        <width>611</width>
+        <height>191</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Century</family>
-        <pointsize>60</pointsize>
+        <pointsize>38</pointsize>
        </font>
       </property>
       <property name="text">
-       <string>Rapid THC-A Test</string>
+       <string>Rapid THC-A Test for Cannabis Flower</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>390</x>
-        <y>120</y>
+        <x>380</x>
+        <y>60</y>
         <width>1131</width>
         <height>351</height>
        </rect>
@@ -164,10 +167,31 @@ outline:none;</string>
        </font>
       </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;span style=&quot; font-size:144pt; color:#000000;&quot;&gt;Canna&lt;/span&gt;&lt;span style=&quot; font-size:144pt; color:#ff0000;&quot;&gt;Check&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:144pt; color:#000000;&quot;&gt;Canna&lt;/span&gt;&lt;span style=&quot; font-size:144pt; color:#ff0000;&quot;&gt;Check&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="textFormat">
        <enum>Qt::RichText</enum>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>770</x>
+        <y>630</y>
+        <width>351</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>27</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>$35 / sample</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -191,7 +215,7 @@ outline:none;</string>
        </font>
       </property>
       <property name="text">
-       <string>Are you over the age of 21 OR are you a registered medical cannabis patient?</string>
+       <string>Are you 21 years of age or older, or a registered medical cannabis patient?</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -927,7 +951,7 @@ outline:none;</string>
        </font>
       </property>
       <property name="text">
-       <string>CannaCheck</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Canna&lt;/span&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;Check&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -1109,7 +1133,7 @@ outline:none;</string>
        <rect>
         <x>20</x>
         <y>40</y>
-        <width>191</width>
+        <width>331</width>
         <height>71</height>
        </rect>
       </property>
@@ -1119,7 +1143,7 @@ outline:none;</string>
        </font>
       </property>
       <property name="text">
-       <string>CannaCheck</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Canna&lt;/span&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;Check&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </widget>
