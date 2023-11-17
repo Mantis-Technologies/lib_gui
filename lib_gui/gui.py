@@ -23,7 +23,7 @@ class GUI(QtWidgets.QMainWindow):
 
     gui_ui_fname = "gui.ui"
 
-    def __init__(self, debug=False):
+    def __init__(self, debug=False, fake_backend: bool = False, fake_payment_terminal: bool = False):
         """Connects all buttons and switches to boot page"""
 
         # Pytest cannot run if this is enabled
