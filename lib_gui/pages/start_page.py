@@ -17,6 +17,7 @@ def switch_to_start_page(self):
     self._switch_to_page(Page.START)
 
 
+
 def connect_start_buttons(self):
     """Connects the start page begin button"""
 

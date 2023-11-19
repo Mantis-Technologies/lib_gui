@@ -33,6 +33,9 @@ class GUI(QtWidgets.QMainWindow):
 
         # If in debug mode, typing n moves to next screen
         self.debug = debug
+        self.fake_backend = fake_backend
+        self.fake_payment_terminal = fake_payment_terminal
+        self.keepThreadsRunning = True
 
         # Load the UI
         self.ui = uic.loadUi(self.ui_path, self)
@@ -46,6 +49,8 @@ class GUI(QtWidgets.QMainWindow):
         self.connect_results_buttons()
         # Connect Order Buttons
         self.connect_order_buttons()
+        #connect payment buttons
+        self.connect_payment_buttons()
         # Remove pointless info
         self.setWindowFlag(Qt.FramelessWindowHint)
         # This is only for when in use by a lab
@@ -86,6 +91,7 @@ class GUI(QtWidgets.QMainWindow):
         """Closes the GUI. Done here for easy inheritance"""
 
         super(GUI, self).close()
+        self.keepThreadsRunning = False
 
     # Boot page methods
     from .pages.boot_page import switch_to_boot_page
@@ -125,8 +131,18 @@ class GUI(QtWidgets.QMainWindow):
     from .pages.results_page import connect_results_buttons
     from .pages.results_page import done_w_results
 
+    #Configuring Keypad page
+    from .pages.ConfiguringKeyPadPage import switch_to_ConfiguringKeyPad_page
+
     # Error page
     from .pages.error_page import switch_to_error_page
+
+    #Payment page
+    from .pages.Payment_page import switch_to_payment_page
+    from .pages.Payment_page import set_Price_label
+    from .pages.Payment_page import connect_payment_buttons
+    from .pages.Payment_page import cancel_payment
+    from .pages.Payment_page import PaymentApprovedCallback
 
     # Keyboard shortcut methods
     from .actions import connect_shortcuts
@@ -134,8 +150,8 @@ class GUI(QtWidgets.QMainWindow):
 
     def run(self):
         """Runs the app"""
-
-        self.showFullScreen()
+        if not self.fake_payment_terminal and not self.fake_backend:
+            self.showFullScreen()
         sys.exit(self.app.exec_())
 
     @property
