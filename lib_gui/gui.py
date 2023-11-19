@@ -57,6 +57,8 @@ class GUI(QtWidgets.QMainWindow):
         self.set_visibility_of_lab_items(visible=False)
         # Connect keyboard shortcuts
         self.connect_shortcuts()
+        if not self.fake_payment_terminal and not self.fake_backend:
+            self.showFullScreen()
         # Move to booting page
         self.switch_to_boot_page()
 
@@ -150,8 +152,6 @@ class GUI(QtWidgets.QMainWindow):
 
     def run(self):
         """Runs the app"""
-        if not self.fake_payment_terminal and not self.fake_backend:
-            self.showFullScreen()
         sys.exit(self.app.exec_())
 
     @property
