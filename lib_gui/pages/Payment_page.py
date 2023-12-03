@@ -10,6 +10,7 @@ __email__ = "nickjl0809@gmail.com"
 
 from ..page import Page
 from PyQt5.QtCore import QThread, pyqtSignal, Qt
+import time
 
 
 def switch_to_payment_page(self):
@@ -20,16 +21,21 @@ def switch_to_payment_page(self):
     self.CheckPaymentApprovedThread.signal.connect(self.PaymentApprovedCallback)
     self.CheckPaymentApprovedThread.start()
 
+    self.PaymentTimeoutThread = PaymentTimeoutThread(self)
+    self.PaymentTimeoutThread.signal.connect(self.PaymentTimeoutCallback)
+    self.PaymentTimeoutThread.start()
+
 
 def set_Price_label(self, priceAsInt: int):
     priceAsFloat = float(priceAsInt) / 100.0
-    self.Price_lbl.setText("")#TODO we are going to have the price on the terminal for now
+    self.Price_lbl.setText("")  # TODO we are going to have the price on the terminal for now
 
 
 def cancel_payment(self):
     """User Cancelled payment, move to start page"""
     self.transactionInProgress = False
     self.CheckPaymentApprovedThread.keepRunning = False
+    self.PaymentTimeoutThread.keepRunning = False
     self.switch_to_start_page_terminate_transaction()
 
 
@@ -40,7 +46,30 @@ def connect_payment_buttons(self):
 
 
 def PaymentApprovedCallback(self, result):
+    self.PaymentTimeoutThread.keepRunning = False
     self.switch_to_load_page()
+
+
+def PaymentTimeoutCallback(self, result):
+    self.cancel_payment()
+
+
+class PaymentTimeoutThread(QThread):
+    signal = pyqtSignal('PyQt_PyObject')
+
+    def __init__(self, gui):
+        QThread.__init__(self)
+        self.gui = gui
+        self.keepRunning = True
+
+    def run(self):
+        maxSecondsToWait = 100  # the payment terminal times out after 90 seconds. Have this wait slightly more incase the user swipes card at last second
+        while self.keepRunning and self.gui.keepThreadsRunning:
+            maxSecondsToWait = maxSecondsToWait - 1
+            if maxSecondsToWait == 0:
+                self.signal.emit(1)  # emit anything to trigger page change
+                break
+            time.sleep(1)
 
 
 class CheckPaymentApprovedThread(QThread):
@@ -49,7 +78,6 @@ class CheckPaymentApprovedThread(QThread):
     def __init__(self, gui):
         QThread.__init__(self)
         self.gui = gui
-        self.NextCalibrationTime = 0  # in milliseconds
         self.keepRunning = True
 
     def run(self):
@@ -58,3 +86,4 @@ class CheckPaymentApprovedThread(QThread):
             if isApproved and isActiveTransaction:
                 self.signal.emit(1)  # emit anything to trigger page change
                 break
+            time.sleep(0.1)

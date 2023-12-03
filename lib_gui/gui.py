@@ -95,7 +95,13 @@ class GUI(QtWidgets.QMainWindow):
         super(GUI, self).close()
         self.keepThreadsRunning = False
 
-    # Boot page methods
+    def ShutdownKiosk(self):
+        self.close()
+        print("Shutting down")
+        import os
+        os.system('systemctl poweroff')
+
+        # Boot page methods
     from .pages.boot_page import switch_to_boot_page
 
     # Start page methods
@@ -145,6 +151,7 @@ class GUI(QtWidgets.QMainWindow):
     from .pages.Payment_page import connect_payment_buttons
     from .pages.Payment_page import cancel_payment
     from .pages.Payment_page import PaymentApprovedCallback
+    from .pages.Payment_page import PaymentTimeoutCallback
 
     # Keyboard shortcut methods
     from .actions import connect_shortcuts

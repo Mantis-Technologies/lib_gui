@@ -107,6 +107,7 @@
       </property>
       <property name="font">
        <font>
+        <family>Calibri</family>
         <pointsize>80</pointsize>
         <weight>75</weight>
         <italic>false</italic>
@@ -155,15 +156,16 @@ outline:none;</string>
      <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>380</x>
+        <x>0</x>
         <y>60</y>
-        <width>1131</width>
+        <width>1911</width>
         <height>351</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <pointsize>120</pointsize>
+        <family>Calibri</family>
+        <pointsize>100</pointsize>
        </font>
       </property>
       <property name="text">
@@ -187,6 +189,7 @@ outline:none;</string>
       </property>
       <property name="font">
        <font>
+        <family>Calibri</family>
         <pointsize>27</pointsize>
        </font>
       </property>
@@ -210,7 +213,7 @@ outline:none;</string>
       </property>
       <property name="font">
        <font>
-        <family>Century</family>
+        <family>Calibri</family>
         <pointsize>40</pointsize>
        </font>
       </property>
@@ -235,7 +238,7 @@ outline:none;</string>
       </property>
       <property name="font">
        <font>
-        <family>Century</family>
+        <family>Calibri</family>
         <pointsize>60</pointsize>
        </font>
       </property>
@@ -264,7 +267,7 @@ outline:none;</string>
       </property>
       <property name="font">
        <font>
-        <family>Century</family>
+        <family>Calibri</family>
         <pointsize>60</pointsize>
        </font>
       </property>
@@ -779,7 +782,7 @@ p, li { white-space: pre-wrap; }
       </property>
       <property name="font">
        <font>
-        <family>Century</family>
+        <family>Calibri</family>
         <pointsize>40</pointsize>
        </font>
       </property>
@@ -806,6 +809,11 @@ p, li { white-space: pre-wrap; }
         <width>1022</width>
         <height>581</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Calibri</family>
+       </font>
       </property>
       <property name="text">
        <string/>
@@ -834,7 +842,8 @@ p, li { white-space: pre-wrap; }
       </property>
       <property name="font">
        <font>
-        <pointsize>40</pointsize>
+        <family>Calibri</family>
+        <pointsize>35</pointsize>
         <weight>75</weight>
         <italic>false</italic>
         <bold>true</bold>
@@ -871,7 +880,8 @@ outline:none;</string>
       </property>
       <property name="font">
        <font>
-        <pointsize>40</pointsize>
+        <family>Calibri</family>
+        <pointsize>35</pointsize>
         <weight>75</weight>
         <italic>false</italic>
         <bold>true</bold>
@@ -904,7 +914,7 @@ outline:none;</string>
       </property>
       <property name="font">
        <font>
-        <family>Century</family>
+        <family>Calibri</family>
         <pointsize>50</pointsize>
        </font>
       </property>
@@ -932,6 +942,11 @@ outline:none;</string>
         <height>61</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Calibri</family>
+       </font>
+      </property>
       <property name="value">
        <number>0</number>
       </property>
@@ -947,6 +962,7 @@ outline:none;</string>
       </property>
       <property name="font">
        <font>
+        <family>Calibri</family>
         <pointsize>100</pointsize>
        </font>
       </property>
@@ -970,7 +986,7 @@ outline:none;</string>
       </property>
       <property name="font">
        <font>
-        <family>Century</family>
+        <family>Calibri</family>
         <pointsize>50</pointsize>
        </font>
       </property>
@@ -1006,6 +1022,7 @@ outline:none;</string>
       </property>
       <property name="font">
        <font>
+        <family>Calibri</family>
         <pointsize>40</pointsize>
         <weight>75</weight>
         <italic>false</italic>
@@ -1040,6 +1057,7 @@ outline:none;</string>
         <widget class="QLabel" name="results_1_lbl">
          <property name="font">
           <font>
+           <family>Calibri</family>
            <pointsize>50</pointsize>
           </font>
          </property>
@@ -1055,6 +1073,7 @@ outline:none;</string>
         <widget class="QLabel" name="results_2_lbl">
          <property name="font">
           <font>
+           <family>Calibri</family>
            <pointsize>50</pointsize>
           </font>
          </property>
@@ -1070,6 +1089,7 @@ outline:none;</string>
         <widget class="QLabel" name="results_3_lbl">
          <property name="font">
           <font>
+           <family>Calibri</family>
            <pointsize>50</pointsize>
           </font>
          </property>
@@ -1085,6 +1105,7 @@ outline:none;</string>
         <widget class="QLabel" name="results_4_lbl">
          <property name="font">
           <font>
+           <family>Calibri</family>
            <pointsize>50</pointsize>
           </font>
          </property>
@@ -1100,6 +1121,7 @@ outline:none;</string>
         <widget class="QLabel" name="results_5_lbl">
          <property name="font">
           <font>
+           <family>Calibri</family>
            <pointsize>50</pointsize>
           </font>
          </property>
@@ -1115,6 +1137,7 @@ outline:none;</string>
         <widget class="QLabel" name="results_6_lbl">
          <property name="font">
           <font>
+           <family>Calibri</family>
            <pointsize>50</pointsize>
           </font>
          </property>
@@ -1139,6 +1162,7 @@ outline:none;</string>
       </property>
       <property name="font">
        <font>
+        <family>Calibri</family>
         <pointsize>35</pointsize>
        </font>
       </property>
@@ -1159,12 +1183,12 @@ outline:none;</string>
       </property>
       <property name="font">
        <font>
-        <family>Century</family>
+        <family>Calibri</family>
         <pointsize>60</pointsize>
        </font>
       </property>
       <property name="text">
-       <string>An Error has occurred preventing the kiosk from running further. Please Contact A System Administrator For Maintenance</string>
+       <string>An errror has occurred. All active transactions will be void or refunded. Sorry for this inconvenience</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -1186,7 +1210,7 @@ outline:none;</string>
       </property>
       <property name="font">
        <font>
-        <family>Century</family>
+        <family>Calibri</family>
         <pointsize>60</pointsize>
        </font>
       </property>
@@ -1214,6 +1238,7 @@ outline:none;</string>
       </property>
       <property name="font">
        <font>
+        <family>Calibri</family>
         <pointsize>50</pointsize>
        </font>
       </property>
@@ -1238,6 +1263,7 @@ outline:none;</string>
       </property>
       <property name="font">
        <font>
+        <family>Calibri</family>
         <pointsize>50</pointsize>
        </font>
       </property>
@@ -1261,6 +1287,7 @@ outline:none;</string>
       </property>
       <property name="font">
        <font>
+        <family>Calibri</family>
         <pointsize>50</pointsize>
        </font>
       </property>
