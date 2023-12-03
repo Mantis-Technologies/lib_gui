@@ -15,6 +15,7 @@ import sys
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QApplication, QWidget
 
 from .page import Page
 
@@ -61,7 +62,6 @@ class GUI(QtWidgets.QMainWindow):
             self.showFullScreen()
         # Move to booting page
         self.switch_to_boot_page()
-
     def _switch_to_page(self, page: Page):
         """Switches to a page"""
 

@@ -35,8 +35,8 @@ def set_results_labels(self, analytes):
     # results = ""
 
     # self.results_1_lbl.setText(results)
-    self.results_1_lbl.setText(str(analytes[0]))
-    self.results_1_lbl.setStyleSheet("color:black")
+    self.results_2_lbl.setText(str(analytes[0]))
+    self.results_2_lbl.setStyleSheet("color:black")
 
 
 def done_w_results(self):
