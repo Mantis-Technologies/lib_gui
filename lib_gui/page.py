@@ -23,3 +23,4 @@ class Page(Enum):
     ERROR = 7
     PAYMENT = 8
     KEYPAD = 9
+    INSTRUCTIONS = 10

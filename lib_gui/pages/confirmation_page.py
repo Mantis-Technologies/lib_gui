@@ -22,4 +22,4 @@ def connect_confirmation_buttons(self):
     """Connects confirmation buttons"""
 
     self.no_not_21_btn.clicked.connect(self.switch_to_start_page)
-    self.yes_over_21_btn.clicked.connect(self.switch_to_payment_page)
+    self.yes_over_21_btn.clicked.connect(self.switch_to_instruction_page)

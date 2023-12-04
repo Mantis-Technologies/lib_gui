@@ -50,8 +50,10 @@ class GUI(QtWidgets.QMainWindow):
         self.connect_results_buttons()
         # Connect Order Buttons
         self.connect_order_buttons()
-        #connect payment buttons
+        # Connect payment buttons
         self.connect_payment_buttons()
+        # Connect instruction page buttons
+        self.connect_instruction_buttons()
         # Remove pointless info
         self.setWindowFlag(Qt.FramelessWindowHint)
         # This is only for when in use by a lab
@@ -153,6 +155,10 @@ class GUI(QtWidgets.QMainWindow):
     from .pages.Payment_page import PaymentApprovedCallback
     from .pages.Payment_page import PaymentTimeoutCallback
 
+    from .pages.instructions_page import (switch_to_instruction_page, connect_instruction_buttons,
+                                          next_button_instruction, cancel_button_instruction)
+
+
     # Keyboard shortcut methods
     from .actions import connect_shortcuts
     from .actions import _move_to_next_screen
@@ -167,3 +173,4 @@ class GUI(QtWidgets.QMainWindow):
 
         _dir = os.path.dirname(os.path.realpath(__file__))
         return os.path.join(_dir, self.gui_ui_fname)
+
