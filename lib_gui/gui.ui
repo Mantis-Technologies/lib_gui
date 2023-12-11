@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1681</width>
-    <height>1022</height>
+    <width>2088</width>
+    <height>1205</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -34,7 +34,7 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="currentIndex">
-     <number>10</number>
+     <number>6</number>
     </property>
     <widget class="QWidget" name="BootingScreen">
      <widget class="QLabel" name="label_8">
@@ -202,21 +202,65 @@ outline:none;</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
+     <widget class="QPushButton" name="about_btn">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>940</y>
+        <width>280</width>
+        <height>120</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>206</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>Calibri</family>
+        <pointsize>55</pointsize>
+        <weight>75</weight>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+    border-style: outset;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: black;
+    min-width: 10em;
+    padding: 6px;
+outline:none;</string>
+      </property>
+      <property name="text">
+       <string>About</string>
+      </property>
+     </widget>
     </widget>
     <widget class="QWidget" name="ConfirmationScreen">
      <widget class="QLabel" name="label_37">
       <property name="geometry">
        <rect>
-        <x>460</x>
+        <x>360</x>
         <y>150</y>
-        <width>1000</width>
-        <height>200</height>
+        <width>1200</width>
+        <height>680</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Calibri</family>
-        <pointsize>40</pointsize>
+        <pointsize>90</pointsize>
        </font>
       </property>
       <property name="text">
@@ -232,10 +276,10 @@ outline:none;</string>
      <widget class="QPushButton" name="yes_over_21_btn">
       <property name="geometry">
        <rect>
-        <x>460</x>
-        <y>400</y>
-        <width>400</width>
-        <height>320</height>
+        <x>200</x>
+        <y>850</y>
+        <width>500</width>
+        <height>200</height>
        </rect>
       </property>
       <property name="font">
@@ -261,10 +305,10 @@ outline:none;</string>
      <widget class="QPushButton" name="no_not_21_btn">
       <property name="geometry">
        <rect>
-        <x>1020</x>
-        <y>400</y>
-        <width>400</width>
-        <height>320</height>
+        <x>1220</x>
+        <y>850</y>
+        <width>500</width>
+        <height>200</height>
        </rect>
       </property>
       <property name="font">
@@ -761,7 +805,7 @@ outline:none;</string>
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:60pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:60pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Ubuntu';&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="placeholderText">
@@ -776,9 +820,9 @@ p, li { white-space: pre-wrap; }
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>449</x>
+        <x>360</x>
         <y>12</y>
-        <width>1022</width>
+        <width>1200</width>
         <height>141</height>
        </rect>
       </property>
@@ -806,10 +850,10 @@ p, li { white-space: pre-wrap; }
      <widget class="QLabel" name="label_5">
       <property name="geometry">
        <rect>
-        <x>449</x>
-        <y>171</y>
-        <width>1022</width>
-        <height>581</height>
+        <x>360</x>
+        <y>150</y>
+        <width>1200</width>
+        <height>680</height>
        </rect>
       </property>
       <property name="font">
@@ -830,8 +874,8 @@ p, li { white-space: pre-wrap; }
      <widget class="QPushButton" name="sample_loaded_btn">
       <property name="geometry">
        <rect>
-        <x>450</x>
-        <y>800</y>
+        <x>200</x>
+        <y>850</y>
         <width>500</width>
         <height>200</height>
        </rect>
@@ -868,8 +912,8 @@ outline:none;</string>
      <widget class="QPushButton" name="cancel_load_btn">
       <property name="geometry">
        <rect>
-        <x>970</x>
-        <y>800</y>
+        <x>1220</x>
+        <y>850</y>
         <width>500</width>
         <height>200</height>
        </rect>
@@ -883,7 +927,7 @@ outline:none;</string>
       <property name="font">
        <font>
         <family>Calibri</family>
-        <pointsize>35</pointsize>
+        <pointsize>60</pointsize>
         <weight>75</weight>
         <italic>false</italic>
         <bold>true</bold>
@@ -980,16 +1024,22 @@ outline:none;</string>
      <widget class="QLabel" name="label_20">
       <property name="geometry">
        <rect>
-        <x>360</x>
-        <y>700</y>
-        <width>1200</width>
-        <height>180</height>
+        <x>20</x>
+        <y>530</y>
+        <width>500</width>
+        <height>300</height>
        </rect>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>202</width>
+        <height>0</height>
+       </size>
       </property>
       <property name="font">
        <font>
         <family>Calibri</family>
-        <pointsize>50</pointsize>
+        <pointsize>40</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -998,7 +1048,7 @@ outline:none;</string>
     padding: 6px;</string>
       </property>
       <property name="text">
-       <string>Please Remove Your Sample And Confirm With The Button Below</string>
+       <string>Please remove your sample and confirm with the button below</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -1010,9 +1060,9 @@ outline:none;</string>
      <widget class="QPushButton" name="finished_test_btn">
       <property name="geometry">
        <rect>
-        <x>560</x>
-        <y>900</y>
-        <width>800</width>
+        <x>20</x>
+        <y>880</y>
+        <width>500</width>
         <height>120</height>
        </rect>
       </property>
@@ -1025,7 +1075,7 @@ outline:none;</string>
       <property name="font">
        <font>
         <family>Calibri</family>
-        <pointsize>40</pointsize>
+        <pointsize>30</pointsize>
         <weight>75</weight>
         <italic>false</italic>
         <bold>true</bold>
@@ -1042,116 +1092,8 @@ outline:none;</string>
 outline:none;</string>
       </property>
       <property name="text">
-       <string>Confirm Sample Removal</string>
+       <string>Confirm Removal</string>
       </property>
-     </widget>
-     <widget class="QWidget" name="gridLayoutWidget">
-      <property name="geometry">
-       <rect>
-        <x>180</x>
-        <y>290</y>
-        <width>1571</width>
-        <height>391</height>
-       </rect>
-      </property>
-      <layout class="QGridLayout" name="gridLayout">
-       <item row="0" column="0">
-        <widget class="QLabel" name="results_1_lbl">
-         <property name="font">
-          <font>
-           <family>Calibri</family>
-           <pointsize>50</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QLabel" name="results_2_lbl">
-         <property name="font">
-          <font>
-           <family>Calibri</family>
-           <pointsize>50</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="2">
-        <widget class="QLabel" name="results_3_lbl">
-         <property name="font">
-          <font>
-           <family>Calibri</family>
-           <pointsize>50</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="0">
-        <widget class="QLabel" name="results_4_lbl">
-         <property name="font">
-          <font>
-           <family>Calibri</family>
-           <pointsize>50</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="1">
-        <widget class="QLabel" name="results_5_lbl">
-         <property name="font">
-          <font>
-           <family>Calibri</family>
-           <pointsize>50</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-       <item row="1" column="2">
-        <widget class="QLabel" name="results_6_lbl">
-         <property name="font">
-          <font>
-           <family>Calibri</family>
-           <pointsize>50</pointsize>
-          </font>
-         </property>
-         <property name="text">
-          <string/>
-         </property>
-         <property name="alignment">
-          <set>Qt::AlignCenter</set>
-         </property>
-        </widget>
-       </item>
-      </layout>
      </widget>
      <widget class="QLabel" name="label_4">
       <property name="geometry">
@@ -1170,6 +1112,28 @@ outline:none;</string>
       </property>
       <property name="text">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Canna&lt;/span&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;Check&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>120</y>
+        <width>500</width>
+        <height>400</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Calibri</family>
+        <italic>true</italic>
+       </font>
+      </property>
+      <property name="text">
+       <string>Please be advised that this self-administered test is not in compliance with the specific regulatory requirements of the Commonwealth of Massachusetts for cannabis testing. As per Section 500.160 of the 935 Massachusetts Code of Regulations (CMR), all marijuana products, including marijuana, must be tested by Independent Testing Laboratories following protocols established under Massachusetts General Laws c. 94G, § 15 and additional provisions in 935 CMR 500.000. This self-test is intended for informational purposes only, designed for consumer use, and is explicitly not for business-to-business transactions or uses. It should not be interpreted as an indication of the product’s safety or quality, nor does it serve as a valid certificate of analysis.</string>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
@@ -1308,10 +1272,10 @@ outline:none;</string>
      <widget class="QLabel" name="label_9">
       <property name="geometry">
        <rect>
-        <x>220</x>
-        <y>40</y>
-        <width>1281</width>
-        <height>741</height>
+        <x>310</x>
+        <y>0</y>
+        <width>1300</width>
+        <height>825</height>
        </rect>
       </property>
       <property name="font">
@@ -1321,27 +1285,22 @@ outline:none;</string>
        </font>
       </property>
       <property name="text">
-       <string>Welcome to our easy sampling process!
-
-To get started, please follow these simple steps:
-
-1.	Retrieve a Sample Cup: Pick up a cup from the dispenser located to your right. For best results, grasp the cup by its sides without touching the top or bottom.
-
-2.	Prepare Your Cannabis Sample: Gently fill the cup with approximately 1g of cannabis flower. For optimal results, we recommend using ground flower.
-
-3.	Check for Light Leakage: Hold the cup up to a light source to ensure that no light penetrates through the center of the cup.
-
-Once you’ve completed these steps, click ‘Next’ to continue.
-</string>
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>pngs/Instructions_Page.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QPushButton" name="instruction_next">
       <property name="geometry">
        <rect>
-        <x>1100</x>
-        <y>840</y>
-        <width>400</width>
-        <height>250</height>
+        <x>200</x>
+        <y>850</y>
+        <width>500</width>
+        <height>200</height>
        </rect>
       </property>
       <property name="font">
@@ -1367,10 +1326,10 @@ Once you’ve completed these steps, click ‘Next’ to continue.
      <widget class="QPushButton" name="instruction_cancel">
       <property name="geometry">
        <rect>
-        <x>250</x>
+        <x>1220</x>
         <y>850</y>
-        <width>400</width>
-        <height>250</height>
+        <width>500</width>
+        <height>200</height>
        </rect>
       </property>
       <property name="font">
@@ -1392,6 +1351,67 @@ Once you’ve completed these steps, click ‘Next’ to continue.
        <string>Cancel</string>
       </property>
      </widget>
+    </widget>
+    <widget class="QWidget" name="AboutPage">
+     <widget class="QPushButton" name="back_to_start_btn">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>940</y>
+        <width>280</width>
+        <height>120</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Calibri</family>
+        <pointsize>60</pointsize>
+        <weight>75</weight>
+        <italic>false</italic>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: white;
+    border-style: outset;
+    border-width: 2px;
+    border-radius: 10px;
+    border-color: black;
+    min-width: 10em;
+    padding: 6px;
+outline:none;</string>
+      </property>
+      <property name="text">
+       <string>Back</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_10">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>0</y>
+        <width>1800</width>
+        <height>1030</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>pngs/About_Page.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <zorder>label_10</zorder>
+     <zorder>back_to_start_btn</zorder>
     </widget>
    </widget>
   </widget>

@@ -24,3 +24,4 @@ class Page(Enum):
     PAYMENT = 8
     KEYPAD = 9
     INSTRUCTIONS = 10
+    ABOUT = 11

@@ -54,6 +54,10 @@ class GUI(QtWidgets.QMainWindow):
         self.connect_payment_buttons()
         # Connect instruction page buttons
         self.connect_instruction_buttons()
+
+        self.connect_about_buttons()
+
+        self.setup_pie_chart()
         # Remove pointless info
         self.setWindowFlag(Qt.FramelessWindowHint)
         # This is only for when in use by a lab
@@ -67,7 +71,7 @@ class GUI(QtWidgets.QMainWindow):
     def _switch_to_page(self, page: Page):
         """Switches to a page"""
 
-        if not self.debug and False:
+        if not self.debug:
             # Remove cursor unless debugging
             self.setCursor(Qt.BlankCursor)
         # Move to the next page
@@ -140,6 +144,9 @@ class GUI(QtWidgets.QMainWindow):
     from .pages.results_page import set_results_labels
     from .pages.results_page import connect_results_buttons
     from .pages.results_page import done_w_results
+    from .pages.results_page import setup_pie_chart
+    from .pages.results_page import UpdateChart
+    from .pages.results_page import CreatePieSeries
 
     #Configuring Keypad page
     from .pages.ConfiguringKeyPadPage import switch_to_ConfiguringKeyPad_page
@@ -157,6 +164,8 @@ class GUI(QtWidgets.QMainWindow):
 
     from .pages.instructions_page import (switch_to_instruction_page, connect_instruction_buttons,
                                           next_button_instruction, cancel_button_instruction)
+
+    from .pages.About_page import switch_to_about_page, connect_about_buttons, AboutPageTimeoutCallback, BackToStartPageButton
 
 
     # Keyboard shortcut methods
