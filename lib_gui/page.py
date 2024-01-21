@@ -21,3 +21,7 @@ class Page(Enum):
     SCANNING = 5
     RESULTS = 6
     ERROR = 7
+    PAYMENT = 8
+    KEYPAD = 9
+    INSTRUCTIONS = 10
+    ABOUT = 11

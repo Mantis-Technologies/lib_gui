@@ -23,8 +23,11 @@ def connect_shortcuts(self):
     self.next_shortcut = QShortcut(QKeySequence("n"), self)
     self.next_shortcut.activated.connect(self._move_to_next_screen)
 
-    self.close_shortcut = QShortcut(QKeySequence("q"), self)
+    self.close_shortcut = QShortcut(QKeySequence("Ctrl+P"), self)
     self.close_shortcut.activated.connect(self.close)
+
+    self.shutdown_shortcut = QShortcut(QKeySequence("q"), self)
+    self.shutdown_shortcut.activated.connect(self.ShutdownKiosk)
 
 
 def _move_to_next_screen(self):

@@ -15,6 +15,7 @@ import sys
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QApplication, QWidget
 
 from .page import Page
 
@@ -23,7 +24,7 @@ class GUI(QtWidgets.QMainWindow):
 
     gui_ui_fname = "gui.ui"
 
-    def __init__(self, debug=False):
+    def __init__(self, debug=False, fake_backend: bool = False, fake_payment_terminal: bool = False):
         """Connects all buttons and switches to boot page"""
 
         # Pytest cannot run if this is enabled
@@ -33,6 +34,9 @@ class GUI(QtWidgets.QMainWindow):
 
         # If in debug mode, typing n moves to next screen
         self.debug = debug
+        self.fake_backend = fake_backend
+        self.fake_payment_terminal = fake_payment_terminal
+        self.keepThreadsRunning = True
 
         # Load the UI
         self.ui = uic.loadUi(self.ui_path, self)
@@ -46,19 +50,28 @@ class GUI(QtWidgets.QMainWindow):
         self.connect_results_buttons()
         # Connect Order Buttons
         self.connect_order_buttons()
+        # Connect payment buttons
+        self.connect_payment_buttons()
+        # Connect instruction page buttons
+        self.connect_instruction_buttons()
+
+        self.connect_about_buttons()
+
+        self.setup_pie_chart()
         # Remove pointless info
         self.setWindowFlag(Qt.FramelessWindowHint)
         # This is only for when in use by a lab
         self.set_visibility_of_lab_items(visible=False)
         # Connect keyboard shortcuts
         self.connect_shortcuts()
+        if not self.fake_payment_terminal and not self.fake_backend:
+            self.showFullScreen()
         # Move to booting page
         self.switch_to_boot_page()
-
     def _switch_to_page(self, page: Page):
         """Switches to a page"""
 
-        if not self.debug and False:
+        if not self.debug:
             # Remove cursor unless debugging
             self.setCursor(Qt.BlankCursor)
         # Move to the next page
@@ -86,8 +99,15 @@ class GUI(QtWidgets.QMainWindow):
         """Closes the GUI. Done here for easy inheritance"""
 
         super(GUI, self).close()
+        self.keepThreadsRunning = False
 
-    # Boot page methods
+    def ShutdownKiosk(self):
+        self.close()
+        print("Shutting down")
+        import os
+        os.system('systemctl poweroff')
+
+        # Boot page methods
     from .pages.boot_page import switch_to_boot_page
 
     # Start page methods
@@ -124,9 +144,29 @@ class GUI(QtWidgets.QMainWindow):
     from .pages.results_page import set_results_labels
     from .pages.results_page import connect_results_buttons
     from .pages.results_page import done_w_results
+    from .pages.results_page import setup_pie_chart
+    from .pages.results_page import UpdateChart
+    from .pages.results_page import CreatePieSeries
+
+    #Configuring Keypad page
+    from .pages.ConfiguringKeyPadPage import switch_to_ConfiguringKeyPad_page
 
     # Error page
     from .pages.error_page import switch_to_error_page
+
+    #Payment page
+    from .pages.Payment_page import switch_to_payment_page
+    from .pages.Payment_page import set_Price_label
+    from .pages.Payment_page import connect_payment_buttons
+    from .pages.Payment_page import cancel_payment
+    from .pages.Payment_page import PaymentApprovedCallback
+    from .pages.Payment_page import PaymentTimeoutCallback
+
+    from .pages.instructions_page import (switch_to_instruction_page, connect_instruction_buttons,
+                                          next_button_instruction, cancel_button_instruction)
+
+    from .pages.About_page import switch_to_about_page, connect_about_buttons, AboutPageTimeoutCallback, BackToStartPageButton
+
 
     # Keyboard shortcut methods
     from .actions import connect_shortcuts
@@ -134,8 +174,6 @@ class GUI(QtWidgets.QMainWindow):
 
     def run(self):
         """Runs the app"""
-
-        self.showFullScreen()
         sys.exit(self.app.exec_())
 
     @property
@@ -144,3 +182,4 @@ class GUI(QtWidgets.QMainWindow):
 
         _dir = os.path.dirname(os.path.realpath(__file__))
         return os.path.join(_dir, self.gui_ui_fname)
+

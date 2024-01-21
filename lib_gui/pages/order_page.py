@@ -34,7 +34,7 @@ def connect_order_buttons(self):
         try:
             order_num = self.get_order_num()
             if order_num:
-                self.switch_to_load_page()
+                self.switch_to_payment_page()
         except Exception as e:
             print("order num failed with ", str(e))
     self.order_num_next_btn.clicked.connect(next_page)
