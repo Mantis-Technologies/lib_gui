@@ -3,8 +3,8 @@
 
 """This file contains a GUI class"""
 
-__author__ = "Justin Furuness, Nicholas Lanotte"
-__credits__ = ["Justin Furuness", "Nicholas Lanotte"]
+__author__ = "Justin Furuness, Nicholas Lanotte, Michael Mahoney"
+__credits__ = ["Justin Furuness", "Nicholas Lanotte", "Michael Mahoney"]
 __maintainer__ = "Justin Furuness"
 __email__ = "jfuruness@gmail.com"
 
@@ -54,8 +54,12 @@ class GUI(QtWidgets.QMainWindow):
         self.connect_payment_buttons()
         # Connect instruction page buttons
         self.connect_instruction_buttons()
-
+        # Connect about page buttons
         self.connect_about_buttons()
+        # Connect disclaimer page buttons
+        self.connect_disclaimer_buttons()
+        # Connect before proceeding page buttons
+        self.connect_before_proceeding_buttons()
 
         self.setup_pie_chart()
         # Remove pointless info

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-__author__ = "Justin Furuness"
+__author__ = "Justin Furuness, Nicholas Lanotte, Michael Mahoney"
 __credits__ = ["Justin Furuness"]
 __maintainer__ = "Justin Furuness"
 __email__ = "jfuruness@gmail.com"
@@ -25,3 +25,5 @@ class Page(Enum):
     KEYPAD = 9
     INSTRUCTIONS = 10
     ABOUT = 11
+    DISCLAIMER = 12
+    BEFORE_PROCEEDING = 13
