@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1849</width>
-    <height>1027</height>
+    <width>1920</width>
+    <height>1080</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -34,7 +34,7 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>6</number>
     </property>
     <widget class="QWidget" name="BootingScreen">
      <widget class="QLabel" name="label_2">
@@ -61,10 +61,10 @@
      <widget class="QPushButton" name="begin_btn">
       <property name="geometry">
        <rect>
-        <x>70</x>
-        <y>280</y>
-        <width>1281</width>
-        <height>181</height>
+        <x>630</x>
+        <y>640</y>
+        <width>691</width>
+        <height>131</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -82,28 +82,29 @@
         <bold>true</bold>
        </font>
       </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background-color: black;
-    border-style: outset;
-    border-width: 2px;
-    border-radius: 10px;
-    border-color: black;
-    min-width: 10em;
-    padding: 6px;
-outline:none;
- background-image : url('/lib_gui/CannaCheck_UI_images_1.2/button.png')</string>
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
       </property>
       <property name="text">
-       <string>Begin</string>
+       <string/>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>200</width>
+        <height>50</height>
+       </size>
       </property>
      </widget>
      <widget class="QPushButton" name="about_btn">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>940</y>
-        <width>280</width>
-        <height>120</height>
+        <x>110</x>
+        <y>969</y>
+        <width>261</width>
+        <height>61</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -114,7 +115,7 @@ outline:none;
       </property>
       <property name="minimumSize">
        <size>
-        <width>176</width>
+        <width>0</width>
         <height>0</height>
        </size>
       </property>
@@ -128,17 +129,11 @@ outline:none;
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: white;
-    border-style: outset;
-    border-width: 2px;
-    border-radius: 10px;
-    border-color: black;
-    min-width: 10em;
-    padding: 6px;
+       <string notr="true">background-color: rgba(255, 255, 255, 0);n    padding: 6px;
 outline:none;</string>
       </property>
       <property name="text">
-       <string>About</string>
+       <string/>
       </property>
      </widget>
      <widget class="QLabel" name="label_3">
@@ -160,18 +155,18 @@ outline:none;</string>
        <bool>true</bool>
       </property>
      </widget>
-     <zorder>about_btn</zorder>
      <zorder>label_3</zorder>
      <zorder>begin_btn</zorder>
+     <zorder>about_btn</zorder>
     </widget>
     <widget class="QWidget" name="ConfirmationScreen">
      <widget class="QPushButton" name="yes_over_21_btn">
       <property name="geometry">
        <rect>
-        <x>200</x>
-        <y>850</y>
-        <width>500</width>
-        <height>200</height>
+        <x>400</x>
+        <y>640</y>
+        <width>541</width>
+        <height>131</height>
        </rect>
       </property>
       <property name="font">
@@ -181,26 +176,19 @@ outline:none;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: white;
-    border-style: outset;
-    border-width: 2px;
-    border-radius: 10px;
-    border-color: black;
-   outline:none;
-    padding: 6px;
-</string>
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
       </property>
       <property name="text">
-       <string>Yes</string>
+       <string/>
       </property>
      </widget>
      <widget class="QPushButton" name="no_not_21_btn">
       <property name="geometry">
        <rect>
-        <x>1220</x>
-        <y>850</y>
-        <width>500</width>
-        <height>200</height>
+        <x>980</x>
+        <y>639</y>
+        <width>541</width>
+        <height>121</height>
        </rect>
       </property>
       <property name="font">
@@ -210,16 +198,10 @@ outline:none;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: red;
-    border-style: outset;
-    border-width: 2px;
-    border-radius: 10px;
-    border-color: black;
-   outline:none;
-    padding: 6px;</string>
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
       </property>
       <property name="text">
-       <string>No</string>
+       <string/>
       </property>
      </widget>
      <widget class="QLabel" name="label_7">
@@ -241,6 +223,9 @@ outline:none;</string>
        <bool>true</bool>
       </property>
      </widget>
+     <zorder>label_7</zorder>
+     <zorder>yes_over_21_btn</zorder>
+     <zorder>no_not_21_btn</zorder>
     </widget>
     <widget class="QWidget" name="OrderNumPage">
      <widget class="QLabel" name="enter_id_lbl">
@@ -716,7 +701,7 @@ outline:none;</string>
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:60pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:60pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Ubuntu';&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="placeholderText">
@@ -731,10 +716,10 @@ p, li { white-space: pre-wrap; }
      <widget class="QPushButton" name="sample_loaded_btn">
       <property name="geometry">
        <rect>
-        <x>200</x>
-        <y>850</y>
-        <width>500</width>
-        <height>200</height>
+        <x>380</x>
+        <y>799</y>
+        <width>531</width>
+        <height>131</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -753,26 +738,19 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: white;
-    border-style: outset;
-    border-width: 2px;
-    border-radius: 10px;
-    border-color: black;
-    min-width: 10em;
-    padding: 6px;
-outline:none;</string>
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
       </property>
       <property name="text">
-       <string>Finished Loading</string>
+       <string/>
       </property>
      </widget>
      <widget class="QPushButton" name="cancel_load_btn">
       <property name="geometry">
        <rect>
-        <x>1220</x>
-        <y>850</y>
-        <width>500</width>
-        <height>200</height>
+        <x>960</x>
+        <y>810</y>
+        <width>541</width>
+        <height>121</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -791,17 +769,10 @@ outline:none;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: red;
-    border-style: outset;
-    border-width: 2px;
-    border-radius: 10px;
-    border-color: black;
-    min-width: 10em;
-    padding: 6px;
-outline:none;</string>
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
       </property>
       <property name="text">
-       <string>Cancel</string>
+       <string/>
       </property>
      </widget>
      <widget class="QLabel" name="label">
@@ -823,6 +794,9 @@ outline:none;</string>
        <bool>true</bool>
       </property>
      </widget>
+     <zorder>label</zorder>
+     <zorder>cancel_load_btn</zorder>
+     <zorder>sample_loaded_btn</zorder>
     </widget>
     <widget class="QWidget" name="ScanRunningScreen">
      <widget class="QProgressBar" name="pbar">
@@ -869,10 +843,10 @@ outline:none;</string>
      <widget class="QPushButton" name="finished_test_btn">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>880</y>
-        <width>500</width>
-        <height>120</height>
+        <x>50</x>
+        <y>729</y>
+        <width>531</width>
+        <height>131</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -891,17 +865,10 @@ outline:none;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: white;
-    border-style: outset;
-    border-width: 2px;
-    border-radius: 10px;
-    border-color: black;
-    min-width: 10em;
-    padding: 6px;
-outline:none;</string>
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
       </property>
       <property name="text">
-       <string>Confirm Removal</string>
+       <string/>
       </property>
      </widget>
      <widget class="QLabel" name="label_4">
@@ -923,6 +890,54 @@ outline:none;</string>
        <bool>true</bool>
       </property>
      </widget>
+     <widget class="QLabel" name="TotalThcLbl">
+      <property name="geometry">
+       <rect>
+        <x>720</x>
+        <y>790</y>
+        <width>450</width>
+        <height>80</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Calibri</family>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+      </property>
+      <property name="text">
+       <string>Total THC</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="TotalCbdLbl">
+      <property name="geometry">
+       <rect>
+        <x>1240</x>
+        <y>790</y>
+        <width>450</width>
+        <height>80</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Calibri</family>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+      </property>
+      <property name="text">
+       <string>Total CBD</string>
+      </property>
+     </widget>
+     <zorder>label_4</zorder>
+     <zorder>finished_test_btn</zorder>
+     <zorder>TotalThcLbl</zorder>
+     <zorder>TotalCbdLbl</zorder>
     </widget>
     <widget class="QWidget" name="ErrorPage">
      <widget class="QLabel" name="label_6">
@@ -949,10 +964,10 @@ outline:none;</string>
      <widget class="QPushButton" name="cancel_payment_btn">
       <property name="geometry">
        <rect>
-        <x>1380</x>
+        <x>1280</x>
         <y>850</y>
-        <width>451</width>
-        <height>211</height>
+        <width>531</width>
+        <height>121</height>
        </rect>
       </property>
       <property name="font">
@@ -962,16 +977,10 @@ outline:none;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: red;
-    border-style: outset;
-    border-width: 2px;
-    border-radius: 10px;
-    border-color: black;
-   outline:none;
-    padding: 6px;</string>
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
       </property>
       <property name="text">
-       <string>Cancel</string>
+       <string/>
       </property>
      </widget>
      <widget class="QLabel" name="label_8">
@@ -993,6 +1002,8 @@ outline:none;</string>
        <bool>true</bool>
       </property>
      </widget>
+     <zorder>label_8</zorder>
+     <zorder>cancel_payment_btn</zorder>
     </widget>
     <widget class="QWidget" name="ConfiguringKeyPadPage">
      <widget class="QLabel" name="label_11">
@@ -1019,10 +1030,10 @@ outline:none;</string>
      <widget class="QPushButton" name="instruction_next">
       <property name="geometry">
        <rect>
-        <x>200</x>
-        <y>850</y>
-        <width>500</width>
-        <height>200</height>
+        <x>420</x>
+        <y>879</y>
+        <width>531</width>
+        <height>121</height>
        </rect>
       </property>
       <property name="font">
@@ -1032,26 +1043,19 @@ outline:none;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: white;
-    border-style: outset;
-    border-width: 2px;
-    border-radius: 10px;
-    border-color: black;
-   outline:none;
-    padding: 6px;
-</string>
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
       </property>
       <property name="text">
-       <string>Next</string>
+       <string/>
       </property>
      </widget>
      <widget class="QPushButton" name="instruction_cancel">
       <property name="geometry">
        <rect>
-        <x>1220</x>
-        <y>850</y>
-        <width>500</width>
-        <height>200</height>
+        <x>1000</x>
+        <y>879</y>
+        <width>531</width>
+        <height>121</height>
        </rect>
       </property>
       <property name="font">
@@ -1061,16 +1065,10 @@ outline:none;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: red;
-    border-style: outset;
-    border-width: 2px;
-    border-radius: 10px;
-    border-color: black;
-   outline:none;
-    padding: 6px;</string>
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
       </property>
       <property name="text">
-       <string>Cancel</string>
+       <string/>
       </property>
      </widget>
      <widget class="QLabel" name="label_9">
@@ -1092,14 +1090,17 @@ outline:none;</string>
        <bool>true</bool>
       </property>
      </widget>
+     <zorder>label_9</zorder>
+     <zorder>instruction_next</zorder>
+     <zorder>instruction_cancel</zorder>
     </widget>
     <widget class="QWidget" name="AboutPage">
      <widget class="QPushButton" name="back_to_start_btn">
       <property name="geometry">
        <rect>
-        <x>710</x>
-        <y>869</y>
-        <width>301</width>
+        <x>1430</x>
+        <y>950</y>
+        <width>421</width>
         <height>111</height>
        </rect>
       </property>
@@ -1122,17 +1123,10 @@ outline:none;</string>
        <bool>false</bool>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: white;
-    border-style: outset;
-    border-width: 2px;
-    border-radius: 10px;
-    border-color: black;
-    min-width: 10em;
-    padding: 6px;
-outline:none;</string>
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
       </property>
       <property name="text">
-       <string>Back</string>
+       <string/>
       </property>
       <property name="icon">
        <iconset>
@@ -1184,27 +1178,33 @@ outline:none;</string>
      <widget class="QPushButton" name="agree_btn">
       <property name="geometry">
        <rect>
-        <x>580</x>
-        <y>900</y>
-        <width>113</width>
-        <height>32</height>
+        <x>400</x>
+        <y>860</y>
+        <width>541</width>
+        <height>111</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+      </property>
       <property name="text">
-       <string>PushButton</string>
+       <string/>
       </property>
      </widget>
      <widget class="QPushButton" name="decline_btn">
       <property name="geometry">
        <rect>
-        <x>1210</x>
-        <y>890</y>
-        <width>113</width>
-        <height>32</height>
+        <x>992</x>
+        <y>851</y>
+        <width>531</width>
+        <height>131</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+      </property>
       <property name="text">
-       <string>PushButton</string>
+       <string/>
       </property>
      </widget>
     </widget>
@@ -1231,27 +1231,33 @@ outline:none;</string>
      <widget class="QPushButton" name="next_proceeding_btn">
       <property name="geometry">
        <rect>
-        <x>630</x>
-        <y>840</y>
-        <width>113</width>
-        <height>32</height>
+        <x>400</x>
+        <y>800</y>
+        <width>541</width>
+        <height>111</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+      </property>
       <property name="text">
-       <string>PushButton</string>
+       <string/>
       </property>
      </widget>
      <widget class="QPushButton" name="cancel_proceeding_btn">
       <property name="geometry">
        <rect>
-        <x>1210</x>
-        <y>840</y>
-        <width>113</width>
-        <height>32</height>
+        <x>990</x>
+        <y>800</y>
+        <width>531</width>
+        <height>121</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+      </property>
       <property name="text">
-       <string>PushButton</string>
+       <string/>
       </property>
      </widget>
     </widget>

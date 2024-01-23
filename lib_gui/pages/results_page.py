@@ -10,7 +10,8 @@ __email__ = "jfuruness@gmail.com"
 
 from ..page import Page
 from PyQt5.QtChart import QChart, QChartView, QPieSeries, QPieSlice
-from PyQt5.QtGui import QFont, QColor
+from PyQt5.QtGui import QFont, QColor, QBrush
+from PyQt5.QtCore import Qt
 
 
 def switch_to_results_page(self):
@@ -23,6 +24,8 @@ def CreatePieSeries(self, analytes):
     newSeries = QPieSeries()
     totalPercentage = 0.0
     for analyte in analytes:
+        if "total" in analyte.name.lower():
+            continue
         analytePercent = round(analyte.analyte_concentration, 1) / 100.0
         totalPercentage = totalPercentage + analytePercent
         slice_ = QPieSlice(analyte.name, analytePercent)
@@ -31,7 +34,7 @@ def CreatePieSeries(self, analytes):
         newSeries.append(slice_)
 
     if totalPercentage < 1.0:
-        slice_ = QPieSlice("Not Tested", 1.0 - totalPercentage)
+        slice_ = QPieSlice("NOT TESTED", 1.0 - totalPercentage)
         slice_.setColor(QColor(200, 200, 200))  # light gray
         slice_.setLabelVisible()
         newSeries.append(slice_)
@@ -41,6 +44,7 @@ def CreatePieSeries(self, analytes):
 def set_results_labels(self, analytes):
     newSeries = self.CreatePieSeries(analytes)
     self.UpdateChart(newSeries)
+    self.setTotalAnalyteLabels(analytes)
 
 
 def done_w_results(self):
@@ -60,44 +64,91 @@ def UpdateChart(self, series):
     for slice in series.slices():
         font = QFont()
         font.setPointSize(20)  # Change the point size to adjust label size
+        font.setFamily("Lato")
         slice.setLabelFont(font)
 
-        slice.setLabelVisible()
         if slice.percentage() > 0.25:
             slice.setLabelPosition(QPieSlice.LabelInsideHorizontal)
             # no line break if outside graph
             label = "<p style='color:{}'>{}<br>{}%</p>".format(
-                'black',
+                'white',
                 slice.label(),
                 round(slice.percentage() * 100, 1)
             )
             slice.setLabel(label)
         else:
             label = "<p style='color:{}'>{} {}%</p>".format(
-                'black',
+                'white',
                 slice.label(),
                 round(slice.percentage() * 100, 1)
             )
             slice.setLabel(label)
+        if slice.percentage() > 0.03:
+            slice.setLabelVisible()
+        else:
+            slice.setLabelVisible(False)
     self.chart.addSeries(series)
-
 
 def setup_pie_chart(self):
     self.chart = QChart()
-
     series = QPieSeries()
-    series.append("Not Tested", 50)
-    series.append("Fake Analyte", 50)
+    series.append("NOT TESTED", 100)
 
-    self.chart.setTitle("Test Results")
+    self.chart.setTitle("TEST RESULTS")
+    self.chart.setBackgroundVisible(True)
+    background_color = QColor(27, 27, 27)
+    brush = QBrush(background_color)
+
+    # Set the background brush for the chart
+    self.chart.setBackgroundBrush(brush)
     font = QFont()
     font.setPointSize(30)  # Change the point size to adjust the font size
-    font.setFamily("Calibri")
+    font.setFamily("Monserrat Light")
     self.chart.setTitleFont(font)
-    self.chart.legend().setVisible(False)
+    self.chart.setTitleBrush(QColor(255, 255, 255))
+    #self.chart.legend().setVisible(False)
+    legend = self.chart.legend()
+
+    # Set the alignment of the legend
+    legend.setAlignment(Qt.AlignLeft)
+    legend.setColor(QColor(255, 255, 255))
 
     results_page_widget = self.stackedWidget.widget(Page.RESULTS.value)
     self.chart_view = QChartView(self.chart)
     self.chart_view.setParent(results_page_widget)
     self.chart_view.setMinimumSize(800, 600)
-    self.chart_view.setGeometry(550, 50, 1200, 980)  # Set position and size using geometry
+    self.chart_view.setGeometry(600, 50, 1100, 700)  # Set position and size using geometry
+    self.chart_view.setBackgroundBrush(brush)
+
+def setTotalAnalyteLabels(self, analytes):
+    thcPercent = 0.0
+    cbdPercent = 0.0
+    for analyte in analytes:
+       lowerCaseName = analyte.name.lower()
+       if "total" in lowerCaseName:
+           if "thc" in lowerCaseName:
+               thcPercent = round(analyte.analyte_concentration, 1)
+           elif "cbd" in lowerCaseName:
+               cbdPercent = round(analyte.analyte_concentration, 1)
+
+
+    thcLabel = "<p style='color:{}'>{}: {}%</p>".format(
+                'white',
+                "TOTAL THC",
+                thcPercent)
+    cbdLabel = "<p style='color:{}'>{}: {}%</p>".format(
+       'white',
+       "TOTAL CBD",
+       cbdPercent)
+
+    font = QFont()
+    font.setPointSize(30)  # Change the point size to adjust the font size
+    font.setFamily("Lato")
+
+    self.TotalThcLbl.setText(thcLabel)
+    self.TotalThcLbl.setAutoFillBackground(False)
+    self.TotalThcLbl.setFont(font)
+
+    self.TotalCbdLbl.setText(cbdLabel)
+    self.TotalCbdLbl.setAutoFillBackground(False)
+    self.TotalCbdLbl.setFont(font)

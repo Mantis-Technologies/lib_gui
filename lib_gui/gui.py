@@ -151,6 +151,7 @@ class GUI(QtWidgets.QMainWindow):
     from .pages.results_page import setup_pie_chart
     from .pages.results_page import UpdateChart
     from .pages.results_page import CreatePieSeries
+    from .pages.results_page import setTotalAnalyteLabels
 
     #Configuring Keypad page
     from .pages.ConfiguringKeyPadPage import switch_to_ConfiguringKeyPad_page
@@ -170,6 +171,9 @@ class GUI(QtWidgets.QMainWindow):
                                           next_button_instruction, cancel_button_instruction)
 
     from .pages.About_page import switch_to_about_page, connect_about_buttons, AboutPageTimeoutCallback, BackToStartPageButton
+
+    from .pages.disclaimer_page import switch_to_disclaimer_page, connect_disclaimer_buttons
+    from .pages.before_proceeding_page import switch_to_before_proceeding_page, connect_before_proceeding_buttons
 
 
     # Keyboard shortcut methods

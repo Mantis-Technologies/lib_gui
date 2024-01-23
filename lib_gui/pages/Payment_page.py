@@ -28,7 +28,7 @@ def switch_to_payment_page(self):
 
 def set_Price_label(self, priceAsInt: int):
     priceAsFloat = float(priceAsInt) / 100.0
-    self.Price_lbl.setText("")  # TODO we are going to have the price on the terminal for now
+    #self.Price_lbl.setText("")  # TODO we are going to have the price on the terminal for now
 
 
 def cancel_payment(self):
