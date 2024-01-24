@@ -94,7 +94,7 @@ def setup_pie_chart(self):
     series = QPieSeries()
     series.append("NOT TESTED", 100)
 
-    self.chart.setTitle("TEST RESULTS")
+    self.chart.setTitle("Test Results")
     self.chart.setBackgroundVisible(True)
     background_color = QColor(27, 27, 27)
     brush = QBrush(background_color)
@@ -110,7 +110,7 @@ def setup_pie_chart(self):
     legend = self.chart.legend()
 
     # Set the alignment of the legend
-    legend.setAlignment(Qt.AlignLeft)
+    legend.setAlignment(Qt.AlignRight)
     legend.setColor(QColor(255, 255, 255))
 
     results_page_widget = self.stackedWidget.widget(Page.RESULTS.value)
@@ -142,7 +142,7 @@ def setTotalAnalyteLabels(self, analytes):
        cbdPercent)
 
     font = QFont()
-    font.setPointSize(30)  # Change the point size to adjust the font size
+    font.setPointSize(20)  # Change the point size to adjust the font size
     font.setFamily("Lato")
 
     self.TotalThcLbl.setText(thcLabel)
