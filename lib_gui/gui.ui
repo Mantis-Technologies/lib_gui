@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1814</width>
+    <width>1728</width>
     <height>1027</height>
    </rect>
   </property>
@@ -34,7 +34,7 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="currentIndex">
-     <number>15</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="BootingScreen">
      <widget class="QLabel" name="label_2">
@@ -1358,6 +1358,8 @@ p, li { white-space: pre-wrap; }
        <string>PushButton</string>
       </property>
      </widget>
+     <zorder>confirm_removal_btn</zorder>
+     <zorder>label_15</zorder>
     </widget>
    </widget>
   </widget>
