@@ -60,7 +60,11 @@ class GUI(QtWidgets.QMainWindow):
         self.connect_disclaimer_buttons()
         # Connect before proceeding page buttons
         self.connect_before_proceeding_buttons()
-
+        # Connect rescan results page
+        self.connect_rescan_buttons()
+        # Connect confirm removal page
+        self.connect_confirm_removal_buttons()
+        # Set up pie chart
         self.setup_pie_chart()
         # Remove pointless info
         self.setWindowFlag(Qt.FramelessWindowHint)
@@ -169,11 +173,17 @@ class GUI(QtWidgets.QMainWindow):
 
     from .pages.instructions_page import (switch_to_instruction_page, connect_instruction_buttons,
                                           next_button_instruction, cancel_button_instruction)
-
+    # About page
     from .pages.About_page import switch_to_about_page, connect_about_buttons, AboutPageTimeoutCallback, BackToStartPageButton
 
+    # Disclaimer page
     from .pages.disclaimer_page import switch_to_disclaimer_page, connect_disclaimer_buttons
+    # Before proceeding page
     from .pages.before_proceeding_page import switch_to_before_proceeding_page, connect_before_proceeding_buttons
+    # Rescan results page
+    from .pages.rescan_results_page import switch_to_rescan_page, connect_rescan_buttons
+    # Confirm removal page
+    from .pages.confirm_removal_page import switch_to_confirm_removal_page, connect_confirm_removal_buttons
 
 
     # Keyboard shortcut methods

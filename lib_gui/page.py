@@ -27,3 +27,5 @@ class Page(Enum):
     ABOUT = 11
     DISCLAIMER = 12
     BEFORE_PROCEEDING = 13
+    RESCAN_RESULTS = 14
+    CONFIRM_REMOVAL = 15

@@ -4,7 +4,7 @@
 """This file contains the methods relating to the results page"""
 
 __author__ = "Justin Furuness"
-__credits__ = ["Justin Furuness"]
+__credits__ = ["Justin Furuness", "Nick Lanotte", "Michael Mahoney"]
 __maintainer__ = "Justin Furuness"
 __email__ = "jfuruness@gmail.com"
 
@@ -50,7 +50,7 @@ def set_results_labels(self, analytes):
 def done_w_results(self):
     """Done with results, move to start page"""
 
-    self.switch_to_start_page()
+    self.switch_to_confirm_removal_page()
 
 
 def connect_results_buttons(self):
