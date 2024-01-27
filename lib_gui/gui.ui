@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1920</width>
-    <height>1080</height>
+    <width>1918</width>
+    <height>1073</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -34,7 +34,7 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="currentIndex">
-     <number>16</number>
+     <number>12</number>
     </property>
     <widget class="QWidget" name="BootingScreen">
      <widget class="QLabel" name="label_2">
@@ -61,10 +61,10 @@
      <widget class="QPushButton" name="begin_btn">
       <property name="geometry">
        <rect>
-        <x>630</x>
+        <x>660</x>
         <y>640</y>
-        <width>691</width>
-        <height>131</height>
+        <width>600</width>
+        <height>130</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -75,8 +75,8 @@
       </property>
       <property name="font">
        <font>
-        <family>Calibri</family>
-        <pointsize>80</pointsize>
+        <family>Arial</family>
+        <pointsize>60</pointsize>
         <weight>75</weight>
         <italic>false</italic>
         <bold>true</bold>
@@ -86,10 +86,10 @@
        <bool>false</bool>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+       <string notr="true">border-radius: 65px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(3, 116, 64)</string>
       </property>
       <property name="text">
-       <string/>
+       <string>BEGIN</string>
       </property>
       <property name="iconSize">
        <size>
@@ -103,8 +103,8 @@
        <rect>
         <x>110</x>
         <y>969</y>
-        <width>261</width>
-        <height>61</height>
+        <width>260</width>
+        <height>60</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -121,19 +121,18 @@
       </property>
       <property name="font">
        <font>
-        <family>Calibri</family>
-        <pointsize>55</pointsize>
+        <family>Arial</family>
+        <pointsize>30</pointsize>
         <weight>75</weight>
         <italic>false</italic>
         <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgba(255, 255, 255, 0);n    padding: 6px;
-outline:none;</string>
+       <string notr="true">border-radius: 30px; background-color: rgb(27, 27, 27); border: 2px solid white; color: rgb(255, 255, 255)</string>
       </property>
       <property name="text">
-       <string/>
+       <string>ABOUT</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_3">
@@ -144,6 +143,11 @@ outline:none;</string>
         <width>1920</width>
         <height>1080</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Noto Sans</family>
+       </font>
       </property>
       <property name="text">
        <string/>
@@ -165,43 +169,43 @@ outline:none;</string>
        <rect>
         <x>400</x>
         <y>640</y>
-        <width>541</width>
-        <height>131</height>
+        <width>540</width>
+        <height>120</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Calibri</family>
-        <pointsize>60</pointsize>
+        <family>Arial</family>
+        <pointsize>40</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(3, 116, 64)</string>
       </property>
       <property name="text">
-       <string/>
+       <string>YES</string>
       </property>
      </widget>
      <widget class="QPushButton" name="no_not_21_btn">
       <property name="geometry">
        <rect>
         <x>980</x>
-        <y>639</y>
-        <width>541</width>
-        <height>121</height>
+        <y>640</y>
+        <width>540</width>
+        <height>120</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Calibri</family>
-        <pointsize>60</pointsize>
+        <family>Arial</family>
+        <pointsize>40</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(169, 6, 10)</string>
       </property>
       <property name="text">
-       <string/>
+       <string>NO</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_7">
@@ -713,13 +717,16 @@ p, li { white-space: pre-wrap; }
      </widget>
     </widget>
     <widget class="QWidget" name="LoadSampleScreen">
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <widget class="QPushButton" name="sample_loaded_btn">
       <property name="geometry">
        <rect>
         <x>380</x>
-        <y>799</y>
-        <width>531</width>
-        <height>131</height>
+        <y>810</y>
+        <width>530</width>
+        <height>120</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -730,7 +737,7 @@ p, li { white-space: pre-wrap; }
       </property>
       <property name="font">
        <font>
-        <family>Calibri</family>
+        <family>Arial</family>
         <pointsize>35</pointsize>
         <weight>75</weight>
         <italic>false</italic>
@@ -738,10 +745,10 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(3, 116, 64)</string>
       </property>
       <property name="text">
-       <string/>
+       <string>FINISHED LOADING</string>
       </property>
      </widget>
      <widget class="QPushButton" name="cancel_load_btn">
@@ -749,8 +756,8 @@ p, li { white-space: pre-wrap; }
        <rect>
         <x>960</x>
         <y>810</y>
-        <width>541</width>
-        <height>121</height>
+        <width>540</width>
+        <height>120</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -761,18 +768,18 @@ p, li { white-space: pre-wrap; }
       </property>
       <property name="font">
        <font>
-        <family>Calibri</family>
-        <pointsize>60</pointsize>
+        <family>Arial</family>
+        <pointsize>35</pointsize>
         <weight>75</weight>
         <italic>false</italic>
         <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(169, 6, 10)</string>
       </property>
       <property name="text">
-       <string/>
+       <string>CANCEL</string>
       </property>
      </widget>
      <widget class="QLabel" name="label">
@@ -843,10 +850,10 @@ p, li { white-space: pre-wrap; }
      <widget class="QPushButton" name="finished_test_btn">
       <property name="geometry">
        <rect>
-        <x>50</x>
-        <y>729</y>
-        <width>531</width>
-        <height>131</height>
+        <x>39</x>
+        <y>730</y>
+        <width>540</width>
+        <height>130</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -857,7 +864,7 @@ p, li { white-space: pre-wrap; }
       </property>
       <property name="font">
        <font>
-        <family>Calibri</family>
+        <family>Arial</family>
         <pointsize>30</pointsize>
         <weight>75</weight>
         <italic>false</italic>
@@ -865,10 +872,10 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+       <string notr="true">border-radius: 65px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(3, 116, 64)</string>
       </property>
       <property name="text">
-       <string/>
+       <string>CONFIRM REMOVAL</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_4">
@@ -965,22 +972,22 @@ p, li { white-space: pre-wrap; }
       <property name="geometry">
        <rect>
         <x>1280</x>
-        <y>850</y>
-        <width>531</width>
-        <height>121</height>
+        <y>855</y>
+        <width>530</width>
+        <height>120</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Calibri</family>
-        <pointsize>60</pointsize>
+        <family>Arial</family>
+        <pointsize>40</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(169, 6, 10)</string>
       </property>
       <property name="text">
-       <string/>
+       <string>CANCEL</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_8">
@@ -1031,44 +1038,44 @@ p, li { white-space: pre-wrap; }
       <property name="geometry">
        <rect>
         <x>420</x>
-        <y>879</y>
+        <y>885</y>
         <width>531</width>
-        <height>121</height>
+        <height>120</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Century</family>
-        <pointsize>60</pointsize>
+        <family>Arial</family>
+        <pointsize>40</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(3, 116, 64)</string>
       </property>
       <property name="text">
-       <string/>
+       <string>NEXT</string>
       </property>
      </widget>
      <widget class="QPushButton" name="instruction_cancel">
       <property name="geometry">
        <rect>
         <x>1000</x>
-        <y>879</y>
+        <y>885</y>
         <width>531</width>
-        <height>121</height>
+        <height>120</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Century</family>
-        <pointsize>60</pointsize>
+        <family>Arial</family>
+        <pointsize>40</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(169, 6, 10)</string>
       </property>
       <property name="text">
-       <string/>
+       <string>CANCEL</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_9">
@@ -1099,9 +1106,9 @@ p, li { white-space: pre-wrap; }
       <property name="geometry">
        <rect>
         <x>1430</x>
-        <y>950</y>
-        <width>421</width>
-        <height>111</height>
+        <y>960</y>
+        <width>420</width>
+        <height>90</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -1112,8 +1119,8 @@ p, li { white-space: pre-wrap; }
       </property>
       <property name="font">
        <font>
-        <family>Calibri</family>
-        <pointsize>60</pointsize>
+        <family>Arial</family>
+        <pointsize>40</pointsize>
         <weight>75</weight>
         <italic>false</italic>
         <bold>true</bold>
@@ -1123,10 +1130,10 @@ p, li { white-space: pre-wrap; }
        <bool>false</bool>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+       <string notr="true">border-radius: 45px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(169, 6, 10)</string>
       </property>
       <property name="text">
-       <string/>
+       <string>BACK</string>
       </property>
       <property name="icon">
        <iconset>
@@ -1187,32 +1194,44 @@ p, li { white-space: pre-wrap; }
       <property name="geometry">
        <rect>
         <x>400</x>
-        <y>860</y>
-        <width>541</width>
-        <height>111</height>
+        <y>855</y>
+        <width>540</width>
+        <height>120</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>40</pointsize>
+       </font>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(3, 116, 64)</string>
       </property>
       <property name="text">
-       <string/>
+       <string>ACCEPT TERMS</string>
       </property>
      </widget>
      <widget class="QPushButton" name="decline_btn">
       <property name="geometry">
        <rect>
-        <x>992</x>
-        <y>851</y>
-        <width>531</width>
-        <height>131</height>
+        <x>980</x>
+        <y>855</y>
+        <width>540</width>
+        <height>120</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>40</pointsize>
+       </font>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(169, 6, 10)</string>
       </property>
       <property name="text">
-       <string/>
+       <string>DECLINE</string>
       </property>
      </widget>
     </widget>
@@ -1241,15 +1260,21 @@ p, li { white-space: pre-wrap; }
        <rect>
         <x>400</x>
         <y>800</y>
-        <width>541</width>
-        <height>111</height>
+        <width>540</width>
+        <height>120</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>40</pointsize>
+       </font>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(3, 116, 64)</string>
       </property>
       <property name="text">
-       <string/>
+       <string>NEXT</string>
       </property>
      </widget>
      <widget class="QPushButton" name="cancel_proceeding_btn">
@@ -1261,11 +1286,17 @@ p, li { white-space: pre-wrap; }
         <height>121</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>40</pointsize>
+       </font>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(169, 6, 10)</string>
       </property>
       <property name="text">
-       <string/>
+       <string>CANCEL</string>
       </property>
      </widget>
     </widget>
@@ -1292,49 +1323,67 @@ p, li { white-space: pre-wrap; }
      <widget class="QPushButton" name="cancel_test_btn">
       <property name="geometry">
        <rect>
-        <x>120</x>
-        <y>790</y>
-        <width>501</width>
-        <height>101</height>
+        <x>95</x>
+        <y>780</y>
+        <width>540</width>
+        <height>120</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>40</pointsize>
+       </font>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(169, 6, 10)</string>
       </property>
       <property name="text">
-       <string/>
+       <string>CANCEL TEST</string>
       </property>
      </widget>
      <widget class="QPushButton" name="rescan_btn">
       <property name="geometry">
        <rect>
-        <x>710</x>
+        <x>690</x>
         <y>780</y>
-        <width>501</width>
-        <height>111</height>
+        <width>540</width>
+        <height>120</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>40</pointsize>
+       </font>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(3, 116, 64)</string>
       </property>
       <property name="text">
-       <string/>
+       <string>RESCAN</string>
       </property>
      </widget>
      <widget class="QPushButton" name="view_results_btn">
       <property name="geometry">
        <rect>
-        <x>1312</x>
-        <y>781</y>
-        <width>491</width>
-        <height>111</height>
+        <x>1285</x>
+        <y>780</y>
+        <width>540</width>
+        <height>120</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>40</pointsize>
+       </font>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(169, 6, 10)</string>
       </property>
       <property name="text">
-       <string/>
+       <string>VIEW RESULTS</string>
       </property>
      </widget>
      <zorder>label_14</zorder>
@@ -1365,17 +1414,23 @@ p, li { white-space: pre-wrap; }
      <widget class="QPushButton" name="confirm_removal_btn">
       <property name="geometry">
        <rect>
-        <x>670</x>
+        <x>640</x>
         <y>730</y>
-        <width>581</width>
-        <height>131</height>
+        <width>640</width>
+        <height>140</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>50</pointsize>
+       </font>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+       <string notr="true">border-radius: 70px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(3, 116, 64)</string>
       </property>
       <property name="text">
-       <string/>
+       <string>CONFIRM REMOVAL</string>
       </property>
      </widget>
     </widget>
