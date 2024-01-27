@@ -64,6 +64,8 @@ class GUI(QtWidgets.QMainWindow):
         self.connect_rescan_buttons()
         # Connect confirm removal page
         self.connect_confirm_removal_buttons()
+        # Connect maintenance page buttons
+        self.connect_maintenance_buttons()
         # Set up pie chart
         self.setup_pie_chart()
         # Remove pointless info
@@ -184,6 +186,8 @@ class GUI(QtWidgets.QMainWindow):
     from .pages.rescan_results_page import switch_to_rescan_page, connect_rescan_buttons
     # Confirm removal page
     from .pages.confirm_removal_page import switch_to_confirm_removal_page, connect_confirm_removal_buttons
+
+    from .pages.MaintenancePage import switch_to_maintenance_page, connect_maintenance_buttons, MoveToEject, HomeMotionSystem
 
 
     # Keyboard shortcut methods

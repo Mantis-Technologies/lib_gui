@@ -29,6 +29,9 @@ def connect_shortcuts(self):
     self.shutdown_shortcut = QShortcut(QKeySequence("q"), self)
     self.shutdown_shortcut.activated.connect(self.ShutdownKiosk)
 
+    self.maintenance_shortcut = QShortcut(QKeySequence("Ctrl+M"), self)
+    self.maintenance_shortcut.activated.connect(self.switch_to_maintenance_page)
+
 
 def _move_to_next_screen(self):
     """Moves to the next screen for shortcuts"""

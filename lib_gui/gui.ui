@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1728</width>
-    <height>1027</height>
+    <width>1920</width>
+    <height>1080</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -34,7 +34,7 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>16</number>
     </property>
     <widget class="QWidget" name="BootingScreen">
      <widget class="QLabel" name="label_2">
@@ -701,7 +701,7 @@ outline:none;</string>
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:60pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:60pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Ubuntu';&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="placeholderText">
@@ -1142,6 +1142,11 @@ p, li { white-space: pre-wrap; }
         <height>1080</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <kerning>true</kerning>
+       </font>
+      </property>
       <property name="text">
        <string/>
       </property>
@@ -1150,6 +1155,9 @@ p, li { white-space: pre-wrap; }
       </property>
       <property name="scaledContents">
        <bool>true</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
       </property>
      </widget>
      <zorder>label_10</zorder>
@@ -1290,8 +1298,11 @@ p, li { white-space: pre-wrap; }
         <height>101</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+      </property>
       <property name="text">
-       <string>PushButton</string>
+       <string/>
       </property>
      </widget>
      <widget class="QPushButton" name="rescan_btn">
@@ -1303,8 +1314,11 @@ p, li { white-space: pre-wrap; }
         <height>111</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+      </property>
       <property name="text">
-       <string>PushButton</string>
+       <string/>
       </property>
      </widget>
      <widget class="QPushButton" name="view_results_btn">
@@ -1316,14 +1330,17 @@ p, li { white-space: pre-wrap; }
         <height>111</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+      </property>
       <property name="text">
-       <string>PushButton</string>
+       <string/>
       </property>
      </widget>
-     <zorder>view_results_btn</zorder>
-     <zorder>rescan_btn</zorder>
-     <zorder>cancel_test_btn</zorder>
      <zorder>label_14</zorder>
+     <zorder>rescan_btn</zorder>
+     <zorder>view_results_btn</zorder>
+     <zorder>cancel_test_btn</zorder>
     </widget>
     <widget class="QWidget" name="ConfirmRemovalPage">
      <widget class="QLabel" name="label_15">
@@ -1354,12 +1371,70 @@ p, li { white-space: pre-wrap; }
         <height>131</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+      </property>
       <property name="text">
-       <string>PushButton</string>
+       <string/>
       </property>
      </widget>
-     <zorder>confirm_removal_btn</zorder>
-     <zorder>label_15</zorder>
+    </widget>
+    <widget class="QWidget" name="MaintenancePage">
+     <widget class="QLabel" name="BackgroundColor">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1920</width>
+        <height>1080</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(27, 27, 27, 255);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="exitMainenanceBtn">
+      <property name="geometry">
+       <rect>
+        <x>1670</x>
+        <y>1000</y>
+        <width>241</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Exit</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="EjectSampleBtn">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>341</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Eject Sample</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="ResetSampleBtn">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>100</y>
+        <width>341</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Reset Sample Door</string>
+      </property>
+     </widget>
     </widget>
    </widget>
   </widget>

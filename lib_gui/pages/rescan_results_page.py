@@ -17,10 +17,9 @@ def switch_to_rescan_page(self):
     self._switch_to_page(Page.RESCAN_RESULTS)
 
 
-
 def connect_rescan_buttons(self):
     """Connects the rescan page buttons"""
 
-    self.cancel_test_btn.clicked.connect(self.switch_to_start_page)
+    self.cancel_test_btn.clicked.connect(self.switch_to_confirm_removal_page)
     self.rescan_btn.clicked.connect(self.switch_to_load_page)
     self.view_results_btn.clicked.connect(self.switch_to_results_page)
