@@ -28,7 +28,7 @@ def switch_to_payment_page(self):
 
 def set_Price_label(self, priceAsInt: int):
     priceAsFloat = float(priceAsInt) / 100.0
-    self.Price_lbl.setText("")  # TODO we are going to have the price on the terminal for now
+    #self.Price_lbl.setText("")  # TODO we are going to have the price on the terminal for now
 
 
 def cancel_payment(self):
@@ -47,7 +47,7 @@ def connect_payment_buttons(self):
 
 def PaymentApprovedCallback(self, result):
     self.PaymentTimeoutThread.keepRunning = False
-    self.switch_to_load_page()
+    self.switch_to_instruction_page()
 
 
 def PaymentTimeoutCallback(self, result):

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>2088</width>
-    <height>1205</height>
+    <width>1918</width>
+    <height>1073</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -34,60 +34,26 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="currentIndex">
-     <number>6</number>
+     <number>15</number>
     </property>
     <widget class="QWidget" name="BootingScreen">
-     <widget class="QLabel" name="label_8">
-      <property name="geometry">
-       <rect>
-        <x>460</x>
-        <y>700</y>
-        <width>1000</width>
-        <height>320</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Century</family>
-        <pointsize>50</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>System Calibrating. Please Wait and Keep Clear of the Sample Door</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="wordWrap">
-       <bool>true</bool>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>370</x>
-        <y>250</y>
-        <width>1161</width>
-        <height>471</height>
+        <x>0</x>
+        <y>0</y>
+        <width>1920</width>
+        <height>1080</height>
        </rect>
       </property>
-      <property name="font">
-       <font>
-        <pointsize>100</pointsize>
-        <underline>false</underline>
-       </font>
-      </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Canna&lt;/span&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;Check&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string/>
       </property>
-      <property name="textFormat">
-       <enum>Qt::AutoText</enum>
+      <property name="pixmap">
+       <pixmap>CannaCheck_UI_images_1.2/BootingScreen.png</pixmap>
       </property>
       <property name="scaledContents">
-       <bool>false</bool>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
@@ -95,10 +61,10 @@
      <widget class="QPushButton" name="begin_btn">
       <property name="geometry">
        <rect>
-        <x>560</x>
-        <y>700</y>
-        <width>800</width>
-        <height>200</height>
+        <x>660</x>
+        <y>640</y>
+        <width>600</width>
+        <height>130</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -109,106 +75,36 @@
       </property>
       <property name="font">
        <font>
-        <family>Calibri</family>
-        <pointsize>80</pointsize>
+        <family>Arial</family>
+        <pointsize>60</pointsize>
         <weight>75</weight>
         <italic>false</italic>
         <bold>true</bold>
        </font>
       </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background-color: white;
-    border-style: outset;
-    border-width: 2px;
-    border-radius: 10px;
-    border-color: black;
-    min-width: 10em;
-    padding: 6px;
-outline:none;</string>
+       <string notr="true">border-radius: 65px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(3, 116, 64)</string>
       </property>
       <property name="text">
-       <string>Begin</string>
+       <string>BEGIN</string>
       </property>
-     </widget>
-     <widget class="QLabel" name="label_12">
-      <property name="geometry">
-       <rect>
-        <x>640</x>
-        <y>420</y>
-        <width>611</width>
-        <height>191</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Calibri</family>
-        <pointsize>38</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Rapid THC-A Test for Cannabis Flower</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="wordWrap">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_3">
-      <property name="geometry">
-       <rect>
-        <x>0</x>
-        <y>60</y>
-        <width>1911</width>
-        <height>351</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Calibri</family>
-        <pointsize>100</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:144pt; color:#000000;&quot;&gt;Canna&lt;/span&gt;&lt;span style=&quot; font-size:144pt; color:#ff0000;&quot;&gt;Check&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-      </property>
-      <property name="textFormat">
-       <enum>Qt::RichText</enum>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_7">
-      <property name="geometry">
-       <rect>
-        <x>770</x>
-        <y>630</y>
-        <width>351</width>
-        <height>51</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Calibri</family>
-        <pointsize>27</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>$35 / sample</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
+      <property name="iconSize">
+       <size>
+        <width>200</width>
+        <height>50</height>
+       </size>
       </property>
      </widget>
      <widget class="QPushButton" name="about_btn">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>940</y>
-        <width>280</width>
-        <height>120</height>
+        <x>110</x>
+        <y>969</y>
+        <width>260</width>
+        <height>60</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -219,117 +115,121 @@ outline:none;</string>
       </property>
       <property name="minimumSize">
        <size>
-        <width>206</width>
+        <width>0</width>
         <height>0</height>
        </size>
       </property>
       <property name="font">
        <font>
-        <family>Calibri</family>
-        <pointsize>55</pointsize>
+        <family>Arial</family>
+        <pointsize>30</pointsize>
         <weight>75</weight>
         <italic>false</italic>
         <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: white;
-    border-style: outset;
-    border-width: 2px;
-    border-radius: 10px;
-    border-color: black;
-    min-width: 10em;
-    padding: 6px;
-outline:none;</string>
+       <string notr="true">border-radius: 30px; background-color: rgb(27, 27, 27); border: 2px solid white; color: rgb(255, 255, 255)</string>
       </property>
       <property name="text">
-       <string>About</string>
+       <string>ABOUT</string>
       </property>
      </widget>
-    </widget>
-    <widget class="QWidget" name="ConfirmationScreen">
-     <widget class="QLabel" name="label_37">
+     <widget class="QLabel" name="label_3">
       <property name="geometry">
        <rect>
-        <x>360</x>
-        <y>150</y>
-        <width>1200</width>
-        <height>680</height>
+        <x>0</x>
+        <y>0</y>
+        <width>1920</width>
+        <height>1080</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Calibri</family>
-        <pointsize>90</pointsize>
+        <family>Noto Sans</family>
        </font>
       </property>
       <property name="text">
-       <string>Are you 21 years of age or older, or a registered medical cannabis patient?</string>
+       <string/>
       </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
+      <property name="pixmap">
+       <pixmap>CannaCheck_UI_images_1.2/StartScreen.png</pixmap>
       </property>
-      <property name="wordWrap">
+      <property name="scaledContents">
        <bool>true</bool>
       </property>
      </widget>
+     <zorder>label_3</zorder>
+     <zorder>begin_btn</zorder>
+     <zorder>about_btn</zorder>
+    </widget>
+    <widget class="QWidget" name="ConfirmationScreen">
      <widget class="QPushButton" name="yes_over_21_btn">
       <property name="geometry">
        <rect>
-        <x>200</x>
-        <y>850</y>
-        <width>500</width>
-        <height>200</height>
+        <x>400</x>
+        <y>640</y>
+        <width>540</width>
+        <height>120</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Calibri</family>
-        <pointsize>60</pointsize>
+        <family>Arial</family>
+        <pointsize>40</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: white;
-    border-style: outset;
-    border-width: 2px;
-    border-radius: 10px;
-    border-color: black;
-   outline:none;
-    padding: 6px;
-</string>
+       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(3, 116, 64)</string>
       </property>
       <property name="text">
-       <string>Yes</string>
+       <string>YES</string>
       </property>
      </widget>
      <widget class="QPushButton" name="no_not_21_btn">
       <property name="geometry">
        <rect>
-        <x>1220</x>
-        <y>850</y>
-        <width>500</width>
-        <height>200</height>
+        <x>980</x>
+        <y>640</y>
+        <width>540</width>
+        <height>120</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Calibri</family>
-        <pointsize>60</pointsize>
+        <family>Arial</family>
+        <pointsize>40</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: red;
-    border-style: outset;
-    border-width: 2px;
-    border-radius: 10px;
-    border-color: black;
-   outline:none;
-    padding: 6px;</string>
+       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(169, 6, 10)</string>
       </property>
       <property name="text">
-       <string>No</string>
+       <string>NO</string>
       </property>
      </widget>
+     <widget class="QLabel" name="label_7">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1920</width>
+        <height>1080</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>CannaCheck_UI_images_1.2/ConfirmationScreen.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <zorder>label_7</zorder>
+     <zorder>yes_over_21_btn</zorder>
+     <zorder>no_not_21_btn</zorder>
     </widget>
     <widget class="QWidget" name="OrderNumPage">
      <widget class="QLabel" name="enter_id_lbl">
@@ -817,67 +717,16 @@ p, li { white-space: pre-wrap; }
      </widget>
     </widget>
     <widget class="QWidget" name="LoadSampleScreen">
-     <widget class="QLabel" name="label">
-      <property name="geometry">
-       <rect>
-        <x>360</x>
-        <y>12</y>
-        <width>1200</width>
-        <height>141</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Calibri</family>
-        <pointsize>40</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: white;
-    min-width: 10em;
-    padding: 6px;</string>
-      </property>
-      <property name="text">
-       <string>Please Load Sample When Carriage Ejects</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="wordWrap">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_5">
-      <property name="geometry">
-       <rect>
-        <x>360</x>
-        <y>150</y>
-        <width>1200</width>
-        <height>680</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Calibri</family>
-       </font>
-      </property>
-      <property name="text">
-       <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>pngs/sample_loading.png</pixmap>
-      </property>
-      <property name="scaledContents">
-       <bool>true</bool>
-      </property>
-     </widget>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
      <widget class="QPushButton" name="sample_loaded_btn">
       <property name="geometry">
        <rect>
-        <x>200</x>
-        <y>850</y>
-        <width>500</width>
-        <height>200</height>
+        <x>380</x>
+        <y>810</y>
+        <width>530</width>
+        <height>120</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -888,7 +737,7 @@ p, li { white-space: pre-wrap; }
       </property>
       <property name="font">
        <font>
-        <family>Calibri</family>
+        <family>Arial</family>
         <pointsize>35</pointsize>
         <weight>75</weight>
         <italic>false</italic>
@@ -896,26 +745,19 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: white;
-    border-style: outset;
-    border-width: 2px;
-    border-radius: 10px;
-    border-color: black;
-    min-width: 10em;
-    padding: 6px;
-outline:none;</string>
+       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(3, 116, 64)</string>
       </property>
       <property name="text">
-       <string>Finished Loading</string>
+       <string>FINISHED LOADING</string>
       </property>
      </widget>
      <widget class="QPushButton" name="cancel_load_btn">
       <property name="geometry">
        <rect>
-        <x>1220</x>
-        <y>850</y>
-        <width>500</width>
-        <height>200</height>
+        <x>960</x>
+        <y>810</y>
+        <width>540</width>
+        <height>120</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -926,59 +768,44 @@ outline:none;</string>
       </property>
       <property name="font">
        <font>
-        <family>Calibri</family>
-        <pointsize>60</pointsize>
+        <family>Arial</family>
+        <pointsize>35</pointsize>
         <weight>75</weight>
         <italic>false</italic>
         <bold>true</bold>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: red;
-    border-style: outset;
-    border-width: 2px;
-    border-radius: 10px;
-    border-color: black;
-    min-width: 10em;
-    padding: 6px;
-outline:none;</string>
+       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(169, 6, 10)</string>
       </property>
       <property name="text">
-       <string>Cancel</string>
+       <string>CANCEL</string>
       </property>
      </widget>
-    </widget>
-    <widget class="QWidget" name="ScanRunningScreen">
-     <widget class="QLabel" name="scanning_lbl">
+     <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>460</x>
-        <y>700</y>
-        <width>1000</width>
-        <height>161</height>
+        <x>0</x>
+        <y>0</y>
+        <width>1920</width>
+        <height>1080</height>
        </rect>
       </property>
-      <property name="font">
-       <font>
-        <family>Calibri</family>
-        <pointsize>50</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: white;
-    min-width: 10em;
-    padding: 6px;</string>
-      </property>
       <property name="text">
-       <string>Performing Analysis</string>
+       <string/>
       </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
+      <property name="pixmap">
+       <pixmap>CannaCheck_UI_images_1.2/LoadSampleScreen.png</pixmap>
       </property>
-      <property name="wordWrap">
+      <property name="scaledContents">
        <bool>true</bool>
       </property>
      </widget>
+     <zorder>label</zorder>
+     <zorder>cancel_load_btn</zorder>
+     <zorder>sample_loaded_btn</zorder>
+    </widget>
+    <widget class="QWidget" name="ScanRunningScreen">
      <widget class="QProgressBar" name="pbar">
       <property name="geometry">
        <rect>
@@ -997,73 +824,36 @@ outline:none;</string>
        <number>0</number>
       </property>
      </widget>
-     <widget class="QLabel" name="label_6">
+     <widget class="QLabel" name="label_5">
       <property name="geometry">
        <rect>
-        <x>360</x>
-        <y>140</y>
-        <width>1181</width>
-        <height>541</height>
+        <x>0</x>
+        <y>0</y>
+        <width>1920</width>
+        <height>1080</height>
        </rect>
       </property>
-      <property name="font">
-       <font>
-        <family>Calibri</family>
-        <pointsize>100</pointsize>
-       </font>
-      </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Canna&lt;/span&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;Check&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string/>
       </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
+      <property name="pixmap">
+       <pixmap>CannaCheck_UI_images_1.2/ScanRunningScreen.png</pixmap>
       </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="ResultScreen">
-     <widget class="QLabel" name="label_20">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>530</y>
-        <width>500</width>
-        <height>300</height>
-       </rect>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>202</width>
-        <height>0</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Calibri</family>
-        <pointsize>40</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">background-color: white;
-    min-width: 10em;
-    padding: 6px;</string>
-      </property>
-      <property name="text">
-       <string>Please remove your sample and confirm with the button below</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="wordWrap">
+      <property name="scaledContents">
        <bool>true</bool>
       </property>
      </widget>
+     <zorder>label_5</zorder>
+     <zorder>pbar</zorder>
+    </widget>
+    <widget class="QWidget" name="ResultScreen">
      <widget class="QPushButton" name="finished_test_btn">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>880</y>
-        <width>500</width>
-        <height>120</height>
+        <x>39</x>
+        <y>730</y>
+        <width>540</width>
+        <height>130</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -1074,7 +864,7 @@ outline:none;</string>
       </property>
       <property name="font">
        <font>
-        <family>Calibri</family>
+        <family>Arial</family>
         <pointsize>30</pointsize>
         <weight>75</weight>
         <italic>false</italic>
@@ -1082,84 +872,97 @@ outline:none;</string>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: white;
-    border-style: outset;
-    border-width: 2px;
-    border-radius: 10px;
-    border-color: black;
-    min-width: 10em;
-    padding: 6px;
-outline:none;</string>
+       <string notr="true">border-radius: 65px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(3, 116, 64)</string>
       </property>
       <property name="text">
-       <string>Confirm Removal</string>
+       <string>CONFIRM REMOVAL</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_4">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>40</y>
-        <width>331</width>
-        <height>71</height>
+        <x>0</x>
+        <y>0</y>
+        <width>1920</width>
+        <height>1080</height>
        </rect>
       </property>
-      <property name="font">
-       <font>
-        <family>Calibri</family>
-        <pointsize>35</pointsize>
-       </font>
-      </property>
       <property name="text">
-       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#000000;&quot;&gt;Canna&lt;/span&gt;&lt;span style=&quot; color:#ff0000;&quot;&gt;Check&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       <string/>
       </property>
-     </widget>
-     <widget class="QLabel" name="label_11">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>120</y>
-        <width>500</width>
-        <height>400</height>
-       </rect>
+      <property name="pixmap">
+       <pixmap>CannaCheck_UI_images_1.2/ResultsScreen.png</pixmap>
       </property>
-      <property name="font">
-       <font>
-        <family>Calibri</family>
-        <italic>true</italic>
-       </font>
-      </property>
-      <property name="text">
-       <string>Please be advised that this self-administered test is not in compliance with the specific regulatory requirements of the Commonwealth of Massachusetts for cannabis testing. As per Section 500.160 of the 935 Massachusetts Code of Regulations (CMR), all marijuana products, including marijuana, must be tested by Independent Testing Laboratories following protocols established under Massachusetts General Laws c. 94G, § 15 and additional provisions in 935 CMR 500.000. This self-test is intended for informational purposes only, designed for consumer use, and is explicitly not for business-to-business transactions or uses. It should not be interpreted as an indication of the product’s safety or quality, nor does it serve as a valid certificate of analysis.</string>
-      </property>
-      <property name="wordWrap">
+      <property name="scaledContents">
        <bool>true</bool>
       </property>
      </widget>
-    </widget>
-    <widget class="QWidget" name="ErrorPage">
-     <widget class="QLabel" name="error_lbl">
+     <widget class="QLabel" name="TotalThcLbl">
       <property name="geometry">
        <rect>
-        <x>460</x>
-        <y>290</y>
-        <width>1000</width>
-        <height>500</height>
+        <x>720</x>
+        <y>790</y>
+        <width>450</width>
+        <height>80</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Calibri</family>
-        <pointsize>60</pointsize>
+        <pointsize>30</pointsize>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+      </property>
       <property name="text">
-       <string>An errror has occurred. All active transactions will be void or refunded. Sorry for this inconvenience</string>
+       <string>Total THC</string>
       </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
+     </widget>
+     <widget class="QLabel" name="TotalCbdLbl">
+      <property name="geometry">
+       <rect>
+        <x>1240</x>
+        <y>790</y>
+        <width>450</width>
+        <height>80</height>
+       </rect>
       </property>
-      <property name="wordWrap">
+      <property name="font">
+       <font>
+        <family>Calibri</family>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(255, 255, 255, 0);</string>
+      </property>
+      <property name="text">
+       <string>Total CBD</string>
+      </property>
+     </widget>
+     <zorder>label_4</zorder>
+     <zorder>finished_test_btn</zorder>
+     <zorder>TotalThcLbl</zorder>
+     <zorder>TotalCbdLbl</zorder>
+    </widget>
+    <widget class="QWidget" name="ErrorPage">
+     <widget class="QLabel" name="label_6">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1920</width>
+        <height>1080</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>CannaCheck_UI_images_1.2/ErrorPage.png</pixmap>
+      </property>
+      <property name="scaledContents">
        <bool>true</bool>
       </property>
      </widget>
@@ -1168,198 +971,144 @@ outline:none;</string>
      <widget class="QPushButton" name="cancel_payment_btn">
       <property name="geometry">
        <rect>
-        <x>1380</x>
-        <y>850</y>
-        <width>451</width>
-        <height>211</height>
+        <x>1280</x>
+        <y>855</y>
+        <width>530</width>
+        <height>120</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Calibri</family>
-        <pointsize>60</pointsize>
+        <family>Arial</family>
+        <pointsize>40</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: red;
-    border-style: outset;
-    border-width: 2px;
-    border-radius: 10px;
-    border-color: black;
-   outline:none;
-    padding: 6px;</string>
+       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(169, 6, 10)</string>
       </property>
       <property name="text">
-       <string>Cancel</string>
+       <string>CANCEL</string>
       </property>
      </widget>
-     <widget class="QLabel" name="Total_lbl">
+     <widget class="QLabel" name="label_8">
       <property name="geometry">
        <rect>
-        <x>510</x>
-        <y>150</y>
-        <width>900</width>
-        <height>450</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Calibri</family>
-        <pointsize>50</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Kindly proceed with the transaction on the integrated payment terminal.</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="wordWrap">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="Price_lbl">
-      <property name="geometry">
-       <rect>
-        <x>770</x>
-        <y>680</y>
-        <width>520</width>
-        <height>81</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Calibri</family>
-        <pointsize>50</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Price here</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="ConfiguringKeyPadPage">
-     <widget class="QLabel" name="Total_lbl_2">
-      <property name="geometry">
-       <rect>
-        <x>470</x>
-        <y>180</y>
-        <width>981</width>
-        <height>551</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Calibri</family>
-        <pointsize>50</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>Configuring Keypad. Please Wait</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="wordWrap">
-       <bool>true</bool>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="InstructionPage">
-     <widget class="QLabel" name="label_9">
-      <property name="geometry">
-       <rect>
-        <x>310</x>
+        <x>0</x>
         <y>0</y>
-        <width>1300</width>
-        <height>825</height>
+        <width>1920</width>
+        <height>1080</height>
        </rect>
-      </property>
-      <property name="font">
-       <font>
-        <weight>50</weight>
-        <bold>false</bold>
-       </font>
       </property>
       <property name="text">
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>pngs/Instructions_Page.png</pixmap>
+       <pixmap>CannaCheck_UI_images_1.2/PaymentPage.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
       </property>
      </widget>
+     <zorder>label_8</zorder>
+     <zorder>cancel_payment_btn</zorder>
+    </widget>
+    <widget class="QWidget" name="ConfiguringKeyPadPage">
+     <widget class="QLabel" name="label_11">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1920</width>
+        <height>1080</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>CannaCheck_UI_images_1.2/ConfiguringKeyPadPage.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="InstructionPage">
      <widget class="QPushButton" name="instruction_next">
       <property name="geometry">
        <rect>
-        <x>200</x>
-        <y>850</y>
-        <width>500</width>
-        <height>200</height>
+        <x>420</x>
+        <y>885</y>
+        <width>531</width>
+        <height>120</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Century</family>
-        <pointsize>60</pointsize>
+        <family>Arial</family>
+        <pointsize>40</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: white;
-    border-style: outset;
-    border-width: 2px;
-    border-radius: 10px;
-    border-color: black;
-   outline:none;
-    padding: 6px;
-</string>
+       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(3, 116, 64)</string>
       </property>
       <property name="text">
-       <string>Next</string>
+       <string>NEXT</string>
       </property>
      </widget>
      <widget class="QPushButton" name="instruction_cancel">
       <property name="geometry">
        <rect>
-        <x>1220</x>
-        <y>850</y>
-        <width>500</width>
-        <height>200</height>
+        <x>1000</x>
+        <y>885</y>
+        <width>531</width>
+        <height>120</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Century</family>
-        <pointsize>60</pointsize>
+        <family>Arial</family>
+        <pointsize>40</pointsize>
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: red;
-    border-style: outset;
-    border-width: 2px;
-    border-radius: 10px;
-    border-color: black;
-   outline:none;
-    padding: 6px;</string>
+       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(169, 6, 10)</string>
       </property>
       <property name="text">
-       <string>Cancel</string>
+       <string>CANCEL</string>
       </property>
      </widget>
+     <widget class="QLabel" name="label_9">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1920</width>
+        <height>1080</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>CannaCheck_UI_images_1.2/InstructionPage.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <zorder>label_9</zorder>
+     <zorder>instruction_next</zorder>
+     <zorder>instruction_cancel</zorder>
     </widget>
     <widget class="QWidget" name="AboutPage">
      <widget class="QPushButton" name="back_to_start_btn">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>940</y>
-        <width>280</width>
-        <height>120</height>
+        <x>1430</x>
+        <y>960</y>
+        <width>420</width>
+        <height>90</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -1370,48 +1119,377 @@ outline:none;</string>
       </property>
       <property name="font">
        <font>
-        <family>Calibri</family>
-        <pointsize>60</pointsize>
+        <family>Arial</family>
+        <pointsize>40</pointsize>
         <weight>75</weight>
         <italic>false</italic>
         <bold>true</bold>
        </font>
       </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background-color: white;
-    border-style: outset;
-    border-width: 2px;
-    border-radius: 10px;
-    border-color: black;
-    min-width: 10em;
-    padding: 6px;
-outline:none;</string>
+       <string notr="true">border-radius: 45px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(169, 6, 10)</string>
       </property>
       <property name="text">
-       <string>Back</string>
+       <string>BACK</string>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../../../button.png</normaloff>../../../button.png</iconset>
       </property>
      </widget>
      <widget class="QLabel" name="label_10">
       <property name="geometry">
        <rect>
-        <x>60</x>
+        <x>0</x>
         <y>0</y>
-        <width>1800</width>
-        <height>1030</height>
+        <width>1920</width>
+        <height>1080</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <kerning>true</kerning>
+       </font>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>CannaCheck_UI_images_1.2/AboutPage.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+     </widget>
+     <zorder>label_10</zorder>
+     <zorder>back_to_start_btn</zorder>
+    </widget>
+    <widget class="QWidget" name="DisclaimerPage">
+     <widget class="QLabel" name="label_12">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1920</width>
+        <height>1080</height>
        </rect>
       </property>
       <property name="text">
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>pngs/About_Page.png</pixmap>
+       <pixmap>CannaCheck_UI_images_1.2/DisclaimerPage.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
       </property>
      </widget>
-     <zorder>label_10</zorder>
-     <zorder>back_to_start_btn</zorder>
+     <widget class="QPushButton" name="agree_btn">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>855</y>
+        <width>540</width>
+        <height>120</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>40</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(3, 116, 64)</string>
+      </property>
+      <property name="text">
+       <string>ACCEPT TERMS</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="decline_btn">
+      <property name="geometry">
+       <rect>
+        <x>980</x>
+        <y>855</y>
+        <width>540</width>
+        <height>120</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>40</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(169, 6, 10)</string>
+      </property>
+      <property name="text">
+       <string>DECLINE</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="BeforeProceedingPage">
+     <widget class="QLabel" name="label_13">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1920</width>
+        <height>1080</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>CannaCheck_UI_images_1.2/BeforeProceeding.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="next_proceeding_btn">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>800</y>
+        <width>540</width>
+        <height>120</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>40</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(3, 116, 64)</string>
+      </property>
+      <property name="text">
+       <string>NEXT</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="cancel_proceeding_btn">
+      <property name="geometry">
+       <rect>
+        <x>990</x>
+        <y>800</y>
+        <width>531</width>
+        <height>121</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>40</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(169, 6, 10)</string>
+      </property>
+      <property name="text">
+       <string>CANCEL</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="RescanResultsPage">
+     <widget class="QLabel" name="label_14">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1920</width>
+        <height>1080</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>CannaCheck_UI_images_1.2/RescanResultsScreen.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="cancel_test_btn">
+      <property name="geometry">
+       <rect>
+        <x>95</x>
+        <y>780</y>
+        <width>540</width>
+        <height>120</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>40</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(169, 6, 10)</string>
+      </property>
+      <property name="text">
+       <string>CANCEL TEST</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="rescan_btn">
+      <property name="geometry">
+       <rect>
+        <x>690</x>
+        <y>780</y>
+        <width>540</width>
+        <height>120</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>40</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(3, 116, 64)</string>
+      </property>
+      <property name="text">
+       <string>RESCAN</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="view_results_btn">
+      <property name="geometry">
+       <rect>
+        <x>1285</x>
+        <y>780</y>
+        <width>540</width>
+        <height>120</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>40</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(169, 6, 10)</string>
+      </property>
+      <property name="text">
+       <string>VIEW RESULTS</string>
+      </property>
+     </widget>
+     <zorder>label_14</zorder>
+     <zorder>rescan_btn</zorder>
+     <zorder>view_results_btn</zorder>
+     <zorder>cancel_test_btn</zorder>
+    </widget>
+    <widget class="QWidget" name="ConfirmRemovalPage">
+     <widget class="QLabel" name="label_15">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1920</width>
+        <height>1080</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>CannaCheck_UI_images_1.2/ConfirmRemovalScreen.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="confirm_removal_btn">
+      <property name="geometry">
+       <rect>
+        <x>640</x>
+        <y>730</y>
+        <width>640</width>
+        <height>140</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>40</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 70px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(3, 116, 64)</string>
+      </property>
+      <property name="text">
+       <string>CONFIRM REMOVAL</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="MaintenancePage">
+     <widget class="QLabel" name="BackgroundColor">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1920</width>
+        <height>1080</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(27, 27, 27, 255);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="exitMainenanceBtn">
+      <property name="geometry">
+       <rect>
+        <x>1670</x>
+        <y>1000</y>
+        <width>241</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Exit</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="EjectSampleBtn">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>341</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Eject Sample</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="ResetSampleBtn">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>100</y>
+        <width>341</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Reset Sample Door</string>
+      </property>
+     </widget>
     </widget>
    </widget>
   </widget>

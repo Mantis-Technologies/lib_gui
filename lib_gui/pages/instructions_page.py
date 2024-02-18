@@ -14,7 +14,7 @@ def cancel_button_instruction(self):
 
 
 def next_button_instruction(self):
-    self.switch_to_payment_page()
+    self.switch_to_load_page()
 
 
 def connect_instruction_buttons(self):

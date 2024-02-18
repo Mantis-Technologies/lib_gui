@@ -3,8 +3,8 @@
 
 """This file contains a GUI class"""
 
-__author__ = "Justin Furuness, Nicholas Lanotte"
-__credits__ = ["Justin Furuness", "Nicholas Lanotte"]
+__author__ = "Justin Furuness, Nicholas Lanotte, Michael Mahoney"
+__credits__ = ["Justin Furuness", "Nicholas Lanotte", "Michael Mahoney"]
 __maintainer__ = "Justin Furuness"
 __email__ = "jfuruness@gmail.com"
 
@@ -54,9 +54,19 @@ class GUI(QtWidgets.QMainWindow):
         self.connect_payment_buttons()
         # Connect instruction page buttons
         self.connect_instruction_buttons()
-
+        # Connect about page buttons
         self.connect_about_buttons()
-
+        # Connect disclaimer page buttons
+        self.connect_disclaimer_buttons()
+        # Connect before proceeding page buttons
+        self.connect_before_proceeding_buttons()
+        # Connect rescan results page
+        self.connect_rescan_buttons()
+        # Connect confirm removal page
+        self.connect_confirm_removal_buttons()
+        # Connect maintenance page buttons
+        self.connect_maintenance_buttons()
+        # Set up pie chart
         self.setup_pie_chart()
         # Remove pointless info
         self.setWindowFlag(Qt.FramelessWindowHint)
@@ -147,6 +157,7 @@ class GUI(QtWidgets.QMainWindow):
     from .pages.results_page import setup_pie_chart
     from .pages.results_page import UpdateChart
     from .pages.results_page import CreatePieSeries
+    from .pages.results_page import setTotalAnalyteLabels
 
     #Configuring Keypad page
     from .pages.ConfiguringKeyPadPage import switch_to_ConfiguringKeyPad_page
@@ -164,8 +175,19 @@ class GUI(QtWidgets.QMainWindow):
 
     from .pages.instructions_page import (switch_to_instruction_page, connect_instruction_buttons,
                                           next_button_instruction, cancel_button_instruction)
-
+    # About page
     from .pages.About_page import switch_to_about_page, connect_about_buttons, AboutPageTimeoutCallback, BackToStartPageButton
+
+    # Disclaimer page
+    from .pages.disclaimer_page import switch_to_disclaimer_page, connect_disclaimer_buttons
+    # Before proceeding page
+    from .pages.before_proceeding_page import switch_to_before_proceeding_page, connect_before_proceeding_buttons
+    # Rescan results page
+    from .pages.rescan_results_page import switch_to_rescan_page, connect_rescan_buttons
+    # Confirm removal page
+    from .pages.confirm_removal_page import switch_to_confirm_removal_page, connect_confirm_removal_buttons
+
+    from .pages.MaintenancePage import switch_to_maintenance_page, connect_maintenance_buttons, MoveToEject, HomeMotionSystem
 
 
     # Keyboard shortcut methods
