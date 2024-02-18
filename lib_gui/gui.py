@@ -157,7 +157,7 @@ class GUI(QtWidgets.QMainWindow):
     from .pages.results_page import setup_pie_chart
     from .pages.results_page import UpdateChart
     from .pages.results_page import CreatePieSeries
-    from .pages.results_page import setTotalAnalyteLabels
+    from .pages.results_page import setTotalAnalyteLabels, GenerateChartImage
 
     #Configuring Keypad page
     from .pages.ConfiguringKeyPadPage import switch_to_ConfiguringKeyPad_page

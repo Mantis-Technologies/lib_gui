@@ -10,7 +10,7 @@ __email__ = "jfuruness@gmail.com"
 
 from ..page import Page
 from PyQt5.QtChart import QChart, QChartView, QPieSeries, QPieSlice
-from PyQt5.QtGui import QFont, QColor, QBrush
+from PyQt5.QtGui import QFont, QColor, QBrush, QPixmap, QPainter
 from PyQt5.QtCore import Qt
 
 
@@ -59,8 +59,7 @@ def connect_results_buttons(self):
     self.finished_test_btn.clicked.connect(self.done_w_results)
 
 
-def UpdateChart(self, series):
-    self.chart.removeAllSeries()
+def FormatSlices(series, color: str):
     for slice in series.slices():
         font = QFont()
         font.setPointSize(20)  # Change the point size to adjust label size
@@ -71,14 +70,14 @@ def UpdateChart(self, series):
             slice.setLabelPosition(QPieSlice.LabelInsideHorizontal)
             # no line break if outside graph
             label = "<p style='color:{}'>{}<br>{}%</p>".format(
-                'white',
+                color,
                 slice.label(),
                 round(slice.percentage() * 100, 1)
             )
             slice.setLabel(label)
         else:
             label = "<p style='color:{}'>{} {}%</p>".format(
-                'white',
+                color,
                 slice.label(),
                 round(slice.percentage() * 100, 1)
             )
@@ -87,7 +86,32 @@ def UpdateChart(self, series):
             slice.setLabelVisible()
         else:
             slice.setLabelVisible(False)
+
+
+def GenerateChartImage(self, imageFileName: str, analytes):
+    PDFBackground_color = QColor(255, 255, 255)
+    brush = QBrush(PDFBackground_color)
+
+    # Set the background brush for the chart
+    self.chart.removeAllSeries()
+    self.chart.setBackgroundBrush(brush)
+    self.chart_view.setBackgroundBrush(brush)
+    newSeries = self.CreatePieSeries(analytes)
+    FormatSlices(newSeries, 'black')
+    self.chart.addSeries(newSeries)
+    self.chart_view.grab().save(imageFileName)
+
+
+def UpdateChart(self, series):
+    self.chart.removeAllSeries()
+    FormatSlices(series, 'white')
     self.chart.addSeries(series)
+    background_color = QColor(27, 27, 27)
+    brush = QBrush(background_color)
+    # Set the background brush for the chart
+    self.chart.setBackgroundBrush(brush)
+    self.chart_view.setBackgroundBrush(brush)
+
 
 def setup_pie_chart(self):
     self.chart = QChart()
@@ -96,17 +120,12 @@ def setup_pie_chart(self):
 
     self.chart.setTitle("Test Results")
     self.chart.setBackgroundVisible(True)
-    background_color = QColor(27, 27, 27)
-    brush = QBrush(background_color)
-
-    # Set the background brush for the chart
-    self.chart.setBackgroundBrush(brush)
     font = QFont()
     font.setPointSize(30)  # Change the point size to adjust the font size
     font.setFamily("Monserrat Light")
     self.chart.setTitleFont(font)
     self.chart.setTitleBrush(QColor(255, 255, 255))
-    #self.chart.legend().setVisible(False)
+    # self.chart.legend().setVisible(False)
     legend = self.chart.legend()
 
     # Set the alignment of the legend
@@ -118,28 +137,27 @@ def setup_pie_chart(self):
     self.chart_view.setParent(results_page_widget)
     self.chart_view.setMinimumSize(800, 600)
     self.chart_view.setGeometry(600, 50, 1100, 700)  # Set position and size using geometry
-    self.chart_view.setBackgroundBrush(brush)
+
 
 def setTotalAnalyteLabels(self, analytes):
     thcPercent = 0.0
     cbdPercent = 0.0
     for analyte in analytes:
-       lowerCaseName = analyte.name.lower()
-       if "total" in lowerCaseName:
-           if "thc" in lowerCaseName:
-               thcPercent = round(analyte.analyte_concentration, 1)
-           elif "cbd" in lowerCaseName:
-               cbdPercent = round(analyte.analyte_concentration, 1)
-
+        lowerCaseName = analyte.name.lower()
+        if "total" in lowerCaseName:
+            if "thc" in lowerCaseName:
+                thcPercent = round(analyte.analyte_concentration, 1)
+            elif "cbd" in lowerCaseName:
+                cbdPercent = round(analyte.analyte_concentration, 1)
 
     thcLabel = "<p style='color:{}'>{}: {}%</p>".format(
-                'white',
-                "TOTAL THC",
-                thcPercent)
+        'white',
+        "TOTAL THC",
+        thcPercent)
     cbdLabel = "<p style='color:{}'>{}: {}%</p>".format(
-       'white',
-       "TOTAL CBD",
-       cbdPercent)
+        'white',
+        "TOTAL CBD",
+        cbdPercent)
 
     font = QFont()
     font.setPointSize(20)  # Change the point size to adjust the font size
