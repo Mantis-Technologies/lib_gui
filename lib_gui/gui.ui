@@ -34,7 +34,7 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="currentIndex">
-     <number>12</number>
+     <number>15</number>
     </property>
     <widget class="QWidget" name="BootingScreen">
      <widget class="QLabel" name="label_2">
@@ -1423,7 +1423,7 @@ p, li { white-space: pre-wrap; }
       <property name="font">
        <font>
         <family>Arial</family>
-        <pointsize>50</pointsize>
+        <pointsize>40</pointsize>
        </font>
       </property>
       <property name="styleSheet">
