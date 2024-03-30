@@ -34,7 +34,7 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="currentIndex">
-     <number>15</number>
+     <number>16</number>
     </property>
     <widget class="QWidget" name="BootingScreen">
      <widget class="QLabel" name="label_2">
@@ -1488,6 +1488,19 @@ p, li { white-space: pre-wrap; }
       </property>
       <property name="text">
        <string>Reset Sample Door</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="PrintLastReceiptBtn">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>190</y>
+        <width>341</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Print Last Receipt</string>
       </property>
      </widget>
     </widget>
