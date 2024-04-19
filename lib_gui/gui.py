@@ -130,14 +130,14 @@ class GUI(QtWidgets.QMainWindow):
         font = QFont("Arial", 26)
         self.ui.start_price_label.setFont(font)
 
-        # Setting the stylesheet for the label
-        self.ui.start_price_label.setStyleSheet("""
-            QLabel {
-                background-color: #1B1B1B;  # Dark background
-                color: white;               # White text
-                padding: 5px;               # Adds padding around the text (not sure if needed)
-            }
-        """)
+        # # Setting the stylesheet for the label
+        # self.ui.start_price_label.setStyleSheet("""
+        #     QLabel {
+        #         background-color: #1B1B1B;  # Dark background
+        #         color: white;               # White text
+        #         padding: 5px;               # Adds padding around the text (not sure if needed)
+        #     }
+        # """)
 
     # Boot page methods
     from .pages.boot_page import switch_to_boot_page

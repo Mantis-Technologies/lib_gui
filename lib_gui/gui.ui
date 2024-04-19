@@ -171,6 +171,14 @@
       <property name="text">
        <string>TextLabel</string>
       </property>
+      <property name="styleSheet">
+        <string notr="true">
+          QLabel {
+               background-color: #1B1B1B;
+               color: #FFFFFF;
+         }
+        </string>
+      </property>
      </widget>
      <zorder>label_3</zorder>
      <zorder>begin_btn</zorder>
