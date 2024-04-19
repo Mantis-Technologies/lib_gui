@@ -127,7 +127,7 @@ class GUI(QtWidgets.QMainWindow):
         self.ui.start_price_label.setText(f"${price_in_dollars:.2f}")
 
         # Setting font for label
-        font = QFont("Arial", 26)
+        font = QFont("Arial", 25)
         self.ui.start_price_label.setFont(font)
 
         # # Setting the stylesheet for the label
