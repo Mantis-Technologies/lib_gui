@@ -77,8 +77,6 @@ class GUI(QtWidgets.QMainWindow):
         self.connect_shortcuts()
         if not self.fake_payment_terminal and not self.fake_backend:
             self.showFullScreen()
-        # Updates price label from price common_app_funcs
-        self.update_price_label()
         # Move to booting page
         self.switch_to_boot_page()
 
