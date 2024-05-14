@@ -170,3 +170,5 @@ def setTotalAnalyteLabels(self, analytes):
     self.TotalCbdLbl.setText(cbdLabel)
     self.TotalCbdLbl.setAutoFillBackground(False)
     self.TotalCbdLbl.setFont(font)
+
+# import qr code from extract_cannabinoid_concentrations
