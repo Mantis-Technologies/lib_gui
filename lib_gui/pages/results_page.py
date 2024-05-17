@@ -13,7 +13,7 @@ from PyQt5.QtChart import QChart, QChartView, QPieSeries, QPieSlice
 from PyQt5.QtGui import QFont, QColor, QBrush, QPixmap, QPainter
 from PyQt5.QtCore import Qt
 from io import BytesIO
-from lib_kiosk.extract_cannabinoid_concentrations import extract_cannabinoid_concentrations, send_results_to_server  # Import the function
+
 
 # TODO figure out what to do with email and how to get it here
 # Should email = None?

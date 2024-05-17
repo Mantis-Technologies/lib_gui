@@ -1,3 +1,14 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""This file contains methods pertaining to the leaderboard page"""
+
+__author__ = "Michael Mahoney"
+__credits__ = ["Michael Mahoney"]
+__maintainer__ = "Michael Mahoney"
+__email__ = "mike@cannacheckkiosk.com"
+
+
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QTableWidget, QTableWidgetItem, QLabel
 import requests
 
