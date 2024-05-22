@@ -5,8 +5,8 @@
 
 __author__ = "Justin Furuness, Nicholas Lanotte, Michael Mahoney"
 __credits__ = ["Justin Furuness", "Nicholas Lanotte", "Michael Mahoney"]
-__maintainer__ = "Justin Furuness"
-__email__ = "jfuruness@gmail.com"
+__maintainer__ = "Michael Mahoney"
+__email__ = "mike@cannacheckkiosk.com"
 
 
 import os
@@ -16,6 +16,7 @@ from PyQt5 import QtWidgets, uic
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QWidget
+from PyQt5.QtGui import QFont
 
 from .page import Page
 
@@ -78,6 +79,7 @@ class GUI(QtWidgets.QMainWindow):
             self.showFullScreen()
         # Move to booting page
         self.switch_to_boot_page()
+
     def _switch_to_page(self, page: Page):
         """Switches to a page"""
 
@@ -117,7 +119,27 @@ class GUI(QtWidgets.QMainWindow):
         import os
         os.system('systemctl poweroff')
 
-        # Boot page methods
+    def update_price_label(self):
+        # self.costOfTest is in cents and needs to be converted to dollars
+        price_in_dollars = self.costOfTest / 100.0
+
+        # Setting the text of the label
+        self.ui.start_price_label.setText(f"${price_in_dollars:.2f}")
+
+        # Setting font for label
+        font = QFont("Arial", 25)
+        self.ui.start_price_label.setFont(font)
+
+        # # Setting the stylesheet for the label
+        # self.ui.start_price_label.setStyleSheet("""
+        #     QLabel {
+        #         background-color: #1B1B1B;  # Dark background
+        #         color: white;               # White text
+        #         padding: 5px;               # Adds padding around the text (not sure if needed)
+        #     }
+        # """)
+
+    # Boot page methods
     from .pages.boot_page import switch_to_boot_page
 
     # Start page methods
