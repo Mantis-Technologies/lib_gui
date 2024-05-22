@@ -9,30 +9,18 @@ __maintainer__ = "Justin Furuness"
 __email__ = "jfuruness@gmail.com"
 
 from ..page import Page
+from lib_gui.app import App  # Import App class to access QR code image
 from PyQt5.QtChart import QChart, QChartView, QPieSeries, QPieSlice
 from PyQt5.QtGui import QFont, QColor, QBrush, QPixmap, QPainter
 from PyQt5.QtCore import Qt
+from PyQt5 import QLabel
 from io import BytesIO
 
 
-# TODO figure out what to do with email and how to get it here
-# Should email = None?
-
-
-def switch_to_results_page(self, analytes, email):
+def switch_to_results_page(self):
     """Switches to the results page"""
 
-    self._switch_to_page(Page.RESULTS)  # Should this be after the QR code bits?
-
-    # Extract analyte percentages from results object, function found in extract_cannabinoid_concentrations
-    analyte_percentage_results = extract_cannabinoid_concentrations(analytes)  # Should this be analytes or results?
-
-    # Send results to the server and get the QR code
-    qr_code_image, test_result_id = send_results_to_server(email, analyte_percentage_results)
-
-    # Display the QR code if it was successfully generated
-    if qr_code_image:
-        self.display_qr_code(qr_code_image)
+    self._switch_to_page(Page.RESULTS)
 
 
 def CreatePieSeries(self, analytes):
@@ -186,15 +174,16 @@ def setTotalAnalyteLabels(self, analytes):
     self.TotalCbdLbl.setAutoFillBackground(False)
     self.TotalCbdLbl.setFont(font)
 
-# Import qr code from extract_cannabinoid_concentrations
-    def display_qr_code(self, qr_code_image):
-        """Display the QR code on the results page"""
-        pixmap = QPixmap()
-        pixmap.loadFromData(qr_code_image.getvalue(), format="PNG")
-        self.qr_code_label.setPixmap(pixmap.scaled(200, 200, Qt.KeepAspectRatio))
 
-    def setup_qr_code_label(self):
-        results_page_widget = self.stackedWidget.widget(Page.RESULTS.value)
-        self.qr_code_label = QLabel(results_page_widget)
-        self.qr_code_label.setGeometry(600, 800, 200, 200)  # Adjust position and size
-        self.qr_code_label.setAlignment(Qt.AlignCenter)
+def display_qr_code(self, qr_code_image):
+    """Display the QR code on the results page"""
+    pixmap = QPixmap()
+    pixmap.loadFromData(qr_code_image.getvalue(), format="PNG")
+    self.qr_code_label.setPixmap(pixmap.scaled(200, 200, Qt.KeepAspectRatio))
+
+
+def setup_qr_code_label(self):
+    results_page_widget = self.stackedWidget.widget(Page.RESULTS.value)
+    self.qr_code_label = QLabel(results_page_widget)
+    self.qr_code_label.setGeometry(600, 800, 200, 200)  # Adjust position and size
+    self.qr_code_label.setAlignment(Qt.AlignCenter)

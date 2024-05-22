@@ -5,8 +5,8 @@
 
 __author__ = "Justin Furuness, Nicholas Lanotte, Michael Mahoney"
 __credits__ = ["Justin Furuness", "Nicholas Lanotte", "Michael Mahoney"]
-__maintainer__ = "Justin Furuness"
-__email__ = "jfuruness@gmail.com"
+__maintainer__ = "Michael Mahoney"
+__email__ = "mike@cannacheckkiosk.com"
 
 
 import os
@@ -14,7 +14,7 @@ import sys
 
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtWidgets import QApplication
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import pyqtSignal, Qt
 from PyQt5.QtWidgets import QApplication, QWidget
 
 from .page import Page
@@ -23,6 +23,9 @@ from .page import Page
 class GUI(QtWidgets.QMainWindow):
 
     gui_ui_fname = "gui.ui"
+
+    # Signal to pass the user email and username throughout the app
+    user_data_valid = pyqtSignal(str, str)
 
     def __init__(self, debug=False, fake_backend: bool = False, fake_payment_terminal: bool = False):
         """Connects all buttons and switches to boot page"""
@@ -52,6 +55,8 @@ class GUI(QtWidgets.QMainWindow):
         self.connect_order_buttons()
         # Connect payment buttons
         self.connect_payment_buttons()
+        # Connect find user add user buttons
+        self.connect_finduseradduser_buttons()
         # Connect instruction page buttons
         self.connect_instruction_buttons()
         # Connect about page buttons
@@ -66,6 +71,8 @@ class GUI(QtWidgets.QMainWindow):
         self.connect_confirm_removal_buttons()
         # Connect maintenance page buttons
         self.connect_maintenance_buttons()
+        # Swt up QR code label
+        self.setup_qr_code_label()
         # Set up pie chart
         self.setup_pie_chart()
         # Remove pointless info
@@ -78,6 +85,7 @@ class GUI(QtWidgets.QMainWindow):
             self.showFullScreen()
         # Move to booting page
         self.switch_to_boot_page()
+
     def _switch_to_page(self, page: Page):
         """Switches to a page"""
 
@@ -158,14 +166,15 @@ class GUI(QtWidgets.QMainWindow):
     from .pages.results_page import UpdateChart
     from .pages.results_page import CreatePieSeries
     from .pages.results_page import setTotalAnalyteLabels, GenerateChartImage
+    from .pages.results_page import setup_qr_code_label, display_qr_code
 
-    #Configuring Keypad page
+    # Configuring Keypad page
     from .pages.ConfiguringKeyPadPage import switch_to_ConfiguringKeyPad_page
 
     # Error page
     from .pages.error_page import switch_to_error_page
 
-    #Payment page
+    # Payment page
     from .pages.Payment_page import switch_to_payment_page
     from .pages.Payment_page import set_Price_label
     from .pages.Payment_page import connect_payment_buttons
@@ -173,10 +182,17 @@ class GUI(QtWidgets.QMainWindow):
     from .pages.Payment_page import PaymentApprovedCallback
     from .pages.Payment_page import PaymentTimeoutCallback
 
+    # Instruction page
     from .pages.instructions_page import (switch_to_instruction_page, connect_instruction_buttons,
                                           next_button_instruction, cancel_button_instruction)
+    # Find User / Add User Page
+    from .pages.finduseradduser import (switch_to_finduseradduser_page, connect_finduseradduser_buttons,
+                                        skip_button_finduseradduser, existing_user_button, new_user_button,
+                                        setup_finduser_adduser_page, show_keyboard, focus_widget)
+
     # About page
-    from .pages.About_page import switch_to_about_page, connect_about_buttons, AboutPageTimeoutCallback, BackToStartPageButton
+    from .pages.About_page import (switch_to_about_page, connect_about_buttons, AboutPageTimeoutCallback,
+                                   BackToStartPageButton)
 
     # Disclaimer page
     from .pages.disclaimer_page import switch_to_disclaimer_page, connect_disclaimer_buttons
@@ -186,9 +202,9 @@ class GUI(QtWidgets.QMainWindow):
     from .pages.rescan_results_page import switch_to_rescan_page, connect_rescan_buttons
     # Confirm removal page
     from .pages.confirm_removal_page import switch_to_confirm_removal_page, connect_confirm_removal_buttons
-
-    from .pages.MaintenancePage import switch_to_maintenance_page, connect_maintenance_buttons, MoveToEject, HomeMotionSystem
-
+    # Maintenance page
+    from .pages.MaintenancePage import (switch_to_maintenance_page, connect_maintenance_buttons, MoveToEject,
+                                        HomeMotionSystem)
 
     # Keyboard shortcut methods
     from .actions import connect_shortcuts
