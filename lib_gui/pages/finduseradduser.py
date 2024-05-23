@@ -30,7 +30,12 @@ def skip_button_finduseradduser(self):
 def existing_user_button(self):
     """Sends existing user to find_user function in lib_kiosk, which sends to website to query db"""
     existing_user = self.existing_user_input.text()
-    find_user(existing_user)
+    user_credentials = {"email": existing_user}
+    email = find_user(user_credentials)
+    if email:
+        print("User found.")
+    else:
+        print("User not found.")
 
 
 def new_user_button(self):
