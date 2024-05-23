@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1728</width>
-    <height>1051</height>
+    <width>1963</width>
+    <height>1087</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -1514,11 +1514,17 @@ p, li { white-space: pre-wrap; }
         <height>1080</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>60</pointsize>
+       </font>
+      </property>
       <property name="text">
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>CannaCheck_UI_images_1.2/FindUserAddUserPage.png</pixmap>
+       <pixmap>CannaCheck_UI_images_1.2/FindUserAddUserPage_done.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -1527,44 +1533,161 @@ p, li { white-space: pre-wrap; }
      <widget class="QLineEdit" name="existingUserInput">
       <property name="geometry">
        <rect>
-        <x>470</x>
-        <y>320</y>
-        <width>113</width>
-        <height>21</height>
+        <x>320</x>
+        <y>470</y>
+        <width>550</width>
+        <height>60</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 30px; background-color: rgb(255, 255, 255); border: 2px solid white; color: rgb(27, 27, 27)</string>
       </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="placeholderText">
+       <string>   Username or Email</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="newUserEmailInput">
       <property name="geometry">
        <rect>
-        <x>1230</x>
-        <y>320</y>
-        <width>113</width>
-        <height>21</height>
+        <x>1250</x>
+        <y>390</y>
+        <width>550</width>
+        <height>60</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 30px; background-color: rgb(255, 255, 255); border: 2px solid white; color: rgb(27, 27, 27)</string>
+      </property>
+      <property name="cursorPosition">
+       <number>0</number>
+      </property>
+      <property name="placeholderText">
+       <string>   Email</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="confirmEmailInput">
       <property name="geometry">
        <rect>
-        <x>1230</x>
-        <y>360</y>
-        <width>113</width>
-        <height>21</height>
+        <x>1250</x>
+        <y>480</y>
+        <width>550</width>
+        <height>60</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 30px; background-color: rgb(255, 255, 255); border: 2px solid white; color: rgb(27, 27, 27)</string>
+      </property>
+      <property name="placeholderText">
+       <string>   Confirm Email</string>
       </property>
      </widget>
      <widget class="QLineEdit" name="usernameInput">
       <property name="geometry">
        <rect>
-        <x>1230</x>
-        <y>410</y>
-        <width>113</width>
-        <height>21</height>
+        <x>1250</x>
+        <y>570</y>
+        <width>550</width>
+        <height>60</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 30px; background-color: rgb(255, 255, 255); border: 2px solid white; color: rgb(27, 27, 27)</string>
+      </property>
+      <property name="placeholderText">
+       <string>   Username</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="existing_user_button">
+      <property name="geometry">
+       <rect>
+        <x>1250</x>
+        <y>670</y>
+        <width>550</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 30px; background-color: #037340; border: 2px solid white; color: rgb(255, 255, 255)</string>
+      </property>
+      <property name="text">
+       <string>Sign Up</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="new_user_button">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>600</y>
+        <width>550</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 30px; background-color: rgb(255, 255, 255); border: 3px solid gray; color: rgb(40, 40, 40)</string>
+      </property>
+      <property name="text">
+       <string>Sign In</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="skip_button_finduseradduser">
+      <property name="geometry">
+       <rect>
+        <x>1650</x>
+        <y>940</y>
+        <width>211</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>35</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 30px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(169, 6, 10)</string>
+      </property>
+      <property name="text">
+       <string>Skip</string>
       </property>
      </widget>
     </widget>
