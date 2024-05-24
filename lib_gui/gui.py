@@ -187,7 +187,7 @@ class GUI(QtWidgets.QMainWindow):
                                           next_button_instruction, cancel_button_instruction)
     # Find User / Add User Page
     from .pages.finduseradduser import (switch_to_finduseradduser_page, connect_finduseradduser_buttons,
-                                        skip_button_finduseradduser, existing_user_button, new_user_button,
+                                        skip_button_finduseradduser, handle_existing_user_button, handle_new_user_button,
                                         setup_finduser_adduser_page, show_keyboard, focus_widget)
 
     # About page

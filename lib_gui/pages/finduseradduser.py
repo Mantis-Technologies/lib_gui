@@ -12,9 +12,9 @@ from ..page import Page
 from PyQt5.uic import loadUi
 from PyQt5.QtWidgets import QLineEdit, QPushButton, QMessageBox
 import re
-from lib_keyboard import CustomKeyboard
+from lib_keyboard.keyboard import CustomKeyboard
 from lib_kiosk.find_user import find_user
-from profanity_check import predict, predict_prob
+from better_profanity import profanity
 
 
 def switch_to_finduseradduser_page(self):
@@ -27,7 +27,7 @@ def skip_button_finduseradduser(self):
     self.switch_to_instruction_page()
 
 
-def existing_user_button(self):
+def handle_existing_user_button(self):
     """Sends existing user to find_user function in lib_kiosk, which sends to website to query db"""
     existing_user = self.existing_user_input.text()
     user_credentials = {"email": existing_user}
@@ -38,7 +38,7 @@ def existing_user_button(self):
         print("User not found.")
 
 
-def new_user_button(self):
+def handle_new_user_button(self):
     """Checks if emails match, if they are valid emails, and ensures that the username is not profane.
     Returns username and email if valid."""
 
@@ -60,7 +60,11 @@ def new_user_button(self):
         return
 
     # Check for profanity in the username
-    if predict([username])[0] == 1:
+    # Initialize the profanity filter
+    profanity.load_censor_words()
+
+    # Check for profanity in the username
+    if profanity.contains_profanity(username):
         QMessageBox.warning(self, "Invalid Username", "The username contains inappropriate content.")
         return
 
@@ -74,9 +78,9 @@ def new_user_button(self):
 
 
 def connect_finduseradduser_buttons(self):
-    self.instruction_skip.clicked.connect(self.skip_button_finduseradduser)
-    self.existing_user_button.clicked.connect(self.existing_user_button)
-    self.new_user_button.clicked.connect(self.new_user_button)
+    self.skip_button_finduseradduser.clicked.connect(self.switch_to_instruction_page)
+    self.existing_user_button.clicked.connect(self.handle_existing_user_button)
+    self.new_user_button.clicked.connect(self.handle_new_user_button)
 
 
 def setup_finduser_adduser_page(self):
