@@ -9,6 +9,7 @@ __email__ = "mike@cannacheckkiosk.com"
 """This contains all the methods from the Find User/Add User page"""
 
 from ..page import Page
+from PyQt5.QtCore import Qt, QEvent
 from PyQt5.uic import loadUi
 from PyQt5.QtWidgets import QLineEdit, QPushButton, QMessageBox
 import re
@@ -84,27 +85,64 @@ def connect_finduseradduser_buttons(self):
 
 
 def setup_finduser_adduser_page(self):
-    # Load UI elements
-    loadUi('finduser_adduser.ui', self)
-
-    # Get references to your widgets
+    # Get references to widgets
     self.existing_user_input = self.findChild(QLineEdit, 'existingUserInput')
     self.new_user_email_input = self.findChild(QLineEdit, 'newUserEmailInput')
     self.confirm_email_input = self.findChild(QLineEdit, 'confirmEmailInput')
     self.username_input = self.findChild(QLineEdit, 'usernameInput')
 
     # Connect the text boxes to show the keyboard
-    self.existing_user_input.mousePressEvent = lambda event: show_keyboard(event, self)
-    self.new_user_email_input.mousePressEvent = lambda event: show_keyboard(event, self)
-    self.confirm_email_input.mousePressEvent = lambda event: show_keyboard(event, self)
-    self.username_input.mousePressEvent = lambda event: show_keyboard(event, self)
+    self.existing_user_input.mousePressEvent = lambda event: show_keyboard(self, event, self.existing_user_input)
+    self.new_user_email_input.mousePressEvent = lambda event: show_keyboard(self, event, self.new_user_email_input)
+    self.confirm_email_input.mousePressEvent = lambda event: show_keyboard(self, event, self.confirm_email_input)
+    self.username_input.mousePressEvent = lambda event: show_keyboard(self, event, self.username_input)
+
+    # Connect the skip button to hide the keyboard
+    self.skip_button_finduseradduser.clicked.connect(lambda: self.keyboard.hide_keyboard())
 
 
-def show_keyboard(event, self):
+# def show_keyboard(self, event, target_input):
+#     if not hasattr(self, 'keyboard'):
+#         self.keyboard = CustomKeyboard(target_input)
+#         self.keyboard.enterPressed.connect(self.keyboard.hide)
+#         self.installEventFilter(self)  # Install event filter to detect clicks outside the keyboard
+#         print("Event filter installed")  # Debug print
+#     else:
+#         self.keyboard.target_input = target_input
+#
+#     # Get position of where the QLine edit is, to display keyboard beneath it
+#     pos = target_input.mapToGlobal(target_input.rect().bottomLeft())
+#     self.keyboard.move(pos.x(), pos.y())
+#     self.keyboard.show()
+#     print("Keyboard shown")  # Debug print
+#
+# # def eventFilter(self, obj, event):
+# #     if event.type() == QEvent.MouseButtonPress:
+# #         print("Mouse button pressed detected")  # Debug print
+# #         if self.keyboard.isVisible() and not self.keyboard.geometry().contains(event.globalPos()):
+# #             print("Hiding keyboard")  # Debug print
+# #             self.keyboard.hide()
+# #     return super().eventFilter(obj, event)
+
+
+def show_keyboard(self, event, target_input):
     if not hasattr(self, 'keyboard'):
-        self.keyboard = CustomKeyboard(focus_widget(self), self.on_enter_clicked)
+        self.keyboard = CustomKeyboard(target_input)
         self.keyboard.enterPressed.connect(self.keyboard.hide)
+        self.installEventFilter(self) # detects clicks outside the keyboard
+    else:
+        self.keyboard.target_input = target_input
+
+    # Get position of where the QLine edit is, to display keyboard beneath it
+    pos = target_input.mapToGlobal(target_input.rect().bottomLeft())
+    self.keyboard.move(pos.x(), pos.y())
     self.keyboard.show()
+
+def eventFilter(self, obj, event):
+    if event.type() == QEvent.MouseButtonPress:
+        if self.keyboard.isVisible() and not self.keyboard.geometry().contains(event.globalPos()):
+            self.keyboard.hide()
+    return super().eventFilter(obj, event)
 
 
 def focus_widget(self):

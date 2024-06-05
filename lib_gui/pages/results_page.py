@@ -175,15 +175,18 @@ def setTotalAnalyteLabels(self, analytes):
     self.TotalCbdLbl.setFont(font)
 
 
-def display_qr_code(self, qr_code_image):
+def display_qr_code(self):
     """Display the QR code on the results page"""
     pixmap = QPixmap()
-    pixmap.loadFromData(qr_code_image.getvalue(), format="PNG")
-    self.qr_code_label.setPixmap(pixmap.scaled(200, 200, Qt.KeepAspectRatio))
+    if self.qr_code_image:
+        pixmap.loadFromData(self.qr_code_image.getvalue(), format="PNG")
+        self.qr_code_label.setPixmap(pixmap.scaled(300, 300, Qt.KeepAspectRatio))
+    else:
+        print("No QR Code Image available")
 
 
 def setup_qr_code_label(self):
     results_page_widget = self.stackedWidget.widget(Page.RESULTS.value)
     self.qr_code_label = QLabel(results_page_widget)
-    self.qr_code_label.setGeometry(600, 800, 200, 200)  # Adjust position and size
+    self.qr_code_label.setGeometry(150, 200, 300, 300)  # Adjust position and size
     self.qr_code_label.setAlignment(Qt.AlignCenter)

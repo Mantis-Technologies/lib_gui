@@ -14,7 +14,7 @@ import sys
 
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtWidgets import QApplication
-from PyQt5.QtCore import pyqtSignal, Qt
+from PyQt5.QtCore import pyqtSignal, Qt, QEvent
 from PyQt5.QtWidgets import QApplication, QWidget
 
 from .page import Page
@@ -57,6 +57,10 @@ class GUI(QtWidgets.QMainWindow):
         self.connect_payment_buttons()
         # Connect find user add user buttons
         self.connect_finduseradduser_buttons()
+        # Connect find user add user input fields
+        self.setup_finduser_adduser_page()
+        # Install event filter for finduseradduser to detect global clicks
+        QApplication.instance().installEventFilter(self)
         # Connect instruction page buttons
         self.connect_instruction_buttons()
         # Connect about page buttons
@@ -124,6 +128,16 @@ class GUI(QtWidgets.QMainWindow):
         print("Shutting down")
         import os
         os.system('systemctl poweroff')
+
+    def eventFilter(self, obj, event):
+        """Detects global clicks so user can close out of keyboard by clicking elsewhere"""
+        if event.type() == QEvent.MouseButtonPress:
+            # print("Mouse button press detected")  # Debug print
+            if hasattr(self, 'keyboard') and self.keyboard.isVisible() and not self.keyboard.geometry().contains(
+                    event.globalPos()):
+                # print("Hiding keyboard")  # Debug print
+                self.keyboard.hide()
+        return super().eventFilter(obj, event)
 
         # Boot page methods
     from .pages.boot_page import switch_to_boot_page
