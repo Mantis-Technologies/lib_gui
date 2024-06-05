@@ -101,30 +101,6 @@ def setup_finduser_adduser_page(self):
     self.skip_button_finduseradduser.clicked.connect(lambda: self.keyboard.hide_keyboard())
 
 
-# def show_keyboard(self, event, target_input):
-#     if not hasattr(self, 'keyboard'):
-#         self.keyboard = CustomKeyboard(target_input)
-#         self.keyboard.enterPressed.connect(self.keyboard.hide)
-#         self.installEventFilter(self)  # Install event filter to detect clicks outside the keyboard
-#         print("Event filter installed")  # Debug print
-#     else:
-#         self.keyboard.target_input = target_input
-#
-#     # Get position of where the QLine edit is, to display keyboard beneath it
-#     pos = target_input.mapToGlobal(target_input.rect().bottomLeft())
-#     self.keyboard.move(pos.x(), pos.y())
-#     self.keyboard.show()
-#     print("Keyboard shown")  # Debug print
-#
-# # def eventFilter(self, obj, event):
-# #     if event.type() == QEvent.MouseButtonPress:
-# #         print("Mouse button pressed detected")  # Debug print
-# #         if self.keyboard.isVisible() and not self.keyboard.geometry().contains(event.globalPos()):
-# #             print("Hiding keyboard")  # Debug print
-# #             self.keyboard.hide()
-# #     return super().eventFilter(obj, event)
-
-
 def show_keyboard(self, event, target_input):
     if not hasattr(self, 'keyboard'):
         self.keyboard = CustomKeyboard(target_input)

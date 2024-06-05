@@ -35,6 +35,9 @@ class GUI(QtWidgets.QMainWindow):
             self.app = QApplication(sys.argv)
         super(GUI, self).__init__()
 
+        # Install event filter for finduseradduser page to detect global clicks
+        QApplication.instance().installEventFilter(self)
+
         # If in debug mode, typing n moves to next screen
         self.debug = debug
         self.fake_backend = fake_backend
@@ -59,8 +62,6 @@ class GUI(QtWidgets.QMainWindow):
         self.connect_finduseradduser_buttons()
         # Connect find user add user input fields
         self.setup_finduser_adduser_page()
-        # Install event filter for finduseradduser to detect global clicks
-        QApplication.instance().installEventFilter(self)
         # Connect instruction page buttons
         self.connect_instruction_buttons()
         # Connect about page buttons
