@@ -77,9 +77,9 @@
        <font>
         <family>Arial</family>
         <pointsize>60</pointsize>
-        <weight>75</weight>
+        <weight>50</weight>
         <italic>false</italic>
-        <bold>true</bold>
+        <bold>false</bold>
        </font>
       </property>
       <property name="autoFillBackground">
@@ -123,9 +123,9 @@
        <font>
         <family>Arial</family>
         <pointsize>30</pointsize>
-        <weight>75</weight>
+        <weight>50</weight>
         <italic>false</italic>
-        <bold>true</bold>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -872,10 +872,10 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-radius: 65px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(3, 116, 64)</string>
+       <string notr="true">border-radius: 65px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(169, 6, 10)</string>
       </property>
       <property name="text">
-       <string>CONFIRM REMOVAL</string>
+       <string>I'M FINISHED</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_4">
@@ -1427,7 +1427,7 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-radius: 70px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(3, 116, 64)</string>
+       <string notr="true">border-radius: 70px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(169, 6, 10)</string>
       </property>
       <property name="text">
        <string>CONFIRM REMOVAL</string>
@@ -1524,7 +1524,7 @@ p, li { white-space: pre-wrap; }
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>CannaCheck_UI_images_1.2/FindUserAddUserPage_done.png</pixmap>
+       <pixmap>CannaCheck_UI_images_1.2/FindUserAddUserPage.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -1558,7 +1558,7 @@ p, li { white-space: pre-wrap; }
      <widget class="QLineEdit" name="newUserEmailInput">
       <property name="geometry">
        <rect>
-        <x>1250</x>
+        <x>1150</x>
         <y>390</y>
         <width>550</width>
         <height>60</height>
@@ -1583,7 +1583,7 @@ p, li { white-space: pre-wrap; }
      <widget class="QLineEdit" name="confirmEmailInput">
       <property name="geometry">
        <rect>
-        <x>1250</x>
+        <x>1150</x>
         <y>480</y>
         <width>550</width>
         <height>60</height>
@@ -1605,7 +1605,7 @@ p, li { white-space: pre-wrap; }
      <widget class="QLineEdit" name="usernameInput">
       <property name="geometry">
        <rect>
-        <x>1250</x>
+        <x>1150</x>
         <y>570</y>
         <width>550</width>
         <height>60</height>
@@ -1624,10 +1624,10 @@ p, li { white-space: pre-wrap; }
        <string>   Username</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="existing_user_button">
+     <widget class="QPushButton" name="new_user_button">
       <property name="geometry">
        <rect>
-        <x>1250</x>
+        <x>1150</x>
         <y>670</y>
         <width>550</width>
         <height>60</height>
@@ -1646,7 +1646,7 @@ p, li { white-space: pre-wrap; }
        <string>Sign Up</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="new_user_button">
+     <widget class="QPushButton" name="existing_user_button">
       <property name="geometry">
        <rect>
         <x>320</x>

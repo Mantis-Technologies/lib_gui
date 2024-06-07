@@ -5,8 +5,8 @@
 
 __author__ = "Justin Furuness"
 __credits__ = ["Justin Furuness", "Nick Lanotte", "Michael Mahoney"]
-__maintainer__ = "Justin Furuness"
-__email__ = "jfuruness@gmail.com"
+__maintainer__ = "Michael Mahoney"
+__email__ = "mike@cannacheckkiosk.com"
 
 from ..page import Page
 from lib_kiosk import app  # Import App class to access QR code image
@@ -188,5 +188,16 @@ def display_qr_code(self):
 def setup_qr_code_label(self):
     results_page_widget = self.stackedWidget.widget(Page.RESULTS.value)
     self.qr_code_label = QLabel(results_page_widget)
-    self.qr_code_label.setGeometry(150, 200, 300, 300)  # Adjust position and size
+    self.qr_code_label.setGeometry(150, 200, 300, 300)
     self.qr_code_label.setAlignment(Qt.AlignCenter)
+
+def results_url_label_text(self):
+    self.results_url_label.setText(f"View your results at: {self.results_url}")
+
+def setup_results_url(self):
+    results_url_widget = self.stackedWidget.widget(Page.RESULTS.value)
+    self.results_url_label = QLabel(results_url_widget)
+    self.results_url_label.setGeometry(50, 510, 500, 30)
+    self.results_url_label.setAlignment(Qt.AlignCenter)
+    self.results_url_label.setStyleSheet("font-size: 14px; color: white; background-color: rgba(255, 255, 255, 0)")
+

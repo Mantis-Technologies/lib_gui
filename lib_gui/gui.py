@@ -76,8 +76,10 @@ class GUI(QtWidgets.QMainWindow):
         self.connect_confirm_removal_buttons()
         # Connect maintenance page buttons
         self.connect_maintenance_buttons()
-        # Swt up QR code label
+        # Set up QR code label
         self.setup_qr_code_label()
+        # Set up result url widget
+        self.setup_results_url()
         # Set up pie chart
         self.setup_pie_chart()
         # Remove pointless info
@@ -97,6 +99,9 @@ class GUI(QtWidgets.QMainWindow):
         if not self.debug:
             # Remove cursor unless debugging
             self.setCursor(Qt.BlankCursor)
+        # Clear text fields if leaving finduseradduser page
+        if self.current_page == Page.FINDUSERADDUSER:
+            self.clear_text_fields()
         # Move to the next page
         self.stackedWidget.setCurrentIndex(page.value)
         # Update and show the new screen
@@ -181,7 +186,7 @@ class GUI(QtWidgets.QMainWindow):
     from .pages.results_page import UpdateChart
     from .pages.results_page import CreatePieSeries
     from .pages.results_page import setTotalAnalyteLabels, GenerateChartImage
-    from .pages.results_page import setup_qr_code_label, display_qr_code
+    from .pages.results_page import setup_qr_code_label, display_qr_code, setup_results_url, results_url_label_text
 
     # Configuring Keypad page
     from .pages.ConfiguringKeyPadPage import switch_to_ConfiguringKeyPad_page
@@ -203,7 +208,7 @@ class GUI(QtWidgets.QMainWindow):
     # Find User / Add User Page
     from .pages.finduseradduser import (switch_to_finduseradduser_page, connect_finduseradduser_buttons,
                                         skip_button_finduseradduser, handle_existing_user_button, handle_new_user_button,
-                                        setup_finduser_adduser_page, show_keyboard, focus_widget)
+                                        setup_finduser_adduser_page, show_keyboard, focus_widget, clear_text_fields)
 
     # About page
     from .pages.About_page import (switch_to_about_page, connect_about_buttons, AboutPageTimeoutCallback,
