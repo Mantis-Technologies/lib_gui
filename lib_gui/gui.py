@@ -119,9 +119,7 @@ class GUI(QtWidgets.QMainWindow):
         import os
         os.system('systemctl poweroff')
 
-    def update_price_label(self):
-        # self.costOfTest is in cents and needs to be converted to dollars
-        price_in_dollars_pre_tax = self.get_pre_tax_price_in_dollars()
+    def update_price_label(self, price_in_dollars_pre_tax: float):
 
         # Setting the text of the label
         self.ui.start_price_label.setText(f"${price_in_dollars_pre_tax:.2f}")
