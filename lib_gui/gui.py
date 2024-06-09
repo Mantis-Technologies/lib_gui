@@ -119,25 +119,14 @@ class GUI(QtWidgets.QMainWindow):
         import os
         os.system('systemctl poweroff')
 
-    def update_price_label(self):
-        # self.costOfTest is in cents and needs to be converted to dollars
-        price_in_dollars = self.costOfTest / 100.0
+    def update_price_label(self, price_in_dollars_pre_tax: float):
 
         # Setting the text of the label
-        self.ui.start_price_label.setText(f"${price_in_dollars:.2f}")
+        self.ui.start_price_label.setText(f"${price_in_dollars_pre_tax:.2f}")
 
         # Setting font for label
         font = QFont("Arial", 25)
         self.ui.start_price_label.setFont(font)
-
-        # # Setting the stylesheet for the label
-        # self.ui.start_price_label.setStyleSheet("""
-        #     QLabel {
-        #         background-color: #1B1B1B;  # Dark background
-        #         color: white;               # White text
-        #         padding: 5px;               # Adds padding around the text (not sure if needed)
-        #     }
-        # """)
 
     # Boot page methods
     from .pages.boot_page import switch_to_boot_page
