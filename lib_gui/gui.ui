@@ -34,7 +34,7 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="currentIndex">
-     <number>17</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="BootingScreen">
      <widget class="QLabel" name="label_2">
@@ -159,9 +159,31 @@
        <bool>true</bool>
       </property>
      </widget>
+     <widget class="QLabel" name="start_price_label">
+      <property name="geometry">
+       <rect>
+        <x>779</x>
+        <y>540</y>
+        <width>120</width>
+        <height>34</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+          QLabel {
+               background-color: #1B1B1B;
+               color: #FFFFFF;
+         }
+        </string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
      <zorder>label_3</zorder>
      <zorder>begin_btn</zorder>
      <zorder>about_btn</zorder>
+     <zorder>start_price_label</zorder>
     </widget>
     <widget class="QWidget" name="ConfirmationScreen">
      <widget class="QPushButton" name="yes_over_21_btn">

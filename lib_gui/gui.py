@@ -16,6 +16,7 @@ from PyQt5 import QtWidgets, uic
 from PyQt5.QtWidgets import QApplication
 from PyQt5.QtCore import pyqtSignal, Qt, QEvent
 from PyQt5.QtWidgets import QApplication, QWidget
+from PyQt5.QtGui import QFont
 
 from .page import Page
 
@@ -146,6 +147,16 @@ class GUI(QtWidgets.QMainWindow):
         return super().eventFilter(obj, event)
 
         # Boot page methods
+    def update_price_label(self, price_in_dollars_pre_tax: float):
+
+        # Setting the text of the label
+        self.ui.start_price_label.setText(f"${price_in_dollars_pre_tax:.2f}")
+
+        # Setting font for label
+        font = QFont("Arial", 25)
+        self.ui.start_price_label.setFont(font)
+
+    # Boot page methods
     from .pages.boot_page import switch_to_boot_page
 
     # Start page methods
