@@ -10,8 +10,45 @@ __email__ = "mike@cannacheckkiosk.com"
 
 
 from PyQt5.QtWidgets import QApplication, QWidget, QVBoxLayout, QTableWidget, QTableWidgetItem, QLabel
+from PyQt5.QtCore import QThread, pyqtSignal, Qt
+import time
 import requests
 
+
+def switch_to_leaderboard_page(self):
+    """Switches to the FAQ page"""
+    self._switch_to_page(Page.LEADERBOARD)
+    self.LeaderboardPageTimeoutThread = LeaderboardPageTimeoutThread(self)
+    self.LeaderboardPageTimeoutThread.signal.connect(self.LeaderboardPageTimeoutCallback)
+    self.LeaderboardPageTimeoutThread.start()
+
+def leaderboard_back_to_start_page(self):
+    self.LeaderboardPageTimeoutThread.keepRunning = False
+    self.switch_to_start_page()
+
+def LeaderboardPageTimeoutCallback(self, result):
+    self.leaderboard_back_to_start_page()
+
+class LeaderboardPageTimeoutThread(QThread):
+    signal = pyqtSignal('PyQt_PyObject')
+
+    def __init__(self, gui):
+        QThread.__init__(self)
+        self.gui = gui
+        self.keepRunning = True
+
+    def run(self):
+        maxSecondsToWait = 300  # allow the user 5 minutes to read the page or revert back
+        while self.keepRunning and self.gui.keepThreadsRunning:
+            maxSecondsToWait = maxSecondsToWait - 1
+            if maxSecondsToWait == 0:
+                self.signal.emit(1)  # emit anything to trigger page change
+                break
+            time.sleep(1)
+
+def connect_leaderboard_buttons(self):
+    """Connects Leaderboard buttons"""
+    self.leaderboard_back_btn.clicked.connect(self.leaderboard_back_to_start_page)
 
 def set_leaderboard_geometry(self):
     self.setGeometry(100, 100, 800, 600)
@@ -51,7 +88,7 @@ def display_leaderboard(self):
     #     {"user_id": 10, "max_thca": 18.7}
     # ]
 
-    response = requests.get('https://www.cannacheckkiosk.com/top-thca-testers')
+    response = requests.get('https://www.cannacheckkiosk.com/top-thca-testers') # change so each kiosk has its own leaderboard
     leaderboard_data = response.json()
 
     for idx, item in enumerate(leaderboard_data):

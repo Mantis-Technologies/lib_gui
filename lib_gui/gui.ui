@@ -132,7 +132,7 @@
        <string notr="true">border-radius: 30px; background-color: rgb(27, 27, 27); border: 2px solid white; color: rgb(255, 255, 255)</string>
       </property>
       <property name="text">
-       <string>ABOUT</string>
+       <string>About</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_3">
@@ -153,7 +153,7 @@
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>CannaCheck_UI_images_1.2/StartScreen_Leaderboard.png</pixmap>
+       <pixmap>CannaCheck_UI_images_1.2/StartScreen.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -180,10 +180,55 @@
        <string>TextLabel</string>
       </property>
      </widget>
+     <widget class="QPushButton" name="faq_btn">
+      <property name="geometry">
+       <rect>
+        <x>835</x>
+        <y>969</y>
+        <width>260</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 30px; background-color: rgb(27, 27, 27); border: 2px solid white; color: rgb(255, 255, 255)</string>
+      </property>
+      <property name="text">
+       <string>FAQ</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="leaderboard_btn">
+      <property name="geometry">
+       <rect>
+        <x>1575</x>
+        <y>969</y>
+        <width>260</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 30px; background-color: rgb(27, 27, 27); border: 2px solid white; color: rgb(255, 255, 255)</string>
+      </property>
+      <property name="text">
+       <string>Leaderboard</string>
+      </property>
+     </widget>
      <zorder>label_3</zorder>
      <zorder>begin_btn</zorder>
      <zorder>about_btn</zorder>
      <zorder>start_price_label</zorder>
+     <zorder>faq_btn</zorder>
+     <zorder>leaderboard_btn</zorder>
     </widget>
     <widget class="QWidget" name="ConfirmationScreen">
      <widget class="QPushButton" name="yes_over_21_btn">
@@ -1710,6 +1755,94 @@ p, li { white-space: pre-wrap; }
       </property>
       <property name="text">
        <string>Skip</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="FAQPage">
+     <widget class="QPushButton" name="faq_back_btn">
+      <property name="geometry">
+       <rect>
+        <x>1430</x>
+        <y>960</y>
+        <width>420</width>
+        <height>90</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>40</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 40px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(169, 6, 10)</string>
+      </property>
+      <property name="text">
+       <string>Back</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_17">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1920</width>
+        <height>1080</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>CannaCheck_UI_images_1.2/FAQPage.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <zorder>label_17</zorder>
+     <zorder>faq_back_btn</zorder>
+    </widget>
+    <widget class="QWidget" name="LeaderboardPage">
+     <widget class="QLabel" name="label_18">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1920</width>
+        <height>1080</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>CannaCheck_UI_images_1.2/LeaderboardPage.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="leaderboard_back_btn">
+      <property name="geometry">
+       <rect>
+        <x>1430</x>
+        <y>960</y>
+        <width>420</width>
+        <height>90</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>40</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 40px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(169, 6, 10)</string>
+      </property>
+      <property name="text">
+       <string>Back</string>
       </property>
      </widget>
     </widget>

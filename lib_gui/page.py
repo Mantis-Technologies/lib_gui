@@ -31,3 +31,4 @@ class Page(Enum):
     CONFIRM_REMOVAL = 15
     MAINTENANCE = 16
     FINDUSERADDUSER = 17
+    FAQ = 18

@@ -77,6 +77,12 @@ class GUI(QtWidgets.QMainWindow):
         self.connect_confirm_removal_buttons()
         # Connect maintenance page buttons
         self.connect_maintenance_buttons()
+        # Connect FAQ page buttons
+        self.connect_faq_buttons()
+        # Set up FAQ page
+        self.setup_faq_page()
+        # Connect Leaderboard page buttons
+        self.connect_leaderboard_buttons()
         # Set up QR code label
         self.setup_qr_code_label()
         # Set up result url widget
@@ -236,6 +242,13 @@ class GUI(QtWidgets.QMainWindow):
     # Maintenance page
     from .pages.MaintenancePage import (switch_to_maintenance_page, connect_maintenance_buttons, MoveToEject,
                                         HomeMotionSystem)
+    # FAQ Page methods
+    from .pages.faq_page import (switch_to_faq_page, connect_faq_buttons, faq_back_to_start_page,
+                                 FAQPageTimeoutCallback, setup_faq_page, add_faq, toggle_answer, reset_faq_page)
+
+    # Leaderboard Page methods
+    from .pages.leaderboard import (switch_to_leaderboard_page, connect_leaderboard_buttons, set_leaderboard_geometry,
+                                    display_leaderboard, leaderboard_back_to_start_page, LeaderboardPageTimeoutCallback)
 
     # Keyboard shortcut methods
     from .actions import connect_shortcuts

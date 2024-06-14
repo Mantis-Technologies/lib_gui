@@ -3,10 +3,10 @@
 
 """This file contains all methods relating to the start page"""
 
-__author__ = "Justin Furuness"
-__credits__ = ["Justin Furuness"]
-__maintainer__ = "Justin Furuness"
-__email__ = "jfuruness@gmail.com"
+__author__ = ["Justin Furuness", "Michael Mahoney"]
+__credits__ = ["Justin Furuness", "Michael Mahoney"]
+__maintainer__ = "Michael Mahoney"
+__email__ = "mike@cannacheckkiosk.com"
 
 from ..page import Page
 
@@ -23,3 +23,5 @@ def connect_start_buttons(self):
 
     self.begin_btn.clicked.connect(self.switch_to_disclaimer_page)
     self.about_btn.clicked.connect(self.switch_to_about_page)
+    self.faq_btn.clicked.connect(self.switch_to_faq_page)
+    self.leaderboard_btn.clicked.connect(self.switch_to_leaderboard_page)
