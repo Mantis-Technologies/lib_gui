@@ -19,6 +19,7 @@ from PyQt5.QtWidgets import QApplication, QWidget
 from PyQt5.QtGui import QFont
 
 from .page import Page
+import time
 
 
 class GUI(QtWidgets.QMainWindow):
@@ -38,6 +39,7 @@ class GUI(QtWidgets.QMainWindow):
         self.fake_backend = fake_backend
         self.fake_payment_terminal = fake_payment_terminal
         self.keepThreadsRunning = True
+        self.button_delay_map = {} # stores key value pairs for button names and a time. Used to have button presses be ignored for set periods
 
         # Load the UI
         self.ui = uic.loadUi(self.ui_path, self)
@@ -128,6 +130,17 @@ class GUI(QtWidgets.QMainWindow):
         font = QFont("Arial", 25)
         self.ui.start_price_label.setFont(font)
 
+    def check_if_button_is_ok_to_press(self, button_key: str, seconds_to_wait: float) -> bool:
+        current_time = time.time()
+        timeSinceButtonPress = current_time - self.button_delay_map[button_key]
+        okToPress =  timeSinceButtonPress > seconds_to_wait
+        if okToPress is False:
+            print("ignoring button press")
+        return okToPress
+
+    def start_timer_to_ignore_button_presses(self, button_key: str):
+        self.button_delay_map[button_key] = time.time()
+
     # Boot page methods
     from .pages.boot_page import switch_to_boot_page
 
@@ -137,7 +150,7 @@ class GUI(QtWidgets.QMainWindow):
 
     # Confirmation over 21 page methods
     from .pages.confirmation_page import switch_to_confirmation_page
-    from .pages.confirmation_page import connect_confirmation_buttons
+    from .pages.confirmation_page import connect_confirmation_buttons, over_21_confirm
 
     # Order page methods
     from .pages.order_page import switch_to_order_page
@@ -153,7 +166,7 @@ class GUI(QtWidgets.QMainWindow):
 
     # Loading page methods (for loading sample)
     from .pages.load_page import switch_to_load_page
-    from .pages.load_page import connect_load_buttons
+    from .pages.load_page import connect_load_buttons, enable_loaded_sample_button
     from .pages.load_page import cancel_load
     from .pages.load_page import finished_load
 
@@ -190,13 +203,13 @@ class GUI(QtWidgets.QMainWindow):
     from .pages.About_page import switch_to_about_page, connect_about_buttons, AboutPageTimeoutCallback, BackToStartPageButton
 
     # Disclaimer page
-    from .pages.disclaimer_page import switch_to_disclaimer_page, connect_disclaimer_buttons
+    from .pages.disclaimer_page import switch_to_disclaimer_page, connect_disclaimer_buttons, disclaimer_confirmed
     # Before proceeding page
-    from .pages.before_proceeding_page import switch_to_before_proceeding_page, connect_before_proceeding_buttons
+    from .pages.before_proceeding_page import switch_to_before_proceeding_page, connect_before_proceeding_buttons, before_proceeding_confirm
     # Rescan results page
     from .pages.rescan_results_page import switch_to_rescan_page, connect_rescan_buttons
     # Confirm removal page
-    from .pages.confirm_removal_page import switch_to_confirm_removal_page, connect_confirm_removal_buttons
+    from .pages.confirm_removal_page import switch_to_confirm_removal_page, connect_confirm_removal_buttons, confirm_removal
 
     from .pages.MaintenancePage import switch_to_maintenance_page, connect_maintenance_buttons, MoveToEject, HomeMotionSystem
 
