@@ -6,6 +6,8 @@ from ..page import Page
 
 def switch_to_instruction_page(self):
     """Switches to the instruction page"""
+
+    self.start_timer_to_ignore_button_presses("instructions confirm")
     self._switch_to_page(Page.INSTRUCTIONS)
 
 
@@ -14,7 +16,8 @@ def cancel_button_instruction(self):
 
 
 def next_button_instruction(self):
-    self.switch_to_load_page()
+    if self.check_if_button_is_ok_to_press("instructions confirm", 2.0):
+        self.switch_to_load_page()
 
 
 def connect_instruction_buttons(self):

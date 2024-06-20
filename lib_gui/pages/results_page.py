@@ -16,7 +16,7 @@ from PyQt5.QtCore import Qt
 
 def switch_to_results_page(self):
     """Switches to the results page"""
-
+    self.start_timer_to_ignore_button_presses("Results confirm")
     self._switch_to_page(Page.RESULTS)
 
 
@@ -49,8 +49,8 @@ def set_results_labels(self, analytes):
 
 def done_w_results(self):
     """Done with results, move to start page"""
-
-    self.switch_to_confirm_removal_page()
+    if self.check_if_button_is_ok_to_press("Results confirm", 2.0):
+        self.switch_to_confirm_removal_page()
 
 
 def connect_results_buttons(self):

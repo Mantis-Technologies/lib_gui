@@ -15,11 +15,17 @@ from ..page import Page
 def switch_to_confirmation_page(self):
     """Switch to confirmation page"""
 
+    self.start_timer_to_ignore_button_presses("Over 21 Confirm")
     self._switch_to_page(Page.CONFIRMATION)
+
+
+def over_21_confirm(self):
+    if self.check_if_button_is_ok_to_press("Over 21 Confirm", 2.0):
+        self.switch_to_before_proceeding_page()
 
 
 def connect_confirmation_buttons(self):
     """Connects confirmation buttons"""
 
     self.no_not_21_btn.clicked.connect(self.switch_to_start_page)
-    self.yes_over_21_btn.clicked.connect(self.switch_to_before_proceeding_page)
+    self.yes_over_21_btn.clicked.connect(self.over_21_confirm)
