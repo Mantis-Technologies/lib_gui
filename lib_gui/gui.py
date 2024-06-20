@@ -65,8 +65,10 @@ class GUI(QtWidgets.QMainWindow):
         self.setup_finduser_adduser_page()
         # Connect instruction page buttons
         self.connect_instruction_buttons()
+
         # Connect about page buttons
-        self.connect_about_buttons()
+        # self.connect_about_buttons() No longer using the About Page
+
         # Connect disclaimer page buttons
         self.connect_disclaimer_buttons()
         # Connect before proceeding page buttons
@@ -83,6 +85,8 @@ class GUI(QtWidgets.QMainWindow):
         self.setup_faq_page()
         # Connect Leaderboard page buttons
         self.connect_leaderboard_buttons()
+        # Setup the Leaderboard
+        self.setup_leaderboard_page()
         # Set up QR code label
         self.setup_qr_code_label()
         # Set up result url widget
@@ -227,9 +231,9 @@ class GUI(QtWidgets.QMainWindow):
                                         skip_button_finduseradduser, handle_existing_user_button, handle_new_user_button,
                                         setup_finduser_adduser_page, show_keyboard, focus_widget, clear_text_fields)
 
-    # About page
-    from .pages.About_page import (switch_to_about_page, connect_about_buttons, AboutPageTimeoutCallback,
-                                   BackToStartPageButton)
+    # About page NO LONGER USING THE ABOUT PAGE, REPLACED WITH FAQ
+    # from .pages.About_page import (switch_to_about_page, connect_about_buttons, AboutPageTimeoutCallback,
+    #                                BackToStartPageButton)
 
     # Disclaimer page
     from .pages.disclaimer_page import switch_to_disclaimer_page, connect_disclaimer_buttons
@@ -247,7 +251,7 @@ class GUI(QtWidgets.QMainWindow):
                                  FAQPageTimeoutCallback, setup_faq_page, add_faq, toggle_answer, reset_faq_page)
 
     # Leaderboard Page methods
-    from .pages.leaderboard import (switch_to_leaderboard_page, connect_leaderboard_buttons, set_leaderboard_geometry,
+    from .pages.leaderboard import (switch_to_leaderboard_page, connect_leaderboard_buttons, setup_leaderboard_page,
                                     display_leaderboard, leaderboard_back_to_start_page, LeaderboardPageTimeoutCallback)
 
     # Keyboard shortcut methods

@@ -22,6 +22,6 @@ def connect_start_buttons(self):
     """Connects the start page begin button"""
 
     self.begin_btn.clicked.connect(self.switch_to_disclaimer_page)
-    self.about_btn.clicked.connect(self.switch_to_about_page)
+    # self.about_btn.clicked.connect(self.switch_to_about_page) No longer using About Page
     self.faq_btn.clicked.connect(self.switch_to_faq_page)
     self.leaderboard_btn.clicked.connect(self.switch_to_leaderboard_page)

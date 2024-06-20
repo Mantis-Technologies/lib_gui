@@ -32,3 +32,4 @@ class Page(Enum):
     MAINTENANCE = 16
     FINDUSERADDUSER = 17
     FAQ = 18
+    LEADERBOARD = 19
