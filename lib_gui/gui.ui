@@ -34,7 +34,7 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>19</number>
     </property>
     <widget class="QWidget" name="BootingScreen">
      <widget class="QLabel" name="label_2">
@@ -1788,10 +1788,10 @@ p, li { white-space: pre-wrap; }
      <widget class="QPushButton" name="leaderboard_back_btn">
       <property name="geometry">
        <rect>
-        <x>1430</x>
-        <y>960</y>
-        <width>420</width>
-        <height>90</height>
+        <x>1759</x>
+        <y>50</y>
+        <width>91</width>
+        <height>61</height>
        </rect>
       </property>
       <property name="font">
@@ -1804,7 +1804,7 @@ p, li { white-space: pre-wrap; }
        <string notr="true">border-radius: 40px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(169, 6, 10)</string>
       </property>
       <property name="text">
-       <string>Back</string>
+       <string>X</string>
       </property>
      </widget>
     </widget>

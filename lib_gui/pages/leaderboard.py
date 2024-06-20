@@ -27,6 +27,7 @@ def switch_to_leaderboard_page(self):
 
 def leaderboard_back_to_start_page(self):
     self.LeaderboardPageTimeoutThread.keepRunning = False
+    self.reset_leaderboard_scroll()
     self.switch_to_start_page()
 
 def LeaderboardPageTimeoutCallback(self, result):
@@ -53,18 +54,29 @@ def connect_leaderboard_buttons(self):
     """Connects Leaderboard buttons"""
     self.leaderboard_back_btn.clicked.connect(self.leaderboard_back_to_start_page)
 
+def reset_leaderboard_scroll(self):
+    """Resets the leaderboard scroll position to the top"""
+    if hasattr(self, 'table_all_time'):
+        self.table_all_time.verticalScrollBar().setValue(0)
+    if hasattr(self, 'table_monthly'):
+        self.table_monthly.verticalScrollBar().setValue(0)
+
 
 def setup_leaderboard_page(self):
     """Sets up the geometry and layout for the leaderboard page"""
 
-    # Create a container widget for the leaderboard
+    # Create a container widget for the leaderboards
     self.leaderboard_container = QWidget(self.ui.LeaderboardPage)
-    self.leaderboard_container.setGeometry(550, 200, 800, 850)  # Set x, y, width, height
+    self.leaderboard_container.setGeometry(155, 200, 1600, 850)  # Set x, y, width, height
 
-    layout = QVBoxLayout(self.leaderboard_container)
+    outer_layout = QHBoxLayout(self.leaderboard_container)
+    outer_layout.setContentsMargins(10, 10, 10, 10)  # Add margins to ensure the rounded corners are visible
 
-    self.label_title = QLabel('Top 10 THC-A Testers', self)
-    self.label_title.setStyleSheet("""
+    # All Time Leaderboard
+    all_time_layout = QVBoxLayout()
+
+    self.label_title_all_time = QLabel('Top 10 THC-A Testers (All Time)', self)
+    self.label_title_all_time.setStyleSheet("""
         QLabel {
             font-size: 24px;
             font-weight: bold;
@@ -73,25 +85,62 @@ def setup_leaderboard_page(self):
             padding: 15px;
         }
     """)
-    self.label_title.setAlignment(Qt.AlignCenter)
-    layout.addWidget(self.label_title)
+    self.label_title_all_time.setAlignment(Qt.AlignCenter)
+    all_time_layout.addWidget(self.label_title_all_time)
 
-    # Table to display leaderboard data
-    self.table = QTableWidget(self)
-    self.table.setRowCount(10)  # Assuming top 10 entries
-    self.table.setColumnCount(3)  # Three columns: Rank, User, and THC-A Value
-    self.table.setHorizontalHeaderLabels(['Rank', 'User', 'THC-A Value'])
-    self.table.setEditTriggers(QTableWidget.NoEditTriggers)  # Make table read-only
-    self.table.horizontalHeader().setDefaultSectionSize(247)  # Adjust column width
-    self.table.verticalHeader().setDefaultSectionSize(75)  # Adjust row height
-    self.table.verticalHeader().setVisible(False)  # Hide vertical header
-    total_table_height = (self.table.verticalHeader().defaultSectionSize() * self.table.rowCount() +
-                          self.table.horizontalHeader().height() +
-                          self.table.frameWidth() * 2)
-    self.table.setFixedHeight(total_table_height)  # Set the fixed height for the table
-    self.table.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)  # Remove horizontal scrollbar
-    self.table.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)  # Remove vertical scrollbar
-    self.table.setStyleSheet("""
+    self.table_all_time = QTableWidget(self)
+    self.setup_table(self.table_all_time)
+    all_time_layout.addWidget(self.table_all_time)
+
+    outer_layout.addLayout(all_time_layout)
+
+    # Monthly Leaderboard
+    monthly_layout = QVBoxLayout()
+
+    self.label_title_monthly = QLabel('Top 10 THC-A Testers (Monthly)', self)
+    self.label_title_monthly.setStyleSheet("""
+        QLabel {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    """)
+    self.label_title_monthly.setAlignment(Qt.AlignCenter)
+    monthly_layout.addWidget(self.label_title_monthly)
+
+    self.table_monthly = QTableWidget(self)
+    self.setup_table(self.table_monthly)
+    monthly_layout.addWidget(self.table_monthly)
+
+    outer_layout.addLayout(monthly_layout)
+
+    self.ui.LeaderboardPage.setStyleSheet("background-color: #1b1b1b;")
+
+def setup_table(self, table):
+    """Sets up the properties of a leaderboard table"""
+    table.setRowCount(10)  # Assuming top 10 entries
+    table.setColumnCount(3)  # Three columns: Rank, User, and THC-A Value
+    table.setHorizontalHeaderLabels(['Rank', 'User', 'THC-A Value'])
+
+    table.setEditTriggers(QTableWidget.NoEditTriggers)  # Make table read-only
+    table.horizontalHeader().setDefaultSectionSize(251)  # Adjust column width
+    table.verticalHeader().setDefaultSectionSize(75)  # Adjust row height
+    table.verticalHeader().setVisible(False)  # Hide vertical header
+
+    table.horizontalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Fixed)  # Disable resizing of columns
+    table.verticalHeader().setSectionResizeMode(QtWidgets.QHeaderView.Fixed)  # Disable resizing of rows
+    table.setSelectionMode(QtWidgets.QAbstractItemView.NoSelection)  # Disable selection
+    table.setFocusPolicy(Qt.NoFocus)  # Disable focus
+
+    total_table_height = (table.verticalHeader().defaultSectionSize() * table.rowCount() +
+                          table.horizontalHeader().height() +
+                          table.frameWidth() * 2)
+    table.setFixedHeight(total_table_height)  # Set the fixed height for the table
+    table.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)  # Remove horizontal scrollbar
+    table.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)  # Remove vertical scrollbar
+    table.setStyleSheet("""
         QTableWidget {
             background-color: #2e2e2e;
             color: white;
@@ -104,7 +153,7 @@ def setup_leaderboard_page(self):
         QHeaderView::section {
             background-color: #444;
             color: white;
-            font-size: 18px;
+            font-size: 22px;
             padding: 15px;
             border: 1px solid #444;
         }
@@ -117,62 +166,67 @@ def setup_leaderboard_page(self):
         }
     """)
 
-    layout.addWidget(self.table)
-
-    self.ui.LeaderboardPage.setStyleSheet("background-color: #1b1b1b;")
-
-
-
 def display_leaderboard(self):
     kiosk_id = self.config.KioskID  # Retrieve the kiosk_id from the config
 
     try:
-        response = requests.get(f'http://127.0.0.1:5000/top-thca-testers?kiosk_id={kiosk_id}', headers={"Accept": "application/json"})
-        response.raise_for_status()  # Raise an exception for HTTP errors
-        leaderboard_data = response.json()
+        # Fetch all-time leaderboard data
+        response_all_time = requests.get(f'http://127.0.0.1:5000/top-thca-testers?kiosk_id={kiosk_id}', headers={"Accept": "application/json"})
+        response_all_time.raise_for_status()  # Raise an exception for HTTP errors
+        leaderboard_data_all_time = response_all_time.json()
 
-        self.table.setRowCount(len(leaderboard_data))  # Adjust row count based on data
-        self.table.setColumnCount(3)  # Three columns: Rank, User, and THC-A Value
-        self.table.setHorizontalHeaderLabels(['Rank', 'User', 'THC-A Value'])
+        self.populate_table(self.table_all_time, leaderboard_data_all_time)
 
-        for idx, item in enumerate(leaderboard_data):
-            # Create rank item with medal images for top 3 spots
-            rank_label = QLabel()
-            rank_label.setAlignment(Qt.AlignCenter)
-            rank_label.setStyleSheet("background-color: #2e2e2e;")  # Set background color
+        # Fetch monthly leaderboard data
+        response_monthly = requests.get(f'http://127.0.0.1:5000/top-thca-testers-monthly?kiosk_id={kiosk_id}', headers={"Accept": "application/json"})
+        response_monthly.raise_for_status()  # Raise an exception for HTTP errors
+        leaderboard_data_monthly = response_monthly.json()
 
-            if idx == 0:
-                rank_label.setPixmap(QPixmap("/Users/tiki/Desktop/Monolith_Kiosk_Code/lib_gui/lib_gui/rank_medal_images/first_place_medal.png").scaled(70, 70, Qt.KeepAspectRatio, Qt.SmoothTransformation))
-            elif idx == 1:
-                rank_label.setPixmap(QPixmap("/Users/tiki/Desktop/Monolith_Kiosk_Code/lib_gui/lib_gui/rank_medal_images/second_place_medal.png").scaled(70, 70, Qt.KeepAspectRatio, Qt.SmoothTransformation))
-            elif idx == 2:
-                rank_label.setPixmap(QPixmap("/Users/tiki/Desktop/Monolith_Kiosk_Code/lib_gui/lib_gui/rank_medal_images/third_place_medal.png").scaled(70, 70, Qt.KeepAspectRatio, Qt.SmoothTransformation))
-            else:
-                rank_label.setText(f"#{idx + 1}")
-                rank_label.setAlignment(Qt.AlignCenter)
-                rank_label.setStyleSheet("""
-                    QLabel {
-                        color: white;
-                        background-color: #2e2e2e;
-                        font-size: 20px;
-                        font-weight: bold;
-                        border: 1px solid #444;
-                    }
-                """)
-
-            user_display = item['user'] if 'user' in item else f"UserID-{item['user_id']}"
-            user_item = QTableWidgetItem(user_display)
-            user_item.setTextAlignment(Qt.AlignCenter)
-            thca_item = QTableWidgetItem(f"{item['THC-A']:.2f}%")
-            thca_item.setTextAlignment(Qt.AlignCenter)
-
-            user_item.setFont(QFont("Arial", 20))  # Increase font size
-            thca_item.setFont(QFont("Arial", 20))  # Increase font size
-
-            self.table.setCellWidget(idx, 0, rank_label)
-            self.table.setItem(idx, 1, user_item)
-            self.table.setItem(idx, 2, thca_item)
+        self.populate_table(self.table_monthly, leaderboard_data_monthly)
 
     except Exception as e:
         print(f"Failed to retrieve leaderboard data: {e}")
         # Handle the error (e.g., display an error message on the UI)
+
+def populate_table(self, table, leaderboard_data):
+    """Populates a leaderboard table with data"""
+    table.setRowCount(len(leaderboard_data))  # Adjust row count based on data
+
+    for idx, item in enumerate(leaderboard_data):
+        # Create rank item with medal images for top 3 spots
+        rank_label = QLabel()
+        rank_label.setAlignment(Qt.AlignCenter)
+        rank_label.setStyleSheet("background-color: #2e2e2e;")  # Set background color
+
+        if idx == 0:
+            rank_label.setPixmap(QPixmap("/Users/tiki/Desktop/Monolith_Kiosk_Code/lib_gui/lib_gui/rank_medal_images/first_place_medal.png").scaled(70, 70, Qt.KeepAspectRatio, Qt.SmoothTransformation))
+        elif idx == 1:
+            rank_label.setPixmap(QPixmap("/Users/tiki/Desktop/Monolith_Kiosk_Code/lib_gui/lib_gui/rank_medal_images/second_place_medal.png").scaled(70, 70, Qt.KeepAspectRatio, Qt.SmoothTransformation))
+        elif idx == 2:
+            rank_label.setPixmap(QPixmap("/Users/tiki/Desktop/Monolith_Kiosk_Code/lib_gui/lib_gui/rank_medal_images/third_place_medal.png").scaled(70, 70, Qt.KeepAspectRatio, Qt.SmoothTransformation))
+        else:
+            rank_label.setText(f"#{idx + 1}")
+            rank_label.setAlignment(Qt.AlignCenter)
+            rank_label.setStyleSheet("""
+                QLabel {
+                    color: white;
+                    background-color: #2e2e2e;
+                    font-size: 20px;
+                    font-weight: bold;
+                    border: 1px solid #444;
+                }
+            """)
+
+        user_display = item['user'] if 'user' in item else f"UserID-{item['user_id']}"
+        user_item = QTableWidgetItem(user_display)
+        user_item.setTextAlignment(Qt.AlignCenter)
+        thca_item = QTableWidgetItem(f"{item['THC-A']:.2f}%")
+        thca_item.setTextAlignment(Qt.AlignCenter)
+
+        user_item.setFont(QFont("Arial", 20))  # Increase font size
+        thca_item.setFont(QFont("Arial", 20))  # Increase font size
+
+        table.setCellWidget(idx, 0, rank_label)
+        table.setItem(idx, 1, user_item)
+        table.setItem(idx, 2, thca_item)
+

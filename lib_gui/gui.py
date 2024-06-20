@@ -252,7 +252,8 @@ class GUI(QtWidgets.QMainWindow):
 
     # Leaderboard Page methods
     from .pages.leaderboard import (switch_to_leaderboard_page, connect_leaderboard_buttons, setup_leaderboard_page,
-                                    display_leaderboard, leaderboard_back_to_start_page, LeaderboardPageTimeoutCallback)
+                                    display_leaderboard, leaderboard_back_to_start_page, LeaderboardPageTimeoutCallback,
+                                    reset_leaderboard_scroll, setup_table, populate_table)
 
     # Keyboard shortcut methods
     from .actions import connect_shortcuts
