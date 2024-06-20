@@ -207,7 +207,7 @@ class GUI(QtWidgets.QMainWindow):
     # Before proceeding page
     from .pages.before_proceeding_page import switch_to_before_proceeding_page, connect_before_proceeding_buttons, before_proceeding_confirm
     # Rescan results page
-    from .pages.rescan_results_page import switch_to_rescan_page, connect_rescan_buttons
+    from .pages.rescan_results_page import switch_to_rescan_page, connect_rescan_buttons, on_cancel_test, on_rescan_test, on_see_results
     # Confirm removal page
     from .pages.confirm_removal_page import switch_to_confirm_removal_page, connect_confirm_removal_buttons, confirm_removal
 
