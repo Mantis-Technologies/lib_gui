@@ -77,14 +77,14 @@ def handle_existing_user_button(self):
     else:
         user_credentials = {"username": existing_user_text}
 
-    email, username = find_user(user_credentials)
+    email, username, points = find_user(user_credentials)
 
     if email or username:
         print("User found.")
         msg_box = CustomMessageBox(self)
         msg_box.setText("The email or username was found.")
         msg_box.show()
-        self.user_data_valid.emit(email, username)
+        self.user_data_valid.emit(email, username, points)
 
         # Maybe wait for a few seconds before switching
         QTimer.singleShot(4000, self.switch_to_instruction_page)
