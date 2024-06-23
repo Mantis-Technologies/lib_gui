@@ -22,7 +22,7 @@ def switch_to_finduseradduser_page(self):
     self._switch_to_page(Page.FINDUSERADDUSER)
 
 
-def skip_button_finduseradduser(self):
+def handle_skip_button(self):
     """Switches to the next page, the instruction page"""
     # override this function to add additional capability before switching the page
     self.switch_to_instruction_page()
@@ -94,22 +94,15 @@ def Validate_new_user_input(self) -> {}:
     return {"email": email, "username": username}
 
 
-def Verify_New_User_information(self, email_exists: bool, email: str, username_exists: bool, username: str):
+def Verify_New_User_information(self, email_exists: bool, username_exists: bool):
     if email_exists:
         ShowCustomMessage(self, "An account with this email already exists.")
-        return
+        return False
 
     if username_exists:
         ShowCustomMessage(self, "The username is already taken.")
-        return
-
-    ShowCustomMessage(self, "The email and username are valid.")
-
-    # If all checks pass, emit a signal with the email and username
-    self.user_data_valid.emit(email, username)
-
-    # Display message box for 4 seconds before switching
-    QTimer.singleShot(4000, self.switch_to_instruction_page)
+        return False
+    return True
 
 
 def handle_new_user_button(self):
@@ -118,7 +111,7 @@ def handle_new_user_button(self):
 
 
 def connect_finduseradduser_buttons(self):
-    self.skip_button_finduseradduser.clicked.connect(self.switch_to_instruction_page)
+    self.skip_button_finduseradduser.clicked.connect(self.handle_skip_button)
     self.existing_user_button.clicked.connect(self.handle_existing_user_button)
     self.new_user_button.clicked.connect(self.handle_new_user_button)
 
