@@ -13,7 +13,6 @@ import os
 import sys
 
 from PyQt5 import QtWidgets, uic
-from PyQt5.QtWidgets import QApplication
 from PyQt5.QtCore import pyqtSignal, Qt, QEvent
 from PyQt5.QtWidgets import QApplication, QWidget
 from PyQt5.QtGui import QFont
