@@ -175,10 +175,10 @@ def setTotalAnalyteLabels(self, analytes):
     self.TotalCbdLbl.setFont(font)
 
 
-def display_qr_code(self):
+def display_qr_code(self, qr_code_image: BytesIO):
     """Display the QR code on the results page"""
     pixmap = QPixmap()
-    if self.qr_code_image is not None:
+    if qr_code_image is not None:
         pixmap.loadFromData(self.qr_code_image.getvalue(), format="PNG")
         self.qr_code_label.setPixmap(pixmap.scaled(300, 300, Qt.KeepAspectRatio))
     else:
@@ -192,8 +192,8 @@ def setup_qr_code_label(self):
     self.qr_code_label.setAlignment(Qt.AlignCenter)
 
 
-def results_url_label_text(self):
-    self.results_url_label.setText(f"View your results at: {self.results_url}")
+def results_url_label_text(self, results_url: str):
+    self.results_url_label.setText(f"View your results at: {results_url}")
 
 
 def setup_results_url(self):

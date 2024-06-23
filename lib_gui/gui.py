@@ -29,9 +29,6 @@ class GUI(QtWidgets.QMainWindow):
     # Signal to pass the user email, username, points throughout the app
     user_data_valid = pyqtSignal(str, str, int)
 
-    qr_code_image = None
-    results_url = ""
-
     def __init__(self, debug=False, fake_backend: bool = False, fake_payment_terminal: bool = False):
         """Connects all buttons and switches to boot page"""
 
