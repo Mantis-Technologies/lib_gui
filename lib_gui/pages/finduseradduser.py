@@ -14,14 +14,12 @@ from PyQt5.uic import loadUi
 from PyQt5.QtWidgets import QLineEdit, QPushButton, QMessageBox, QVBoxLayout, QDialog
 import re
 from lib_keyboard.keyboard import CustomKeyboard
-from lib_kiosk.find_user import find_user
-from lib_kiosk.check_new_user import check_new_user
 from better_profanity import profanity
-
 
 # Subclass for QMessage boxes
 from PyQt5.QtWidgets import QMessageBox
 from PyQt5.QtCore import QTimer, Qt
+
 
 class CustomMessageBox(QMessageBox):
     def __init__(self, parent=None, *args, **kwargs):
@@ -77,7 +75,7 @@ def handle_existing_user_button(self):
     else:
         user_credentials = {"username": existing_user_text}
 
-    email, username, points = find_user(user_credentials)
+    email, username, points = self.User_Database_Interface.find_user(user_credentials)
 
     if email or username:
         print("User found.")
@@ -94,6 +92,7 @@ def handle_existing_user_button(self):
         msg_box = CustomMessageBox(self)
         msg_box.setText("No user found with the provided email or username.")
         msg_box.show()
+
 
 def handle_new_user_button(self):
     """Checks if emails match, if they are valid emails, and ensures that the username is not profane.
@@ -134,7 +133,7 @@ def handle_new_user_button(self):
     # Check if email or username already exists
     # Check if email or username already exists
     user_credentials = {"email": email, "username": username}
-    email_exists, username_exists = check_new_user(user_credentials)
+    email_exists, username_exists = self.User_Database_Interface.check_new_user(user_credentials)
 
     if email_exists:
         msg_box = CustomMessageBox(self)
@@ -156,7 +155,7 @@ def handle_new_user_button(self):
     self.user_data_valid.emit(email, username)
 
     # Maybe wait for a few seconds before switching
-    QTimer.singleShot(4000, self.switch_to_instruction_page)
+    #QTimer.singleShot(4000, self.switch_to_instruction_page)
 
 
 def connect_finduseradduser_buttons(self):
@@ -186,7 +185,7 @@ def show_keyboard(self, event, target_input):
     if not hasattr(self, 'keyboard'):
         self.keyboard = CustomKeyboard(target_input)
         self.keyboard.enterPressed.connect(self.keyboard.hide)
-        self.installEventFilter(self) # detects clicks outside the keyboard
+        self.installEventFilter(self)  # detects clicks outside the keyboard
     else:
         self.keyboard.target_input = target_input
 
@@ -195,10 +194,12 @@ def show_keyboard(self, event, target_input):
     self.keyboard.move(pos.x(), pos.y())
     self.keyboard.show()
 
+
 def hide_keyboard_if_exists(self):
     """Hide the keyboard if it exists."""
     if hasattr(self, 'keyboard'):
         self.keyboard.hide_keyboard()
+
 
 def eventFilter(self, obj, event):
     """Detects mouse click outside of the keyboard and hides keyboard"""
@@ -219,6 +220,7 @@ def focus_widget(self):
     elif self.username_input.hasFocus():
         return self.username_input
     return None
+
 
 def clear_text_fields(self):
     """Clear all QLineEdit fields."""
