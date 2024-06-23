@@ -10,45 +10,11 @@ __email__ = "mike@cannacheckkiosk.com"
 
 from ..page import Page
 from PyQt5.QtCore import Qt, QEvent, QTimer
-from PyQt5.uic import loadUi
 from PyQt5.QtWidgets import QLineEdit, QPushButton, QMessageBox, QVBoxLayout, QDialog
 import re
 from lib_keyboard.keyboard import CustomKeyboard
 from better_profanity import profanity
-
-# Subclass for QMessage boxes
-from PyQt5.QtWidgets import QMessageBox
-from PyQt5.QtCore import QTimer, Qt
-
-
-class CustomMessageBox(QMessageBox):
-    def __init__(self, parent=None, *args, **kwargs):
-        super(CustomMessageBox, self).__init__(parent, *args, **kwargs)
-        self.setWindowFlags(Qt.FramelessWindowHint | Qt.WindowStaysOnTopHint | Qt.Dialog)
-
-        # print("CustomMessageBox created")  # Debug print
-
-        # Set a timer to close the message box after 4 seconds (4000 milliseconds)
-        self.timer = QTimer(self)
-        self.timer.setSingleShot(True)
-        self.timer.timeout.connect(self.handle_close)
-        self.timer.start(4000)
-        # print("Timer started for 4 seconds")  # Debug print
-
-        # Ensure the message box appears in front
-        self.raise_()
-        self.activateWindow()
-
-        # Remove default buttons
-        self.setStandardButtons(QMessageBox.NoButton)
-
-    def showEvent(self, event):
-        super(CustomMessageBox, self).showEvent(event)
-        # print("CustomMessageBox shown")  # Debug print
-
-    def handle_close(self):
-        # print("Handling CustomMessageBox close")  # Debug print
-        self.accept()  # Close the message box
+from ..Custom_Message_Dialog import ShowCustomMessage
 
 
 def switch_to_finduseradduser_page(self):
@@ -58,12 +24,16 @@ def switch_to_finduseradduser_page(self):
 
 def skip_button_finduseradduser(self):
     """Switches to the next page, the instruction page"""
-    self.clear_user_data()  # Clear the user data so the previous user is not sent the results
+    # override this function to add additional capability before switching the page
     self.switch_to_instruction_page()
 
 
 def handle_existing_user_button(self):
-    """Sends existing user to find_user function in lib_kiosk, which sends to website to query db"""
+    # override this function
+    pass
+
+
+def Get_User_Credentials_From_Existing_User_Input(self) -> {}:
     existing_user_text = self.existing_user_input.text()
     user_credentials = {}
 
@@ -74,29 +44,27 @@ def handle_existing_user_button(self):
         user_credentials = {"email": existing_user_text}
     else:
         user_credentials = {"username": existing_user_text}
+    return user_credentials
 
-    email, username, points = self.User_Database_Interface.find_user(user_credentials)
 
+def Verify_Existing_User_information(self, email: str, username: str, points: int):
     if email or username:
         print("User found.")
-        msg_box = CustomMessageBox(self)
-        msg_box.setText("The email or username was found.")
-        msg_box.show()
+        ShowCustomMessage(self, "The email or username was found.")
+
         self.user_data_valid.emit(email, username, points)
 
-        # Maybe wait for a few seconds before switching
+        # Display Message Box for 4 seconds before switching
         QTimer.singleShot(4000, self.switch_to_instruction_page)
 
     else:
         print("User not found.")
-        msg_box = CustomMessageBox(self)
-        msg_box.setText("No user found with the provided email or username.")
-        msg_box.show()
+        ShowCustomMessage(self, "No user found with the provided email or username.")
 
 
-def handle_new_user_button(self):
+def Validate_new_user_input(self) -> {}:
     """Checks if emails match, if they are valid emails, and ensures that the username is not profane.
-    Returns username and email if valid."""
+       Returns username and email if valid."""
 
     email = self.new_user_email_input.text()
     confirm_email = self.confirm_email_input.text()
@@ -107,17 +75,13 @@ def handle_new_user_button(self):
 
     # Check if emails are valid
     if not re.match(email_regex, email):
-        msg_box = CustomMessageBox(self)
-        msg_box.setText("Please enter a valid email address.")
-        msg_box.show()
-        return
+        ShowCustomMessage(self, "Please enter a valid email address.")
+        return None
 
     # Check if emails match
     if email != confirm_email:
-        msg_box = CustomMessageBox(self)
-        msg_box.setText("The email addresses do not match.")
-        msg_box.show()
-        return
+        ShowCustomMessage(self, "The email addresses do not match.")
+        return None
 
     # Check for profanity in the username
     # Initialize the profanity filter
@@ -125,37 +89,32 @@ def handle_new_user_button(self):
 
     # Check for profanity in the username
     if profanity.contains_profanity(username):
-        msg_box = CustomMessageBox(self)
-        msg_box.setText("The username contains inappropriate content.")
-        msg_box.show()
-        return
+        ShowCustomMessage(self, "The username contains inappropriate content.")
+        return None
+    return {"email": email, "username": username}
 
-    # Check if email or username already exists
-    # Check if email or username already exists
-    user_credentials = {"email": email, "username": username}
-    email_exists, username_exists = self.User_Database_Interface.check_new_user(user_credentials)
 
+def Verify_New_User_information(self, email_exists: bool, email: str, username_exists: bool, username: str):
     if email_exists:
-        msg_box = CustomMessageBox(self)
-        msg_box.setText("An account with this email already exists.")
-        msg_box.show()
+        ShowCustomMessage(self, "An account with this email already exists.")
         return
 
     if username_exists:
-        msg_box = CustomMessageBox(self)
-        msg_box.setText("The username is already taken.")
-        msg_box.show()
+        ShowCustomMessage(self, "The username is already taken.")
         return
 
-    msg_box = CustomMessageBox(self)
-    msg_box.setText("The email and username are valid.")
-    msg_box.show()
+    ShowCustomMessage(self, "The email and username are valid.")
 
     # If all checks pass, emit a signal with the email and username
     self.user_data_valid.emit(email, username)
 
-    # Maybe wait for a few seconds before switching
-    #QTimer.singleShot(4000, self.switch_to_instruction_page)
+    # Display message box for 4 seconds before switching
+    QTimer.singleShot(4000, self.switch_to_instruction_page)
+
+
+def handle_new_user_button(self):
+    # override this function
+    pass
 
 
 def connect_finduseradduser_buttons(self):

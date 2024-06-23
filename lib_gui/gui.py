@@ -29,6 +29,9 @@ class GUI(QtWidgets.QMainWindow):
     # Signal to pass the user email, username, points throughout the app
     user_data_valid = pyqtSignal(str, str, int)
 
+    qr_code_image = None
+    results_url = ""
+
     def __init__(self, debug=False, fake_backend: bool = False, fake_payment_terminal: bool = False):
         """Connects all buttons and switches to boot page"""
 
@@ -242,7 +245,9 @@ class GUI(QtWidgets.QMainWindow):
     # Find User / Add User Page
     from .pages.finduseradduser import (switch_to_finduseradduser_page, connect_finduseradduser_buttons,
                                         skip_button_finduseradduser, handle_existing_user_button, handle_new_user_button,
-                                        setup_finduser_adduser_page, show_keyboard, focus_widget, clear_text_fields)
+                                        setup_finduser_adduser_page, show_keyboard, focus_widget, clear_text_fields,
+                                        Get_User_Credentials_From_Existing_User_Input, Verify_Existing_User_information,
+                                        Verify_New_User_information, Validate_new_user_input)
 
     # About page NO LONGER USING THE ABOUT PAGE, REPLACED WITH FAQ
     # from .pages.About_page import (switch_to_about_page, connect_about_buttons, AboutPageTimeoutCallback,

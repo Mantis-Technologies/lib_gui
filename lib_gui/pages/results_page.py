@@ -178,7 +178,7 @@ def setTotalAnalyteLabels(self, analytes):
 def display_qr_code(self):
     """Display the QR code on the results page"""
     pixmap = QPixmap()
-    if self.qr_code_image:
+    if self.qr_code_image is not None:
         pixmap.loadFromData(self.qr_code_image.getvalue(), format="PNG")
         self.qr_code_label.setPixmap(pixmap.scaled(300, 300, Qt.KeepAspectRatio))
     else:
@@ -191,8 +191,10 @@ def setup_qr_code_label(self):
     self.qr_code_label.setGeometry(150, 200, 300, 300)
     self.qr_code_label.setAlignment(Qt.AlignCenter)
 
+
 def results_url_label_text(self):
     self.results_url_label.setText(f"View your results at: {self.results_url}")
+
 
 def setup_results_url(self):
     results_url_widget = self.stackedWidget.widget(Page.RESULTS.value)
@@ -200,4 +202,3 @@ def setup_results_url(self):
     self.results_url_label.setGeometry(50, 510, 500, 30)
     self.results_url_label.setAlignment(Qt.AlignCenter)
     self.results_url_label.setStyleSheet("font-size: 14px; color: white; background-color: rgba(255, 255, 255, 0)")
-
