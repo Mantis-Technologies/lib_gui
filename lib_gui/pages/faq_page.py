@@ -142,7 +142,7 @@ def setup_faq_page(self):
                 (os.path.join(image_dir, "CBDtit Scatter copy.png"), "CBD Total Scatter (x: actual, y: predicted)"),
                 (os.path.join(image_dir, "Trip Scatter THC copy.png"), "Triplicate Scatter THC (x: actual, y: predicted)"),
                 (os.path.join(image_dir, "Trip Scatter CBD copy.png"), "Triplicate Scatter CBD (x: actual, y: predicted)"),
-                (os.path.join(image_dir, "PLS Val Errors copy.png"), "PLS Validation Errors (count of errors spread from zero")
+                (os.path.join(image_dir, "PLS Val Errors copy.png"), "PLS Validation Errors (deviations from zero % error)")
             ])
         else:
             faq_data = self.add_faq(scroll_layout, question, answer)

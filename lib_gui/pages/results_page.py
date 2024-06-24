@@ -179,7 +179,7 @@ def display_qr_code(self, qr_code_image: BytesIO):
     """Display the QR code on the results page"""
     pixmap = QPixmap()
     if qr_code_image is not None:
-        pixmap.loadFromData(self.qr_code_image.getvalue(), format="PNG")
+        pixmap.loadFromData(qr_code_image.getvalue(), format="PNG")
         self.qr_code_label.setPixmap(pixmap.scaled(300, 300, Qt.KeepAspectRatio))
     else:
         print("No QR Code Image available")
