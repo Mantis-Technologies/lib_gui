@@ -170,6 +170,10 @@ def display_leaderboard(self):
     kiosk_id = self.config.KioskID  # Retrieve the kiosk_id from the config
 
     try:
+        #TODO break out the functions to request data from the website and add them to lib_kiosk User_Database_interface and
+        # have this function take in the retrieved data. This library is public. We do not want the urls to access the backend features
+        # of our website shown, and we don't need lib_gui doing back end work
+        
         # Fetch all-time leaderboard data
         response_all_time = requests.get(f'http://127.0.0.1:5000/top-thca-testers?kiosk_id={kiosk_id}', headers={"Accept": "application/json"})
         response_all_time.raise_for_status()  # Raise an exception for HTTP errors
@@ -197,7 +201,7 @@ def populate_table(self, table, leaderboard_data):
         rank_label = QLabel()
         rank_label.setAlignment(Qt.AlignCenter)
         rank_label.setStyleSheet("background-color: #2e2e2e;")  # Set background color
-
+        #TODO remove absolute paths. See Lib_kiosk ReceiptPDFGenerator.py for an example on getting a file from a relative path
         if idx == 0:
             rank_label.setPixmap(QPixmap("/Users/tiki/Desktop/Monolith_Kiosk_Code/lib_gui/lib_gui/rank_medal_images/first_place_medal.png").scaled(70, 70, Qt.KeepAspectRatio, Qt.SmoothTransformation))
         elif idx == 1:
