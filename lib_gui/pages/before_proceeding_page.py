@@ -19,7 +19,7 @@ def switch_to_before_proceeding_page(self):
 
 def before_proceeding_confirm(self):
     if self.check_if_button_is_ok_to_press("Before Proceeding Confirm", 2.0):
-        self.switch_to_payment_page()
+        self.switch_to_finduseradduser_page()
 
 
 def connect_before_proceeding_buttons(self):

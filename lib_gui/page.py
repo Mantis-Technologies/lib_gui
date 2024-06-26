@@ -33,3 +33,4 @@ class Page(Enum):
     FINDUSERADDUSER = 17
     FAQ = 18
     LEADERBOARD = 19
+    APPLYPOINTS = 20

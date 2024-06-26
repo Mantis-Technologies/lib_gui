@@ -266,6 +266,8 @@ class GUI(QtWidgets.QMainWindow):
                                     display_leaderboard, leaderboard_back_to_start_page, LeaderboardPageTimeoutCallback,
                                     reset_leaderboard_scroll, setup_table, populate_table)
 
+    from .pages.ApplyPointsPage import switch_to_ApplyPointsPage, connect_ApplyPointsPage_buttons, Skip_PointsApplied, Confirm_PointsApplied
+
     # Keyboard shortcut methods
     from .actions import connect_shortcuts
     from .actions import _move_to_next_screen

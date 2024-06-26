@@ -52,9 +52,6 @@ def Verify_Existing_User_information(self, email: str, username: str, points: in
         print("User found.")
         ShowCustomMessage(self, "The email or username was found.")
 
-        # Display Message Box for 4 seconds before switching
-        QTimer.singleShot(4000, self.switch_to_instruction_page)
-
     else:
         print("User not found.")
         ShowCustomMessage(self, "No user found with the provided email or username.")
