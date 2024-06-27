@@ -266,7 +266,8 @@ class GUI(QtWidgets.QMainWindow):
     # Leaderboard Page methods
     from .pages.leaderboard import (switch_to_leaderboard_page, connect_leaderboard_buttons, setup_leaderboard_page,
                                     display_leaderboard, leaderboard_back_to_start_page, LeaderboardPageTimeoutCallback,
-                                    reset_leaderboard_scroll, setup_table, populate_table)
+                                    reset_leaderboard_scroll, setup_table, populate_table, get_monthly_leaderboard_data,
+                                    get_relative_path, get_all_time_leaderboard_data)
 
     from .pages.ApplyPointsPage import switch_to_ApplyPointsPage, connect_ApplyPointsPage_buttons, Skip_PointsApplied, Confirm_PointsApplied
 

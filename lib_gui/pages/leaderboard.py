@@ -15,6 +15,7 @@ from PyQt5.QtCore import QThread, pyqtSignal, Qt
 from PyQt5.QtGui import QColor, QFont, QPalette, QIcon, QPixmap, QImage
 import time
 import requests
+import os
 
 
 def switch_to_leaderboard_page(self):
@@ -166,31 +167,37 @@ def setup_table(self, table):
         }
     """)
 
+
 def display_leaderboard(self):
     kiosk_id = self.config.KioskID  # Retrieve the kiosk_id from the config
 
     try:
-        #TODO break out the functions to request data from the website and add them to lib_kiosk User_Database_interface and
-        # have this function take in the retrieved data. This library is public. We do not want the urls to access the backend features
-        # of our website shown, and we don't need lib_gui doing back end work
-        
         # Fetch all-time leaderboard data
-        response_all_time = requests.get(f'http://127.0.0.1:5000/top-thca-testers?kiosk_id={kiosk_id}', headers={"Accept": "application/json"})
-        response_all_time.raise_for_status()  # Raise an exception for HTTP errors
-        leaderboard_data_all_time = response_all_time.json()
-
+        leaderboard_data_all_time = self.get_all_time_leaderboard_data(kiosk_id)
         self.populate_table(self.table_all_time, leaderboard_data_all_time)
 
         # Fetch monthly leaderboard data
-        response_monthly = requests.get(f'http://127.0.0.1:5000/top-thca-testers-monthly?kiosk_id={kiosk_id}', headers={"Accept": "application/json"})
-        response_monthly.raise_for_status()  # Raise an exception for HTTP errors
-        leaderboard_data_monthly = response_monthly.json()
-
+        leaderboard_data_monthly = self.get_monthly_leaderboard_data(kiosk_id)
         self.populate_table(self.table_monthly, leaderboard_data_monthly)
 
     except Exception as e:
         print(f"Failed to retrieve leaderboard data: {e}")
         # Handle the error (e.g., display an error message on the UI)
+
+def get_all_time_leaderboard_data(self, kiosk_id):
+    # This method will be overridden in lib_kiosk
+    pass
+
+
+def get_monthly_leaderboard_data(self, kiosk_id):
+    # This method will be overridden in lib_kiosk
+    pass
+
+def get_relative_path(relative_path):
+    # Adjust the base path to point to the lib_gui directory
+    base_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), '..')
+    full_path = os.path.normpath(os.path.join(base_path, relative_path))
+    return full_path
 
 def populate_table(self, table, leaderboard_data):
     """Populates a leaderboard table with data"""
@@ -201,13 +208,13 @@ def populate_table(self, table, leaderboard_data):
         rank_label = QLabel()
         rank_label.setAlignment(Qt.AlignCenter)
         rank_label.setStyleSheet("background-color: #2e2e2e;")  # Set background color
-        #TODO remove absolute paths. See Lib_kiosk ReceiptPDFGenerator.py for an example on getting a file from a relative path
+
         if idx == 0:
-            rank_label.setPixmap(QPixmap("/Users/tiki/Desktop/Monolith_Kiosk_Code/lib_gui/lib_gui/rank_medal_images/first_place_medal.png").scaled(70, 70, Qt.KeepAspectRatio, Qt.SmoothTransformation))
+            rank_label.setPixmap(QPixmap(get_relative_path("rank_medal_images/first_place_medal.png")).scaled(70, 70, Qt.KeepAspectRatio, Qt.SmoothTransformation))
         elif idx == 1:
-            rank_label.setPixmap(QPixmap("/Users/tiki/Desktop/Monolith_Kiosk_Code/lib_gui/lib_gui/rank_medal_images/second_place_medal.png").scaled(70, 70, Qt.KeepAspectRatio, Qt.SmoothTransformation))
+            rank_label.setPixmap(QPixmap(get_relative_path("rank_medal_images/second_place_medal.png")).scaled(70, 70, Qt.KeepAspectRatio, Qt.SmoothTransformation))
         elif idx == 2:
-            rank_label.setPixmap(QPixmap("/Users/tiki/Desktop/Monolith_Kiosk_Code/lib_gui/lib_gui/rank_medal_images/third_place_medal.png").scaled(70, 70, Qt.KeepAspectRatio, Qt.SmoothTransformation))
+            rank_label.setPixmap(QPixmap(get_relative_path("rank_medal_images/third_place_medal.png")).scaled(70, 70, Qt.KeepAspectRatio, Qt.SmoothTransformation))
         else:
             rank_label.setText(f"#{idx + 1}")
             rank_label.setAlignment(Qt.AlignCenter)
