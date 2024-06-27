@@ -1869,7 +1869,7 @@ p, li { white-space: pre-wrap; }
        <string>Confirm</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_19">
+     <widget class="QLabel" name="User_Total_Points_lbl">
       <property name="geometry">
        <rect>
         <x>1520</x>
@@ -1882,7 +1882,7 @@ p, li { white-space: pre-wrap; }
        <string>Display user points count here</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_20">
+     <widget class="QLabel" name="Welcome_lbl">
       <property name="geometry">
        <rect>
         <x>840</x>
@@ -1895,7 +1895,7 @@ p, li { white-space: pre-wrap; }
        <string>Welcome the user here</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_21">
+     <widget class="QLabel" name="Points_Being_Applied_lbl">
       <property name="geometry">
        <rect>
         <x>1520</x>
@@ -1905,10 +1905,10 @@ p, li { white-space: pre-wrap; }
        </rect>
       </property>
       <property name="text">
-       <string>Show points being applied here along with discount</string>
+       <string>Show points being applied here</string>
       </property>
      </widget>
-     <widget class="QLabel" name="label_22">
+     <widget class="QLabel" name="Price_Adjustment_lbl">
       <property name="geometry">
        <rect>
         <x>1530</x>
@@ -1987,7 +1987,7 @@ p, li { white-space: pre-wrap; }
        <string>50% Off</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="Apply_Max_Points_Button">
+     <widget class="QPushButton" name="Discount_100_Percent_Button">
       <property name="geometry">
        <rect>
         <x>970</x>
@@ -2009,7 +2009,7 @@ p, li { white-space: pre-wrap; }
        <string>100% Off</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="Discount_50_Percent_Button_2">
+     <widget class="QPushButton" name="Apply_Max_Points_Button">
       <property name="geometry">
        <rect>
         <x>685</x>
@@ -2028,7 +2028,7 @@ p, li { white-space: pre-wrap; }
        <string notr="true">border-radius: 30px; background-color: #0289c7; border: 2px solid white; color: rgb(255, 255, 255)</string>
       </property>
       <property name="text">
-       <string>Apply Max Points</string>
+       <string>Apply All</string>
       </property>
      </widget>
     </widget>
