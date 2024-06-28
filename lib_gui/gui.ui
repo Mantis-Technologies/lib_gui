@@ -1987,7 +1987,7 @@ p, li { white-space: pre-wrap; }
        <string>50% Off</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="Discount_100_Percent_Button">
+     <widget class="QPushButton" name="Max_Discount_Button">
       <property name="geometry">
        <rect>
         <x>970</x>
@@ -2006,29 +2006,7 @@ p, li { white-space: pre-wrap; }
        <string notr="true">border-radius: 30px; background-color: #0289c7; border: 2px solid white; color: rgb(255, 255, 255)</string>
       </property>
       <property name="text">
-       <string>100% Off</string>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="Apply_Max_Points_Button">
-      <property name="geometry">
-       <rect>
-        <x>685</x>
-        <y>720</y>
-        <width>550</width>
-        <height>200</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Arial</family>
-        <pointsize>30</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border-radius: 30px; background-color: #0289c7; border: 2px solid white; color: rgb(255, 255, 255)</string>
-      </property>
-      <property name="text">
-       <string>Apply All</string>
+       <string>Max Discount Here</string>
       </property>
      </widget>
     </widget>

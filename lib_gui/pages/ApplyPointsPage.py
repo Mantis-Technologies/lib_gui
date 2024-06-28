@@ -29,14 +29,12 @@ def switch_to_ApplyPointsPage(self, user_name: str, user_point_count: int, value
     enable50PercentDiscount = points_for_free_test / 2.0 <= user_point_count_float
     self.Discount_50_Percent_Button.setEnabled(enable50PercentDiscount)
 
-    enable100PercentDiscount = points_for_free_test <= user_point_count_float
-    self.Discount_100_Percent_Button.setEnabled(enable100PercentDiscount)
-
-    if enable100PercentDiscount:  # if the user has enough points for a free test, no point in allowing them to apply the max amount of points. just hide the button
-        self.Apply_Max_Points_Button.hide()
-        self.Apply_Max_Points_Button.setEnabled(False)
-
-
+    if user_point_count >= points_for_free_test:
+        self.Max_Discount_Button.setText("100% Off")
+    else:
+        maxPercentDiscount = round(float(user_point_count) / float(points_for_free_test) * 100.0, 2)
+        max_points_string = f"{maxPercentDiscount}% Off\n({user_point_count} points)"
+        self.Max_Discount_Button.setText(max_points_string)
 
     """Switch to confirmation page"""
     self._switch_to_page(Page.APPLYPOINTS)
