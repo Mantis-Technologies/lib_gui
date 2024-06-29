@@ -92,7 +92,7 @@ class GUI(QtWidgets.QMainWindow):
         # Set up pie chart
         self.setup_pie_chart()
         #connect apply points page buttons
-        self.connect_ApplyPointsPage_buttons()
+        self.connect_apply_points_page_buttons()
         # Remove pointless info
         self.setWindowFlag(Qt.FramelessWindowHint)
         # This is only for when in use by a lab
@@ -169,7 +169,7 @@ class GUI(QtWidgets.QMainWindow):
     def check_if_button_is_ok_to_press(self, button_key: str, seconds_to_wait: float) -> bool:
         current_time = time.time()
         timeSinceButtonPress = current_time - self.button_delay_map[button_key]
-        okToPress =  timeSinceButtonPress > seconds_to_wait
+        okToPress = timeSinceButtonPress > seconds_to_wait
         if okToPress is False:
             print("ignoring button press")
         return okToPress
@@ -269,7 +269,9 @@ class GUI(QtWidgets.QMainWindow):
                                     reset_leaderboard_scroll, setup_table, populate_table, get_monthly_leaderboard_data,
                                     get_relative_path, get_all_time_leaderboard_data)
 
-    from .pages.ApplyPointsPage import switch_to_ApplyPointsPage, connect_ApplyPointsPage_buttons, Skip_PointsApplied, Confirm_PointsApplied
+    from .pages.ApplyPointsPage import (switch_to_ApplyPointsPage, connect_apply_points_page_buttons,
+        Skip_PointsApplied, Confirm_PointsApplied, Apply10PercentDiscount, Apply25PercentDiscount,
+        Apply50PercentDiscount, ApplyMaxDiscount, SetPointsAppliedLabel)
 
     # Keyboard shortcut methods
     from .actions import connect_shortcuts
