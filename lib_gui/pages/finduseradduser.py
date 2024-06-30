@@ -47,15 +47,6 @@ def Get_User_Credentials_From_Existing_User_Input(self) -> {}:
     return user_credentials
 
 
-def Verify_Existing_User_information(self, email: str, username: str, points: int):
-    if email or username:
-        print("User found.")
-        ShowCustomMessage(self, "The email or username was found.")
-
-    else:
-        print("User not found.")
-        ShowCustomMessage(self, "No user found with the provided email or username.")
-
 
 def Validate_new_user_input(self) -> {}:
     """Checks if emails match, if they are valid emails, and ensures that the username is not profane.

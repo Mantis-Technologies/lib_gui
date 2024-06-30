@@ -241,7 +241,7 @@ class GUI(QtWidgets.QMainWindow):
     from .pages.finduseradduser import (switch_to_finduseradduser_page, connect_finduseradduser_buttons,
                                         handle_skip_button, handle_existing_user_button, handle_new_user_button,
                                         setup_finduser_adduser_page, show_keyboard, focus_widget, clear_text_fields,
-                                        Get_User_Credentials_From_Existing_User_Input, Verify_Existing_User_information,
+                                        Get_User_Credentials_From_Existing_User_Input,
                                         Verify_New_User_information, Validate_new_user_input)
 
     # About page NO LONGER USING THE ABOUT PAGE, REPLACED WITH FAQ

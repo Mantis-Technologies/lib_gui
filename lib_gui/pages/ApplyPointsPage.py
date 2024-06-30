@@ -11,9 +11,7 @@ __email__ = "nickjl0809@gmail.com"
 from ..page import Page
 
 
-def switch_to_ApplyPointsPage(self, user_name: str, user_point_count: int, value_per_point: int, cost_of_test: int):
-    self.Welcome_lbl.setText("Welcome " + user_name)
-    self.User_Total_Points_lbl.setText("You have " + str(user_point_count) + " points")
+def switch_to_ApplyPointsPage(self, user_point_count: int, value_per_point: int, cost_of_test: int):
     points_for_free_test = round(float(cost_of_test) / float(value_per_point))
 
     user_point_count_float = float(user_point_count)

@@ -50,12 +50,15 @@ def set_results_labels(self, analytes):
     self.setTotalAnalyteLabels(analytes)
 
 
-def set_points_earned_label(self, points_earned: int):
+def set_points_earned_label(self, points_earned: int, is_guest: bool):
     if points_earned == 0:
         self.Points_earned_lbl.hide()
     else:
         self.Points_earned_lbl.show()
-        pointsString = f'< p > < span style = "font-size:20px;" > You Earned < / span > < br > < span style = ' \
+        initialString = "You Earned"
+        if is_guest:
+            initialString = "You Could Have Earned"
+        pointsString = f'< p >< span style = "font-size:20px;" >{initialString}< / span > < br > < span style = ' \
                        f'"font-size:40px;" > {points_earned} Points < / span > < / p >'
         self.Points_earned_lbl.setText(pointsString)
 
