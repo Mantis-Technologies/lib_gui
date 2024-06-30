@@ -82,9 +82,15 @@ def SetPointsAppliedLabel(self, cost_of_test_dollars: float, points_applied: int
     final_cost_dollars = cost_of_test_dollars - discount_dollars
     final_cost_dollars_string = f"{final_cost_dollars:.2f}"  # ensure we round to 2 decimals
 
+    final_cost_cents = max(int(round(final_cost_dollars*100.0)), 0)# force int and 0 as minimum value
+
     if points_applied > 0:
         test_cost_string = f'<span style="color: red; text-decoration: line-through;">${cost_of_test_dollars_string}</span>\n'
-        test_cost_string = test_cost_string + f'${final_cost_dollars_string}'
+        if final_cost_cents == 0:
+            test_cost_string = test_cost_string + "FREE"
+        else:
+            test_cost_string = f'<span style="color: red; text-decoration: line-through;">${cost_of_test_dollars_string}</span>\n'
+            test_cost_string = test_cost_string + f'${final_cost_dollars_string}'
 
     else:
         test_cost_string = f'<span style="color: black;">{final_cost_dollars_string}</span>\n'  # black color is temporary

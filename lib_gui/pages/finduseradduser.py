@@ -14,7 +14,6 @@ from PyQt5.QtWidgets import QLineEdit, QPushButton, QMessageBox, QVBoxLayout, QD
 import re
 from lib_keyboard.keyboard import CustomKeyboard
 from better_profanity import profanity
-from ..Custom_Message_Dialog import ShowCustomMessage
 
 
 def switch_to_finduseradduser_page(self):
@@ -47,8 +46,7 @@ def Get_User_Credentials_From_Existing_User_Input(self) -> {}:
     return user_credentials
 
 
-
-def Validate_new_user_input(self) -> {}:
+def Validate_new_user_input(self) -> ({}, str):
     """Checks if emails match, if they are valid emails, and ensures that the username is not profane.
        Returns username and email if valid."""
 
@@ -61,13 +59,11 @@ def Validate_new_user_input(self) -> {}:
 
     # Check if emails are valid
     if not re.match(email_regex, email):
-        ShowCustomMessage(self, "Please enter a valid email address.")
-        return None
+        return {}, "Please enter a valid email address."
 
     # Check if emails match
     if email != confirm_email:
-        ShowCustomMessage(self, "The email addresses do not match.")
-        return None
+        return {}, "The email addresses do not match."
 
     # Check for profanity in the username
     # Initialize the profanity filter
@@ -75,20 +71,17 @@ def Validate_new_user_input(self) -> {}:
 
     # Check for profanity in the username
     if profanity.contains_profanity(username):
-        ShowCustomMessage(self, "The username contains inappropriate content.")
-        return None
-    return {"email": email, "username": username}
+        return {}, "The username contains inappropriate content."
+    return {"email": email, "username": username}, ""
 
 
-def Verify_New_User_information(self, email_exists: bool, username_exists: bool):
+def Verify_New_User_information(self, email_exists: bool, username_exists: bool) -> (bool, str):
     if email_exists:
-        ShowCustomMessage(self, "An account with this email already exists.")
-        return False
+        return False, "An account with this email already exists."
 
     if username_exists:
-        ShowCustomMessage(self, "The username is already taken.")
-        return False
-    return True
+        return False, "The username is already taken."
+    return True, ""
 
 
 def handle_new_user_button(self):

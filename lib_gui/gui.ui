@@ -34,7 +34,7 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="currentIndex">
-     <number>20</number>
+     <number>6</number>
     </property>
     <widget class="QWidget" name="BootingScreen">
      <widget class="QLabel" name="label_2">
@@ -980,7 +980,7 @@ p, li { white-space: pre-wrap; }
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-radius: 10px; background-color: #0289c7; border: 3px solid white;color:white</string>
+       <string notr="true">border-radius: 10px; background-color: #D8A444; border: 3px solid white;color:white</string>
       </property>
       <property name="text">
        <string>&lt;p&gt;&lt;span style=&quot;font-size:20px;&quot;&gt;You Earned&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size:40px;&quot;&gt;x Points&lt;/span&gt;&lt;/p&gt;</string>

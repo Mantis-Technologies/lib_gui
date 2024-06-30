@@ -37,7 +37,7 @@ class User_Banner(QWidget):
         # Define points for the custom shape
         points = [
             QPoint(0, 0),
-            QPoint(20, height),  # Point 50 pixels to the right from the bottom-left corner
+            QPoint(20, height),
             QPoint(width, height),  # Bottom-right corner
             QPoint(width, 0),  # Top-right corner
             QPoint(0, 0)  # Top-left corner
