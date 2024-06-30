@@ -218,7 +218,7 @@ class GUI(QtWidgets.QMainWindow):
     from .pages.results_page import UpdateChart
     from .pages.results_page import CreatePieSeries
     from .pages.results_page import setTotalAnalyteLabels, GenerateChartImage
-    from .pages.results_page import setup_qr_code_label, display_qr_code, setup_results_url, results_url_label_text
+    from .pages.results_page import setup_qr_code_label, display_qr_code, setup_results_url, results_url_label_text, set_points_earned_label
 
     # Configuring Keypad page
     from .pages.ConfiguringKeyPadPage import switch_to_ConfiguringKeyPad_page

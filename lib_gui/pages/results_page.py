@@ -50,6 +50,16 @@ def set_results_labels(self, analytes):
     self.setTotalAnalyteLabels(analytes)
 
 
+def set_points_earned_label(self, points_earned: int):
+    if points_earned == 0:
+        self.Points_earned_lbl.hide()
+    else:
+        self.Points_earned_lbl.show()
+        pointsString = f'< p > < span style = "font-size:20px;" > You Earned < / span > < br > < span style = ' \
+                       f'"font-size:40px;" > {points_earned} Points < / span > < / p >'
+        self.Points_earned_lbl.setText(pointsString)
+
+
 def done_w_results(self):
     """Done with results, move to start page"""
     if self.check_if_button_is_ok_to_press("Results confirm", 2.0):

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1920</width>
-    <height>1080</height>
+    <width>1918</width>
+    <height>1073</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -34,7 +34,7 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="currentIndex">
-     <number>20</number>
+     <number>6</number>
     </property>
     <widget class="QWidget" name="BootingScreen">
      <widget class="QLabel" name="label_2">
@@ -879,7 +879,7 @@ p, li { white-space: pre-wrap; }
      <widget class="QPushButton" name="finished_test_btn">
       <property name="geometry">
        <rect>
-        <x>39</x>
+        <x>40</x>
         <y>730</y>
         <width>540</width>
         <height>130</height>
@@ -970,10 +970,30 @@ p, li { white-space: pre-wrap; }
        <string>Total CBD</string>
       </property>
      </widget>
+     <widget class="QLabel" name="Points_earned_lbl">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>30</y>
+        <width>440</width>
+        <height>130</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 10px; background-color: #0289c7; border: 3px solid white;color:white</string>
+      </property>
+      <property name="text">
+       <string>&lt;p&gt;&lt;span style=&quot;font-size:20px;&quot;&gt;You Earned&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size:40px;&quot;&gt;x Points&lt;/span&gt;&lt;/p&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
      <zorder>label_4</zorder>
      <zorder>finished_test_btn</zorder>
      <zorder>TotalThcLbl</zorder>
      <zorder>TotalCbdLbl</zorder>
+     <zorder>Points_earned_lbl</zorder>
     </widget>
     <widget class="QWidget" name="ErrorPage">
      <widget class="QLabel" name="label_6">
