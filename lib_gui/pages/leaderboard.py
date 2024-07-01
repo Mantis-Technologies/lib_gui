@@ -16,7 +16,21 @@ from PyQt5.QtGui import QColor, QFont, QPalette, QIcon, QPixmap, QImage
 import time
 import requests
 import os
+from datetime import datetime, timedelta
 
+# Get the current date
+current_date = datetime.now()
+
+# Get the first day of the current month
+first_day_of_month = current_date.replace(day=1)
+
+# Calculate the last day of the current month
+next_month = first_day_of_month.replace(day=28) + timedelta(days=4)  # this will never fail
+last_day_of_month = next_month - timedelta(days=next_month.day)
+
+# Format the dates
+first_day_str = first_day_of_month.strftime('%m/%d/%y')
+last_day_str = last_day_of_month.strftime('%m/%d/%y')
 
 def switch_to_leaderboard_page(self):
     """Switches to the FAQ page"""
@@ -98,7 +112,7 @@ def setup_leaderboard_page(self):
     # Monthly Leaderboard
     monthly_layout = QVBoxLayout()
 
-    self.label_title_monthly = QLabel('Top 10 THC-A Testers (Monthly)', self)
+    self.label_title_monthly = QLabel(f'Top 10 THC-A Testers (Monthly: {first_day_str} - {last_day_str})', self)
     self.label_title_monthly.setStyleSheet("""
         QLabel {
             font-size: 24px;
