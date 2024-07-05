@@ -1,7 +1,6 @@
 from PyQt5.QtWidgets import QWidget, QLabel
 from PyQt5.QtGui import QPainter, QPen, QBrush, QColor
 from PyQt5.QtCore import Qt, QPoint
-from PyQt5.QtCore import Qt, QEvent, QTimer
 
 
 class Error_Message_Banner(QWidget):
@@ -43,14 +42,7 @@ class Error_Message_Banner(QWidget):
         painter.drawPolygon(*points)
 
     def ShowMessage(self, message_to_show: str):
-        #TODO every call of this needs to reset the timer so the previous timer doesn't hide the error too fast
         self.message_lbl.setText(message_to_show)
-        # Set a timer to hide the message box after 4 seconds (4000 milliseconds)
-        self.timer = QTimer(self)
-        self.timer.setSingleShot(True)
-        self.timer.timeout.connect(self.handle_close)
-        self.timer.start(4000)
-        self.show()
 
     def handle_close(self):
         self.hide()
