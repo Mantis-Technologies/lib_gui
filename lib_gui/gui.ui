@@ -34,7 +34,7 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="currentIndex">
-     <number>6</number>
+     <number>20</number>
     </property>
     <widget class="QWidget" name="BootingScreen">
      <widget class="QLabel" name="label_2">
@@ -1844,6 +1844,9 @@ p, li { white-space: pre-wrap; }
       <property name="text">
        <string/>
       </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
      </widget>
      <widget class="QPushButton" name="skip_button_apply_points">
       <property name="geometry">
@@ -1892,27 +1895,53 @@ p, li { white-space: pre-wrap; }
      <widget class="QLabel" name="Points_Being_Applied_lbl">
       <property name="geometry">
        <rect>
-        <x>1520</x>
-        <y>210</y>
-        <width>271</width>
-        <height>41</height>
+        <x>1500</x>
+        <y>280</y>
+        <width>300</width>
+        <height>200</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(27, 27, 27, 255);
+color: white;</string>
+      </property>
       <property name="text">
-       <string>Show points being applied here</string>
+       <string>Show points
+ being applied here</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
      <widget class="QLabel" name="Price_Adjustment_lbl">
       <property name="geometry">
        <rect>
-        <x>1530</x>
-        <y>340</y>
-        <width>271</width>
-        <height>41</height>
+        <x>1500</x>
+        <y>500</y>
+        <width>300</width>
+        <height>200</height>
        </rect>
       </property>
+      <property name="font">
+       <font>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(27, 27, 27, 255);
+color: white;</string>
+      </property>
       <property name="text">
-       <string>Show Points adjusted price here</string>
+       <string>Show Points
+ adjusted price here</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
      <widget class="QPushButton" name="Discount_10_Percent_Button">
@@ -1931,7 +1960,8 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-radius: 30px; background-color: #0289c7; border: 2px solid white; color: rgb(255, 255, 255)</string>
+       <string notr="true">QPushButton{border-radius: 30px; background-color: #0289c7; border: 2px solid white; color: rgb(255, 255, 255)}
+QPushButton:disabled{border-radius: 30px; background-color: rgb(198, 198, 198); border: 2px solid white; color: rgb(82, 82, 82)}</string>
       </property>
       <property name="text">
        <string>10% Off</string>
@@ -1953,7 +1983,8 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-radius: 30px; background-color: #0289c7; border: 2px solid white; color: rgb(255, 255, 255)</string>
+       <string notr="true">QPushButton{border-radius: 30px; background-color: #0289c7; border: 2px solid white; color: rgb(255, 255, 255)}
+QPushButton:disabled{border-radius: 30px; background-color: rgb(198, 198, 198); border: 2px solid white; color: rgb(82, 82, 82)}</string>
       </property>
       <property name="text">
        <string>25% Off</string>
@@ -1975,7 +2006,8 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-radius: 30px; background-color: #0289c7; border: 2px solid white; color: rgb(255, 255, 255)</string>
+       <string notr="true">QPushButton{border-radius: 30px; background-color: #0289c7; border: 2px solid white; color: rgb(255, 255, 255)}
+QPushButton:disabled{border-radius: 30px; background-color: rgb(198, 198, 198); border: 2px solid white; color: rgb(82, 82, 82)}</string>
       </property>
       <property name="text">
        <string>50% Off</string>

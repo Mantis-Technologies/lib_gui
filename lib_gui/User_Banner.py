@@ -36,11 +36,11 @@ class User_Banner(QWidget):
 
         # Define points for the custom shape
         points = [
-            QPoint(0, 0),
+            QPoint(2, 0),
             QPoint(20, height),
-            QPoint(width, height),  # Bottom-right corner
-            QPoint(width, 0),  # Top-right corner
-            QPoint(0, 0)  # Top-left corner
+            QPoint(width-2, height),  # Bottom-right corner
+            QPoint(width-2, 0),  # Top-right corner
+            QPoint(2, 0)  # Top-left corner
         ]
 
         # Draw the custom shape

@@ -33,7 +33,7 @@ def switch_to_ApplyPointsPage(self, user_point_count: int, value_per_point: int,
         max_points_string = f"{maxPercentDiscount}% Off\n({user_point_count} points)"
         self.Max_Discount_Button.setText(max_points_string)
 
-    self.SetPointsAppliedLabel(float(cost_of_test)/100.0, 0, value_per_point) # reset apply points page
+    self.SetPointsAppliedLabel(float(cost_of_test)/100.0, 0, value_per_point)  # reset apply points page
 
     """Switch to confirmation page"""
     self._switch_to_page(Page.APPLYPOINTS)
@@ -77,22 +77,21 @@ def ApplyMaxDiscount(self):
 def SetPointsAppliedLabel(self, cost_of_test_dollars: float, points_applied: int, value_of_point: int):
     cost_of_test_dollars_string = f"{cost_of_test_dollars:.2f}"  # ensure we round to 2 decimals
 
-    self.Points_Being_Applied_lbl.setText(f'{points_applied} points applied')
+    self.Points_Being_Applied_lbl.setText(f'Points applied<br><span style="color: #0289c7";>{points_applied}</span>')
     discount_dollars = round(float(points_applied) * float(value_of_point) / 100.0, 2)
     final_cost_dollars = cost_of_test_dollars - discount_dollars
     final_cost_dollars_string = f"{final_cost_dollars:.2f}"  # ensure we round to 2 decimals
 
     final_cost_cents = max(int(round(final_cost_dollars*100.0)), 0)# force int and 0 as minimum value
-
+    test_cost_string = 'Cost Of Test <br>'
     if points_applied > 0:
-        test_cost_string = f'<span style="color: red; text-decoration: line-through;">${cost_of_test_dollars_string}</span>\n'
+        test_cost_string += f'<span style="color: red; text-decoration: line-through;">${cost_of_test_dollars_string}</span><br>'
         if final_cost_cents == 0:
-            test_cost_string = test_cost_string + "FREE"
+            test_cost_string += "FREE"
         else:
-            test_cost_string = f'<span style="color: red; text-decoration: line-through;">${cost_of_test_dollars_string}</span>\n'
-            test_cost_string = test_cost_string + f'${final_cost_dollars_string}'
+            test_cost_string += f'${final_cost_dollars_string}'
 
     else:
-        test_cost_string = f'<span style="color: black;">{final_cost_dollars_string}</span>\n'  # black color is temporary
+        test_cost_string += f'<span style="color: white;">{final_cost_dollars_string}</span>\n'
 
     self.Price_Adjustment_lbl.setText(test_cost_string)
