@@ -14,6 +14,13 @@ class Error_Message_Banner(QWidget):
         self.message_lbl.setStyleSheet(
             "background-color: rgba(255, 255, 255, 0); color: white; font-size: 30px;")  # Style the label
         self.message_lbl.setAlignment(Qt.AlignCenter | Qt.AlignVCenter)  # Set text alignment to center
+        self.background_color = QColor(169, 6, 10)
+
+    def Set_Background_Color_To_Default(self):
+        self.background_color = QColor(169, 6, 10)
+
+    def Set_Background_Color_To_Blink(self):
+        self.background_color = QColor(255, 6, 10)
 
     def paintEvent(self, event):
         painter = QPainter(self)
@@ -22,7 +29,7 @@ class Error_Message_Banner(QWidget):
         painter.setRenderHint(QPainter.Antialiasing)  # Enable anti-aliasing
 
         # Set brush to fill the polygon
-        brush = QBrush(QColor(169, 6, 10))  # Choose a color for the fill
+        brush = QBrush(self.background_color)  # Choose a color for the fill
         painter.setBrush(brush)
 
         # Get widget dimensions
@@ -32,7 +39,7 @@ class Error_Message_Banner(QWidget):
         # Define points for the custom shape
         points = [
             QPoint(0, 0),  # top left corner
-            QPoint(width, 0),  # Top-right corner
+            QPoint(width-2, 0),  # Top-right corner
             QPoint(width - 20, height),  # bottom right
             QPoint(0, height),  # bottom Left
             QPoint(0, 0)  # Top-left corner
