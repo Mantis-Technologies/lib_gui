@@ -16,11 +16,9 @@ class Error_Message_Banner(QWidget):
         self.message_lbl.setAlignment(Qt.AlignCenter | Qt.AlignVCenter)  # Set text alignment to center
         self.background_color = QColor(169, 6, 10)
 
-    def Set_Background_Color_To_Default(self):
-        self.background_color = QColor(169, 6, 10)
-
-    def Set_Background_Color_To_Blink(self):
-        self.background_color = QColor(255, 6, 10)
+    def Set_Background_Color(self, r: int, g: int, b: int):
+        self.background_color = QColor(r, g, b)
+        self.update()  # schedules a redraw of the message banner
 
     def paintEvent(self, event):
         painter = QPainter(self)
