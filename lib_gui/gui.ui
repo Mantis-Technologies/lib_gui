@@ -34,7 +34,7 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="currentIndex">
-     <number>18</number>
+     <number>20</number>
     </property>
     <widget class="QWidget" name="BootingScreen">
      <widget class="QLabel" name="label_2">
@@ -265,6 +265,14 @@ border-radius: 60px;
  background-color: rgb(27, 27, 27);
  border: 6px solid white;
  color: rgb(3, 116, 64);
+}
+
+QPushButton:disabled
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid grey;
+ color: grey;
 }</string>
       </property>
       <property name="text">
@@ -858,6 +866,14 @@ border-radius: 60px;
  background-color: rgb(27, 27, 27);
  border: 6px solid white;
  color: rgb(3, 116, 64);
+}
+
+QPushButton:disabled
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid grey;
+ color: grey;
 }</string>
       </property>
       <property name="text">
@@ -1013,6 +1029,14 @@ border-radius: 65px;
  background-color: rgb(27, 27, 27);
  border: 6px solid white;
  color: rgb(169, 6, 10)
+}
+
+QPushButton:disabled
+{
+border-radius: 65px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid grey;
+ color: grey;
 }</string>
       </property>
       <property name="text">
@@ -1239,6 +1263,14 @@ border-radius: 60px;
  background-color: rgb(27, 27, 27);
  border: 6px solid white;
  color: rgb(3, 116, 64);
+}
+
+QPushButton:disabled
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid grey;
+ color: grey;
 }</string>
       </property>
       <property name="text">
@@ -1437,6 +1469,14 @@ border-radius: 60px;
  background-color: rgb(27, 27, 27);
  border: 6px solid white;
  color: rgb(3, 116, 64);
+}
+
+QPushButton:disabled
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid grey;
+ color: grey;
 }</string>
       </property>
       <property name="text">
@@ -1530,6 +1570,14 @@ border-radius: 60px;
  background-color: rgb(27, 27, 27);
  border: 6px solid white;
  color: rgb(3, 116, 64);
+}
+
+QPushButton:disabled
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid grey;
+ color: grey;
 }</string>
       </property>
       <property name="text">
@@ -1623,6 +1671,14 @@ border-radius: 60px;
  background-color: rgb(27, 27, 27);
  border: 6px solid white;
  color: rgb(169, 6, 10)
+}
+
+QPushButton:disabled
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid grey;
+ color: grey;
 }</string>
       </property>
       <property name="text">
@@ -1659,6 +1715,14 @@ border-radius: 60px;
  background-color: rgb(27, 27, 27);
  border: 6px solid white;
  color: rgb(3, 116, 64);
+}
+
+QPushButton:disabled
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid grey;
+ color: grey;
 }</string>
       </property>
       <property name="text">
@@ -1695,6 +1759,14 @@ border-radius: 60px;
  background-color: rgb(27, 27, 27);
  border: 6px solid white;
  color: rgb(169, 6, 10)
+}
+
+QPushButton:disabled
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid grey;
+ color: grey;
 }</string>
       </property>
       <property name="text">
@@ -1756,6 +1828,14 @@ border-radius: 70px;
  background-color: rgb(27, 27, 27);
  border: 6px solid white;
  color: rgb(169, 6, 10)
+}
+
+QPushButton:disabled 
+{
+border-radius: 70px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid grey;
+ color: grey
 }</string>
       </property>
       <property name="text">
@@ -2262,6 +2342,14 @@ border-radius: 30px;
  background-color: #037340;
  border: 4px solid white;
  color: rgb(255, 255, 255)
+}
+
+QPushButton:disabled 
+{
+border-radius: 30px;
+ background-color: grey;
+ border: 4px solid white;
+ color: rgb(255, 255, 255)
 }</string>
       </property>
       <property name="text">
@@ -2341,7 +2429,7 @@ border-radius: 30px; background-color: #0289c7;
 border: 2px solid white; 
 color: rgb(255, 255, 255);
 }
-QPushButton:disabled{border-radius: 30px; background-color: rgb(198, 198, 198); border: 2px solid white; color: rgb(82, 82, 82)}
+QPushButton:disabled{border-radius: 30px; background-color: grey; border: 2px solid white; color: rgb(82, 82, 82)}
 QPushButton:pressed
 {
  border-radius: 30px;
@@ -2374,7 +2462,7 @@ border-radius: 30px; background-color: #0289c7;
 border: 2px solid white; 
 color: rgb(255, 255, 255);
 }
-QPushButton:disabled{border-radius: 30px; background-color: rgb(198, 198, 198); border: 2px solid white; color: rgb(82, 82, 82)}
+QPushButton:disabled{border-radius: 30px; background-color: grey; border: 2px solid white; color: rgb(82, 82, 82)}
 QPushButton:pressed
 {
  border-radius: 30px;
@@ -2407,7 +2495,7 @@ border-radius: 30px; background-color: #0289c7;
 border: 2px solid white; 
 color: rgb(255, 255, 255);
 }
-QPushButton:disabled{border-radius: 30px; background-color: rgb(198, 198, 198); border: 2px solid white; color: rgb(82, 82, 82)}
+QPushButton:disabled{border-radius: 30px; background-color: grey; border: 2px solid white; color: rgb(82, 82, 82)}
 QPushButton:pressed
 {
  border-radius: 30px;
@@ -2440,7 +2528,7 @@ border-radius: 30px; background-color: #0289c7;
 border: 2px solid white; 
 color: rgb(255, 255, 255);
 }
-QPushButton:disabled{border-radius: 30px; background-color: rgb(198, 198, 198); border: 2px solid white; color: rgb(82, 82, 82)}
+QPushButton:disabled{border-radius: 30px; background-color: grey; border: 2px solid white; color: rgb(82, 82, 82)}
 QPushButton:pressed
 {
  border-radius: 30px;

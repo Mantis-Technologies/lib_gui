@@ -35,6 +35,8 @@ def switch_to_ApplyPointsPage(self, user_point_count: int, value_per_point: int,
 
     self.SetPointsAppliedLabel(float(cost_of_test)/100.0, 0, value_per_point)  # reset apply points page
 
+    self.Confirm_Apply_Points.setEnabled(False)
+
     """Switch to confirmation page"""
     self._switch_to_page(Page.APPLYPOINTS)
 
@@ -95,3 +97,4 @@ def SetPointsAppliedLabel(self, cost_of_test_dollars: float, points_applied: int
         test_cost_string += f'<span style="color: white;">{final_cost_dollars_string}</span>\n'
 
     self.Price_Adjustment_lbl.setText(test_cost_string)
+    self.Confirm_Apply_Points.setEnabled(True)

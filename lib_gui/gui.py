@@ -166,17 +166,6 @@ class GUI(QtWidgets.QMainWindow):
         font = QFont("Arial", 25)
         self.ui.start_price_label.setFont(font)
 
-    def check_if_button_is_ok_to_press(self, button_key: str, seconds_to_wait: float) -> bool:
-        current_time = time.time()
-        timeSinceButtonPress = current_time - self.button_delay_map[button_key]
-        okToPress = timeSinceButtonPress > seconds_to_wait
-        if okToPress is False:
-            print("ignoring button press")
-        return okToPress
-
-    def start_timer_to_ignore_button_presses(self, button_key: str):
-        self.button_delay_map[button_key] = time.time()
-
     # Boot page methods
     from .pages.boot_page import switch_to_boot_page
 
@@ -202,7 +191,7 @@ class GUI(QtWidgets.QMainWindow):
 
     # Loading page methods (for loading sample)
     from .pages.load_page import switch_to_load_page
-    from .pages.load_page import connect_load_buttons, enable_loaded_sample_button
+    from .pages.load_page import connect_load_buttons
     from .pages.load_page import cancel_load
     from .pages.load_page import finished_load
 

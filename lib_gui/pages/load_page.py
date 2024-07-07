@@ -17,11 +17,6 @@ def switch_to_load_page(self):
     self._switch_to_page(Page.LOAD)
 
 
-def enable_loaded_sample_button(self):
-    print("Load Sample Enabled")
-    self.sample_loaded_btn.setEnabled(True)
-    self.start_timer_to_ignore_button_presses("Load Sample Button")
-
 
 def cancel_load(self):
     """Cancels load and moves to start page"""
@@ -31,8 +26,7 @@ def cancel_load(self):
 
 def finished_load(self):
     """Load is complete, move to scanning page"""
-    if self.check_if_button_is_ok_to_press("Load Sample Button", 3.0):
-        self.switch_to_scanning_page()
+    self.switch_to_scanning_page()
 
 
 def connect_load_buttons(self):
