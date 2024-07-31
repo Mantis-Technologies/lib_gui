@@ -34,15 +34,16 @@ def handle_existing_user_button(self):
 
 def Get_User_Credentials_From_Existing_User_Input(self) -> {}:
     existing_user_text = self.existing_user_input.text()
+    user_pin = self.user_pin_entry.text()
     user_credentials = {}
 
     # Regular expression to check if input is an email
     email_regex = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
 
     if re.match(email_regex, existing_user_text):
-        user_credentials = {"email": existing_user_text}
+        user_credentials = {"email": existing_user_text, "pin": user_pin}
     else:
-        user_credentials = {"username": existing_user_text}
+        user_credentials = {"username": existing_user_text, "pin": user_pin}
     return user_credentials
 
 
@@ -98,12 +99,17 @@ def connect_finduseradduser_buttons(self):
 def setup_finduser_adduser_page(self):
     # Get references to widgets
     self.existing_user_input = self.findChild(QLineEdit, 'existingUserInput')
+    self.user_pin_entry = self.findChild(QLineEdit, 'user_pin_entry')
     self.new_user_email_input = self.findChild(QLineEdit, 'newUserEmailInput')
     self.confirm_email_input = self.findChild(QLineEdit, 'confirmEmailInput')
     self.username_input = self.findChild(QLineEdit, 'usernameInput')
 
+    # Set echo mode to Password to hide the PIN entry behind asterisks
+    self.user_pin_entry.setEchoMode(QLineEdit.Password)
+
     # Connect the text boxes to show the keyboard
     self.existing_user_input.mousePressEvent = lambda event: show_keyboard(self, event, self.existing_user_input)
+    self.user_pin_entry.mousePressEvent = lambda event: show_keyboard(self, event, self.user_pin_entry)
     self.new_user_email_input.mousePressEvent = lambda event: show_keyboard(self, event, self.new_user_email_input)
     self.confirm_email_input.mousePressEvent = lambda event: show_keyboard(self, event, self.confirm_email_input)
     self.username_input.mousePressEvent = lambda event: show_keyboard(self, event, self.username_input)
@@ -133,7 +139,7 @@ def hide_keyboard_if_exists(self):
 
 
 def eventFilter(self, obj, event):
-    """Detects mouse click outside of the keyboard and hides keyboard"""
+    """Detects mouse click outside the keyboard and hides keyboard"""
     if event.type() == QEvent.MouseButtonPress:
         if self.keyboard.isVisible() and not self.keyboard.geometry().contains(event.globalPos()):
             self.keyboard.hide()
@@ -144,6 +150,8 @@ def focus_widget(self):
     """Returns which QLineEdit is currently clicked"""
     if self.existing_user_input.hasFocus():
         return self.existing_user_input
+    elif self.user_pin_entry.hasFocus():
+        return self.user_pin_entry
     elif self.new_user_email_input.hasFocus():
         return self.new_user_email_input
     elif self.confirm_email_input.hasFocus():
@@ -156,6 +164,7 @@ def focus_widget(self):
 def clear_text_fields(self):
     """Clear all QLineEdit fields."""
     self.existing_user_input.clear()
+    self.user_pin_entry.clear()
     self.new_user_email_input.clear()
     self.confirm_email_input.clear()
     self.username_input.clear()

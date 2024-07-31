@@ -91,7 +91,7 @@ class GUI(QtWidgets.QMainWindow):
         self.setup_results_url()
         # Set up pie chart
         self.setup_pie_chart()
-        #connect apply points page buttons
+        # connect apply points page buttons
         self.connect_apply_points_page_buttons()
         # Remove pointless info
         self.setWindowFlag(Qt.FramelessWindowHint)
