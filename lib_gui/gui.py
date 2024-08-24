@@ -171,7 +171,7 @@ class GUI(QtWidgets.QMainWindow):
 
     # Start page methods
     from .pages.start_page import switch_to_start_page
-    from .pages.start_page import connect_start_buttons
+    from .pages.start_page import connect_start_buttons, OnBeginButtonPressed
 
     # Confirmation over 21 page methods
     from .pages.confirmation_page import switch_to_confirmation_page

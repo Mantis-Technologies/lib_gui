@@ -146,11 +146,10 @@ border-radius: 65px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">
-          QLabel {
-               background-color: #1B1B1B;
-               color: #FFFFFF;
-         }
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
         </string>
       </property>
       <property name="text">
@@ -1208,8 +1207,28 @@ border-radius: 60px;
        <bool>true</bool>
       </property>
      </widget>
+     <widget class="QLabel" name="Price_lbl">
+      <property name="geometry">
+       <rect>
+        <x>630</x>
+        <y>380</y>
+        <width>231</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}</string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
      <zorder>label_8</zorder>
      <zorder>cancel_payment_btn</zorder>
+     <zorder>Price_lbl</zorder>
     </widget>
     <widget class="QWidget" name="ConfiguringKeyPadPage">
      <widget class="QLabel" name="label_11">

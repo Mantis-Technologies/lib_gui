@@ -10,6 +10,7 @@ __email__ = "nickjl0809@gmail.com"
 
 from ..page import Page
 from PyQt5.QtCore import QThread, pyqtSignal, Qt
+from PyQt5.QtGui import QFont
 import time
 
 
@@ -26,9 +27,13 @@ def switch_to_payment_page(self):
     self.PaymentTimeoutThread.start()
 
 
-def set_Price_label(self, priceAsInt: int):
-    priceAsFloat = float(priceAsInt) / 100.0
-    #self.Price_lbl.setText("")  # TODO we are going to have the price on the terminal for now
+def set_Price_label(self, price_in_dollars_total: float):
+
+    # Setting the text of the label
+    self.Price_lbl.setText(f"${price_in_dollars_total:.2f}")
+    # Setting font for label
+    font = QFont("Arial", 50)
+    self.Price_lbl.setFont(font)
 
 
 def cancel_payment(self):
