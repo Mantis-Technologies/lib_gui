@@ -34,3 +34,4 @@ class Page(Enum):
     FAQ = 18
     LEADERBOARD = 19
     APPLYPOINTS = 20
+    NETWORKOUTAGE = 21

@@ -223,6 +223,8 @@ class GUI(QtWidgets.QMainWindow):
     from .pages.Payment_page import PaymentApprovedCallback
     from .pages.Payment_page import PaymentTimeoutCallback
 
+    from .pages.NetworkOutagePage import switch_to_Network_Outage_page
+
     # Instruction page
     from .pages.instructions_page import (switch_to_instruction_page, connect_instruction_buttons,
                                           next_button_instruction, cancel_button_instruction)
