@@ -51,8 +51,9 @@ def connect_payment_buttons(self):
 
 
 def PaymentApprovedCallback(self, result):
-    self.PaymentTimeoutThread.keepRunning = False
-    self.switch_to_instruction_page()
+    if self.PaymentTimeoutThread.keepRunning is True:
+        self.PaymentTimeoutThread.keepRunning = False
+        self.switch_to_instruction_page()
 
 
 def PaymentTimeoutCallback(self, result):
