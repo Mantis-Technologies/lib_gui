@@ -147,11 +147,15 @@ class GUI(QtWidgets.QMainWindow):
         os.system('systemctl poweroff')
 
     def eventFilter(self, obj, event):
+        if not hasattr(self, 'keyboard'):
+            return super().eventFilter(obj, event)# early out
         """Detects global clicks so user can close out of keyboard by clicking elsewhere"""
-        if event.type() == QEvent.MouseButtonPress:
+        if event.type() == QEvent.MouseButtonPress and self.keyboard.isVisible():
             # print("Mouse button press detected")  # Debug print
-            if hasattr(self, 'keyboard') and self.keyboard.isVisible() and not self.keyboard.geometry().contains(
-                    event.globalPos()):
+            keyboard_rect = self.keyboard.rect()
+            globalPosition = event.globalPos()
+            keyboard_pos = self.keyboard.mapFromGlobal(globalPosition)
+            if not keyboard_rect.contains(keyboard_pos):
                 # print("Hiding keyboard")  # Debug print
                 self.keyboard.hide()
         return super().eventFilter(obj, event)
