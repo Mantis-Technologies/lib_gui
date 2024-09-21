@@ -13,13 +13,12 @@ from ..page import Page
 
 def switch_to_confirm_removal_page(self):
     """Switches to the confirm removal page"""
-    self.start_timer_to_ignore_button_presses("confirm removal")
+    self.confirm_removal_btn.setEnabled(False)
     self._switch_to_page(Page.CONFIRM_REMOVAL)
 
 
 def confirm_removal(self):
-    if self.check_if_button_is_ok_to_press("confirm removal", 2.0):
-        self.switch_to_start_page()
+    self.switch_to_start_page()
 
 def connect_confirm_removal_buttons(self):
     """Connects the rescan page buttons"""

@@ -5,18 +5,21 @@
 
 __author__ = "Justin Furuness"
 __credits__ = ["Justin Furuness", "Nick Lanotte", "Michael Mahoney"]
-__maintainer__ = "Justin Furuness"
-__email__ = "jfuruness@gmail.com"
+__maintainer__ = "Michael Mahoney"
+__email__ = "mike@cannacheckkiosk.com"
 
 from ..page import Page
+from lib_kiosk import app  # Import App class to access QR code image
 from PyQt5.QtChart import QChart, QChartView, QPieSeries, QPieSlice
 from PyQt5.QtGui import QFont, QColor, QBrush, QPixmap, QPainter
 from PyQt5.QtCore import Qt
+from PyQt5.QtWidgets import QLabel
+from io import BytesIO
 
 
 def switch_to_results_page(self):
     """Switches to the results page"""
-    self.start_timer_to_ignore_button_presses("Results confirm")
+    self.finished_test_btn.setEnabled(False)
     self._switch_to_page(Page.RESULTS)
 
 
@@ -47,10 +50,22 @@ def set_results_labels(self, analytes):
     self.setTotalAnalyteLabels(analytes)
 
 
+def set_points_earned_label(self, points_earned: int, is_guest: bool):
+    if points_earned == 0:
+        self.Points_earned_lbl.hide()
+    else:
+        self.Points_earned_lbl.show()
+        initialString = "You Earned"
+        if is_guest:
+            initialString = "You Could Have Earned"
+        pointsString = f'< p >< span style = "font-size:20px;" >{initialString}< / span > < br > < span style = ' \
+                       f'"font-size:40px;" > {points_earned} Points < / span > < / p >'
+        self.Points_earned_lbl.setText(pointsString)
+
+
 def done_w_results(self):
     """Done with results, move to start page"""
-    if self.check_if_button_is_ok_to_press("Results confirm", 2.0):
-        self.switch_to_confirm_removal_page()
+    self.switch_to_confirm_removal_page()
 
 
 def connect_results_buttons(self):
@@ -170,3 +185,32 @@ def setTotalAnalyteLabels(self, analytes):
     self.TotalCbdLbl.setText(cbdLabel)
     self.TotalCbdLbl.setAutoFillBackground(False)
     self.TotalCbdLbl.setFont(font)
+
+
+def display_qr_code(self, qr_code_image: BytesIO):
+    """Display the QR code on the results page"""
+    pixmap = QPixmap()
+    if qr_code_image is not None:
+        pixmap.loadFromData(qr_code_image.getvalue(), format="PNG")
+        self.qr_code_label.setPixmap(pixmap.scaled(300, 300, Qt.KeepAspectRatio))
+    else:
+        print("No QR Code Image available")
+
+
+def setup_qr_code_label(self):
+    results_page_widget = self.stackedWidget.widget(Page.RESULTS.value)
+    self.qr_code_label = QLabel(results_page_widget)
+    self.qr_code_label.setGeometry(150, 200, 300, 300)
+    self.qr_code_label.setAlignment(Qt.AlignCenter)
+
+
+def results_url_label_text(self, results_url: str):
+    self.results_url_label.setText(f"View your results at: {results_url}")
+
+
+def setup_results_url(self):
+    results_url_widget = self.stackedWidget.widget(Page.RESULTS.value)
+    self.results_url_label = QLabel(results_url_widget)
+    self.results_url_label.setGeometry(50, 510, 500, 30)
+    self.results_url_label.setAlignment(Qt.AlignCenter)
+    self.results_url_label.setStyleSheet("font-size: 14px; color: white; background-color: rgba(255, 255, 255, 0)")

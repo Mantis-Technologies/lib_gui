@@ -13,13 +13,12 @@ from ..page import Page
 
 def switch_to_disclaimer_page(self):
     """Switches to the disclaimer page"""
-    self.start_timer_to_ignore_button_presses("Disclaimer Confirm")
+    self.agree_btn.setEnabled(False)
     self._switch_to_page(Page.DISCLAIMER)
 
 
 def disclaimer_confirmed(self):
-    if self.check_if_button_is_ok_to_press("Disclaimer Confirm", 2.0):
-        self.switch_to_confirmation_page()
+    self.switch_to_confirmation_page()
 
 
 def connect_disclaimer_buttons(self):
