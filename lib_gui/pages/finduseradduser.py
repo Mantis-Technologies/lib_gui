@@ -24,7 +24,7 @@ def switch_to_finduseradduser_page(self):
 def handle_skip_button(self):
     """Switches to the next page, the instruction page"""
     # override this function to add additional capability before switching the page
-    self.switch_to_instruction_page()
+    self.switch_to_payment_page()
 
 
 def handle_existing_user_button(self):
