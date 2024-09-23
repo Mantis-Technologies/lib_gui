@@ -10,7 +10,7 @@ __email__ = "mike@cannacheckkiosk.com"
 
 from ..page import Page
 from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QVBoxLayout, QTableWidget, QTableWidgetItem, QLabel, QWidget, QSpacerItem, QSizePolicy, QHBoxLayout
+from PyQt5.QtWidgets import QVBoxLayout, QTableWidget, QTableWidgetItem, QLabel, QWidget, QSpacerItem, QSizePolicy, QHBoxLayout, QScroller
 from PyQt5.QtCore import QThread, pyqtSignal, Qt
 from PyQt5.QtGui import QColor, QFont, QPalette, QIcon, QPixmap, QImage
 import time
@@ -155,6 +155,10 @@ def setup_table(self, table):
     table.setFixedHeight(total_table_height)  # Set the fixed height for the table
     table.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)  # Remove horizontal scrollbar
     table.setVerticalScrollBarPolicy(Qt.ScrollBarAlwaysOff)  # Remove vertical scrollbar
+
+    # Enable touch-based scrolling with rubber-band effect
+    QScroller.grabGesture(table.viewport(), QScroller.ScrollerGestureType.LeftMouseButtonGesture)
+
     table.setStyleSheet("""
         QTableWidget {
             background-color: #2e2e2e;

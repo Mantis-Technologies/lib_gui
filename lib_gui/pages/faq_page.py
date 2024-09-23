@@ -10,7 +10,7 @@ __email__ = "mike@cannacheckkiosk.com"
 
 from ..page import Page
 from PyQt5.QtCore import QThread, pyqtSignal, Qt, QSize
-from PyQt5.QtWidgets import QVBoxLayout, QHBoxLayout, QPushButton, QLabel, QScrollArea, QWidget, QSizePolicy
+from PyQt5.QtWidgets import QVBoxLayout, QHBoxLayout, QPushButton, QLabel, QScrollArea, QWidget, QSizePolicy, QScroller
 from PyQt5.QtGui import QPixmap
 import time
 import os
@@ -121,6 +121,9 @@ def setup_faq_page(self):
             padding: 10px;  /* Add padding to avoid content cutting off */
         }
     """)
+
+    # Enable touch-based scrolling with rubber-band effect
+    QScroller.grabGesture(self.ui.faq_scroll_area.viewport(), QScroller.ScrollerGestureType.LeftMouseButtonGesture)
 
     # Create a widget for the scroll area contents
     scroll_content = QWidget()
