@@ -203,6 +203,7 @@ border-radius: 30px;
       </property>
       <property name="font">
        <font>
+        <family>Arial</family>
         <pointsize>30</pointsize>
        </font>
       </property>
