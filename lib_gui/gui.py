@@ -13,8 +13,7 @@ import os
 import sys
 
 from PyQt5 import QtWidgets, uic
-from PyQt5.QtWidgets import QApplication
-from PyQt5.QtCore import Qt
+from PyQt5.QtCore import pyqtSignal, Qt, QEvent
 from PyQt5.QtWidgets import QApplication, QWidget
 from PyQt5.QtGui import QFont
 
@@ -33,6 +32,9 @@ class GUI(QtWidgets.QMainWindow):
         if "PYTEST_CURRENT_TEST" not in os.environ:
             self.app = QApplication(sys.argv)
         super(GUI, self).__init__()
+
+        # Install event filter for finduseradduser page to detect global clicks
+        QApplication.instance().installEventFilter(self)
 
         # If in debug mode, typing n moves to next screen
         self.debug = debug
@@ -55,10 +57,16 @@ class GUI(QtWidgets.QMainWindow):
         self.connect_order_buttons()
         # Connect payment buttons
         self.connect_payment_buttons()
+        # Connect find user add user buttons
+        self.connect_finduseradduser_buttons()
+        # Connect find user add user input fields
+        self.setup_finduser_adduser_page()
         # Connect instruction page buttons
         self.connect_instruction_buttons()
+
         # Connect about page buttons
-        self.connect_about_buttons()
+        # self.connect_about_buttons() No longer using the About Page
+
         # Connect disclaimer page buttons
         self.connect_disclaimer_buttons()
         # Connect before proceeding page buttons
@@ -69,8 +77,22 @@ class GUI(QtWidgets.QMainWindow):
         self.connect_confirm_removal_buttons()
         # Connect maintenance page buttons
         self.connect_maintenance_buttons()
+        # Connect FAQ page buttons
+        self.connect_faq_buttons()
+        # Set up FAQ page
+        self.setup_faq_page()
+        # Connect Leaderboard page buttons
+        self.connect_leaderboard_buttons()
+        # Setup the Leaderboard
+        self.setup_leaderboard_page()
+        # Set up QR code label
+        self.setup_qr_code_label()
+        # Set up result url widget
+        self.setup_results_url()
         # Set up pie chart
         self.setup_pie_chart()
+        # connect apply points page buttons
+        self.connect_apply_points_page_buttons()
         # Remove pointless info
         self.setWindowFlag(Qt.FramelessWindowHint)
         # This is only for when in use by a lab
@@ -88,6 +110,9 @@ class GUI(QtWidgets.QMainWindow):
         if not self.debug:
             # Remove cursor unless debugging
             self.setCursor(Qt.BlankCursor)
+        # Clear text fields if leaving finduseradduser page
+        if self.current_page == Page.FINDUSERADDUSER:
+            self.clear_text_fields()
         # Move to the next page
         self.stackedWidget.setCurrentIndex(page.value)
         # Update and show the new screen
@@ -121,6 +146,21 @@ class GUI(QtWidgets.QMainWindow):
         import os
         os.system('systemctl poweroff')
 
+    def eventFilter(self, obj, event):
+        if not hasattr(self, 'keyboard'):
+            return super().eventFilter(obj, event)# early out
+        """Detects global clicks so user can close out of keyboard by clicking elsewhere"""
+        if event.type() == QEvent.MouseButtonPress and self.keyboard.isVisible():
+            # print("Mouse button press detected")  # Debug print
+            keyboard_rect = self.keyboard.rect()
+            globalPosition = event.globalPos()
+            keyboard_pos = self.keyboard.mapFromGlobal(globalPosition)
+            if not keyboard_rect.contains(keyboard_pos):
+                # print("Hiding keyboard")  # Debug print
+                self.keyboard.hide()
+        return super().eventFilter(obj, event)
+
+        # Boot page methods
     def update_price_label(self, price_in_dollars_pre_tax: float):
 
         # Setting the text of the label
@@ -129,17 +169,6 @@ class GUI(QtWidgets.QMainWindow):
         # Setting font for label
         font = QFont("Arial", 25)
         self.ui.start_price_label.setFont(font)
-
-    def check_if_button_is_ok_to_press(self, button_key: str, seconds_to_wait: float) -> bool:
-        current_time = time.time()
-        timeSinceButtonPress = current_time - self.button_delay_map[button_key]
-        okToPress =  timeSinceButtonPress > seconds_to_wait
-        if okToPress is False:
-            print("ignoring button press")
-        return okToPress
-
-    def start_timer_to_ignore_button_presses(self, button_key: str):
-        self.button_delay_map[button_key] = time.time()
 
     # Boot page methods
     from .pages.boot_page import switch_to_boot_page
@@ -166,7 +195,7 @@ class GUI(QtWidgets.QMainWindow):
 
     # Loading page methods (for loading sample)
     from .pages.load_page import switch_to_load_page
-    from .pages.load_page import connect_load_buttons, enable_loaded_sample_button
+    from .pages.load_page import connect_load_buttons
     from .pages.load_page import cancel_load
     from .pages.load_page import finished_load
 
@@ -182,14 +211,15 @@ class GUI(QtWidgets.QMainWindow):
     from .pages.results_page import UpdateChart
     from .pages.results_page import CreatePieSeries
     from .pages.results_page import setTotalAnalyteLabels, GenerateChartImage
+    from .pages.results_page import setup_qr_code_label, display_qr_code, setup_results_url, results_url_label_text, set_points_earned_label
 
-    #Configuring Keypad page
+    # Configuring Keypad page
     from .pages.ConfiguringKeyPadPage import switch_to_ConfiguringKeyPad_page
 
     # Error page
     from .pages.error_page import switch_to_error_page
 
-    #Payment page
+    # Payment page
     from .pages.Payment_page import switch_to_payment_page
     from .pages.Payment_page import set_Price_label
     from .pages.Payment_page import connect_payment_buttons
@@ -197,10 +227,21 @@ class GUI(QtWidgets.QMainWindow):
     from .pages.Payment_page import PaymentApprovedCallback
     from .pages.Payment_page import PaymentTimeoutCallback
 
+    from .pages.NetworkOutagePage import switch_to_Network_Outage_page
+
+    # Instruction page
     from .pages.instructions_page import (switch_to_instruction_page, connect_instruction_buttons,
                                           next_button_instruction, cancel_button_instruction)
-    # About page
-    from .pages.About_page import switch_to_about_page, connect_about_buttons, AboutPageTimeoutCallback, BackToStartPageButton
+    # Find User / Add User Page
+    from .pages.finduseradduser import (switch_to_finduseradduser_page, connect_finduseradduser_buttons,
+                                        handle_skip_button, handle_existing_user_button, handle_new_user_button,
+                                        setup_finduser_adduser_page, show_keyboard, focus_widget, clear_text_fields,
+                                        Get_User_Credentials_From_Existing_User_Input,
+                                        Verify_New_User_information, Validate_new_user_input)
+
+    # About page NO LONGER USING THE ABOUT PAGE, REPLACED WITH FAQ
+    # from .pages.About_page import (switch_to_about_page, connect_about_buttons, AboutPageTimeoutCallback,
+    #                                BackToStartPageButton)
 
     # Disclaimer page
     from .pages.disclaimer_page import switch_to_disclaimer_page, connect_disclaimer_buttons, disclaimer_confirmed
@@ -210,9 +251,22 @@ class GUI(QtWidgets.QMainWindow):
     from .pages.rescan_results_page import switch_to_rescan_page, connect_rescan_buttons, on_cancel_test, on_rescan_test, on_see_results
     # Confirm removal page
     from .pages.confirm_removal_page import switch_to_confirm_removal_page, connect_confirm_removal_buttons, confirm_removal
+    # Maintenance page
+    from .pages.MaintenancePage import (switch_to_maintenance_page, connect_maintenance_buttons, MoveToEject,
+                                        HomeMotionSystem)
+    # FAQ Page methods
+    from .pages.faq_page import (switch_to_faq_page, connect_faq_buttons, faq_back_to_start_page,
+                                 FAQPageTimeoutCallback, setup_faq_page, add_faq, toggle_answer, reset_faq_page)
 
-    from .pages.MaintenancePage import switch_to_maintenance_page, connect_maintenance_buttons, MoveToEject, HomeMotionSystem
+    # Leaderboard Page methods
+    from .pages.leaderboard import (switch_to_leaderboard_page, connect_leaderboard_buttons, setup_leaderboard_page,
+                                    display_leaderboard, leaderboard_back_to_start_page, LeaderboardPageTimeoutCallback,
+                                    reset_leaderboard_scroll, setup_table, populate_table, get_monthly_leaderboard_data,
+                                    get_relative_path, get_all_time_leaderboard_data)
 
+    from .pages.ApplyPointsPage import (switch_to_ApplyPointsPage, connect_apply_points_page_buttons,
+        Skip_PointsApplied, Confirm_PointsApplied, Apply10PercentDiscount, Apply25PercentDiscount,
+        Apply50PercentDiscount, ApplyMaxDiscount, SetPointsAppliedLabel)
 
     # Keyboard shortcut methods
     from .actions import connect_shortcuts
