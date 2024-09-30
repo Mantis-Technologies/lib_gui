@@ -172,10 +172,17 @@ class GUI(QtWidgets.QMainWindow):
 
     def load_custom_fonts(self):
         """Load custom fonts (Lato and Montserrat)"""
-        font_db = QFontDatabase()
+        # Get the current directory
+        current_dir = os.path.dirname(os.path.realpath(__file__))
 
-        lato_font_id = font_db.addApplicationFont("fonts/Lato-Regular.ttf")
-        montserrat_font_id = font_db.addApplicationFont("fonts/Montserrat-VariableFont_wght.ttf")
+        # Construct the absolute paths to the font files
+        lato_font_path = os.path.join(current_dir, "fonts", "Lato-Regular.ttf")
+        montserrat_font_path = os.path.join(current_dir, "fonts", "Montserrat-VariableFont_wght.ttf")
+
+        # Add the fonts
+        font_db = QFontDatabase()
+        lato_font_id = font_db.addApplicationFont(lato_font_path)
+        montserrat_font_id = font_db.addApplicationFont(montserrat_font_path)
 
         # Check if the fonts were loaded successfully
         if lato_font_id == -1:
