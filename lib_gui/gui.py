@@ -178,17 +178,21 @@ class GUI(QtWidgets.QMainWindow):
         # Construct the absolute paths to the font files
         lato_font_path = os.path.join(current_dir, "fonts", "Lato-Regular.ttf")
         montserrat_font_path = os.path.join(current_dir, "fonts", "Montserrat-VariableFont_wght.ttf")
+        montserrat_extra_light_path = os.path.join(current_dir, 'fonts', 'Montserrat-ExtraLight.ttf')
 
         # Add the fonts
         font_db = QFontDatabase()
         lato_font_id = font_db.addApplicationFont(lato_font_path)
         montserrat_font_id = font_db.addApplicationFont(montserrat_font_path)
+        extra_light_font_id = font_db.addApplicationFont(montserrat_extra_light_path)
 
         # Check if the fonts were loaded successfully
         if lato_font_id == -1:
             print("Lato font could not be loaded.")
         if montserrat_font_id == -1:
             print("Montserrat Light font could not be loaded.")
+        if extra_light_font_id == -1:
+            print("Montserrat Extra Light could not be loaded.")
 
     # Boot page methods
     from .pages.boot_page import switch_to_boot_page

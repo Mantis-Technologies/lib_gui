@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1080</width>
-    <height>1862</height>
+    <height>1866</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -34,7 +34,7 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="BootingScreen">
      <widget class="QLabel" name="label_2">
@@ -67,7 +67,7 @@
       </property>
       <property name="font">
        <font>
-        <family>Arial</family>
+        <family>Lato</family>
         <pointsize>40</pointsize>
        </font>
       </property>
@@ -270,16 +270,18 @@ border-radius: 30px;
      <widget class="QLabel" name="rapid_thc_cbd_label">
       <property name="geometry">
        <rect>
-        <x>320</x>
-        <y>820</y>
-        <width>481</width>
+        <x>390</x>
+        <y>810</y>
+        <width>351</width>
         <height>71</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Arial</family>
+        <family>Montserrat</family>
         <pointsize>24</pointsize>
+        <weight>50</weight>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -290,7 +292,13 @@ border-radius: 30px;
         </string>
       </property>
       <property name="text">
-       <string>Rapid THC and CBD test for cannabis flower</string>
+       <string>RAPID THC &amp; CBD TEST FOR CANNABIS FLOWER</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QLabel" name="per_test_label">
@@ -344,6 +352,26 @@ border-radius: 30px;
        <bool>true</bool>
       </property>
      </widget>
+     <widget class="QLabel" name="label_21">
+      <property name="geometry">
+       <rect>
+        <x>930</x>
+        <y>660</y>
+        <width>60</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+        </string>
+      </property>
+      <property name="text">
+       <string>™</string>
+      </property>
+     </widget>
      <zorder>label_3</zorder>
      <zorder>begin_btn</zorder>
      <zorder>start_price_label</zorder>
@@ -352,6 +380,7 @@ border-radius: 30px;
      <zorder>rapid_thc_cbd_label</zorder>
      <zorder>per_test_label</zorder>
      <zorder>cannacheck_logo_label</zorder>
+     <zorder>label_21</zorder>
     </widget>
     <widget class="QWidget" name="ConfirmationScreen">
      <widget class="QPushButton" name="yes_over_21_btn">
