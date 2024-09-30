@@ -15,7 +15,7 @@ import sys
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtCore import pyqtSignal, Qt, QEvent
 from PyQt5.QtWidgets import QApplication, QWidget
-from PyQt5.QtGui import QFont
+from PyQt5.QtGui import QFont, QFontDatabase
 
 from .page import Page
 import time
@@ -169,6 +169,19 @@ class GUI(QtWidgets.QMainWindow):
         # Setting font for label
         font = QFont("Arial", 25)
         self.ui.start_price_label.setFont(font)
+
+    def load_custom_fonts(self):
+        """Load custom fonts (Lato and Montserrat)"""
+        font_db = QFontDatabase()
+
+        lato_font_id = font_db.addApplicationFont("fonts/Lato-Regular.ttf")
+        montserrat_font_id = font_db.addApplicationFont("fonts/Montserrat-VariableFont_wght.ttf")
+
+        # Check if the fonts were loaded successfully
+        if lato_font_id == -1:
+            print("Lato font could not be loaded.")
+        if montserrat_font_id == -1:
+            print("Montserrat Light font could not be loaded.")
 
     # Boot page methods
     from .pages.boot_page import switch_to_boot_page

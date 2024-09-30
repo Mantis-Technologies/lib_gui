@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1080</width>
-    <height>1920</height>
+    <width>1079</width>
+    <height>1867</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Test My Flower</string>
+   <string>CannaCheck Kiosk</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QStackedWidget" name="stackedWidget">
@@ -34,7 +34,7 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="currentIndex">
-     <number>8</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="BootingScreen">
      <widget class="QLabel" name="label_2">
@@ -46,14 +46,45 @@
         <height>1920</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #1b1b1b;</string>
+      </property>
       <property name="text">
        <string/>
       </property>
-      <property name="pixmap">
-       <pixmap>CannaCheck_UI_images_1.2/BootingScreen.png</pixmap>
-      </property>
       <property name="scaledContents">
        <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_20">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>710</y>
+        <width>751</width>
+        <height>291</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>40</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #1b1b1b;
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>Calibration in progress. 
+ Please wait and keep clear 
+ of the sample door.</string>
+      </property>
+      <property name="scaledContents">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </widget>
@@ -61,8 +92,8 @@
      <widget class="QPushButton" name="begin_btn">
       <property name="geometry">
        <rect>
-        <x>660</x>
-        <y>640</y>
+        <x>240</x>
+        <y>1040</y>
         <width>600</width>
         <height>130</height>
        </rect>
@@ -77,16 +108,30 @@
        <font>
         <family>Arial</family>
         <pointsize>60</pointsize>
-        <weight>75</weight>
+        <weight>50</weight>
         <italic>false</italic>
-        <bold>true</bold>
+        <bold>false</bold>
        </font>
       </property>
       <property name="autoFillBackground">
        <bool>false</bool>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-radius: 65px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(3, 116, 64)</string>
+       <string notr="true">QPushButton
+{
+border-radius: 65px;
+ background-color: rgb(27, 27, 27);
+ border: 3px solid white;
+ color: rgb(3, 116, 64);
+}
+
+QPushButton:pressed
+{
+border-radius: 65px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid white;
+ color: rgb(3, 116, 64);
+}</string>
       </property>
       <property name="text">
        <string>BEGIN</string>
@@ -96,43 +141,6 @@
         <width>200</width>
         <height>50</height>
        </size>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="about_btn">
-      <property name="geometry">
-       <rect>
-        <x>110</x>
-        <y>969</y>
-        <width>260</width>
-        <height>60</height>
-       </rect>
-      </property>
-      <property name="sizePolicy">
-       <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-        <horstretch>0</horstretch>
-        <verstretch>0</verstretch>
-       </sizepolicy>
-      </property>
-      <property name="minimumSize">
-       <size>
-        <width>0</width>
-        <height>0</height>
-       </size>
-      </property>
-      <property name="font">
-       <font>
-        <family>Arial</family>
-        <pointsize>30</pointsize>
-        <weight>75</weight>
-        <italic>false</italic>
-        <bold>true</bold>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">border-radius: 30px; background-color: rgb(27, 27, 27); border: 2px solid white; color: rgb(255, 255, 255)</string>
-      </property>
-      <property name="text">
-       <string>ABOUT</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_3">
@@ -149,11 +157,12 @@
         <family>Noto Sans</family>
        </font>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #1b1b1b;
+color: white;</string>
+      </property>
       <property name="text">
        <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>CannaCheck_UI_images_1.2/StartScreen.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -162,11 +171,16 @@
      <widget class="QLabel" name="start_price_label">
       <property name="geometry">
        <rect>
-        <x>779</x>
-        <y>540</y>
+        <x>400</x>
+        <y>950</y>
         <width>120</width>
         <height>34</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true"> QLabel {
@@ -178,20 +192,175 @@
       <property name="text">
        <string>TextLabel</string>
       </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="faq_btn">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>1200</y>
+        <width>260</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QPushButton
+{
+ border-radius: 30px;
+ background-color: rgb(27, 27, 27);
+ border: 2px solid white;
+ color: rgb(255, 255, 255)
+}
+
+QPushButton:pressed
+{
+border-radius: 30px;
+ background-color: rgb(27, 27, 27);
+ border: 4px solid white;
+ color: rgb(255, 255, 255)
+}</string>
+      </property>
+      <property name="text">
+       <string>FAQ</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="leaderboard_btn">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>1280</y>
+        <width>260</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+ border-radius: 30px;
+ background-color: rgb(27, 27, 27);
+ border: 2px solid white;
+ color: rgb(255, 255, 255)
+}
+
+QPushButton:pressed
+{
+border-radius: 30px;
+ background-color: rgb(27, 27, 27);
+ border: 4px solid white;
+ color: rgb(255, 255, 255)
+}</string>
+      </property>
+      <property name="text">
+       <string>Leaderboard</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="rapid_thc_cbd_label">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>820</y>
+        <width>481</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>24</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+        </string>
+      </property>
+      <property name="text">
+       <string>Rapid THC and CBD test for cannabis flower</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="per_test_label">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>960</y>
+        <width>60</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+        </string>
+      </property>
+      <property name="text">
+       <string>per Test</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="cannacheck_logo_label">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>640</y>
+        <width>931</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+        </string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>../../../Monolith_2024/Brand/Logos/Logo Files/For Web/png/White logo - no background-greenlogo.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
      </widget>
      <zorder>label_3</zorder>
      <zorder>begin_btn</zorder>
-     <zorder>about_btn</zorder>
      <zorder>start_price_label</zorder>
+     <zorder>faq_btn</zorder>
+     <zorder>leaderboard_btn</zorder>
+     <zorder>rapid_thc_cbd_label</zorder>
+     <zorder>per_test_label</zorder>
+     <zorder>cannacheck_logo_label</zorder>
     </widget>
     <widget class="QWidget" name="ConfirmationScreen">
      <widget class="QPushButton" name="yes_over_21_btn">
       <property name="geometry">
        <rect>
-        <x>400</x>
-        <y>640</y>
-        <width>540</width>
-        <height>120</height>
+        <x>110</x>
+        <y>1150</y>
+        <width>371</width>
+        <height>121</height>
        </rect>
       </property>
       <property name="font">
@@ -201,7 +370,29 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(3, 116, 64)</string>
+       <string notr="true">QPushButton
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 3px solid white;
+ color: rgb(3, 116, 64);
+}
+
+QPushButton:pressed
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid white;
+ color: rgb(3, 116, 64);
+}
+
+QPushButton:disabled
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid grey;
+ color: grey;
+}</string>
       </property>
       <property name="text">
        <string>YES</string>
@@ -210,10 +401,10 @@
      <widget class="QPushButton" name="no_not_21_btn">
       <property name="geometry">
        <rect>
-        <x>980</x>
-        <y>640</y>
-        <width>540</width>
-        <height>120</height>
+        <x>590</x>
+        <y>1150</y>
+        <width>361</width>
+        <height>121</height>
        </rect>
       </property>
       <property name="font">
@@ -223,7 +414,21 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(169, 6, 10)</string>
+       <string notr="true">QPushButton
+{
+ border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 3px solid white;
+ color: rgb(169, 6, 10)
+}
+
+QPushButton:pressed
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid white;
+ color: rgb(169, 6, 10)
+}</string>
       </property>
       <property name="text">
        <string>NO</string>
@@ -238,19 +443,53 @@
         <height>1920</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #1b1b1b;
+color: white;</string>
+      </property>
       <property name="text">
        <string/>
       </property>
-      <property name="pixmap">
-       <pixmap>CannaCheck_UI_images_1.2/ConfirmationScreen.png</pixmap>
-      </property>
       <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="age_question_label">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>700</y>
+        <width>621</width>
+        <height>221</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>48</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+        </string>
+      </property>
+      <property name="text">
+       <string>Are you 21 years of age or older, or a registered medical cannabis patient?</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
        <bool>true</bool>
       </property>
      </widget>
      <zorder>label_7</zorder>
      <zorder>yes_over_21_btn</zorder>
      <zorder>no_not_21_btn</zorder>
+     <zorder>age_question_label</zorder>
     </widget>
     <widget class="QWidget" name="OrderNumPage">
      <widget class="QLabel" name="enter_id_lbl">
@@ -726,7 +965,7 @@
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:60pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:60pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Ubuntu';&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="placeholderText">
@@ -744,10 +983,10 @@ p, li { white-space: pre-wrap; }
      <widget class="QPushButton" name="sample_loaded_btn">
       <property name="geometry">
        <rect>
-        <x>380</x>
-        <y>810</y>
-        <width>530</width>
-        <height>120</height>
+        <x>100</x>
+        <y>1590</y>
+        <width>391</width>
+        <height>121</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -766,7 +1005,29 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(3, 116, 64)</string>
+       <string notr="true">QPushButton
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 3px solid white;
+ color: rgb(3, 116, 64);
+}
+
+QPushButton:pressed
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid white;
+ color: rgb(3, 116, 64);
+}
+
+QPushButton:disabled
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid grey;
+ color: grey;
+}</string>
       </property>
       <property name="text">
        <string>FINISHED LOADING</string>
@@ -775,10 +1036,10 @@ p, li { white-space: pre-wrap; }
      <widget class="QPushButton" name="cancel_load_btn">
       <property name="geometry">
        <rect>
-        <x>960</x>
-        <y>810</y>
-        <width>540</width>
-        <height>120</height>
+        <x>580</x>
+        <y>1590</y>
+        <width>371</width>
+        <height>121</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -797,7 +1058,21 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(169, 6, 10)</string>
+       <string notr="true">QPushButton
+{
+ border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 3px solid white;
+ color: rgb(169, 6, 10)
+}
+
+QPushButton:pressed
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid white;
+ color: rgb(169, 6, 10)
+}</string>
       </property>
       <property name="text">
        <string>CANCEL</string>
@@ -812,26 +1087,78 @@ p, li { white-space: pre-wrap; }
         <height>1920</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #1b1b1b;
+color: white;   </string>
+      </property>
       <property name="text">
        <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>CannaCheck_UI_images_1.2/LoadSampleScreen.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
       </property>
      </widget>
+     <widget class="QLabel" name="load_sample_label">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>90</y>
+        <width>331</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>36</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+        </string>
+      </property>
+      <property name="text">
+       <string>Please load sample</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="load_sample_graphic">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>650</y>
+        <width>611</width>
+        <height>231</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #1b1b1b;
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
      <zorder>label</zorder>
      <zorder>cancel_load_btn</zorder>
      <zorder>sample_loaded_btn</zorder>
+     <zorder>load_sample_label</zorder>
+     <zorder>load_sample_graphic</zorder>
     </widget>
     <widget class="QWidget" name="ScanRunningScreen">
      <widget class="QProgressBar" name="pbar">
       <property name="geometry">
        <rect>
-        <x>460</x>
-        <y>870</y>
+        <x>40</x>
+        <y>1260</y>
         <width>1001</width>
         <height>61</height>
        </rect>
@@ -854,27 +1181,61 @@ p, li { white-space: pre-wrap; }
         <height>1920</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #1b1b1b;
+color: white;   </string>
+      </property>
       <property name="text">
        <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>CannaCheck_UI_images_1.2/ScanRunningScreen.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
       </property>
      </widget>
+     <widget class="QLabel" name="performing_analysis_label">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>730</y>
+        <width>611</width>
+        <height>311</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>36</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+       </string>
+      </property>
+      <property name="text">
+       <string>Performing Analysis</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
      <zorder>label_5</zorder>
      <zorder>pbar</zorder>
+     <zorder>performing_analysis_label</zorder>
     </widget>
     <widget class="QWidget" name="ResultScreen">
      <widget class="QPushButton" name="finished_test_btn">
       <property name="geometry">
        <rect>
-        <x>39</x>
-        <y>730</y>
-        <width>540</width>
-        <height>130</height>
+        <x>20</x>
+        <y>1510</y>
+        <width>451</width>
+        <height>141</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -893,10 +1254,32 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-radius: 65px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(3, 116, 64)</string>
+       <string notr="true">QPushButton
+{
+ border-radius: 65px;
+ background-color: rgb(27, 27, 27);
+ border: 3px solid white;
+ color: rgb(169, 6, 10)
+}
+
+QPushButton:pressed
+{
+border-radius: 65px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid white;
+ color: rgb(169, 6, 10)
+}
+
+QPushButton:disabled
+{
+border-radius: 65px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid grey;
+ color: grey;
+}</string>
       </property>
       <property name="text">
-       <string>CONFIRM REMOVAL</string>
+       <string>I'M FINISHED</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_4">
@@ -908,11 +1291,12 @@ p, li { white-space: pre-wrap; }
         <height>1920</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #1b1b1b;
+color: white;   </string>
+      </property>
       <property name="text">
        <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>CannaCheck_UI_images_1.2/ResultsScreen.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -921,8 +1305,8 @@ p, li { white-space: pre-wrap; }
      <widget class="QLabel" name="TotalThcLbl">
       <property name="geometry">
        <rect>
-        <x>720</x>
-        <y>790</y>
+        <x>70</x>
+        <y>1350</y>
         <width>450</width>
         <height>80</height>
        </rect>
@@ -943,8 +1327,8 @@ p, li { white-space: pre-wrap; }
      <widget class="QLabel" name="TotalCbdLbl">
       <property name="geometry">
        <rect>
-        <x>1240</x>
-        <y>790</y>
+        <x>600</x>
+        <y>1340</y>
         <width>450</width>
         <height>80</height>
        </rect>
@@ -962,10 +1346,106 @@ p, li { white-space: pre-wrap; }
        <string>Total CBD</string>
       </property>
      </widget>
+     <widget class="QLabel" name="Points_earned_lbl">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>30</y>
+        <width>440</width>
+        <height>130</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 10px; background-color: #D8A444; border: 3px solid white;color:white</string>
+      </property>
+      <property name="text">
+       <string>&lt;p&gt;&lt;span style=&quot;font-size:20px;&quot;&gt;You Earned&lt;/span&gt;&lt;br&gt;&lt;span style=&quot;font-size:40px;&quot;&gt;x Points&lt;/span&gt;&lt;/p&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="test_disclaimer_label">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>1680</y>
+        <width>621</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>9</pointsize>
+        <italic>false</italic>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+       </string>
+      </property>
+      <property name="text">
+       <string>*disclaimer: Please be advised that this self-administered test is not in compliance with the specific regulatory requirements of the Commonwealth of Massachusetts for cannabis testing. As per Section 500.160 of the 935 Massachusetts Code of Regulations (CMR), all marijuana products, including marijuana, must be tested by Independent Testing Laboratories following protocols established under Massachusetts General Laws c. 94G, § 15 and additional provisions in 935 CMR 500.000. This self-test is intended for informational purposes only, designed for consumer use, and is explicitly not for business-to-business transactions or uses. It should not be interpreted as an indication of the product’s safety or quality, nor does it serve as a valid certificate of analysis.</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="scan_qr_code_to_view_results">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>190</y>
+        <width>251</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+       </string>
+      </property>
+      <property name="text">
+       <string>Scan QR code to view your results online</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="do_not_confirm_unti_finished">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>890</y>
+        <width>191</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+       </string>
+      </property>
+      <property name="text">
+       <string>Do not confirm until finished</string>
+      </property>
+     </widget>
      <zorder>label_4</zorder>
      <zorder>finished_test_btn</zorder>
      <zorder>TotalThcLbl</zorder>
      <zorder>TotalCbdLbl</zorder>
+     <zorder>Points_earned_lbl</zorder>
+     <zorder>test_disclaimer_label</zorder>
+     <zorder>scan_qr_code_to_view_results</zorder>
+     <zorder>do_not_confirm_unti_finished</zorder>
     </widget>
     <widget class="QWidget" name="ErrorPage">
      <widget class="QLabel" name="label_6">
@@ -977,13 +1457,40 @@ p, li { white-space: pre-wrap; }
         <height>1920</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #1b1b1b;
+color: white;   </string>
+      </property>
       <property name="text">
        <string/>
       </property>
-      <property name="pixmap">
-       <pixmap>CannaCheck_UI_images_1.2/ErrorPage.png</pixmap>
-      </property>
       <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="error_message_label">
+      <property name="geometry">
+       <rect>
+        <x>209</x>
+        <y>555</y>
+        <width>421</width>
+        <height>561</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+       </string>
+      </property>
+      <property name="text">
+       <string>An error has occured. All active transactions will either be voided or refunded. We apologize for any inconvenience caused.</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
        <bool>true</bool>
       </property>
      </widget>
@@ -992,8 +1499,8 @@ p, li { white-space: pre-wrap; }
      <widget class="QPushButton" name="cancel_payment_btn">
       <property name="geometry">
        <rect>
-        <x>1280</x>
-        <y>855</y>
+        <x>530</x>
+        <y>1620</y>
         <width>530</width>
         <height>120</height>
        </rect>
@@ -1005,7 +1512,21 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(169, 6, 10)</string>
+       <string notr="true">QPushButton
+{
+ border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 3px solid white;
+ color: rgb(169, 6, 10)
+}
+
+QPushButton:pressed
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid white;
+ color: rgb(169, 6, 10)
+}</string>
       </property>
       <property name="text">
        <string>CANCEL</string>
@@ -1020,11 +1541,12 @@ p, li { white-space: pre-wrap; }
         <height>1920</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #1b1b1b;
+color: white;   </string>
+      </property>
       <property name="text">
        <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>CannaCheck_UI_images_1.2/PaymentPage.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -1033,8 +1555,8 @@ p, li { white-space: pre-wrap; }
      <widget class="QLabel" name="Price_lbl">
       <property name="geometry">
        <rect>
-        <x>630</x>
-        <y>380</y>
+        <x>300</x>
+        <y>680</y>
         <width>231</width>
         <height>61</height>
        </rect>
@@ -1049,9 +1571,135 @@ p, li { white-space: pre-wrap; }
        <string>TextLabel</string>
       </property>
      </widget>
+     <widget class="QLabel" name="thc_tests_label">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>890</y>
+        <width>60</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+       </string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="cbd_tests_label">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>900</y>
+        <width>60</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+       </string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="per_test_payment_label">
+      <property name="geometry">
+       <rect>
+        <x>550</x>
+        <y>710</y>
+        <width>60</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+       </string>
+      </property>
+      <property name="text">
+       <string>per test</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="kindly_proceed_w_transaction">
+      <property name="geometry">
+       <rect>
+        <x>300</x>
+        <y>300</y>
+        <width>501</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+       </string>
+      </property>
+      <property name="text">
+       <string>Kindly proceed with the transaction on the integrated payment terminal</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="nondestructive_test_label">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>850</y>
+        <width>271</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+       </string>
+      </property>
+      <property name="text">
+       <string>Non-Destructive Test Includes:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="all_sales_final">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>1070</y>
+        <width>111</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+       </string>
+      </property>
+      <property name="text">
+       <string>All Sales Final</string>
+      </property>
+     </widget>
      <zorder>label_8</zorder>
      <zorder>cancel_payment_btn</zorder>
      <zorder>Price_lbl</zorder>
+     <zorder>thc_tests_label</zorder>
+     <zorder>cbd_tests_label</zorder>
+     <zorder>per_test_payment_label</zorder>
+     <zorder>kindly_proceed_w_transaction</zorder>
+     <zorder>nondestructive_test_label</zorder>
+     <zorder>all_sales_final</zorder>
     </widget>
     <widget class="QWidget" name="ConfiguringKeyPadPage">
      <widget class="QLabel" name="label_11">
@@ -1063,14 +1711,35 @@ p, li { white-space: pre-wrap; }
         <height>1920</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #1b1b1b;
+color: white;   </string>
+      </property>
       <property name="text">
        <string/>
       </property>
-      <property name="pixmap">
-       <pixmap>CannaCheck_UI_images_1.2/ConfiguringKeyPadPage.png</pixmap>
-      </property>
       <property name="scaledContents">
        <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="configuring_terminal_label">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>920</y>
+        <width>211</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+ </string>
+      </property>
+      <property name="text">
+       <string>Configuring terminal. Please wait.</string>
       </property>
      </widget>
     </widget>
@@ -1078,8 +1747,8 @@ p, li { white-space: pre-wrap; }
      <widget class="QPushButton" name="instruction_next">
       <property name="geometry">
        <rect>
-        <x>420</x>
-        <y>885</y>
+        <x>30</x>
+        <y>1650</y>
         <width>531</width>
         <height>120</height>
        </rect>
@@ -1091,7 +1760,29 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(3, 116, 64)</string>
+       <string notr="true">QPushButton
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 3px solid white;
+ color: rgb(3, 116, 64);
+}
+
+QPushButton:pressed
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid white;
+ color: rgb(3, 116, 64);
+}
+
+QPushButton:disabled
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid grey;
+ color: grey;
+}</string>
       </property>
       <property name="text">
        <string>NEXT</string>
@@ -1100,8 +1791,8 @@ p, li { white-space: pre-wrap; }
      <widget class="QPushButton" name="instruction_cancel">
       <property name="geometry">
        <rect>
-        <x>1000</x>
-        <y>885</y>
+        <x>520</x>
+        <y>1540</y>
         <width>531</width>
         <height>120</height>
        </rect>
@@ -1113,7 +1804,21 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(169, 6, 10)</string>
+       <string notr="true">QPushButton
+{
+ border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 3px solid white;
+ color: rgb(169, 6, 10)
+}
+
+QPushButton:pressed
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid white;
+ color: rgb(169, 6, 10)
+}</string>
       </property>
       <property name="text">
        <string>CANCEL</string>
@@ -1128,19 +1833,104 @@ p, li { white-space: pre-wrap; }
         <height>1920</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #1b1b1b;
+color: white;   </string>
+      </property>
       <property name="text">
        <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>CannaCheck_UI_images_1.2/InstructionPage.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
       </property>
      </widget>
+     <widget class="QLabel" name="instructions_label">
+      <property name="geometry">
+       <rect>
+        <x>280</x>
+        <y>520</y>
+        <width>60</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+ </string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="follow_simple_steps_label">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>250</y>
+        <width>351</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+ </string>
+      </property>
+      <property name="text">
+       <string>Please follow these simple steps:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="ensure_to_fill_cup_label">
+      <property name="geometry">
+       <rect>
+        <x>780</x>
+        <y>380</y>
+        <width>221</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+ </string>
+      </property>
+      <property name="text">
+       <string>Ensure to fill cup cmpletely! ~1-2g</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="full_cup_image_label">
+      <property name="geometry">
+       <rect>
+        <x>830</x>
+        <y>560</y>
+        <width>60</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+ </string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
      <zorder>label_9</zorder>
      <zorder>instruction_next</zorder>
      <zorder>instruction_cancel</zorder>
+     <zorder>instructions_label</zorder>
+     <zorder>follow_simple_steps_label</zorder>
+     <zorder>ensure_to_fill_cup_label</zorder>
+     <zorder>full_cup_image_label</zorder>
     </widget>
     <widget class="QWidget" name="AboutPage">
      <widget class="QPushButton" name="back_to_start_btn">
@@ -1171,7 +1961,21 @@ p, li { white-space: pre-wrap; }
        <bool>false</bool>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-radius: 45px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(169, 6, 10)</string>
+       <string notr="true">QPushButton
+{
+ border-radius: 45px;
+ background-color: rgb(27, 27, 27);
+ border: 3px solid white;
+ color: rgb(169, 6, 10)
+}
+
+QPushButton:pressed
+{
+border-radius: 45px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid white;
+ color: rgb(169, 6, 10)
+}</string>
       </property>
       <property name="text">
        <string>BACK</string>
@@ -1221,11 +2025,12 @@ p, li { white-space: pre-wrap; }
         <height>1920</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #1b1b1b;
+color: white;   </string>
+      </property>
       <property name="text">
        <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>CannaCheck_UI_images_1.2/DisclaimerPage.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -1234,8 +2039,8 @@ p, li { white-space: pre-wrap; }
      <widget class="QPushButton" name="agree_btn">
       <property name="geometry">
        <rect>
-        <x>400</x>
-        <y>855</y>
+        <x>30</x>
+        <y>1530</y>
         <width>540</width>
         <height>120</height>
        </rect>
@@ -1247,7 +2052,29 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(3, 116, 64)</string>
+       <string notr="true">QPushButton
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 3px solid white;
+ color: rgb(3, 116, 64);
+}
+
+QPushButton:pressed
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid white;
+ color: rgb(3, 116, 64);
+}
+
+QPushButton:disabled
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid grey;
+ color: grey;
+}</string>
       </property>
       <property name="text">
        <string>ACCEPT TERMS</string>
@@ -1256,8 +2083,8 @@ p, li { white-space: pre-wrap; }
      <widget class="QPushButton" name="decline_btn">
       <property name="geometry">
        <rect>
-        <x>980</x>
-        <y>855</y>
+        <x>450</x>
+        <y>1400</y>
         <width>540</width>
         <height>120</height>
        </rect>
@@ -1269,10 +2096,81 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(169, 6, 10)</string>
+       <string notr="true">QPushButton
+{
+ border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 3px solid white;
+ color: rgb(169, 6, 10)
+}
+
+QPushButton:pressed
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid white;
+ color: rgb(169, 6, 10)
+}</string>
       </property>
       <property name="text">
        <string>DECLINE</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="disclaimer_heading">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>140</y>
+        <width>60</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+ </string>
+      </property>
+      <property name="text">
+       <string>Disclaimer</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="disclaimer_body">
+      <property name="geometry">
+       <rect>
+        <x>340</x>
+        <y>330</y>
+        <width>341</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+ </string>
+      </property>
+      <property name="text">
+       <string>Monolith Machines (hereinafter referred to as &quot;Company&quot;) hereby issues this disclaimer regarding the usage of its kiosk testing results.
+
+Limitation of Liability: The Company shall not be liable, under any circumstances, for any claims, damages, losses, expenses, costs, or liabilities resulting from, arising out of, or in any way related to the use, interpretation, or reliance upon the test results obtained from the Company's kiosk.
+No Warranties: The test results provided by the Company's kiosk are offered on an &quot;as is&quot; and &quot;as available&quot; basis without any warranties of any kind, either express or implied, including but not limited to warranties of fitness for a particular purpose, merchantability, or non-infringement.
+Use at Own Risk: Individuals who use the kiosk and rely on the test results do so at their own risk. The Company expressly disclaims any responsibility for any actions taken or not taken based on the test results.
+AGE RESTRICTION: By using the kiosk, individuals acknowledge that they have read and understood this disclaimer, confirm they are at least 21 years of age, and agree to be bound by its terms.
+Not for Medical or Diagnostic Use: The test results from the Company's kiosk are not intended for medical or diagnostic purposes and should not be used as a substitute for professional medical advice, diagnosis, or treatment.
+Entertainment Purposes Only: The test results provided by the Company's kiosk are intended for entertainment purposes only. They are not meant to be used for any diagnostic, prognostic, or treatment purposes and should not be considered as a substitute for professional advice.
+Compliance with Massachusetts Regulations: Please be advised that this self-administered test is not in compliance with the specific regulatory requirements of the Commonwealth of Massachusetts for cannabis testing. As per Section 500.160 of the 935 Massachusetts Code of Regulations (CMR), all marijuana products, including marijuana, must be tested by Independent Testing Laboratories following protocols established under Massachusetts General Laws c. 94G, § 15 and additional provisions in 935 CMR 500.000. This self-test is intended for entertainment purposes only, designed for consumer use, and is explicitly not for business-to-business transactions or uses. It should not be interpreted as an indication of the product’s safety or quality, nor does it serve as a valid certificate of analysis for resale.
+Indemnification: By using the kiosk, individuals agree to indemnify, defend, and hold harmless the Company, its officers, directors, employees, agents, and third parties from and against any losses, expenses, damages, and costs, including reasonable attorneys' fees, resulting from any violation of this disclaimer or any activity related to their use of the test results.
+Modification of Terms: The Company reserves the right to change the terms, conditions, and notices under which the kiosk is offered, including but not limited to the charges associated with the use of the kiosk.
+
+This disclaimer is intended to be as broad and inclusive as permitted by the law. If any portion of this disclaimer is held invalid or unenforceable, the remaining portions shall remain in full force and effect.
+
+By using the kiosk, individuals acknowledge that they have read and understood this disclaimer, confirm they are at least 21 years of age, and agree to be bound by its terms.
+Monolith Machines 1/13/2024
+
+</string>
       </property>
      </widget>
     </widget>
@@ -1286,11 +2184,12 @@ p, li { white-space: pre-wrap; }
         <height>1920</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #1b1b1b;
+color: white;   </string>
+      </property>
       <property name="text">
        <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>CannaCheck_UI_images_1.2/BeforeProceeding.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -1299,8 +2198,8 @@ p, li { white-space: pre-wrap; }
      <widget class="QPushButton" name="next_proceeding_btn">
       <property name="geometry">
        <rect>
-        <x>400</x>
-        <y>800</y>
+        <x>0</x>
+        <y>1480</y>
         <width>540</width>
         <height>120</height>
        </rect>
@@ -1312,7 +2211,29 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(3, 116, 64)</string>
+       <string notr="true">QPushButton
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 3px solid white;
+ color: rgb(3, 116, 64);
+}
+
+QPushButton:pressed
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid white;
+ color: rgb(3, 116, 64);
+}
+
+QPushButton:disabled
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid grey;
+ color: grey;
+}</string>
       </property>
       <property name="text">
        <string>NEXT</string>
@@ -1321,8 +2242,8 @@ p, li { white-space: pre-wrap; }
      <widget class="QPushButton" name="cancel_proceeding_btn">
       <property name="geometry">
        <rect>
-        <x>990</x>
-        <y>800</y>
+        <x>560</x>
+        <y>1430</y>
         <width>531</width>
         <height>121</height>
        </rect>
@@ -1334,10 +2255,64 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(169, 6, 10)</string>
+       <string notr="true">QPushButton
+{
+ border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 3px solid white;
+ color: rgb(169, 6, 10)
+}
+
+QPushButton:pressed
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid white;
+ color: rgb(169, 6, 10)
+}</string>
       </property>
       <property name="text">
        <string>CANCEL</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="before_proceeding_header">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>230</y>
+        <width>60</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+ </string>
+      </property>
+      <property name="text">
+       <string>Before proceeding you will need:</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="before_proceeding_instructions">
+      <property name="geometry">
+       <rect>
+        <x>470</x>
+        <y>690</y>
+        <width>60</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+ </string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
       </property>
      </widget>
     </widget>
@@ -1351,11 +2326,12 @@ p, li { white-space: pre-wrap; }
         <height>1920</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #1b1b1b;
+color: white;   </string>
+      </property>
       <property name="text">
        <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>CannaCheck_UI_images_1.2/RescanResultsScreen.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -1364,8 +2340,8 @@ p, li { white-space: pre-wrap; }
      <widget class="QPushButton" name="cancel_test_btn">
       <property name="geometry">
        <rect>
-        <x>95</x>
-        <y>780</y>
+        <x>30</x>
+        <y>1220</y>
         <width>540</width>
         <height>120</height>
        </rect>
@@ -1377,7 +2353,29 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(169, 6, 10)</string>
+       <string notr="true">QPushButton
+{
+ border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 3px solid white;
+ color: rgb(169, 6, 10)
+}
+
+QPushButton:pressed
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid white;
+ color: rgb(169, 6, 10)
+}
+
+QPushButton:disabled
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid grey;
+ color: grey;
+}</string>
       </property>
       <property name="text">
        <string>CANCEL TEST</string>
@@ -1386,8 +2384,8 @@ p, li { white-space: pre-wrap; }
      <widget class="QPushButton" name="rescan_btn">
       <property name="geometry">
        <rect>
-        <x>690</x>
-        <y>780</y>
+        <x>20</x>
+        <y>1040</y>
         <width>540</width>
         <height>120</height>
        </rect>
@@ -1399,7 +2397,29 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(3, 116, 64)</string>
+       <string notr="true">QPushButton
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 3px solid white;
+ color: rgb(3, 116, 64);
+}
+
+QPushButton:pressed
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid white;
+ color: rgb(3, 116, 64);
+}
+
+QPushButton:disabled
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid grey;
+ color: grey;
+}</string>
       </property>
       <property name="text">
        <string>RESCAN</string>
@@ -1408,8 +2428,8 @@ p, li { white-space: pre-wrap; }
      <widget class="QPushButton" name="view_results_btn">
       <property name="geometry">
        <rect>
-        <x>1285</x>
-        <y>780</y>
+        <x>40</x>
+        <y>880</y>
         <width>540</width>
         <height>120</height>
        </rect>
@@ -1421,16 +2441,59 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-radius: 60px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(169, 6, 10)</string>
+       <string notr="true">QPushButton
+{
+ border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 3px solid white;
+ color: rgb(169, 6, 10)
+}
+
+QPushButton:pressed
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid white;
+ color: rgb(169, 6, 10)
+}
+
+QPushButton:disabled
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid grey;
+ color: grey;
+}</string>
       </property>
       <property name="text">
        <string>VIEW RESULTS</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="warning_label">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>390</y>
+        <width>60</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+ </string>
+      </property>
+      <property name="text">
+       <string>Warning</string>
       </property>
      </widget>
      <zorder>label_14</zorder>
      <zorder>rescan_btn</zorder>
      <zorder>view_results_btn</zorder>
      <zorder>cancel_test_btn</zorder>
+     <zorder>warning_label</zorder>
     </widget>
     <widget class="QWidget" name="ConfirmRemovalPage">
      <widget class="QLabel" name="label_15">
@@ -1442,11 +2505,12 @@ p, li { white-space: pre-wrap; }
         <height>1920</height>
        </rect>
       </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #1b1b1b;
+color: white;   </string>
+      </property>
       <property name="text">
        <string/>
-      </property>
-      <property name="pixmap">
-       <pixmap>CannaCheck_UI_images_1.2/ConfirmRemovalScreen.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -1455,8 +2519,8 @@ p, li { white-space: pre-wrap; }
      <widget class="QPushButton" name="confirm_removal_btn">
       <property name="geometry">
        <rect>
-        <x>640</x>
-        <y>730</y>
+        <x>190</x>
+        <y>1370</y>
         <width>640</width>
         <height>140</height>
        </rect>
@@ -1468,10 +2532,69 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-radius: 70px; background-color: rgb(27, 27, 27); border: 3px solid white; color: rgb(3, 116, 64)</string>
+       <string notr="true">QPushButton
+{
+ border-radius: 70px;
+ background-color: rgb(27, 27, 27);
+ border: 3px solid white;
+ color: rgb(169, 6, 10)
+}
+
+QPushButton:pressed
+{
+border-radius: 70px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid white;
+ color: rgb(169, 6, 10)
+}
+
+QPushButton:disabled
+{
+border-radius: 70px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid grey;
+ color: grey
+}</string>
       </property>
       <property name="text">
        <string>CONFIRM REMOVAL</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="remove_sample_image">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>910</y>
+        <width>60</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #1b1b1b;
+color: white;   </string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="remove_sample_text">
+      <property name="geometry">
+       <rect>
+        <x>460</x>
+        <y>1030</y>
+        <width>60</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+  </string>
+      </property>
+      <property name="text">
+       <string>Please remove your sample and confirm with the button below</string>
       </property>
      </widget>
     </widget>
@@ -1542,6 +2665,861 @@ p, li { white-space: pre-wrap; }
       </property>
       <property name="text">
        <string>Print Last Receipt</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="FindUserAddUserPage">
+     <widget class="QLabel" name="label_16">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1080</width>
+        <height>1920</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>60</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #1b1b1b;
+color: white;   </string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="existingUserInput">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>1140</y>
+        <width>550</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 30px; background-color: rgb(255, 255, 255); border: 2px solid white; color: rgb(27, 27, 27)</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="placeholderText">
+       <string>   Username or Email</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="newUserEmailInput">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>1440</y>
+        <width>550</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 30px; background-color: rgb(255, 255, 255); border: 2px solid white; color: rgb(27, 27, 27)</string>
+      </property>
+      <property name="cursorPosition">
+       <number>0</number>
+      </property>
+      <property name="placeholderText">
+       <string>   Email</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="confirmEmailInput">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>1530</y>
+        <width>550</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 30px; background-color: rgb(255, 255, 255); border: 2px solid white; color: rgb(27, 27, 27)</string>
+      </property>
+      <property name="placeholderText">
+       <string>   Confirm Email</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="usernameInput">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>1620</y>
+        <width>550</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 30px; background-color: rgb(255, 255, 255); border: 2px solid white; color: rgb(27, 27, 27)</string>
+      </property>
+      <property name="placeholderText">
+       <string>   Username</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="new_user_button">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>1720</y>
+        <width>550</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+ border-radius: 30px;
+ background-color: #037340;
+ border: 2px solid white;
+ color: rgb(255, 255, 255)
+}
+
+QPushButton:pressed
+{
+border-radius: 30px;
+ background-color: #037340;
+ border: 4px solid white;
+ color: rgb(255, 255, 255)
+}</string>
+      </property>
+      <property name="text">
+       <string>Sign Up</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="existing_user_button">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>1320</y>
+        <width>550</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+border-radius: 30px;
+ background-color: rgb(255, 255, 255);
+ border: 3px solid gray;
+ color: rgb(40, 40, 40);
+}
+
+QPushButton:pressed
+{
+border-radius: 30px;
+ background-color: rgb(255, 255, 255);
+ border: 6px solid gray;
+ color: rgb(40, 40, 40);
+}</string>
+      </property>
+      <property name="text">
+       <string>Sign In</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="skip_button_finduseradduser">
+      <property name="geometry">
+       <rect>
+        <x>1650</x>
+        <y>940</y>
+        <width>211</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>35</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+ border-radius: 30px;
+ background-color: rgb(27, 27, 27);
+ border: 3px solid white;
+ color: rgb(169, 6, 10)
+}
+
+QPushButton:pressed
+{
+border-radius: 30px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid white;
+ color: rgb(169, 6, 10)
+}</string>
+      </property>
+      <property name="text">
+       <string>Skip</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="user_pin_entry">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>1230</y>
+        <width>550</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius: 30px; background-color: rgb(255, 255, 255); border: 2px solid white; color: rgb(27, 27, 27)</string>
+      </property>
+      <property name="placeholderText">
+       <string>   4-Digit Account Pin</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="signinup_header">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>140</y>
+        <width>751</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+  </string>
+      </property>
+      <property name="text">
+       <string>Sign in or sign up to get emailed results, accure points for discounts, and be entered into our monthly leaderboard contests. We will not send you marketing.</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="sign_in_label">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>530</y>
+        <width>60</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>sign in</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="sign_up_label">
+      <property name="geometry">
+       <rect>
+        <x>800</x>
+        <y>530</y>
+        <width>60</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>sign up</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="FAQPage">
+     <widget class="QPushButton" name="faq_back_btn">
+      <property name="geometry">
+       <rect>
+        <x>1430</x>
+        <y>960</y>
+        <width>420</width>
+        <height>90</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>40</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+ border-radius: 45px;
+ background-color: rgb(27, 27, 27);
+ border: 3px solid white;
+ color: rgb(169, 6, 10)
+}
+
+QPushButton:pressed
+{
+border-radius: 45px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid white;
+ color: rgb(169, 6, 10)
+}</string>
+      </property>
+      <property name="text">
+       <string>Back</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_17">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1080</width>
+        <height>1920</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #1b1b1b;
+color: white;   </string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="FAQS">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>160</y>
+        <width>60</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+  </string>
+      </property>
+      <property name="text">
+       <string>FAQS</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="frequently_asked_questions">
+      <property name="geometry">
+       <rect>
+        <x>480</x>
+        <y>320</y>
+        <width>181</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+  </string>
+      </property>
+      <property name="text">
+       <string>Frequently Asked Questions</string>
+      </property>
+     </widget>
+     <zorder>label_17</zorder>
+     <zorder>faq_back_btn</zorder>
+     <zorder>FAQS</zorder>
+     <zorder>frequently_asked_questions</zorder>
+    </widget>
+    <widget class="QWidget" name="LeaderboardPage">
+     <widget class="QLabel" name="label_18">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1080</width>
+        <height>1920</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #1b1b1b;
+color: white;   </string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="leaderboard_back_btn">
+      <property name="geometry">
+       <rect>
+        <x>1759</x>
+        <y>50</y>
+        <width>91</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>40</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+ background-color: rgb(27, 27, 27);
+ border: 3px solid white;
+ color: rgb(169, 6, 10)
+}
+
+QPushButton:pressed
+{
+ background-color: rgb(27, 27, 27);
+ border: 6px solid white;
+ color: rgb(169, 6, 10)
+}</string>
+      </property>
+      <property name="text">
+       <string>X</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="leaderboard_header">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>260</y>
+        <width>161</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+ </string>
+      </property>
+      <property name="text">
+       <string>Leaderboard</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="leaderboard_logo">
+      <property name="geometry">
+       <rect>
+        <x>510</x>
+        <y>100</y>
+        <width>60</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+ </string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="leaderboard_graphic">
+      <property name="geometry">
+       <rect>
+        <x>500</x>
+        <y>350</y>
+        <width>60</width>
+        <height>16</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+ </string>
+      </property>
+      <property name="text">
+       <string>TextLabel</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="ApplyPointsPage">
+     <widget class="QLabel" name="BackgroundColor_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1080</width>
+        <height>1920</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #1b1b1b;
+color: white;   </string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="scaledContents">
+       <bool>false</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="skip_button_apply_points">
+      <property name="geometry">
+       <rect>
+        <x>820</x>
+        <y>1760</y>
+        <width>211</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>35</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+ border-radius: 30px;
+ background-color: rgb(27, 27, 27);
+ border: 3px solid white;
+ color: rgb(169, 6, 10)
+}
+
+QPushButton:pressed
+{
+border-radius: 30px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid white;
+ color: rgb(169, 6, 10)
+}</string>
+      </property>
+      <property name="text">
+       <string>Skip</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Confirm_Apply_Points">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>960</y>
+        <width>550</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+ border-radius: 30px;
+ background-color: #037340;
+ border: 2px solid white;
+ color: rgb(255, 255, 255)
+}
+
+QPushButton:pressed
+{
+border-radius: 30px;
+ background-color: #037340;
+ border: 4px solid white;
+ color: rgb(255, 255, 255)
+}
+
+QPushButton:disabled
+{
+border-radius: 30px;
+ background-color: grey;
+ border: 4px solid white;
+ color: rgb(255, 255, 255)
+}</string>
+      </property>
+      <property name="text">
+       <string>Confirm</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Points_Being_Applied_lbl">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>1190</y>
+        <width>300</width>
+        <height>200</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(27, 27, 27, 255);
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>Show points
+ being applied here</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Price_Adjustment_lbl">
+      <property name="geometry">
+       <rect>
+        <x>610</x>
+        <y>1180</y>
+        <width>300</width>
+        <height>200</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(27, 27, 27, 255);
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>Show Points
+ adjusted price here</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Discount_10_Percent_Button">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>280</y>
+        <width>400</width>
+        <height>200</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+border-radius: 30px; background-color: #0289c7;
+border: 2px solid white;
+color: rgb(255, 255, 255);
+}
+QPushButton:disabled{border-radius: 30px; background-color: grey; border: 2px solid white; color: rgb(82, 82, 82)}
+QPushButton:pressed
+{
+ border-radius: 30px;
+ background-color: #0289c7; border: 4px solid white;
+ color: rgb(255, 255, 255);
+}</string>
+      </property>
+      <property name="text">
+       <string>10% Off</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Discount_25_Percent_Button">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>280</y>
+        <width>400</width>
+        <height>200</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+border-radius: 30px; background-color: #0289c7;
+border: 2px solid white;
+color: rgb(255, 255, 255);
+}
+QPushButton:disabled{border-radius: 30px; background-color: grey; border: 2px solid white; color: rgb(82, 82, 82)}
+QPushButton:pressed
+{
+ border-radius: 30px;
+ background-color: #0289c7; border: 4px solid white;
+ color: rgb(255, 255, 255);
+}</string>
+      </property>
+      <property name="text">
+       <string>25% Off</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Discount_50_Percent_Button">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>520</y>
+        <width>400</width>
+        <height>200</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+border-radius: 30px; background-color: #0289c7;
+border: 2px solid white;
+color: rgb(255, 255, 255);
+}
+QPushButton:disabled{border-radius: 30px; background-color: grey; border: 2px solid white; color: rgb(82, 82, 82)}
+QPushButton:pressed
+{
+ border-radius: 30px;
+ background-color: #0289c7; border: 4px solid white;
+ color: rgb(255, 255, 255);
+}</string>
+      </property>
+      <property name="text">
+       <string>50% Off</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Max_Discount_Button">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>520</y>
+        <width>400</width>
+        <height>200</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton{
+border-radius: 30px; background-color: #0289c7;
+border: 2px solid white;
+color: rgb(255, 255, 255);
+}
+QPushButton:disabled{border-radius: 30px; background-color: grey; border: 2px solid white; color: rgb(82, 82, 82)}
+QPushButton:pressed
+{
+ border-radius: 30px;
+ background-color: #0289c7; border: 4px solid white;
+ color: rgb(255, 255, 255);
+}</string>
+      </property>
+      <property name="text">
+       <string>Max Discount Here</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="NetworkOutagePage">
+     <widget class="QLabel" name="BackgroundColor_3">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>1080</width>
+        <height>1920</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(27, 27, 27, 255);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_19">
+      <property name="geometry">
+       <rect>
+        <x>150</x>
+        <y>600</y>
+        <width>761</width>
+        <height>461</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>40</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(27, 27, 27, 255);
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>Cannot reach CannaCheck™ servers. The network may be down or maintenance is underway. Please contact a store administrator or come back later. Any active transactions will be refunded. We apologize for this inconvenience.</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
