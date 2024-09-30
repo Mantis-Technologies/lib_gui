@@ -9,7 +9,7 @@ __maintainer__ = "Nicholas Lanotte"
 __email__ = "nickjl0809@gmail.com"
 
 from ..page import Page
-from PyQt5.QtCore import QThread, pyqtSignal, Qt
+from PyQt5.QtCore import QThread, pyqtSignal, Qt, QObject
 from PyQt5.QtGui import QFont
 import time
 
@@ -28,7 +28,6 @@ def switch_to_payment_page(self):
 
 
 def set_Price_label(self, price_in_dollars_total: float):
-
     # Setting the text of the label
     self.Price_lbl.setText(f"${price_in_dollars_total:.2f}")
     # Setting font for label
@@ -43,11 +42,23 @@ def cancel_payment(self):
     self.PaymentTimeoutThread.keepRunning = False
     self.switch_to_start_page_terminate_transaction()
 
+class CheckPaymentTerminalSignalEmitter(QObject):
+    # Define the signal at the class level
+    signal = pyqtSignal()
+
+    def __init__(self):
+        super().__init__()
+
+    def emit_signal(self):
+        self.signal.emit()
 
 def connect_payment_buttons(self):
     """Connects results buttons"""
 
     self.cancel_payment_btn.clicked.connect(self.cancel_payment)
+
+    self.check_payment_terminal_connection_signal = CheckPaymentTerminalSignalEmitter()
+    self.check_payment_terminal_connection_signal.signal.connect(self.Check_Payment_Terminal_Connection)
 
 
 def PaymentApprovedCallback(self, result):
@@ -58,6 +69,14 @@ def PaymentApprovedCallback(self, result):
 
 def PaymentTimeoutCallback(self, result):
     self.cancel_payment()
+
+
+def Check_Payment_Terminal_Connection(self):
+    print("Check Payment Terminal function is not overridden")  # override this function
+
+
+def Send_CheckPayment_Terminal_Connection_Signal(self):
+    self.check_payment_terminal_connection_signal.emit_signal()
 
 
 class PaymentTimeoutThread(QThread):
