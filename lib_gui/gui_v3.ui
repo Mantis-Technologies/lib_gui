@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1080</width>
-    <height>1866</height>
+    <height>1867</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -34,7 +34,7 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>15</number>
     </property>
     <widget class="QWidget" name="BootingScreen">
      <widget class="QLabel" name="label_2">
@@ -60,14 +60,14 @@
       <property name="geometry">
        <rect>
         <x>140</x>
-        <y>710</y>
+        <y>760</y>
         <width>751</width>
         <height>291</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Lato</family>
+        <family>Montserrat</family>
         <pointsize>40</pointsize>
        </font>
       </property>
@@ -92,10 +92,10 @@ color: white;</string>
      <widget class="QPushButton" name="begin_btn">
       <property name="geometry">
        <rect>
-        <x>240</x>
-        <y>1040</y>
-        <width>600</width>
-        <height>130</height>
+        <x>310</x>
+        <y>1010</y>
+        <width>501</width>
+        <height>131</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -171,15 +171,16 @@ color: white;</string>
      <widget class="QLabel" name="start_price_label">
       <property name="geometry">
        <rect>
-        <x>400</x>
+        <x>460</x>
         <y>950</y>
-        <width>120</width>
-        <height>34</height>
+        <width>91</width>
+        <height>16</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Arial</family>
+        <family>Montserrat</family>
+        <pointsize>18</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -199,8 +200,8 @@ color: white;</string>
      <widget class="QPushButton" name="faq_btn">
       <property name="geometry">
        <rect>
-        <x>400</x>
-        <y>1200</y>
+        <x>430</x>
+        <y>1260</y>
         <width>260</width>
         <height>60</height>
        </rect>
@@ -235,8 +236,8 @@ border-radius: 30px;
      <widget class="QPushButton" name="leaderboard_btn">
       <property name="geometry">
        <rect>
-        <x>400</x>
-        <y>1280</y>
+        <x>430</x>
+        <y>1180</y>
         <width>260</width>
         <height>60</height>
        </rect>
@@ -264,15 +265,15 @@ border-radius: 30px;
 }</string>
       </property>
       <property name="text">
-       <string>Leaderboard</string>
+       <string>Leaderboards</string>
       </property>
      </widget>
      <widget class="QLabel" name="rapid_thc_cbd_label">
       <property name="geometry">
        <rect>
-        <x>390</x>
-        <y>810</y>
-        <width>351</width>
+        <x>380</x>
+        <y>820</y>
+        <width>360</width>
         <height>71</height>
        </rect>
       </property>
@@ -281,6 +282,7 @@ border-radius: 30px;
         <family>Montserrat</family>
         <pointsize>24</pointsize>
         <weight>50</weight>
+        <italic>false</italic>
         <bold>false</bold>
        </font>
       </property>
@@ -292,7 +294,7 @@ border-radius: 30px;
         </string>
       </property>
       <property name="text">
-       <string>RAPID THC &amp; CBD TEST FOR CANNABIS FLOWER</string>
+       <string>Rapid THC &amp; CBD Analysis for Cannabis Flower</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -304,15 +306,16 @@ border-radius: 30px;
      <widget class="QLabel" name="per_test_label">
       <property name="geometry">
        <rect>
-        <x>520</x>
-        <y>960</y>
-        <width>60</width>
+        <x>560</x>
+        <y>950</y>
+        <width>81</width>
         <height>16</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Arial</family>
+        <family>Montserrat</family>
+        <pointsize>18</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -352,7 +355,7 @@ border-radius: 30px;
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_21">
+     <widget class="QLabel" name="trademark_1">
       <property name="geometry">
        <rect>
         <x>930</x>
@@ -360,6 +363,11 @@ border-radius: 30px;
         <width>60</width>
         <height>16</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>18</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true"> QLabel {
@@ -380,7 +388,7 @@ border-radius: 30px;
      <zorder>rapid_thc_cbd_label</zorder>
      <zorder>per_test_label</zorder>
      <zorder>cannacheck_logo_label</zorder>
-     <zorder>label_21</zorder>
+     <zorder>trademark_1</zorder>
     </widget>
     <widget class="QWidget" name="ConfirmationScreen">
      <widget class="QPushButton" name="yes_over_21_btn">
@@ -494,7 +502,7 @@ color: white;</string>
       </property>
       <property name="font">
        <font>
-        <family>Arial</family>
+        <family>Montserrat</family>
         <pointsize>48</pointsize>
        </font>
       </property>
@@ -1012,8 +1020,8 @@ p, li { white-space: pre-wrap; }
      <widget class="QPushButton" name="sample_loaded_btn">
       <property name="geometry">
        <rect>
-        <x>100</x>
-        <y>1590</y>
+        <x>110</x>
+        <y>1280</y>
         <width>391</width>
         <height>121</height>
        </rect>
@@ -1028,9 +1036,9 @@ p, li { white-space: pre-wrap; }
        <font>
         <family>Arial</family>
         <pointsize>35</pointsize>
-        <weight>75</weight>
+        <weight>50</weight>
         <italic>false</italic>
-        <bold>true</bold>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -1065,8 +1073,8 @@ border-radius: 60px;
      <widget class="QPushButton" name="cancel_load_btn">
       <property name="geometry">
        <rect>
-        <x>580</x>
-        <y>1590</y>
+        <x>600</x>
+        <y>1280</y>
         <width>371</width>
         <height>121</height>
        </rect>
@@ -1081,9 +1089,9 @@ border-radius: 60px;
        <font>
         <family>Arial</family>
         <pointsize>35</pointsize>
-        <weight>75</weight>
+        <weight>50</weight>
         <italic>false</italic>
-        <bold>true</bold>
+        <bold>false</bold>
        </font>
       </property>
       <property name="styleSheet">
@@ -1130,15 +1138,15 @@ color: white;   </string>
      <widget class="QLabel" name="load_sample_label">
       <property name="geometry">
        <rect>
-        <x>360</x>
-        <y>90</y>
-        <width>331</width>
-        <height>61</height>
+        <x>320</x>
+        <y>50</y>
+        <width>431</width>
+        <height>101</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Arial</family>
+        <family>Montserrat</family>
         <pointsize>36</pointsize>
        </font>
       </property>
@@ -1150,7 +1158,7 @@ color: white;   </string>
         </string>
       </property>
       <property name="text">
-       <string>Please load sample</string>
+       <string>Please load a sample.</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -1162,8 +1170,8 @@ color: white;   </string>
      <widget class="QLabel" name="load_sample_graphic">
       <property name="geometry">
        <rect>
-        <x>190</x>
-        <y>650</y>
+        <x>240</x>
+        <y>720</y>
         <width>611</width>
         <height>231</height>
        </rect>
@@ -1232,7 +1240,7 @@ color: white;   </string>
       </property>
       <property name="font">
        <font>
-        <family>Arial</family>
+        <family>Montserrat</family>
         <pointsize>36</pointsize>
        </font>
       </property>
@@ -1334,15 +1342,15 @@ color: white;   </string>
      <widget class="QLabel" name="TotalThcLbl">
       <property name="geometry">
        <rect>
-        <x>70</x>
-        <y>1350</y>
+        <x>60</x>
+        <y>1050</y>
         <width>450</width>
         <height>80</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Calibri</family>
+        <family>Lato</family>
         <pointsize>30</pointsize>
        </font>
       </property>
@@ -1356,15 +1364,15 @@ color: white;   </string>
      <widget class="QLabel" name="TotalCbdLbl">
       <property name="geometry">
        <rect>
-        <x>600</x>
-        <y>1340</y>
+        <x>610</x>
+        <y>1050</y>
         <width>450</width>
         <height>80</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Calibri</family>
+        <family>Lato</family>
         <pointsize>30</pointsize>
        </font>
       </property>
@@ -1378,8 +1386,8 @@ color: white;   </string>
      <widget class="QLabel" name="Points_earned_lbl">
       <property name="geometry">
        <rect>
-        <x>80</x>
-        <y>30</y>
+        <x>580</x>
+        <y>1520</y>
         <width>440</width>
         <height>130</height>
        </rect>
@@ -1397,16 +1405,16 @@ color: white;   </string>
      <widget class="QLabel" name="test_disclaimer_label">
       <property name="geometry">
        <rect>
-        <x>250</x>
-        <y>1680</y>
-        <width>621</width>
+        <x>20</x>
+        <y>1710</y>
+        <width>1041</width>
         <height>101</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Arial</family>
-        <pointsize>9</pointsize>
+        <family>Lato</family>
+        <pointsize>14</pointsize>
         <italic>false</italic>
        </font>
       </property>
@@ -1418,7 +1426,7 @@ color: white;   </string>
        </string>
       </property>
       <property name="text">
-       <string>*disclaimer: Please be advised that this self-administered test is not in compliance with the specific regulatory requirements of the Commonwealth of Massachusetts for cannabis testing. As per Section 500.160 of the 935 Massachusetts Code of Regulations (CMR), all marijuana products, including marijuana, must be tested by Independent Testing Laboratories following protocols established under Massachusetts General Laws c. 94G, § 15 and additional provisions in 935 CMR 500.000. This self-test is intended for informational purposes only, designed for consumer use, and is explicitly not for business-to-business transactions or uses. It should not be interpreted as an indication of the product’s safety or quality, nor does it serve as a valid certificate of analysis.</string>
+       <string>*DISCLAIMER: Please be advised that this self-administered test is not in compliance with the specific regulatory requirements of the Commonwealth of Massachusetts for cannabis testing. As per Section 500.160 of the 935 Massachusetts Code of Regulations (CMR), all marijuana products, including marijuana, must be tested by Independent Testing Laboratories following protocols established under Massachusetts General Laws c. 94G, § 15 and additional provisions in 935 CMR 500.000. This self-test is intended for informational purposes only, designed for consumer use, and is explicitly not for business-to-business transactions or uses. It should not be interpreted as an indication of the product’s safety or quality, nor does it serve as a valid certificate of analysis.</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
@@ -1430,11 +1438,17 @@ color: white;   </string>
      <widget class="QLabel" name="scan_qr_code_to_view_results">
       <property name="geometry">
        <rect>
-        <x>80</x>
-        <y>190</y>
-        <width>251</width>
+        <x>30</x>
+        <y>1260</y>
+        <width>291</width>
         <height>51</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+        <pointsize>24</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true"> QLabel {
@@ -1444,17 +1458,29 @@ color: white;   </string>
        </string>
       </property>
       <property name="text">
-       <string>Scan QR code to view your results online</string>
+       <string>Scan the QR code to view your results online.</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QLabel" name="do_not_confirm_unti_finished">
       <property name="geometry">
        <rect>
         <x>80</x>
-        <y>890</y>
-        <width>191</width>
+        <y>180</y>
+        <width>241</width>
         <height>51</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+        <pointsize>24</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true"> QLabel {
@@ -1464,7 +1490,13 @@ color: white;   </string>
        </string>
       </property>
       <property name="text">
-       <string>Do not confirm until finished</string>
+       <string>Do not confirm until finished.</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
      <zorder>label_4</zorder>
@@ -1500,11 +1532,17 @@ color: white;   </string>
      <widget class="QLabel" name="error_message_label">
       <property name="geometry">
        <rect>
-        <x>209</x>
-        <y>555</y>
-        <width>421</width>
+        <x>210</x>
+        <y>630</y>
+        <width>631</width>
         <height>561</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+        <pointsize>40</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true"> QLabel {
@@ -1514,7 +1552,7 @@ color: white;   </string>
        </string>
       </property>
       <property name="text">
-       <string>An error has occured. All active transactions will either be voided or refunded. We apologize for any inconvenience caused.</string>
+       <string>An error has occured, and our team has been notified. All active transactions will either be voided or refunded automatically. We apologize for any inconvenience caused.</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -1528,10 +1566,10 @@ color: white;   </string>
      <widget class="QPushButton" name="cancel_payment_btn">
       <property name="geometry">
        <rect>
-        <x>530</x>
-        <y>1620</y>
-        <width>530</width>
-        <height>120</height>
+        <x>720</x>
+        <y>1700</y>
+        <width>321</width>
+        <height>121</height>
        </rect>
       </property>
       <property name="font">
@@ -1584,11 +1622,17 @@ color: white;   </string>
      <widget class="QLabel" name="Price_lbl">
       <property name="geometry">
        <rect>
-        <x>300</x>
-        <y>680</y>
-        <width>231</width>
-        <height>61</height>
+        <x>320</x>
+        <y>510</y>
+        <width>211</width>
+        <height>171</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Lato</family>
+        <pointsize>48</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true"> QLabel {
@@ -1603,11 +1647,17 @@ color: white;   </string>
      <widget class="QLabel" name="thc_tests_label">
       <property name="geometry">
        <rect>
-        <x>370</x>
-        <y>890</y>
-        <width>60</width>
-        <height>16</height>
+        <x>200</x>
+        <y>870</y>
+        <width>281</width>
+        <height>171</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Lato</family>
+        <pointsize>36</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true"> QLabel {
@@ -1617,17 +1667,31 @@ color: white;   </string>
        </string>
       </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string>(1) Total THC Test
+(1) THC-A Test
+(1) THC Test</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QLabel" name="cbd_tests_label">
       <property name="geometry">
        <rect>
-        <x>520</x>
-        <y>900</y>
-        <width>60</width>
-        <height>16</height>
+        <x>580</x>
+        <y>870</y>
+        <width>311</width>
+        <height>161</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Lato</family>
+        <pointsize>36</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true"> QLabel {
@@ -1637,17 +1701,31 @@ color: white;   </string>
        </string>
       </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string>(1) Total CBD Test
+(1) CBD-A Test
+(1) CBD Test</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QLabel" name="per_test_payment_label">
       <property name="geometry">
        <rect>
-        <x>550</x>
-        <y>710</y>
-        <width>60</width>
-        <height>16</height>
+        <x>540</x>
+        <y>510</y>
+        <width>191</width>
+        <height>161</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Lato</family>
+        <pointsize>48</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true"> QLabel {
@@ -1663,11 +1741,17 @@ color: white;   </string>
      <widget class="QLabel" name="kindly_proceed_w_transaction">
       <property name="geometry">
        <rect>
-        <x>300</x>
-        <y>300</y>
-        <width>501</width>
-        <height>81</height>
+        <x>160</x>
+        <y>60</y>
+        <width>751</width>
+        <height>261</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+        <pointsize>48</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true"> QLabel {
@@ -1677,17 +1761,30 @@ color: white;   </string>
        </string>
       </property>
       <property name="text">
-       <string>Kindly proceed with the transaction on the integrated payment terminal</string>
+       <string>Kindly proceed with the transaction on the integrated payment terminal.</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QLabel" name="nondestructive_test_label">
       <property name="geometry">
        <rect>
-        <x>380</x>
-        <y>850</y>
-        <width>271</width>
-        <height>16</height>
+        <x>280</x>
+        <y>770</y>
+        <width>491</width>
+        <height>71</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Lato</family>
+        <pointsize>36</pointsize>
+        <underline>true</underline>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true"> QLabel {
@@ -1697,14 +1794,14 @@ color: white;   </string>
        </string>
       </property>
       <property name="text">
-       <string>Non-Destructive Test Includes:</string>
+       <string>Non-Destructive Test Includes*:</string>
       </property>
      </widget>
      <widget class="QLabel" name="all_sales_final">
       <property name="geometry">
        <rect>
-        <x>430</x>
-        <y>1070</y>
+        <x>490</x>
+        <y>1050</y>
         <width>111</width>
         <height>16</height>
        </rect>
@@ -1717,7 +1814,7 @@ color: white;   </string>
        </string>
       </property>
       <property name="text">
-       <string>All Sales Final</string>
+       <string>*All Sales Final</string>
       </property>
      </widget>
      <zorder>label_8</zorder>
@@ -1754,11 +1851,17 @@ color: white;   </string>
      <widget class="QLabel" name="configuring_terminal_label">
       <property name="geometry">
        <rect>
-        <x>510</x>
-        <y>920</y>
-        <width>211</width>
-        <height>16</height>
+        <x>280</x>
+        <y>830</y>
+        <width>491</width>
+        <height>151</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+        <pointsize>40</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true"> QLabel {
@@ -1770,16 +1873,22 @@ color: white;   </string>
       <property name="text">
        <string>Configuring terminal. Please wait.</string>
       </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
      </widget>
     </widget>
     <widget class="QWidget" name="InstructionPage">
      <widget class="QPushButton" name="instruction_next">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>1650</y>
-        <width>531</width>
-        <height>120</height>
+        <x>600</x>
+        <y>1610</y>
+        <width>365</width>
+        <height>131</height>
        </rect>
       </property>
       <property name="font">
@@ -1820,10 +1929,10 @@ border-radius: 60px;
      <widget class="QPushButton" name="instruction_cancel">
       <property name="geometry">
        <rect>
-        <x>520</x>
-        <y>1540</y>
-        <width>531</width>
-        <height>120</height>
+        <x>110</x>
+        <y>1610</y>
+        <width>365</width>
+        <height>131</height>
        </rect>
       </property>
       <property name="font">
@@ -1876,11 +1985,23 @@ color: white;   </string>
      <widget class="QLabel" name="instructions_label">
       <property name="geometry">
        <rect>
-        <x>280</x>
-        <y>520</y>
-        <width>60</width>
-        <height>16</height>
+        <x>100</x>
+        <y>320</y>
+        <width>871</width>
+        <height>721</height>
        </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+        <pointsize>24</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true"> QLabel {
@@ -1890,17 +2011,29 @@ color: white;   </string>
  </string>
       </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;h1&gt;Step 1&lt;/h1&gt;&lt;p&gt;Retrieve a sample cup from the dispenser located to your right. For best results, grasp the cup by its sides without touching the top or bottom.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;h1&gt;Step 2&lt;/h1&gt;&lt;p&gt;Gently fill the cup with approximately 1-2g of cannabis flower. For optimal results, we recommend using ground flower. Ensure the cup is securely closed and avoid overfilling. The orientation of the cup is not significant.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;h1&gt;Step 3&lt;/h1&gt;&lt;p&gt;Before proceeding, hold the cup up to a light source. Ensure that no light penetrates through the center of the cup.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QLabel" name="follow_simple_steps_label">
       <property name="geometry">
        <rect>
-        <x>360</x>
-        <y>250</y>
-        <width>351</width>
-        <height>16</height>
+        <x>120</x>
+        <y>40</y>
+        <width>831</width>
+        <height>281</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+        <pointsize>40</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true"> QLabel {
@@ -1910,17 +2043,29 @@ color: white;   </string>
  </string>
       </property>
       <property name="text">
-       <string>Please follow these simple steps:</string>
+       <string>&lt;h1&gt;Please follow these simple steps:&lt;/h1&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QLabel" name="ensure_to_fill_cup_label">
       <property name="geometry">
        <rect>
-        <x>780</x>
-        <y>380</y>
-        <width>221</width>
-        <height>16</height>
+        <x>370</x>
+        <y>1440</y>
+        <width>331</width>
+        <height>61</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Lato</family>
+        <pointsize>18</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true"> QLabel {
@@ -1930,36 +2075,61 @@ color: white;   </string>
  </string>
       </property>
       <property name="text">
-       <string>Ensure to fill cup cmpletely! ~1-2g</string>
+       <string>Fill cup completely!
+ ~1-2g</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="full_cup_image_label">
+     <widget class="QLabel" name="full_cup_image">
       <property name="geometry">
        <rect>
-        <x>830</x>
-        <y>560</y>
-        <width>60</width>
-        <height>16</height>
+        <x>380</x>
+        <y>1040</y>
+        <width>311</width>
+        <height>391</height>
        </rect>
       </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
       <property name="styleSheet">
-       <string notr="true"> QLabel {
-     background-color: #1B1B1B;
-     color: #FFFFFF;
-}
- </string>
+       <string notr="true">background-color: #1b1b1b;
+color: #037440;   </string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::NoFrame</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+      <property name="lineWidth">
+       <number>1</number>
       </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>CannaCheck_UI_images_1.2/Pack Your Sample copy.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
       </property>
      </widget>
      <zorder>label_9</zorder>
      <zorder>instruction_next</zorder>
      <zorder>instruction_cancel</zorder>
-     <zorder>instructions_label</zorder>
      <zorder>follow_simple_steps_label</zorder>
      <zorder>ensure_to_fill_cup_label</zorder>
-     <zorder>full_cup_image_label</zorder>
+     <zorder>instructions_label</zorder>
+     <zorder>full_cup_image</zorder>
     </widget>
     <widget class="QWidget" name="AboutPage">
      <widget class="QPushButton" name="back_to_start_btn">
@@ -2068,10 +2238,10 @@ color: white;   </string>
      <widget class="QPushButton" name="agree_btn">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>1530</y>
-        <width>540</width>
-        <height>120</height>
+        <x>580</x>
+        <y>1460</y>
+        <width>391</width>
+        <height>131</height>
        </rect>
       </property>
       <property name="font">
@@ -2112,10 +2282,10 @@ border-radius: 60px;
      <widget class="QPushButton" name="decline_btn">
       <property name="geometry">
        <rect>
-        <x>450</x>
-        <y>1400</y>
-        <width>540</width>
-        <height>120</height>
+        <x>80</x>
+        <y>1460</y>
+        <width>401</width>
+        <height>121</height>
        </rect>
       </property>
       <property name="font">
@@ -2148,11 +2318,17 @@ border-radius: 60px;
      <widget class="QLabel" name="disclaimer_heading">
       <property name="geometry">
        <rect>
-        <x>430</x>
-        <y>140</y>
-        <width>60</width>
-        <height>16</height>
+        <x>390</x>
+        <y>130</y>
+        <width>271</width>
+        <height>51</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Times New Roman</family>
+        <pointsize>50</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true"> QLabel {
@@ -2164,15 +2340,27 @@ border-radius: 60px;
       <property name="text">
        <string>Disclaimer</string>
       </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
      </widget>
      <widget class="QLabel" name="disclaimer_body">
       <property name="geometry">
        <rect>
-        <x>340</x>
-        <y>330</y>
-        <width>341</width>
-        <height>91</height>
+        <x>200</x>
+        <y>250</y>
+        <width>681</width>
+        <height>1101</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Times New Roman</family>
+        <pointsize>18</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true"> QLabel {
@@ -2182,24 +2370,13 @@ border-radius: 60px;
  </string>
       </property>
       <property name="text">
-       <string>Monolith Machines (hereinafter referred to as &quot;Company&quot;) hereby issues this disclaimer regarding the usage of its kiosk testing results.
-
-Limitation of Liability: The Company shall not be liable, under any circumstances, for any claims, damages, losses, expenses, costs, or liabilities resulting from, arising out of, or in any way related to the use, interpretation, or reliance upon the test results obtained from the Company's kiosk.
-No Warranties: The test results provided by the Company's kiosk are offered on an &quot;as is&quot; and &quot;as available&quot; basis without any warranties of any kind, either express or implied, including but not limited to warranties of fitness for a particular purpose, merchantability, or non-infringement.
-Use at Own Risk: Individuals who use the kiosk and rely on the test results do so at their own risk. The Company expressly disclaims any responsibility for any actions taken or not taken based on the test results.
-AGE RESTRICTION: By using the kiosk, individuals acknowledge that they have read and understood this disclaimer, confirm they are at least 21 years of age, and agree to be bound by its terms.
-Not for Medical or Diagnostic Use: The test results from the Company's kiosk are not intended for medical or diagnostic purposes and should not be used as a substitute for professional medical advice, diagnosis, or treatment.
-Entertainment Purposes Only: The test results provided by the Company's kiosk are intended for entertainment purposes only. They are not meant to be used for any diagnostic, prognostic, or treatment purposes and should not be considered as a substitute for professional advice.
-Compliance with Massachusetts Regulations: Please be advised that this self-administered test is not in compliance with the specific regulatory requirements of the Commonwealth of Massachusetts for cannabis testing. As per Section 500.160 of the 935 Massachusetts Code of Regulations (CMR), all marijuana products, including marijuana, must be tested by Independent Testing Laboratories following protocols established under Massachusetts General Laws c. 94G, § 15 and additional provisions in 935 CMR 500.000. This self-test is intended for entertainment purposes only, designed for consumer use, and is explicitly not for business-to-business transactions or uses. It should not be interpreted as an indication of the product’s safety or quality, nor does it serve as a valid certificate of analysis for resale.
-Indemnification: By using the kiosk, individuals agree to indemnify, defend, and hold harmless the Company, its officers, directors, employees, agents, and third parties from and against any losses, expenses, damages, and costs, including reasonable attorneys' fees, resulting from any violation of this disclaimer or any activity related to their use of the test results.
-Modification of Terms: The Company reserves the right to change the terms, conditions, and notices under which the kiosk is offered, including but not limited to the charges associated with the use of the kiosk.
-
-This disclaimer is intended to be as broad and inclusive as permitted by the law. If any portion of this disclaimer is held invalid or unenforceable, the remaining portions shall remain in full force and effect.
-
-By using the kiosk, individuals acknowledge that they have read and understood this disclaimer, confirm they are at least 21 years of age, and agree to be bound by its terms.
-Monolith Machines 1/13/2024
-
-</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Monolith Machines (hereinafter referred to as &amp;quot;Company&amp;quot;) hereby issues this disclaimer regarding the usage of its kiosk testing results.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;Limitation of Liability: &lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;The Company shall not be liable, under any circumstances, for any claims, damages, losses, expenses, costs, or liabilities resulting from, arising out of, or in any way related to the use, interpretation, or reliance upon the test results obtained from the Company's kiosk.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;No Warranties:&lt;/span&gt; The test results provided by the Company's kiosk are offered on an &amp;quot;as is&amp;quot; and &amp;quot;as available&amp;quot; basis without any warranties of any kind, either express or implied, including but not limited to warranties of fitness for a particular purpose, merchantability, or non-infringement.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Use at Own Risk: &lt;/span&gt;Individuals who use the kiosk and rely on the test results do so at their own risk. The Company expressly disclaims any responsibility for any actions taken or not taken based on the test results.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;AGE RESTRICTION:&lt;/span&gt; By using the kiosk, individuals acknowledge that they have read and understood this disclaimer, confirm they are at least 21 years of age, and agree to be bound by its terms.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Not for Medical or Diagnostic Use: &lt;/span&gt;The test results from the Company's kiosk are not intended for medical or diagnostic purposes and should not be used as a substitute for professional medical advice, diagnosis, or treatment.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Entertainment Purposes Only: &lt;/span&gt;The test results provided by the Company's kiosk are intended for entertainment purposes only. They are not meant to be used for any diagnostic, prognostic, or treatment purposes and should not be considered as a substitute for professional advice.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Compliance with Massachusetts Regulations:&lt;/span&gt; Please be advised that this self-administered test is not in compliance with the specific regulatory requirements of the Commonwealth of Massachusetts for cannabis testing. As per Section 500.160 of the 935 Massachusetts Code of Regulations (CMR), all marijuana products, including marijuana, must be tested by Independent Testing Laboratories following protocols established under Massachusetts General Laws c. 94G, § 15 and additional provisions in 935 CMR 500.000. This self-test is intended for entertainment purposes only, designed for consumer use, and is explicitly not for business-to-business transactions or uses. It should not be interpreted as an indication of the product’s safety or quality, nor does it serve as a valid certificate of analysis for resale.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Indemnification:&lt;/span&gt; By using the kiosk, individuals agree to indemnify, defend, and hold harmless the Company, its officers, directors, employees, agents, and third parties from and against any losses, expenses, damages, and costs, including reasonable attorneys' fees, resulting from any violation of this disclaimer or any activity related to their use of the test results.&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Modification of Terms:&lt;/span&gt; The Company reserves the right to change the terms, conditions, and notices under which the kiosk is offered, including but not limited to the charges associated with the use of the kiosk.&lt;/p&gt;&lt;p&gt;This disclaimer is intended to be as broad and inclusive as permitted by the law. If any portion of this disclaimer is held invalid or unenforceable, the remaining portions shall remain in full force and effect.&lt;/p&gt;&lt;p&gt;By using the kiosk, individuals acknowledge that they have read and understood this disclaimer, confirm they are at least 21 years of age, and agree to be bound by its terms.&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;Monolith Machines, Inc. 1/13/2024&lt;/p&gt;&lt;p align=&quot;center&quot;&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
@@ -2369,8 +2546,8 @@ color: white;   </string>
      <widget class="QPushButton" name="cancel_test_btn">
       <property name="geometry">
        <rect>
-        <x>30</x>
-        <y>1220</y>
+        <x>270</x>
+        <y>1160</y>
         <width>540</width>
         <height>120</height>
        </rect>
@@ -2413,8 +2590,8 @@ border-radius: 60px;
      <widget class="QPushButton" name="rescan_btn">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>1040</y>
+        <x>270</x>
+        <y>970</y>
         <width>540</width>
         <height>120</height>
        </rect>
@@ -2457,8 +2634,8 @@ border-radius: 60px;
      <widget class="QPushButton" name="view_results_btn">
       <property name="geometry">
        <rect>
-        <x>40</x>
-        <y>880</y>
+        <x>270</x>
+        <y>1350</y>
         <width>540</width>
         <height>120</height>
        </rect>
@@ -2501,11 +2678,17 @@ border-radius: 60px;
      <widget class="QLabel" name="warning_label">
       <property name="geometry">
        <rect>
-        <x>420</x>
-        <y>390</y>
-        <width>60</width>
-        <height>16</height>
+        <x>220</x>
+        <y>320</y>
+        <width>641</width>
+        <height>541</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+        <pointsize>36</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true"> QLabel {
@@ -2515,7 +2698,13 @@ border-radius: 60px;
  </string>
       </property>
       <property name="text">
-       <string>Warning</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p style=&quot;color: Red;&quot;&gt; WARNING:&lt;/style&gt;&lt;/p&gt;&lt;p&gt;The kiosk detected a condition which prevents a reliable analysis of the sample. It may be due to contamination of the sample with non-cannabis material. We are offering a free rescan of your sample. &lt;span style=&quot; font-weight:600;&quot;&gt;Try repacking the sample, reinsert it, and then press rescan.&lt;/span&gt; If you cancel the test, you will not be charged.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
      <zorder>label_14</zorder>
@@ -2592,28 +2781,46 @@ border-radius: 70px;
      <widget class="QLabel" name="remove_sample_image">
       <property name="geometry">
        <rect>
-        <x>460</x>
-        <y>910</y>
-        <width>60</width>
-        <height>16</height>
+        <x>-110</x>
+        <y>410</y>
+        <width>1161</width>
+        <height>621</height>
        </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: #1b1b1b;
 color: white;   </string>
       </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>CannaCheck_UI_images_1.2/CannaCheckKiosk_Sample_Door.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QLabel" name="remove_sample_text">
       <property name="geometry">
        <rect>
-        <x>460</x>
-        <y>1030</y>
-        <width>60</width>
-        <height>16</height>
+        <x>170</x>
+        <y>1080</y>
+        <width>661</width>
+        <height>171</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+        <pointsize>50</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true"> QLabel {
@@ -2623,7 +2830,39 @@ color: white;   </string>
   </string>
       </property>
       <property name="text">
-       <string>Please remove your sample and confirm with the button below</string>
+       <string>Please remove your sample and confirm with the button below.</string>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="arrow_label">
+      <property name="geometry">
+       <rect>
+        <x>520</x>
+        <y>470</y>
+        <width>241</width>
+        <height>181</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: #FFFFFF;
+color: white;   </string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>CannaCheck_UI_images_1.2/vecteezy_directional-arrow-sign-on-transparent-background_18720948.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
