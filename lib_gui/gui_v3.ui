@@ -394,8 +394,8 @@ border-radius: 30px;
      <widget class="QPushButton" name="yes_over_21_btn">
       <property name="geometry">
        <rect>
-        <x>110</x>
-        <y>1150</y>
+        <x>590</x>
+        <y>1160</y>
         <width>371</width>
         <height>121</height>
        </rect>
@@ -438,8 +438,8 @@ border-radius: 60px;
      <widget class="QPushButton" name="no_not_21_btn">
       <property name="geometry">
        <rect>
-        <x>590</x>
-        <y>1150</y>
+        <x>90</x>
+        <y>1160</y>
         <width>361</width>
         <height>121</height>
        </rect>
@@ -1138,10 +1138,10 @@ color: white;   </string>
      <widget class="QLabel" name="load_sample_label">
       <property name="geometry">
        <rect>
-        <x>330</x>
+        <x>320</x>
         <y>1030</y>
-        <width>431</width>
-        <height>101</height>
+        <width>481</width>
+        <height>151</height>
        </rect>
       </property>
       <property name="font">
@@ -1158,7 +1158,7 @@ color: white;   </string>
         </string>
       </property>
       <property name="text">
-       <string>Please load a sample.</string>
+       <string>Please load your sample when the tray fully ejects.</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -1224,7 +1224,7 @@ color: white;</string>
       <property name="geometry">
        <rect>
         <x>40</x>
-        <y>1260</y>
+        <y>1000</y>
         <width>1001</width>
         <height>61</height>
        </rect>
@@ -1281,7 +1281,7 @@ color: white;   </string>
        </string>
       </property>
       <property name="text">
-       <string>Performing Analysis...</string>
+       <string>Performing analysis...</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -1581,7 +1581,7 @@ color: white;   </string>
        </string>
       </property>
       <property name="text">
-       <string>An error has occured, and our team has been notified. All active transactions will either be voided or refunded automatically. We apologize for any inconvenience caused.</string>
+       <string>An error has occured. Our team has been notified, and all active transactions will be voided or refunded. We apologize for any inconvenience caused.</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -1651,10 +1651,10 @@ color: white;   </string>
      <widget class="QLabel" name="Price_lbl">
       <property name="geometry">
        <rect>
-        <x>320</x>
-        <y>510</y>
-        <width>211</width>
-        <height>171</height>
+        <x>690</x>
+        <y>1150</y>
+        <width>231</width>
+        <height>161</height>
        </rect>
       </property>
       <property name="font">
@@ -1673,19 +1673,19 @@ color: white;   </string>
        <string>TextLabel</string>
       </property>
      </widget>
-     <widget class="QLabel" name="thc_tests_label">
+     <widget class="QLabel" name="included_tests_label">
       <property name="geometry">
        <rect>
-        <x>200</x>
-        <y>870</y>
-        <width>281</width>
-        <height>171</height>
+        <x>130</x>
+        <y>680</y>
+        <width>771</width>
+        <height>321</height>
        </rect>
       </property>
       <property name="font">
        <font>
-        <family>Lato</family>
-        <pointsize>36</pointsize>
+        <family>Helvetica</family>
+        <pointsize>28</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -1696,46 +1696,10 @@ color: white;   </string>
        </string>
       </property>
       <property name="text">
-       <string>(1) Total THC Test
-(1) THC-A Test
-(1) THC Test</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;right&quot;&gt;Includes:&lt;br/&gt;&lt;br/&gt;(qty. 1)..................................................TOTAL THC TEST&lt;/p&gt;&lt;p align=&quot;right&quot;&gt;(qty. 1)...........................................................THC-A TEST&lt;/p&gt;&lt;p align=&quot;right&quot;&gt;(qty. 1)...............................................................THC TEST&lt;/p&gt;&lt;p align=&quot;right&quot;&gt;(qty. 1)..................................................TOTAL CBD TEST&lt;/p&gt;&lt;p align=&quot;right&quot;&gt;(qty. 1)...........................................................CBD-A TEST&lt;/p&gt;&lt;p align=&quot;right&quot;&gt;(qty. 1)...............................................................CBD TEST&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-      <property name="wordWrap">
-       <bool>true</bool>
-      </property>
-     </widget>
-     <widget class="QLabel" name="cbd_tests_label">
-      <property name="geometry">
-       <rect>
-        <x>580</x>
-        <y>870</y>
-        <width>311</width>
-        <height>161</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Lato</family>
-        <pointsize>36</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"> QLabel {
-     background-color: #1B1B1B;
-     color: #FFFFFF;
-}
-       </string>
-      </property>
-      <property name="text">
-       <string>(1) Total CBD Test
-(1) CBD-A Test
-(1) CBD Test</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
       <property name="wordWrap">
        <bool>true</bool>
@@ -1744,8 +1708,8 @@ color: white;   </string>
      <widget class="QLabel" name="per_test_payment_label">
       <property name="geometry">
        <rect>
-        <x>540</x>
-        <y>510</y>
+        <x>390</x>
+        <y>1150</y>
         <width>191</width>
         <height>161</height>
        </rect>
@@ -1764,14 +1728,14 @@ color: white;   </string>
        </string>
       </property>
       <property name="text">
-       <string>per test</string>
+       <string>TOTAL</string>
       </property>
      </widget>
      <widget class="QLabel" name="kindly_proceed_w_transaction">
       <property name="geometry">
        <rect>
         <x>160</x>
-        <y>60</y>
+        <y>130</y>
         <width>751</width>
         <height>261</height>
        </rect>
@@ -1802,9 +1766,9 @@ color: white;   </string>
      <widget class="QLabel" name="nondestructive_test_label">
       <property name="geometry">
        <rect>
-        <x>280</x>
-        <y>770</y>
-        <width>491</width>
+        <x>150</x>
+        <y>610</y>
+        <width>771</width>
         <height>71</height>
        </rect>
       </property>
@@ -1823,14 +1787,14 @@ color: white;   </string>
        </string>
       </property>
       <property name="text">
-       <string>Non-Destructive Test Includes*:</string>
+       <string>(1) NIR CANNABINOID PANEL (non-destructive)</string>
       </property>
      </widget>
      <widget class="QLabel" name="all_sales_final">
       <property name="geometry">
        <rect>
-        <x>490</x>
-        <y>1050</y>
+        <x>790</x>
+        <y>1000</y>
         <width>111</width>
         <height>16</height>
        </rect>
@@ -1846,15 +1810,89 @@ color: white;   </string>
        <string>*All Sales Final</string>
       </property>
      </widget>
+     <widget class="QLabel" name="frame_for_price">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>190</y>
+        <width>921</width>
+        <height>1491</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: 255, 255, 255, 0 ;
+color: white;   </string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>CannaCheck_UI_images_1.2/frame_for_price.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="cart_label">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>440</y>
+        <width>141</width>
+        <height>151</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: 255, 255, 255, 0 ;
+color: white;   </string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>CannaCheck_UI_images_1.2/cart_graphic.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="invoice_label">
+      <property name="geometry">
+       <rect>
+        <x>580</x>
+        <y>490</y>
+        <width>251</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Helvetica</family>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+ </string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;h1&gt;Invoice&lt;/h1&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+     </widget>
      <zorder>label_8</zorder>
+     <zorder>included_tests_label</zorder>
+     <zorder>frame_for_price</zorder>
      <zorder>cancel_payment_btn</zorder>
-     <zorder>Price_lbl</zorder>
-     <zorder>thc_tests_label</zorder>
-     <zorder>cbd_tests_label</zorder>
-     <zorder>per_test_payment_label</zorder>
      <zorder>kindly_proceed_w_transaction</zorder>
      <zorder>nondestructive_test_label</zorder>
      <zorder>all_sales_final</zorder>
+     <zorder>per_test_payment_label</zorder>
+     <zorder>Price_lbl</zorder>
+     <zorder>cart_label</zorder>
+     <zorder>invoice_label</zorder>
     </widget>
     <widget class="QWidget" name="ConfiguringKeyPadPage">
      <widget class="QLabel" name="label_11">
@@ -2565,6 +2603,29 @@ border-radius: 60px;
        <set>Qt::AlignCenter</set>
       </property>
       <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="happy_nug_label">
+      <property name="geometry">
+       <rect>
+        <x>590</x>
+        <y>390</y>
+        <width>101</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: 255, 255, 255, 0 ;
+color: white;   </string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>CannaCheck_UI_images_1.2/happy_nug.png</pixmap>
+      </property>
+      <property name="scaledContents">
        <bool>true</bool>
       </property>
      </widget>
@@ -3542,8 +3603,8 @@ color: white;   </string>
      <widget class="QPushButton" name="leaderboard_back_btn">
       <property name="geometry">
        <rect>
-        <x>910</x>
-        <y>40</y>
+        <x>930</x>
+        <y>1760</y>
         <width>111</width>
         <height>81</height>
        </rect>
@@ -3576,9 +3637,9 @@ QPushButton:pressed
      <widget class="QLabel" name="leaderboard_header">
       <property name="geometry">
        <rect>
-        <x>390</x>
-        <y>160</y>
-        <width>321</width>
+        <x>380</x>
+        <y>230</y>
+        <width>341</width>
         <height>71</height>
        </rect>
       </property>
@@ -3596,49 +3657,36 @@ QPushButton:pressed
  </string>
       </property>
       <property name="text">
-       <string>Leaderboard</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="leaderboard_logo">
-      <property name="geometry">
-       <rect>
-        <x>510</x>
-        <y>100</y>
-        <width>60</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true"> QLabel {
-     background-color: #1B1B1B;
-     color: #FFFFFF;
-}
- </string>
-      </property>
-      <property name="text">
-       <string>TextLabel</string>
+       <string>Leaderboards</string>
       </property>
      </widget>
      <widget class="QLabel" name="leaderboard_graphic">
       <property name="geometry">
        <rect>
-        <x>490</x>
-        <y>280</y>
-        <width>60</width>
-        <height>16</height>
+        <x>190</x>
+        <y>-110</y>
+        <width>721</width>
+        <height>731</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true"> QLabel {
-     background-color: #1B1B1B;
-     color: #FFFFFF;
-}
- </string>
+       <string notr="true">background-color: 255, 255, 255, 0 ;
+color: white;   </string>
       </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>CannaCheck_UI_images_1.2/leaderboard_graphic.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
       </property>
      </widget>
+     <zorder>label_18</zorder>
+     <zorder>leaderboard_back_btn</zorder>
+     <zorder>leaderboard_graphic</zorder>
+     <zorder>leaderboard_header</zorder>
     </widget>
     <widget class="QWidget" name="ApplyPointsPage">
      <widget class="QLabel" name="BackgroundColor_2">
