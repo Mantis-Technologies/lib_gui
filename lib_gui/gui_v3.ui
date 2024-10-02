@@ -34,7 +34,7 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="currentIndex">
-     <number>15</number>
+     <number>8</number>
     </property>
     <widget class="QWidget" name="BootingScreen">
      <widget class="QLabel" name="label_2">
@@ -334,7 +334,7 @@ border-radius: 30px;
        <rect>
         <x>20</x>
         <y>640</y>
-        <width>931</width>
+        <width>961</width>
         <height>171</height>
        </rect>
       </property>
@@ -358,7 +358,7 @@ border-radius: 30px;
      <widget class="QLabel" name="trademark_1">
       <property name="geometry">
        <rect>
-        <x>930</x>
+        <x>950</x>
         <y>660</y>
         <width>60</width>
         <height>16</height>
@@ -1020,8 +1020,8 @@ p, li { white-space: pre-wrap; }
      <widget class="QPushButton" name="sample_loaded_btn">
       <property name="geometry">
        <rect>
-        <x>110</x>
-        <y>1280</y>
+        <x>590</x>
+        <y>1440</y>
         <width>391</width>
         <height>121</height>
        </rect>
@@ -1073,8 +1073,8 @@ border-radius: 60px;
      <widget class="QPushButton" name="cancel_load_btn">
       <property name="geometry">
        <rect>
-        <x>600</x>
-        <y>1280</y>
+        <x>140</x>
+        <y>1440</y>
         <width>371</width>
         <height>121</height>
        </rect>
@@ -1138,8 +1138,8 @@ color: white;   </string>
      <widget class="QLabel" name="load_sample_label">
       <property name="geometry">
        <rect>
-        <x>320</x>
-        <y>50</y>
+        <x>330</x>
+        <y>1030</y>
         <width>431</width>
         <height>101</height>
        </rect>
@@ -1170,10 +1170,10 @@ color: white;   </string>
      <widget class="QLabel" name="load_sample_graphic">
       <property name="geometry">
        <rect>
-        <x>240</x>
-        <y>720</y>
-        <width>611</width>
-        <height>231</height>
+        <x>-20</x>
+        <y>430</y>
+        <width>1071</width>
+        <height>591</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -1181,7 +1181,35 @@ color: white;   </string>
 color: white;</string>
       </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>CannaCheck_UI_images_1.2/CannaCheckKiosk_Sample_Door.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="load_sample_arrow_png">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>490</y>
+        <width>141</width>
+        <height>201</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: 255, 255, 255, 0 ;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>CannaCheck_UI_images_1.2/vecteezy_red-directional-arrow-on-transparent-background_16770572.png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
       </property>
      </widget>
      <zorder>label</zorder>
@@ -1189,6 +1217,7 @@ color: white;</string>
      <zorder>sample_loaded_btn</zorder>
      <zorder>load_sample_label</zorder>
      <zorder>load_sample_graphic</zorder>
+     <zorder>load_sample_arrow_png</zorder>
     </widget>
     <widget class="QWidget" name="ScanRunningScreen">
      <widget class="QProgressBar" name="pbar">
@@ -1252,7 +1281,7 @@ color: white;   </string>
        </string>
       </property>
       <property name="text">
-       <string>Performing Analysis</string>
+       <string>Performing Analysis...</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -2404,10 +2433,10 @@ color: white;   </string>
      <widget class="QPushButton" name="next_proceeding_btn">
       <property name="geometry">
        <rect>
-        <x>0</x>
-        <y>1480</y>
-        <width>540</width>
-        <height>120</height>
+        <x>620</x>
+        <y>1410</y>
+        <width>351</width>
+        <height>131</height>
        </rect>
       </property>
       <property name="font">
@@ -2442,15 +2471,15 @@ border-radius: 60px;
 }</string>
       </property>
       <property name="text">
-       <string>NEXT</string>
+       <string>I'M READY</string>
       </property>
      </widget>
      <widget class="QPushButton" name="cancel_proceeding_btn">
       <property name="geometry">
        <rect>
-        <x>560</x>
-        <y>1430</y>
-        <width>531</width>
+        <x>130</x>
+        <y>1410</y>
+        <width>341</width>
         <height>121</height>
        </rect>
       </property>
@@ -2484,11 +2513,17 @@ border-radius: 60px;
      <widget class="QLabel" name="before_proceeding_header">
       <property name="geometry">
        <rect>
-        <x>530</x>
-        <y>230</y>
-        <width>60</width>
-        <height>16</height>
+        <x>130</x>
+        <y>140</y>
+        <width>851</width>
+        <height>181</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+        <pointsize>50</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true"> QLabel {
@@ -2498,17 +2533,23 @@ border-radius: 60px;
  </string>
       </property>
       <property name="text">
-       <string>Before proceeding you will need:</string>
+       <string>Before proceeding, you will need:</string>
       </property>
      </widget>
      <widget class="QLabel" name="before_proceeding_instructions">
       <property name="geometry">
        <rect>
-        <x>470</x>
-        <y>690</y>
-        <width>60</width>
-        <height>16</height>
+        <x>210</x>
+        <y>350</y>
+        <width>691</width>
+        <height>771</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+        <pointsize>34</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true"> QLabel {
@@ -2518,7 +2559,13 @@ border-radius: 60px;
  </string>
       </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:xx-large; font-weight:600;&quot;&gt;1&lt;/span&gt;&lt;/p&gt;&lt;p&gt;About &lt;span style=&quot; text-decoration: underline;&quot;&gt;one to two grams&lt;/span&gt; of &lt;span style=&quot; font-weight:600;&quot;&gt;cannabis flower&lt;/span&gt;.&lt;/p&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:xx-large; font-weight:600;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;A few minutes&lt;/span&gt; to &lt;span style=&quot; font-weight:600;&quot;&gt;prepare your sample with a grinder&lt;/span&gt;. &lt;br/&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:xx-large; font-weight:600;&quot;&gt;3&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; text-decoration: underline;&quot;&gt;A sample cup&lt;/span&gt; from the &lt;span style=&quot; font-weight:600;&quot;&gt;dispenser located on the side of kiosk&lt;/span&gt;. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
@@ -2782,9 +2829,9 @@ border-radius: 70px;
       <property name="geometry">
        <rect>
         <x>-110</x>
-        <y>410</y>
-        <width>1161</width>
-        <height>621</height>
+        <y>460</y>
+        <width>1191</width>
+        <height>571</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -2810,7 +2857,7 @@ color: white;   </string>
      <widget class="QLabel" name="remove_sample_text">
       <property name="geometry">
        <rect>
-        <x>170</x>
+        <x>190</x>
         <y>1080</y>
         <width>661</width>
         <height>171</height>
@@ -2845,23 +2892,61 @@ color: white;   </string>
      <widget class="QLabel" name="arrow_label">
       <property name="geometry">
        <rect>
-        <x>520</x>
-        <y>470</y>
-        <width>241</width>
-        <height>181</height>
+        <x>570</x>
+        <y>530</y>
+        <width>131</width>
+        <height>171</height>
        </rect>
       </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
       <property name="styleSheet">
-       <string notr="true">background-color: #FFFFFF;
+       <string notr="true">background-color: 255, 255, 255, 0 ;
 color: white;   </string>
       </property>
       <property name="text">
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>CannaCheck_UI_images_1.2/vecteezy_directional-arrow-sign-on-transparent-background_18720948.png</pixmap>
+       <pixmap>CannaCheck_UI_images_1.2/vecteezy_red-directional-arrow-on-transparent-background_16770572.png</pixmap>
       </property>
       <property name="scaledContents">
+       <bool>true</bool>
+      </property>
+      <property name="indent">
+       <number>-1</number>
+      </property>
+     </widget>
+     <widget class="QLabel" name="thank_you_label">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>160</y>
+        <width>721</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+        <pointsize>35</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+  </string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:xx-large; font-weight:600;&quot;&gt;Thank you for your purchase!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
        <bool>true</bool>
       </property>
      </widget>
@@ -2966,8 +3051,8 @@ color: white;   </string>
      <widget class="QLineEdit" name="existingUserInput">
       <property name="geometry">
        <rect>
-        <x>70</x>
-        <y>1140</y>
+        <x>280</x>
+        <y>1050</y>
         <width>550</width>
         <height>60</height>
        </rect>
@@ -2991,8 +3076,8 @@ color: white;   </string>
      <widget class="QLineEdit" name="newUserEmailInput">
       <property name="geometry">
        <rect>
-        <x>310</x>
-        <y>1440</y>
+        <x>280</x>
+        <y>350</y>
         <width>550</width>
         <height>60</height>
        </rect>
@@ -3016,8 +3101,8 @@ color: white;   </string>
      <widget class="QLineEdit" name="confirmEmailInput">
       <property name="geometry">
        <rect>
-        <x>310</x>
-        <y>1530</y>
+        <x>280</x>
+        <y>440</y>
         <width>550</width>
         <height>60</height>
        </rect>
@@ -3038,8 +3123,8 @@ color: white;   </string>
      <widget class="QLineEdit" name="usernameInput">
       <property name="geometry">
        <rect>
-        <x>310</x>
-        <y>1620</y>
+        <x>280</x>
+        <y>530</y>
         <width>550</width>
         <height>60</height>
        </rect>
@@ -3060,8 +3145,8 @@ color: white;   </string>
      <widget class="QPushButton" name="new_user_button">
       <property name="geometry">
        <rect>
-        <x>310</x>
-        <y>1720</y>
+        <x>280</x>
+        <y>630</y>
         <width>550</width>
         <height>60</height>
        </rect>
@@ -3096,8 +3181,8 @@ border-radius: 30px;
      <widget class="QPushButton" name="existing_user_button">
       <property name="geometry">
        <rect>
-        <x>70</x>
-        <y>1320</y>
+        <x>280</x>
+        <y>1230</y>
         <width>550</width>
         <height>60</height>
        </rect>
@@ -3132,8 +3217,8 @@ border-radius: 30px;
      <widget class="QPushButton" name="skip_button_finduseradduser">
       <property name="geometry">
        <rect>
-        <x>1650</x>
-        <y>940</y>
+        <x>840</x>
+        <y>1760</y>
         <width>211</width>
         <height>61</height>
        </rect>
@@ -3168,8 +3253,8 @@ border-radius: 30px;
      <widget class="QLineEdit" name="user_pin_entry">
       <property name="geometry">
        <rect>
-        <x>70</x>
-        <y>1230</y>
+        <x>280</x>
+        <y>1140</y>
         <width>550</width>
         <height>60</height>
        </rect>
@@ -3187,13 +3272,106 @@ border-radius: 30px;
        <string>   4-Digit Account Pin</string>
       </property>
      </widget>
-     <widget class="QLabel" name="signinup_header">
+     <widget class="QLabel" name="signup_call_to_action">
       <property name="geometry">
        <rect>
-        <x>200</x>
-        <y>140</y>
-        <width>751</width>
-        <height>51</height>
+        <x>240</x>
+        <y>120</y>
+        <width>631</width>
+        <height>201</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+        <pointsize>30</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+  </string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:large; font-weight:600; text-decoration: underline;&quot;&gt;Sign up&lt;/span&gt;&lt;span style=&quot; font-size:large; font-weight:600;&quot;&gt; to receive emailed results, accrue points for discounts, and more!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="sign_in_label">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>890</y>
+        <width>221</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+        <pointsize>45</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+  </string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;h3&gt;Sign In&lt;/h3&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="sign_up_label">
+      <property name="geometry">
+       <rect>
+        <x>330</x>
+        <y>720</y>
+        <width>451</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+        <pointsize>22</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"> QLabel {
+     background-color: #1B1B1B;
+     color: #FFFFFF;
+}
+  </string>
+      </property>
+      <property name="text">
+       <string>* We will not send you marketing.</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="wordWrap">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <widget class="QLabel" name="green_rounded_square_png">
+      <property name="geometry">
+       <rect>
+        <x>205</x>
+        <y>890</y>
+        <width>671</width>
+        <height>581</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -3204,42 +3382,35 @@ border-radius: 30px;
   </string>
       </property>
       <property name="text">
-       <string>Sign in or sign up to get emailed results, accure points for discounts, and be entered into our monthly leaderboard contests. We will not send you marketing.</string>
+       <string/>
+      </property>
+      <property name="pixmap">
+       <pixmap>CannaCheck_UI_images_1.2/green_shape (3000 x 3000 px).png</pixmap>
+      </property>
+      <property name="scaledContents">
+       <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="sign_in_label">
-      <property name="geometry">
-       <rect>
-        <x>220</x>
-        <y>530</y>
-        <width>60</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>sign in</string>
-      </property>
-     </widget>
-     <widget class="QLabel" name="sign_up_label">
-      <property name="geometry">
-       <rect>
-        <x>800</x>
-        <y>530</y>
-        <width>60</width>
-        <height>16</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>sign up</string>
-      </property>
-     </widget>
+     <zorder>label_16</zorder>
+     <zorder>green_rounded_square_png</zorder>
+     <zorder>confirmEmailInput</zorder>
+     <zorder>existingUserInput</zorder>
+     <zorder>existing_user_button</zorder>
+     <zorder>newUserEmailInput</zorder>
+     <zorder>new_user_button</zorder>
+     <zorder>sign_in_label</zorder>
+     <zorder>sign_up_label</zorder>
+     <zorder>signup_call_to_action</zorder>
+     <zorder>skip_button_finduseradduser</zorder>
+     <zorder>user_pin_entry</zorder>
+     <zorder>usernameInput</zorder>
     </widget>
     <widget class="QWidget" name="FAQPage">
      <widget class="QPushButton" name="faq_back_btn">
       <property name="geometry">
        <rect>
-        <x>1430</x>
-        <y>960</y>
+        <x>330</x>
+        <y>1630</y>
         <width>420</width>
         <height>90</height>
        </rect>
@@ -3294,11 +3465,16 @@ color: white;   </string>
      <widget class="QLabel" name="FAQS">
       <property name="geometry">
        <rect>
-        <x>520</x>
-        <y>160</y>
-        <width>60</width>
-        <height>16</height>
+        <x>400</x>
+        <y>20</y>
+        <width>271</width>
+        <height>131</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>50</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true"> QLabel {
@@ -3308,17 +3484,23 @@ color: white;   </string>
   </string>
       </property>
       <property name="text">
-       <string>FAQS</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;h1&gt;FAQS&lt;/h1&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QLabel" name="frequently_asked_questions">
       <property name="geometry">
        <rect>
-        <x>480</x>
-        <y>320</y>
-        <width>181</width>
-        <height>16</height>
+        <x>290</x>
+        <y>140</y>
+        <width>491</width>
+        <height>51</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+        <pointsize>22</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true"> QLabel {
@@ -3328,7 +3510,7 @@ color: white;   </string>
   </string>
       </property>
       <property name="text">
-       <string>Frequently Asked Questions</string>
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;h2&gt;Frequently Asked Questions&lt;/h2&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <zorder>label_17</zorder>
@@ -3360,10 +3542,10 @@ color: white;   </string>
      <widget class="QPushButton" name="leaderboard_back_btn">
       <property name="geometry">
        <rect>
-        <x>1759</x>
-        <y>50</y>
-        <width>91</width>
-        <height>61</height>
+        <x>910</x>
+        <y>40</y>
+        <width>111</width>
+        <height>81</height>
        </rect>
       </property>
       <property name="font">
@@ -3375,7 +3557,7 @@ color: white;   </string>
       <property name="styleSheet">
        <string notr="true">QPushButton
 {
- background-color: rgb(27, 27, 27);
+ border-radius: 25px; background-color: rgb(27, 27, 27);
  border: 3px solid white;
  color: rgb(169, 6, 10)
 }
@@ -3394,11 +3576,17 @@ QPushButton:pressed
      <widget class="QLabel" name="leaderboard_header">
       <property name="geometry">
        <rect>
-        <x>500</x>
-        <y>260</y>
-        <width>161</width>
-        <height>16</height>
+        <x>390</x>
+        <y>160</y>
+        <width>321</width>
+        <height>71</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+        <pointsize>50</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true"> QLabel {
@@ -3434,8 +3622,8 @@ QPushButton:pressed
      <widget class="QLabel" name="leaderboard_graphic">
       <property name="geometry">
        <rect>
-        <x>500</x>
-        <y>350</y>
+        <x>490</x>
+        <y>280</y>
         <width>60</width>
         <height>16</height>
        </rect>
@@ -3479,16 +3667,16 @@ color: white;   </string>
      <widget class="QPushButton" name="skip_button_apply_points">
       <property name="geometry">
        <rect>
-        <x>820</x>
-        <y>1760</y>
-        <width>211</width>
-        <height>61</height>
+        <x>300</x>
+        <y>1390</y>
+        <width>471</width>
+        <height>91</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Arial</family>
-        <pointsize>35</pointsize>
+        <pointsize>30</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -3509,16 +3697,16 @@ border-radius: 30px;
 }</string>
       </property>
       <property name="text">
-       <string>Skip</string>
+       <string>SKIP</string>
       </property>
      </widget>
      <widget class="QPushButton" name="Confirm_Apply_Points">
       <property name="geometry">
        <rect>
-        <x>170</x>
-        <y>960</y>
-        <width>550</width>
-        <height>60</height>
+        <x>230</x>
+        <y>1230</y>
+        <width>611</width>
+        <height>101</height>
        </rect>
       </property>
       <property name="font">
@@ -3553,14 +3741,14 @@ border-radius: 30px;
 }</string>
       </property>
       <property name="text">
-       <string>Confirm</string>
+       <string>CONFIRM</string>
       </property>
      </widget>
      <widget class="QLabel" name="Points_Being_Applied_lbl">
       <property name="geometry">
        <rect>
-        <x>90</x>
-        <y>1190</y>
+        <x>130</x>
+        <y>320</y>
         <width>300</width>
         <height>200</height>
        </rect>
@@ -3585,8 +3773,8 @@ color: white;</string>
      <widget class="QLabel" name="Price_Adjustment_lbl">
       <property name="geometry">
        <rect>
-        <x>610</x>
-        <y>1180</y>
+        <x>590</x>
+        <y>320</y>
         <width>300</width>
         <height>200</height>
        </rect>
@@ -3611,8 +3799,8 @@ color: white;</string>
      <widget class="QPushButton" name="Discount_10_Percent_Button">
       <property name="geometry">
        <rect>
-        <x>80</x>
-        <y>280</y>
+        <x>100</x>
+        <y>670</y>
         <width>400</width>
         <height>200</height>
        </rect>
@@ -3644,8 +3832,8 @@ QPushButton:pressed
      <widget class="QPushButton" name="Discount_25_Percent_Button">
       <property name="geometry">
        <rect>
-        <x>530</x>
-        <y>280</y>
+        <x>550</x>
+        <y>670</y>
         <width>400</width>
         <height>200</height>
        </rect>
@@ -3677,8 +3865,8 @@ QPushButton:pressed
      <widget class="QPushButton" name="Discount_50_Percent_Button">
       <property name="geometry">
        <rect>
-        <x>80</x>
-        <y>520</y>
+        <x>100</x>
+        <y>910</y>
         <width>400</width>
         <height>200</height>
        </rect>
@@ -3710,8 +3898,8 @@ QPushButton:pressed
      <widget class="QPushButton" name="Max_Discount_Button">
       <property name="geometry">
        <rect>
-        <x>530</x>
-        <y>520</y>
+        <x>550</x>
+        <y>910</y>
         <width>400</width>
         <height>200</height>
        </rect>
@@ -3738,6 +3926,29 @@ QPushButton:pressed
       </property>
       <property name="text">
        <string>Max Discount Here</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_21">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>60</y>
+        <width>731</width>
+        <height>171</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Montserrat</family>
+        <pointsize>50</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(27, 27, 27, 255);
+color: white;</string>
+      </property>
+      <property name="text">
+       <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;h1&gt;Apply points?&lt;/h1&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
     </widget>
