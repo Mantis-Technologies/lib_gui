@@ -98,7 +98,7 @@ class GUI(QtWidgets.QMainWindow):
         # Connect FAQ page buttons
         self.connect_faq_buttons()
         # Set up FAQ page
-        self.setup_faq_page()
+        self.setup_faq_page(ui_version)
         # Connect Leaderboard page buttons
         self.connect_leaderboard_buttons()
         # Setup the Leaderboard
