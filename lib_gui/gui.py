@@ -23,7 +23,7 @@ import time
 
 class GUI(QtWidgets.QMainWindow):
 
-    gui_ui_fname = "gui.ui"
+    # gui_ui_fname = "gui.ui" removed due to new load ui function
 
     def __init__(self, debug=False, fake_backend: bool = False, fake_payment_terminal: bool = False):
         """Connects all buttons and switches to boot page"""
@@ -43,8 +43,26 @@ class GUI(QtWidgets.QMainWindow):
         self.keepThreadsRunning = True
         self.button_delay_map = {} # stores key value pairs for button names and a time. Used to have button presses be ignored for set periods
 
+
+    def load_ui(self, ui_filename):
+        """Loads the appropriate UI based on the kiosk version."""
+        # Get the path to the current directory where this script is located
+        current_dir = os.path.dirname(os.path.realpath(__file__))
+
+        # Construct the full path to the .ui file based on the current directory
+        ui_path = os.path.join(current_dir, ui_filename)
+
         # Load the UI
-        self.ui = uic.loadUi(self.ui_path, self)
+        self.ui = uic.loadUi(ui_path, self)
+
+        # Connect buttons after the UI is loaded
+        self.setup_connections()
+
+        # Show the UI
+        self.show_ui()
+
+    def setup_connections(self):
+        """Connects buttons and other widgets to their respective functions."""
         # Connect start buttons
         self.connect_start_buttons()
         # Connect confirmation buttons
@@ -63,10 +81,6 @@ class GUI(QtWidgets.QMainWindow):
         self.setup_finduser_adduser_page()
         # Connect instruction page buttons
         self.connect_instruction_buttons()
-
-        # Connect about page buttons
-        # self.connect_about_buttons() No longer using the About Page
-
         # Connect disclaimer page buttons
         self.connect_disclaimer_buttons()
         # Connect before proceeding page buttons
@@ -99,10 +113,16 @@ class GUI(QtWidgets.QMainWindow):
         self.set_visibility_of_lab_items(visible=False)
         # Connect keyboard shortcuts
         self.connect_shortcuts()
+
+    def show_ui(self):
+        """Shows UI"""
+        # Full-screen and other necessary setup
         if not self.fake_payment_terminal and not self.fake_backend:
             self.showFullScreen()
-        # Move to booting page
+
+        # Move to the booting page
         self.switch_to_boot_page()
+
 
     def _switch_to_page(self, page: Page):
         """Switches to a page"""
@@ -300,10 +320,10 @@ class GUI(QtWidgets.QMainWindow):
         """Runs the app"""
         sys.exit(self.app.exec_())
 
-    @property
-    def ui_path(self):
-        """Path to the UI file"""
-
-        _dir = os.path.dirname(os.path.realpath(__file__))
-        return os.path.join(_dir, self.gui_ui_fname)
+    # @property removed due to new load ui function
+    # def ui_path(self):
+    #     """Path to the UI file"""
+    #
+    #     _dir = os.path.dirname(os.path.realpath(__file__))
+    #     return os.path.join(_dir, self.gui_ui_fname)
 

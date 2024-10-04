@@ -9,7 +9,7 @@ __maintainer__ = "Michael Mahoney"
 __email__ = "mike@cannacheckkiosk.com"
 
 from ..page import Page
-from lib_kiosk import app  # Import App class to access QR code image
+# from lib_kiosk import app  # Import App class to access QR code image
 from PyQt5.QtChart import QChart, QChartView, QPieSeries, QPieSlice
 from PyQt5.QtGui import QFont, QColor, QBrush, QPixmap, QPainter
 from PyQt5.QtCore import Qt
