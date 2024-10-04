@@ -46,6 +46,10 @@ class GUI(QtWidgets.QMainWindow):
 
     def load_ui(self, ui_filename):
         """Loads the appropriate UI based on the kiosk version."""
+
+        # Save ui filename to a variable to be accessed elsewhere
+        ui_version = ui_filename
+
         # Get the path to the current directory where this script is located
         current_dir = os.path.dirname(os.path.realpath(__file__))
 
@@ -56,13 +60,13 @@ class GUI(QtWidgets.QMainWindow):
         self.ui = uic.loadUi(ui_path, self)
 
         # Connect buttons after the UI is loaded
-        self.setup_connections()
+        self.setup_connections(ui_version)
 
         # Show the UI
         self.show_ui()
 
-    def setup_connections(self):
-        """Connects buttons and other widgets to their respective functions."""
+    def setup_connections(self, ui_version):
+        """Connects buttons and other widgets to their respective functions. Pass ui version to pages that need it"""
         # Connect start buttons
         self.connect_start_buttons()
         # Connect confirmation buttons
@@ -98,7 +102,7 @@ class GUI(QtWidgets.QMainWindow):
         # Connect Leaderboard page buttons
         self.connect_leaderboard_buttons()
         # Setup the Leaderboard
-        self.setup_leaderboard_page()
+        self.setup_leaderboard_page(ui_version)
         # Set up QR code label
         self.setup_qr_code_label()
         # Set up result url widget

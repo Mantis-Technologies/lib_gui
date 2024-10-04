@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1080</width>
-    <height>1857</height>
+    <height>1858</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -34,7 +34,7 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="currentIndex">
-     <number>6</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="BootingScreen">
      <widget class="QLabel" name="label_2">
@@ -173,8 +173,8 @@ color: white;</string>
        <rect>
         <x>460</x>
         <y>950</y>
-        <width>91</width>
-        <height>16</height>
+        <width>100</width>
+        <height>20</height>
        </rect>
       </property>
       <property name="font">
@@ -308,8 +308,8 @@ border-radius: 30px;
        <rect>
         <x>560</x>
         <y>950</y>
-        <width>81</width>
-        <height>16</height>
+        <width>100</width>
+        <height>20</height>
        </rect>
       </property>
       <property name="font">
@@ -334,7 +334,7 @@ border-radius: 30px;
        <rect>
         <x>20</x>
         <y>640</y>
-        <width>961</width>
+        <width>981</width>
         <height>171</height>
        </rect>
       </property>
@@ -358,7 +358,7 @@ border-radius: 30px;
      <widget class="QLabel" name="trademark_1">
       <property name="geometry">
        <rect>
-        <x>950</x>
+        <x>970</x>
         <y>660</y>
         <width>60</width>
         <height>16</height>
@@ -3678,7 +3678,7 @@ color: white;   </string>
      <widget class="QPushButton" name="leaderboard_back_btn">
       <property name="geometry">
        <rect>
-        <x>930</x>
+        <x>960</x>
         <y>1760</y>
         <width>111</width>
         <height>81</height>
@@ -3712,16 +3712,16 @@ QPushButton:pressed
      <widget class="QLabel" name="leaderboard_header">
       <property name="geometry">
        <rect>
-        <x>380</x>
-        <y>230</y>
-        <width>341</width>
-        <height>71</height>
+        <x>410</x>
+        <y>120</y>
+        <width>291</width>
+        <height>51</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Montserrat</family>
-        <pointsize>50</pointsize>
+        <pointsize>36</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -3738,10 +3738,10 @@ QPushButton:pressed
      <widget class="QLabel" name="leaderboard_graphic">
       <property name="geometry">
        <rect>
-        <x>190</x>
-        <y>-110</y>
-        <width>721</width>
-        <height>731</height>
+        <x>320</x>
+        <y>-70</y>
+        <width>431</width>
+        <height>421</height>
        </rect>
       </property>
       <property name="styleSheet">
