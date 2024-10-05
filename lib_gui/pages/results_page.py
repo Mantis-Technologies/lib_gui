@@ -136,7 +136,8 @@ def setup_pie_chart(self, ui_version):
     self.chart.setTitle("Test Results")
     self.chart.setBackgroundVisible(True)
     font = QFont()
-    font.setPointSize(30)  # Change the point size to adjust the font size
+    font.setBold(True)
+    font.setPointSize(100)  # Change the point size to adjust the font size
     font.setFamily("Monserrat Light")
     self.chart.setTitleFont(font)
     self.chart.setTitleBrush(QColor(255, 255, 255))
@@ -210,7 +211,7 @@ def setup_qr_code_label(self, ui_version):
     if ui_version == "gui.ui":
         self.qr_code_label.setGeometry(150, 200, 300, 300)
     elif ui_version == "gui_v3.ui":
-        self.qr_code_label.setGeometry(120, 1100, 300, 300)
+        self.qr_code_label.setGeometry(120, 1050, 300, 300)
 
     self.qr_code_label.setAlignment(Qt.AlignCenter)
 
@@ -227,7 +228,7 @@ def setup_results_url(self, ui_version):
     if ui_version == "gui.ui":
         self.results_url_label.setGeometry(50, 510, 500, 30)
     if ui_version == "gui_v3.ui":
-        self.results_url_label.setGeometry(20, 1430, 500, 30)
+        self.results_url_label.setGeometry(20, 1380, 500, 30)
 
     self.results_url_label.setAlignment(Qt.AlignCenter)
     self.results_url_label.setStyleSheet("font-size: 14px; color: white; background-color: rgba(255, 255, 255, 0)")
