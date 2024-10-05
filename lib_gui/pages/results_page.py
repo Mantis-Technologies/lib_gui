@@ -128,7 +128,7 @@ def UpdateChart(self, series):
     self.chart_view.setBackgroundBrush(brush)
 
 
-def setup_pie_chart(self):
+def setup_pie_chart(self, ui_version):
     self.chart = QChart()
     series = QPieSeries()
     series.append("NOT TESTED", 100)
@@ -151,7 +151,12 @@ def setup_pie_chart(self):
     self.chart_view = QChartView(self.chart)
     self.chart_view.setParent(results_page_widget)
     self.chart_view.setMinimumSize(800, 600)
-    self.chart_view.setGeometry(600, 50, 1100, 700)  # Set position and size using geometry
+
+    # Check ui version to load the appropriate geometry
+    if ui_version == "gui.ui":
+        self.chart_view.setGeometry(600, 50, 1100, 700)  # Set position and size using geometry
+    elif ui_version == "gui_v3.ui":
+        self.chart_view.setGeometry(0, 50, 1100, 700)  # Set position and size using geometry
 
 
 def setTotalAnalyteLabels(self, analytes):
@@ -197,10 +202,16 @@ def display_qr_code(self, qr_code_image: BytesIO):
         print("No QR Code Image available")
 
 
-def setup_qr_code_label(self):
+def setup_qr_code_label(self, ui_version):
     results_page_widget = self.stackedWidget.widget(Page.RESULTS.value)
     self.qr_code_label = QLabel(results_page_widget)
-    self.qr_code_label.setGeometry(150, 200, 300, 300)
+
+    # Check ui version to load the appropriate geometry
+    if ui_version == "gui.ui":
+        self.qr_code_label.setGeometry(150, 200, 300, 300)
+    elif ui_version == "gui_v3.ui":
+        self.qr_code_label.setGeometry(120, 1100, 300, 300)
+
     self.qr_code_label.setAlignment(Qt.AlignCenter)
 
 
@@ -208,9 +219,15 @@ def results_url_label_text(self, results_url: str):
     self.results_url_label.setText(f"View your results at: {results_url}")
 
 
-def setup_results_url(self):
+def setup_results_url(self, ui_version):
     results_url_widget = self.stackedWidget.widget(Page.RESULTS.value)
     self.results_url_label = QLabel(results_url_widget)
-    self.results_url_label.setGeometry(50, 510, 500, 30)
+
+    # Check ui version to load the appropriate geometry
+    if ui_version == "gui.ui":
+        self.results_url_label.setGeometry(50, 510, 500, 30)
+    if ui_version == "gui_v3.ui":
+        self.results_url_label.setGeometry(20, 1430, 500, 30)
+
     self.results_url_label.setAlignment(Qt.AlignCenter)
     self.results_url_label.setStyleSheet("font-size: 14px; color: white; background-color: rgba(255, 255, 255, 0)")

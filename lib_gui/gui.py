@@ -23,8 +23,6 @@ import time
 
 class GUI(QtWidgets.QMainWindow):
 
-    # gui_ui_fname = "gui.ui" removed due to new load ui function
-
     def __init__(self, debug=False, fake_backend: bool = False, fake_payment_terminal: bool = False):
         """Connects all buttons and switches to boot page"""
 
@@ -104,11 +102,11 @@ class GUI(QtWidgets.QMainWindow):
         # Setup the Leaderboard
         self.setup_leaderboard_page(ui_version)
         # Set up QR code label
-        self.setup_qr_code_label()
+        self.setup_qr_code_label(ui_version)
         # Set up result url widget
-        self.setup_results_url()
+        self.setup_results_url(ui_version)
         # Set up pie chart
-        self.setup_pie_chart()
+        self.setup_pie_chart(ui_version)
         # connect apply points page buttons
         self.connect_apply_points_page_buttons()
         # Remove pointless info
@@ -323,11 +321,4 @@ class GUI(QtWidgets.QMainWindow):
     def run(self):
         """Runs the app"""
         sys.exit(self.app.exec_())
-
-    # @property removed due to new load ui function
-    # def ui_path(self):
-    #     """Path to the UI file"""
-    #
-    #     _dir = os.path.dirname(os.path.realpath(__file__))
-    #     return os.path.join(_dir, self.gui_ui_fname)
 
