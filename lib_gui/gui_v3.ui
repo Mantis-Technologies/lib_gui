@@ -1499,8 +1499,8 @@ color: white;   </string>
        <rect>
         <x>126</x>
         <y>950</y>
-        <width>311</width>
-        <height>51</height>
+        <width>331</width>
+        <height>61</height>
        </rect>
       </property>
       <property name="font">
@@ -1562,7 +1562,7 @@ color: white;   </string>
       <property name="geometry">
        <rect>
         <x>660</x>
-        <y>930</y>
+        <y>940</y>
         <width>301</width>
         <height>81</height>
        </rect>
