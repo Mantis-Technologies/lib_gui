@@ -60,9 +60,6 @@ class GUI(QtWidgets.QMainWindow):
         # Connect buttons after the UI is loaded
         self.setup_connections(ui_version)
 
-        # Show the UI
-        self.show_ui()
-
     def setup_connections(self, ui_version):
         """Connects buttons and other widgets to their respective functions. Pass ui version to pages that need it"""
         # Connect start buttons
@@ -116,7 +113,7 @@ class GUI(QtWidgets.QMainWindow):
         # Connect keyboard shortcuts
         self.connect_shortcuts()
 
-    def show_ui(self):
+    def show_main_window(self):
         """Shows UI"""
         # Full-screen and other necessary setup
         if not self.fake_payment_terminal and not self.fake_backend:
