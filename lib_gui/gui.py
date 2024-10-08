@@ -31,9 +31,6 @@ class GUI(QtWidgets.QMainWindow):
             self.app = QApplication(sys.argv)
         super(GUI, self).__init__()
 
-        # Install event filter for finduseradduser page to detect global clicks
-        QApplication.instance().installEventFilter(self)
-
         # If in debug mode, typing n moves to next screen
         self.debug = debug
         self.fake_backend = fake_backend
@@ -59,6 +56,9 @@ class GUI(QtWidgets.QMainWindow):
 
         # Connect buttons after the UI is loaded
         self.setup_connections(ui_version)
+
+        # Install event filter for finduseradduser page to detect global clicks
+        QApplication.instance().installEventFilter(self)
 
     def setup_connections(self, ui_version):
         """Connects buttons and other widgets to their respective functions. Pass ui version to pages that need it"""

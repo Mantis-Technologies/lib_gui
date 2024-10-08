@@ -120,7 +120,7 @@ def setup_finduser_adduser_page(self):
 
 def show_keyboard(self, event, target_input):
     if not hasattr(self, 'keyboard'):
-        self.keyboard = CustomKeyboard(target_input)
+        self.keyboard = CustomKeyboard(target_input, self.centralWidget())
         self.keyboard.enterPressed.connect(self.keyboard.hide)
         self.installEventFilter(self)  # detects clicks outside the keyboard
     else:
@@ -128,7 +128,7 @@ def show_keyboard(self, event, target_input):
 
     # Get position of where the QLine edit is, to display keyboard beneath it
 
-    pos = target_input.mapToGlobal(target_input.rect().bottomLeft())
+    pos = target_input.mapToParent(target_input.rect().bottomLeft())
     self.keyboard.move(pos.x(), pos.y())
     self.keyboard.show()
 
