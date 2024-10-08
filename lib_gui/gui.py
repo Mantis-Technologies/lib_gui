@@ -268,7 +268,7 @@ class GUI(QtWidgets.QMainWindow):
     # Payment page
     from .pages.Payment_page import switch_to_payment_page
     from .pages.Payment_page import set_Price_label
-    from .pages.Payment_page import connect_payment_buttons
+    from .pages.Payment_page import connect_payment_buttons, Check_Payment_Terminal_Connection, Send_CheckPayment_Terminal_Connection_Signal
     from .pages.Payment_page import cancel_payment
     from .pages.Payment_page import PaymentApprovedCallback
     from .pages.Payment_page import PaymentTimeoutCallback
