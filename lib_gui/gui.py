@@ -15,15 +15,13 @@ import sys
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtCore import pyqtSignal, Qt, QEvent
 from PyQt5.QtWidgets import QApplication, QWidget
-from PyQt5.QtGui import QFont
+from PyQt5.QtGui import QFont, QFontDatabase
 
 from .page import Page
 import time
 
 
 class GUI(QtWidgets.QMainWindow):
-
-    gui_ui_fname = "gui.ui"
 
     def __init__(self, debug=False, fake_backend: bool = False, fake_payment_terminal: bool = False):
         """Connects all buttons and switches to boot page"""
@@ -33,9 +31,6 @@ class GUI(QtWidgets.QMainWindow):
             self.app = QApplication(sys.argv)
         super(GUI, self).__init__()
 
-        # Install event filter for finduseradduser page to detect global clicks
-        QApplication.instance().installEventFilter(self)
-
         # If in debug mode, typing n moves to next screen
         self.debug = debug
         self.fake_backend = fake_backend
@@ -43,8 +38,30 @@ class GUI(QtWidgets.QMainWindow):
         self.keepThreadsRunning = True
         self.button_delay_map = {} # stores key value pairs for button names and a time. Used to have button presses be ignored for set periods
 
+
+    def load_ui(self, ui_filename):
+        """Loads the appropriate UI based on the kiosk version."""
+
+        # Save ui filename to a variable to be accessed elsewhere
+        ui_version = ui_filename
+
+        # Get the path to the current directory where this script is located
+        current_dir = os.path.dirname(os.path.realpath(__file__))
+
+        # Construct the full path to the .ui file based on the current directory
+        ui_path = os.path.join(current_dir, ui_filename)
+
         # Load the UI
-        self.ui = uic.loadUi(self.ui_path, self)
+        self.ui = uic.loadUi(ui_path, self)
+
+        # Connect buttons after the UI is loaded
+        self.setup_connections(ui_version)
+
+        # Install event filter for finduseradduser page to detect global clicks
+        QApplication.instance().installEventFilter(self)
+
+    def setup_connections(self, ui_version):
+        """Connects buttons and other widgets to their respective functions. Pass ui version to pages that need it"""
         # Connect start buttons
         self.connect_start_buttons()
         # Connect confirmation buttons
@@ -63,10 +80,6 @@ class GUI(QtWidgets.QMainWindow):
         self.setup_finduser_adduser_page()
         # Connect instruction page buttons
         self.connect_instruction_buttons()
-
-        # Connect about page buttons
-        # self.connect_about_buttons() No longer using the About Page
-
         # Connect disclaimer page buttons
         self.connect_disclaimer_buttons()
         # Connect before proceeding page buttons
@@ -80,17 +93,17 @@ class GUI(QtWidgets.QMainWindow):
         # Connect FAQ page buttons
         self.connect_faq_buttons()
         # Set up FAQ page
-        self.setup_faq_page()
+        self.setup_faq_page(ui_version)
         # Connect Leaderboard page buttons
         self.connect_leaderboard_buttons()
         # Setup the Leaderboard
-        self.setup_leaderboard_page()
+        self.setup_leaderboard_page(ui_version)
         # Set up QR code label
-        self.setup_qr_code_label()
+        self.setup_qr_code_label(ui_version)
         # Set up result url widget
-        self.setup_results_url()
+        self.setup_results_url(ui_version)
         # Set up pie chart
-        self.setup_pie_chart()
+        self.setup_pie_chart(ui_version)
         # connect apply points page buttons
         self.connect_apply_points_page_buttons()
         # Remove pointless info
@@ -99,10 +112,16 @@ class GUI(QtWidgets.QMainWindow):
         self.set_visibility_of_lab_items(visible=False)
         # Connect keyboard shortcuts
         self.connect_shortcuts()
+
+    def show_main_window(self):
+        """Shows UI"""
+        # Full-screen and other necessary setup
         if not self.fake_payment_terminal and not self.fake_backend:
             self.showFullScreen()
-        # Move to booting page
+
+        # Move to the booting page
         self.switch_to_boot_page()
+
 
     def _switch_to_page(self, page: Page):
         """Switches to a page"""
@@ -169,6 +188,30 @@ class GUI(QtWidgets.QMainWindow):
         # Setting font for label
         font = QFont("Arial", 25)
         self.ui.start_price_label.setFont(font)
+
+    def load_custom_fonts(self):
+        """Load custom fonts (Lato and Montserrat)"""
+        # Get the current directory
+        current_dir = os.path.dirname(os.path.realpath(__file__))
+
+        # Construct the absolute paths to the font files
+        lato_font_path = os.path.join(current_dir, "fonts", "Lato-Regular.ttf")
+        montserrat_font_path = os.path.join(current_dir, "fonts", "Montserrat-VariableFont_wght.ttf")
+        montserrat_extra_light_path = os.path.join(current_dir, 'fonts', 'Montserrat-ExtraLight.ttf')
+
+        # Add the fonts
+        font_db = QFontDatabase()
+        lato_font_id = font_db.addApplicationFont(lato_font_path)
+        montserrat_font_id = font_db.addApplicationFont(montserrat_font_path)
+        extra_light_font_id = font_db.addApplicationFont(montserrat_extra_light_path)
+
+        # Check if the fonts were loaded successfully
+        if lato_font_id == -1:
+            print("Lato font could not be loaded.")
+        if montserrat_font_id == -1:
+            print("Montserrat Light font could not be loaded.")
+        if extra_light_font_id == -1:
+            print("Montserrat Extra Light could not be loaded.")
 
     # Boot page methods
     from .pages.boot_page import switch_to_boot_page
@@ -275,11 +318,4 @@ class GUI(QtWidgets.QMainWindow):
     def run(self):
         """Runs the app"""
         sys.exit(self.app.exec_())
-
-    @property
-    def ui_path(self):
-        """Path to the UI file"""
-
-        _dir = os.path.dirname(os.path.realpath(__file__))
-        return os.path.join(_dir, self.gui_ui_fname)
 

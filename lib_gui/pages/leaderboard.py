@@ -77,14 +77,23 @@ def reset_leaderboard_scroll(self):
         self.table_monthly.verticalScrollBar().setValue(0)
 
 
-def setup_leaderboard_page(self):
+def setup_leaderboard_page(self, ui_version):
+    print(ui_version)
     """Sets up the geometry and layout for the leaderboard page"""
 
-    # Create a container widget for the leaderboards
+    # Create a container widget for the leaderboards,
     self.leaderboard_container = QWidget(self.ui.LeaderboardPage)
-    self.leaderboard_container.setGeometry(155, 200, 1600, 850)  # Set x, y, width, height
 
-    outer_layout = QHBoxLayout(self.leaderboard_container)
+    # Decide which version of the ui to use, setup accordingly
+    # If version 2
+    if ui_version == "gui.ui":
+        self.leaderboard_container.setGeometry(155, 200, 1600, 850)  # Set x, y, width, height
+        outer_layout = QHBoxLayout(self.leaderboard_container)
+    # If version 3
+    elif ui_version == "gui_v3.ui":
+        self.leaderboard_container.setGeometry(130, 200, 800, 1600)  # Set x, y, width, height
+        outer_layout = QVBoxLayout(self.leaderboard_container)
+
     outer_layout.setContentsMargins(10, 10, 10, 10)  # Add margins to ensure the rounded corners are visible
 
     # All Time Leaderboard

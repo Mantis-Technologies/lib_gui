@@ -48,6 +48,7 @@ class Error_Message_Banner(QWidget):
 
     def ShowMessage(self, message_to_show: str):
         self.message_lbl.setText(message_to_show)
+        self.raise_() # raise banner to front, works with either ui v2 or v3
 
     def handle_close(self):
         self.hide()

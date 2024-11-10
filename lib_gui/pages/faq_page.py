@@ -72,7 +72,7 @@ class FAQPageTimeoutThread(QThread):
             time.sleep(1)
 
 
-def setup_faq_page(self):
+def setup_faq_page(self, ui_version):
     """Set up the FAQ page with questions and answers"""
     faqs = [
         ("What is a CannaCheck™ Kiosk?", "A CannaCheck™ Kiosk is a self-service machine for cannabis testing."),
@@ -81,8 +81,8 @@ def setup_faq_page(self):
         ("What other industries use NIR spectroscopy?", "NIR spectroscopy technology is used in industries such as big agriculture, pharmaceuticals, and food & beverage."),
         ("How accurate is CannaCheck™'s kiosk?", "The kiosk provides highly accurate results comparable to lab tests. The machine is accurate to +/-10% of the measured value. For example, on a 20% THC-A flower, the variance would be +/-2%. This means the flower would be within 18% to 22% THC-A."),
         ("How is total THC and total CBD calculated?", "Total THC and Total CBD are calculated using specific equations that account for both the acidic and neutral forms of these cannabinoids. The equations are as follows:\n\nTotal THC = (THC-A * 0.877) + THC\nTotal CBD = (CBD-A * 0.877) + CBD\n\nThese calculations are based on the fact that THC-A and CBD-A, the acidic forms, convert to their neutral forms (THC and CBD) when heated. The conversion factor 0.877 accounts for the loss of the carboxyl group during this process. These equations provide a more comprehensive measure of the total potential content of THC and CBD in the sample."),
-        ("Why do samples from the same plant show different results?", "Variations can occur due to differences in sample preparation and environmental factors. Environmental factors are the most prevalent, primarily due to the natural variance in cannabis flower itself. Examples of variations in sample preparation include differing levels of fineness in the ground flower, holes where light can shine through the sample, or dirty sample cups, such as sample cups with fingerprints on the bottom."),
-        ("Why do I get different results when I retest the same sample?", "Even when retesting the exact same sample, variations can occur due to several factors. Touching the bottom of the sample cup when removing the sample, jostling the sample when reinserting it, and fingerprint oils on the sample cup can all affect the results. Additionally, slight changes in temperature and moisture can impact the readings. Because the machine only tests a 14mm diameter of a 47mm cup, and cannabis is naturally highly variable, different parts of the same sample can yield different results."),
+        ("Why do samples from the same plant show different results?", "\nVariations can occur due to differences in sample preparation and environmental factors. Environmental factors are the most prevalent, primarily due to the natural variance in cannabis flower itself. Examples of variations in sample preparation include differing levels of fineness in the ground flower, holes where light can shine through the sample, or dirty sample cups, such as sample cups with fingerprints on the bottom.\n"),
+        ("Why do I get different results when I retest the same sample?", "\nEven when retesting the exact same sample, variations can occur due to several factors. Touching the bottom of the sample cup when removing the sample, jostling the sample when reinserting it, and fingerprint oils on the sample cup can all affect the results. Additionally, slight changes in temperature and moisture can impact the readings. Because the machine only tests a 14mm diameter of a 47mm cup, and cannabis is naturally highly variable, different parts of the same sample can yield different results.\n"),
         ("How do I get the most consistent results?", "Ensure consistent sample preparation and handling of the sample cups for best results. If retesting a sample, average the differences between tests to understand the most representative value."),
         ("Why grind the sample?", "Grinding the sample ensures a uniform and representative sample for analysis."),
         ("Does the sample weight matter for accurate results with NIR?", "Yes, the weight of the sample does matter for accurate results with NIR spectroscopy. However, when testing a small portion of a much larger sample, like CannaCheck™'s method, the weight is not critical as long as the sample completely fills the cup to ensure no light passes through. Consistency in sample preparation is key."),
@@ -90,8 +90,9 @@ def setup_faq_page(self):
         ("Can CannaCheck™ measure edibles or infused products?", "Currently, CannaCheck™ is not designed to measure edibles or infused products due to many other ingredients obscuring the optical sampling process."),
         ("Can CannaCheck™ measure contaminants (pesticides, molds etc)?", "CannaCheck™ cannot detect certain contaminants at meaningful levels, as it is primarily designed for potency testing."),
         ("Can CannaCheck™ measure heavy metals?", "No, CannaCheck™ does not measure heavy metals."),
+        ("Can CannaCheck™ measure terpenes?", "No, at this time, CannaCheck™ cannot measure terpenes."),
         ("Is CannaCheck™ a state-certified test method?", "No. Most states name only HPLC or GC as certified methods. The CannaCheck™ is not intended to replace mandatory third-party testing of final product. It is only intended to replace R&D testing which does not require HPLC or GC."),
-        ("What are optimal use-cases for CannaCheck™?", "Any time a potency measurement is needed that doesn’t require third-party lab testing. Pheno hunting, optimization of cultivation parameters, R&D testing, dosing of edibles, and more. CannaCheck™ is made for home growers to receive testing with far greater accuracy and precision than competing products."),
+        ("What are optimal use-cases for CannaCheck™?", "Any time a potency measurement is needed that doesn’t require third-party lab testing. Pheno hunting, optimization of cultivation parameters, R&D testing, dosing of edibles, and more. CannaCheck™ is made for home growers to receive testing with far greater accuracy and precision than competing products at an accessible price point."),
         ("Is CannaCheck™ supposed to eliminate outside lab-testing?", "No, CannaCheck™ is designed to complement outside lab-testing."),
         ("What can CannaCheck™ test for?", "CannaCheck™ can test for THC-A, CBD-A, THC, CBD, Total THC, and Total CBD."),
         ("How is CannaCheck™ different than HPLC or GC?", "CannaCheck™ uses spectroscopy, which is faster and less expensive than HPLC or GC."),
@@ -103,7 +104,14 @@ def setup_faq_page(self):
 
     # Create a container widget for centering the scroll area
     container_widget = QWidget(faq_page_widget)
-    container_widget.setGeometry(350, 250, 1200, 700)  # Adjust the position and size as needed
+
+    # V2 Kiosk
+    if ui_version == "gui.ui":
+        container_widget.setGeometry(350, 250, 1200, 700)  # x, y, width, height
+    #V3 Kiosk
+    elif ui_version == "gui_v3.ui":
+        container_widget.setGeometry(0, 225, 1090, 1400)  # x, y, width, height
+
     container_layout = QVBoxLayout(container_widget)
     container_layout.setContentsMargins(20, 20, 20, 20)  # Add margins for a nicer look
     container_widget.setStyleSheet("border-radius: 10px;")
