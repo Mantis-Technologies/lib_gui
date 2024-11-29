@@ -9,10 +9,10 @@ __maintainer__ = "Michael Mahoney"
 __email__ = "mike@cannacheckkiosk.com"
 
 from ..page import Page
-from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QVBoxLayout, QTableWidget, QTableWidgetItem, QLabel, QWidget, QSpacerItem, QSizePolicy, QHBoxLayout
-from PyQt5.QtCore import QThread, pyqtSignal, Qt
-from PyQt5.QtGui import QColor, QFont, QPalette, QIcon, QPixmap, QImage
+from PySide6 import QtWidgets
+from PySide6.QtWidgets import QVBoxLayout, QTableWidget, QTableWidgetItem, QLabel, QWidget, QSpacerItem, QSizePolicy, QHBoxLayout
+from PySide6.QtCore import QThread, Signal, Qt
+from PySide6.QtGui import QColor, QFont, QPalette, QIcon, QPixmap, QImage
 import time
 import requests
 import os
@@ -49,7 +49,7 @@ def LeaderboardPageTimeoutCallback(self, result):
     self.leaderboard_back_to_start_page()
 
 class LeaderboardPageTimeoutThread(QThread):
-    signal = pyqtSignal('PyQt_PyObject')
+    signal = Signal('PyQt_PyObject')
 
     def __init__(self, gui):
         QThread.__init__(self)

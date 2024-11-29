@@ -9,8 +9,8 @@ __maintainer__ = "Nicholas Lanotte"
 __email__ = "nickjl0809@gmail.com"
 
 from ..page import Page
-from PyQt5.QtCore import QThread, pyqtSignal, Qt, QObject
-from PyQt5.QtGui import QFont
+from PySide6.QtCore import QThread, Signal, Qt, QObject
+from PySide6.QtGui import QFont
 import time
 
 
@@ -44,7 +44,7 @@ def cancel_payment(self):
 
 class CheckPaymentTerminalSignalEmitter(QObject):
     # Define the signal at the class level
-    signal = pyqtSignal()
+    signal = Signal()
 
     def __init__(self):
         super().__init__()
@@ -80,7 +80,7 @@ def Send_CheckPayment_Terminal_Connection_Signal(self):
 
 
 class PaymentTimeoutThread(QThread):
-    signal = pyqtSignal('PyQt_PyObject')
+    signal = Signal('PyQt_PyObject')
 
     def __init__(self, gui):
         QThread.__init__(self)
@@ -98,7 +98,7 @@ class PaymentTimeoutThread(QThread):
 
 
 class CheckPaymentApprovedThread(QThread):
-    signal = pyqtSignal('PyQt_PyObject')
+    signal = Signal('PyQt_PyObject')
 
     def __init__(self, gui):
         QThread.__init__(self)

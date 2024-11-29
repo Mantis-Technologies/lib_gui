@@ -9,8 +9,8 @@ __email__ = "mike@cannacheckkiosk.com"
 """This contains all the methods from the Find User/Add User page"""
 
 from ..page import Page
-from PyQt5.QtCore import Qt, QEvent, QTimer
-from PyQt5.QtWidgets import QLineEdit, QPushButton, QMessageBox, QVBoxLayout, QDialog
+from PySide6.QtCore import Qt, QEvent, QTimer
+from PySide6.QtWidgets import QLineEdit, QPushButton, QMessageBox, QVBoxLayout, QDialog
 import re
 from lib_keyboard.keyboard import CustomKeyboard
 from better_profanity import profanity

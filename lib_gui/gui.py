@@ -12,10 +12,10 @@ __email__ = "mike@cannacheckkiosk.com"
 import os
 import sys
 
-from PyQt5 import QtWidgets, uic
-from PyQt5.QtCore import pyqtSignal, Qt, QEvent
-from PyQt5.QtWidgets import QApplication, QWidget
-from PyQt5.QtGui import QFont, QFontDatabase
+from PySide6 import QtWidgets, uic
+from PySide6.QtCore import Signal, Qt, QEvent
+from PySide6.QtWidgets import QApplication, QWidget
+from PySide6.QtGui import QFont, QFontDatabase
 
 from .page import Page
 import time

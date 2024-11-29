@@ -9,9 +9,9 @@ __maintainer__ = "Michael Mahoney"
 __email__ = "mike@cannacheckkiosk.com"
 
 from ..page import Page
-from PyQt5.QtCore import QThread, pyqtSignal, Qt, QSize
-from PyQt5.QtWidgets import QVBoxLayout, QHBoxLayout, QPushButton, QLabel, QScrollArea, QWidget, QSizePolicy
-from PyQt5.QtGui import QPixmap
+from PySide6.QtCore import QThread, Signal, Qt, QSize
+from PySide6.QtWidgets import QVBoxLayout, QHBoxLayout, QPushButton, QLabel, QScrollArea, QWidget, QSizePolicy
+from PySide6.QtGui import QPixmap
 import time
 import os
 
@@ -55,7 +55,7 @@ def reset_faq_page(self):
 
 
 class FAQPageTimeoutThread(QThread):
-    signal = pyqtSignal('PyQt_PyObject')
+    signal = Signal('PyQt_PyObject')
 
     def __init__(self, gui):
         QThread.__init__(self)
