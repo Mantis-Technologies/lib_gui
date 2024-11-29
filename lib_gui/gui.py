@@ -12,10 +12,12 @@ __email__ = "mike@cannacheckkiosk.com"
 import os
 import sys
 
-from PySide6 import QtWidgets, uic
+from PySide6 import QtWidgets
+from PySide6.QtUiTools import QUiLoader
 from PySide6.QtCore import Signal, Qt, QEvent
 from PySide6.QtWidgets import QApplication, QWidget
 from PySide6.QtGui import QFont, QFontDatabase
+from PySide6.QtCore import QFile
 
 from .page import Page
 import time
@@ -50,9 +52,11 @@ class GUI(QtWidgets.QMainWindow):
 
         # Construct the full path to the .ui file based on the current directory
         ui_path = os.path.join(current_dir, ui_filename)
-
-        # Load the UI
-        self.ui = uic.loadUi(ui_path, self)
+        loader = QUiLoader()
+        ui_file = QFile(ui_path)
+        ui_file.open(QFile.ReadOnly)
+        self.ui = loader.load(ui_file, self)
+        ui_file.close()
 
         # Connect buttons after the UI is loaded
         self.setup_connections(ui_version)
