@@ -55,7 +55,7 @@ class GUI(QtWidgets.QMainWindow):
         loader = QUiLoader()
         ui_file = QFile(ui_path)
         ui_file.open(QFile.ReadOnly)
-        self.ui = loader.load(ui_file, self)
+        loader.load(ui_file, self)
         ui_file.close()
 
         # Connect buttons after the UI is loaded
