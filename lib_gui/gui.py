@@ -60,6 +60,7 @@ class GUI(QtWidgets.QMainWindow):
         # make all widgets members of self for compatibility with pyqt5 code
         for widget in self.ui.children():
             setattr(self, widget.objectName(), widget)
+            print(widget.objectName())
 
         # Connect buttons after the UI is loaded
         self.setup_connections(ui_version)
