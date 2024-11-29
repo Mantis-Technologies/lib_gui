@@ -55,8 +55,11 @@ class GUI(QtWidgets.QMainWindow):
         loader = QUiLoader()
         ui_file = QFile(ui_path)
         ui_file.open(QFile.ReadOnly)
-        loader.load(ui_file, self)
+        self.ui = loader.load(ui_file, self)
         ui_file.close()
+        # make all widgets members of self for compatibility with pyqt5 code
+        for widget in self.ui.children():
+            setattr(self, widget.objectName(), widget)
 
         # Connect buttons after the UI is loaded
         self.setup_connections(ui_version)
