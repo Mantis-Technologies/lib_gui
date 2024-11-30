@@ -92,7 +92,7 @@ class PaymentTimeoutThread(QThread):
         while self.keepRunning and self.gui.keepThreadsRunning:
             maxSecondsToWait = maxSecondsToWait - 1
             if maxSecondsToWait == 0:
-                self.signal.emit(1)  # emit anything to trigger page change
+                self.signal.emit()  # emit to trigger page change
                 break
             time.sleep(1)
 
