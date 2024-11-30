@@ -15,7 +15,7 @@ import sys
 from PySide6 import QtWidgets
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtCore import Signal, Qt, QEvent
-from PySide6.QtWidgets import QApplication, QWidget
+from PySide6.QtWidgets import QApplication, QWidget, QStackedWidget
 from PySide6.QtGui import QFont, QFontDatabase
 from PySide6.QtCore import QFile
 
@@ -27,7 +27,7 @@ class GUI(QtWidgets.QMainWindow):
 
     def __init__(self, debug=False, fake_backend: bool = False, fake_payment_terminal: bool = False):
         """Connects all buttons and switches to boot page"""
-
+        self.loader = QUiLoader()
         # Pytest cannot run if this is enabled
         if "PYTEST_CURRENT_TEST" not in os.environ:
             self.app = QApplication(sys.argv)
@@ -40,6 +40,10 @@ class GUI(QtWidgets.QMainWindow):
         self.keepThreadsRunning = True
         self.button_delay_map = {} # stores key value pairs for button names and a time. Used to have button presses be ignored for set periods
 
+    def recursiveAddChildrenWidgets(self, parentWidget):
+        for widget in parentWidget.children():
+            setattr(self, widget.objectName(), widget)
+            self.recursiveAddChildrenWidgets(widget)
 
     def load_ui(self, ui_filename):
         """Loads the appropriate UI based on the kiosk version."""
@@ -52,15 +56,22 @@ class GUI(QtWidgets.QMainWindow):
 
         # Construct the full path to the .ui file based on the current directory
         ui_path = os.path.join(current_dir, ui_filename)
-        loader = QUiLoader()
+
+        ##############################################################################
+        #The conversion to Pyside 6 has some differences from PyQt5 causing the main
+        # window to not be loaded directly. We need to load the ui, promote the widgets
+        # within and then resize the main window we made.
         ui_file = QFile(ui_path)
         ui_file.open(QFile.ReadOnly)
-        self.ui = loader.load(ui_file, self)
+        self.ui = self.loader.load(ui_file, self)
+        uiCentralWidget = self.ui.findChild(QWidget, "centralwidget")
+        self.recursiveAddChildrenWidgets(uiCentralWidget)
+        self.setCentralWidget(uiCentralWidget)
         ui_file.close()
+        stackedWidgetSize = self.stackedWidget.size()
         # make all widgets members of self for compatibility with pyqt5 code
-        for widget in self.ui.children():
-            setattr(self, widget.objectName(), widget)
-            print(widget.objectName())
+        self.resize(stackedWidgetSize.width(), stackedWidgetSize.height())
+        ###############################################################################
 
         # Connect buttons after the UI is loaded
         self.setup_connections(ui_version)
@@ -126,7 +137,8 @@ class GUI(QtWidgets.QMainWindow):
         # Full-screen and other necessary setup
         if not self.fake_payment_terminal and not self.fake_backend:
             self.showFullScreen()
-
+        else:
+            self.show()
         # Move to the booting page
         self.switch_to_boot_page()
 

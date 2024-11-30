@@ -11,8 +11,7 @@ __email__ = "jfuruness@gmail.com"
 
 import logging
 
-from PyQt5.QtGui import QKeySequence
-from PyQt5.QtWidgets import QShortcut
+from PySide6.QtGui import QShortcut, QKeySequence
 
 from .page import Page
 

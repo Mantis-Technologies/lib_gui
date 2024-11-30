@@ -1,6 +1,6 @@
-from PyQt5.QtWidgets import QWidget, QLabel
-from PyQt5.QtGui import QPainter, QPen, QBrush, QColor
-from PyQt5.QtCore import Qt, QPoint
+from PySide6.QtWidgets import QWidget, QLabel
+from PySide6.QtGui import QPainter, QPen, QBrush, QColor
+from PySide6.QtCore import Qt, QPoint
 
 
 class Error_Message_Banner(QWidget):
