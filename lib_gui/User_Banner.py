@@ -1,5 +1,5 @@
 from PySide6.QtWidgets import QWidget, QLabel
-from PySide6.QtGui import QPainter, QPen, QBrush, QColor
+from PySide6.QtGui import QPainter, QPen, QBrush, QColor, QPolygon
 from PySide6.QtCore import Qt, QPoint
 
 
@@ -45,7 +45,8 @@ class User_Banner(QWidget):
         ]
 
         # Draw the custom shape
-        painter.drawPolygon(*points)
+        polygon = QPolygon(points)
+        painter.drawPolygon(polygon)
 
     def Set_Banner_Info(self, username: str, points: int, is_guest: bool):
         username_string = username
