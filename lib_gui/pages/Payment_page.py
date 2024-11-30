@@ -61,13 +61,13 @@ def connect_payment_buttons(self):
     self.check_payment_terminal_connection_signal.signal.connect(self.Check_Payment_Terminal_Connection)
 
 
-def PaymentApprovedCallback(self, result):
+def PaymentApprovedCallback(self):
     if self.PaymentTimeoutThread.keepRunning is True:
         self.PaymentTimeoutThread.keepRunning = False
         self.switch_to_instruction_page()
 
 
-def PaymentTimeoutCallback(self, result):
+def PaymentTimeoutCallback(self):
     self.cancel_payment()
 
 
