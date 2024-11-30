@@ -80,7 +80,7 @@ def Send_CheckPayment_Terminal_Connection_Signal(self):
 
 
 class PaymentTimeoutThread(QThread):
-    signal = Signal('PyQt_PyObject')
+    signal = Signal()
 
     def __init__(self, gui):
         QThread.__init__(self)
@@ -98,7 +98,7 @@ class PaymentTimeoutThread(QThread):
 
 
 class CheckPaymentApprovedThread(QThread):
-    signal = Signal('PyQt_PyObject')
+    signal = Signal()
 
     def __init__(self, gui):
         QThread.__init__(self)

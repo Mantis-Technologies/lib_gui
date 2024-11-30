@@ -55,7 +55,7 @@ def reset_faq_page(self):
 
 
 class FAQPageTimeoutThread(QThread):
-    signal = Signal('PyQt_PyObject')
+    signal = Signal()
 
     def __init__(self, gui):
         QThread.__init__(self)
