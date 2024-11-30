@@ -109,6 +109,6 @@ class CheckPaymentApprovedThread(QThread):
         while self.keepRunning and self.gui.keepThreadsRunning:
             isApproved, isActiveTransaction = self.gui.paymentTerminal.CheckIfTransactionIsFinished()
             if isApproved and isActiveTransaction:
-                self.signal.emit(1)  # emit anything to trigger page change
+                self.signal.emit()  # emit to trigger page change
                 break
             time.sleep(0.1)
