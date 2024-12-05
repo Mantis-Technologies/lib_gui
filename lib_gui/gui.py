@@ -140,6 +140,7 @@ class GUI(QtWidgets.QMainWindow):
         else:
             self.show()
         # Move to the booting page
+        print("Showing UI")
         self.switch_to_boot_page()
 
 
