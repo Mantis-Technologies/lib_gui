@@ -136,11 +136,12 @@ class GUI(QtWidgets.QMainWindow):
         """Shows UI"""
         # Full-screen and other necessary setup
         if not self.fake_payment_terminal and not self.fake_backend:
+            print("Showing UI full screen")
             self.showFullScreen()
         else:
+            print("Showing UI not full screen")
             self.show()
         # Move to the booting page
-        print("Showing UI")
         self.switch_to_boot_page()
 
 
