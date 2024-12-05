@@ -18,6 +18,7 @@ from PySide6.QtCore import Signal, Qt, QEvent
 from PySide6.QtWidgets import QApplication, QWidget, QStackedWidget
 from PySide6.QtGui import QFont, QFontDatabase
 from PySide6.QtCore import QFile
+from PySide6.QtCore import QCoreApplication
 
 from .page import Page
 import time
@@ -141,6 +142,7 @@ class GUI(QtWidgets.QMainWindow):
         else:
             print("Showing UI not full screen")
             self.show()
+        QCoreApplication.processEvents()
         # Move to the booting page
         self.switch_to_boot_page()
 
