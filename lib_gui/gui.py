@@ -45,67 +45,123 @@ class GUI(QtWidgets.QMainWindow):
 
         # Load the UI
         self.ui = uic.loadUi(self.ui_path, self)
+
         # Connect start buttons
+        print("Initializing: Connecting start buttons")
         self.connect_start_buttons()
+
         # Connect confirmation buttons
+        print("Initializing: Connecting confirmation buttons")
         self.connect_confirmation_buttons()
+
         # Connect loading sample buttons
+        print("Initializing: Connecting loading sample buttons")
         self.connect_load_buttons()
+
         # Connect results buttons
+        print("Initializing: Connecting results buttons")
         self.connect_results_buttons()
+
         # Connect Order Buttons
+        print("Initializing: Connecting order buttons")
         self.connect_order_buttons()
+
         # Connect payment buttons
+        print("Initializing: Connecting payment buttons")
         self.connect_payment_buttons()
+
         # Connect find user add user buttons
+        print("Initializing: Connecting find user/add user buttons")
         self.connect_finduseradduser_buttons()
+
         # Connect find user add user input fields
+        print("Initializing: Setting up find user/add user page")
         self.setup_finduser_adduser_page()
+
         # Connect instruction page buttons
+        print("Initializing: Connecting instruction page buttons")
         self.connect_instruction_buttons()
 
         # Connect about page buttons
-        # self.connect_about_buttons() No longer using the About Page
+        # print("Initializing: Connecting about page buttons (skipped)")  # Commented out
 
         # Connect disclaimer page buttons
+        print("Initializing: Connecting disclaimer page buttons")
         self.connect_disclaimer_buttons()
+
         # Connect before proceeding page buttons
+        print("Initializing: Connecting before proceeding page buttons")
         self.connect_before_proceeding_buttons()
+
         # Connect rescan results page
+        print("Initializing: Connecting rescan results page")
         self.connect_rescan_buttons()
+
         # Connect confirm removal page
+        print("Initializing: Connecting confirm removal page")
         self.connect_confirm_removal_buttons()
+
         # Connect maintenance page buttons
+        print("Initializing: Connecting maintenance page buttons")
         self.connect_maintenance_buttons()
+
         # Connect FAQ page buttons
+        print("Initializing: Connecting FAQ page buttons")
         self.connect_faq_buttons()
+
         # Set up FAQ page
+        print("Initializing: Setting up FAQ page")
         self.setup_faq_page()
+
         # Connect Leaderboard page buttons
+        print("Initializing: Connecting leaderboard page buttons")
         self.connect_leaderboard_buttons()
+
         # Setup the Leaderboard
+        print("Initializing: Setting up leaderboard page")
         self.setup_leaderboard_page()
+
         # Set up QR code label
+        print("Initializing: Setting up QR code label")
         self.setup_qr_code_label()
-        # Set up result url widget
+
+        # Set up result URL widget
+        print("Initializing: Setting up result URL widget")
         self.setup_results_url()
+
         # Set up pie chart
+        print("Initializing: Setting up pie chart")
         self.setup_pie_chart()
-        # connect apply points page buttons
+
+        # Connect apply points page buttons
+        print("Initializing: Connecting apply points page buttons")
         self.connect_apply_points_page_buttons()
+
         # Remove pointless info
+        print("Initializing: Removing pointless info and setting frameless window hint")
         self.setWindowFlag(Qt.FramelessWindowHint)
+
         # This is only for when in use by a lab
+        print("Initializing: Setting visibility of lab items to False")
         self.set_visibility_of_lab_items(visible=False)
+
         # Connect keyboard shortcuts
+        print("Initializing: Connecting keyboard shortcuts")
         self.connect_shortcuts()
+
+        # If not using fake backend or payment terminal, show fullscreen
         if not self.fake_payment_terminal and not self.fake_backend:
+            print("Initializing: Showing fullscreen")
             self.showFullScreen()
+
         # Move to booting page
+        print("Initializing: Moving to boot page")
         self.switch_to_boot_page()
 
     def _switch_to_page(self, page: Page):
         """Switches to a page"""
+
+        print(f"Switching to page: {page}")  # Debug print
 
         if not self.debug:
             # Remove cursor unless debugging
@@ -192,6 +248,7 @@ class GUI(QtWidgets.QMainWindow):
     from .pages.order_page import set_visibility_of_lab_items
     from .pages.order_page import get_prep
     from .pages.order_page import get_notes
+    from .pages.order_page import commence_lab_app_scan
 
     # Loading page methods (for loading sample)
     from .pages.load_page import switch_to_load_page

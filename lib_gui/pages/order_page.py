@@ -3,13 +3,18 @@
 
 """This file contains methods for the order page"""
 
-__author__ = "Justin Furuness"
-__credits__ = ["Justin Furuness"]
-__maintainer__ = "Justin Furuness"
-__email__ = "jfuruness@gmail.com"
+__author__ = "Justin Furuness, Michael Mahoney"
+__credits__ = ["Justin Furuness", "Michael Mahoney"]
+__maintainer__ = "Michael Mahoney"
+__email__ = "mike@cannacheckkiosk.com"
 
 from ..page import Page
 from lib_enums import Prep
+
+
+def commence_lab_app_scan(self):
+    """commences scan, overwritten function. loading of sample complete, switch to scanning page"""
+    print("Commencing lab app scan")
 
 
 def switch_to_order_page(self):
@@ -31,14 +36,16 @@ def connect_order_buttons(self):
 
     # If there is no order number, do nothing
     def next_page():
+        """IF DEBUG MODE, CALL FINISHED LOADING FOR FAKE BACKEND, IF REAL KIOSK, REAL FINISHED LOAD"""
         try:
             order_num = self.get_order_num()
             if order_num:
-                self.switch_to_payment_page()
+                self.commence_lab_app_scan()
+
         except Exception as e:
-            print("order num failed with ", str(e))
+            print("Next page failed with ", str(e))
     self.order_num_next_btn.clicked.connect(next_page)
-    self.order_num_cancel_btn.clicked.connect(self.switch_to_start_page)
+    self.order_num_cancel_btn.clicked.connect(self.switch_to_order_page) # this was switch to start page. no more! MJM
 
 
 def connect_num_buttons(self):
