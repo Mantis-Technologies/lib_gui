@@ -19,6 +19,7 @@ class User_Banner(QWidget):
         self.user_points_lbl.setStyleSheet(
             "background-color: rgba(255, 255, 255, 0); color: white; font-size: 40px;")  # Style the label
         self.user_points_lbl.setAlignment(Qt.AlignCenter | Qt.AlignVCenter)  # Set text alignment to center
+        self.user_points_lbl.show()
 
     def paintEvent(self, event):
         painter = QPainter(self)
@@ -58,3 +59,5 @@ class User_Banner(QWidget):
         if is_guest:
             points_string = ""
         self.user_points_lbl.setText(points_string)
+        self.raise_()  # Bring the banner to the top layer
+        self.show()    # Ensure the banner is visible
