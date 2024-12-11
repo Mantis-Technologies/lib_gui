@@ -146,6 +146,9 @@ class GUI(QtWidgets.QMainWindow):
         # Move to the booting page
         self.switch_to_boot_page()
 
+    def process_events(self):
+        QCoreApplication.processEvents()
+
 
     def _switch_to_page(self, page: Page):
         """Switches to a page"""
