@@ -275,7 +275,6 @@ class GUI(QtWidgets.QMainWindow):
     from .pages.order_page import connect_del_btn
     from .pages.order_page import get_order_num
     from .pages.order_page import set_order_num
-    from .pages.order_page import change_order_id_lbl
     from .pages.order_page import set_visibility_of_lab_items
     from .pages.order_page import get_prep
     from .pages.order_page import get_notes

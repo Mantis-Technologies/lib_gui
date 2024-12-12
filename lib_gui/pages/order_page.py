@@ -117,12 +117,6 @@ def set_order_num(self, num: str):
     return self.order_num_entry.setText(num)
 
 
-def change_order_id_lbl(self):
-    """Changes order id for mcr lab techs"""
-
-    self.enter_id_lbl.setText("Enter sample ID")
-
-
 def get_prep(self):
     """Gets the preparation method"""
 

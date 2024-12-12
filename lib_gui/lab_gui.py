@@ -21,9 +21,14 @@ class LabGUI(GUI):
         print("LabGUI: Overriding unnecessary components")
         self.override_unused_components()
 
+
         super(LabGUI, self).__init__(*args, **kwargs)
-        # Changes order label and says it's for sample_id
-        self.change_order_id_lbl()
+
+
+        # # # TODO: remove harcoding version
+        # # # loads proper ui before mcr app elements are initialized but after app is initialized
+        # self.load_ui("gui_v3.ui") # HARDCODED FOR NOW WITH V3
+
         # Changes the visibility of the preparation method combo box
         self.set_visibility_of_lab_items(visible=True)
 
@@ -35,12 +40,12 @@ class LabGUI(GUI):
         """Skip connecting unused components"""
         self.connect_faq_buttons = lambda: print("Skipping FAQ buttons for LabGUI")
         self.connect_leaderboard_buttons = lambda: print("Skipping leaderboard buttons for LabGUI")
-        self.setup_leaderboard_page = lambda: print("Skipping leaderboard setup for LabGUI")
-        self.setup_faq_page = lambda: print("Skipping FAQ setup for LabGUI")
+        self.setup_leaderboard_page = lambda _: print("Skipping leaderboard setup for LabGUI") # use _: for the overwitten unused componentd with ui version arguments
+        self.setup_faq_page = lambda _: print("Skipping FAQ setup for LabGUI") # use _: for the overwitten unused componentd with ui version arguments
         self.connect_apply_points_page_buttons = lambda: print("Skipping apply points page buttons for LabGUI")
-        self.setup_qr_code_label = lambda: print("Skipping QR code label setup for LabGUI")
-        self.setup_results_url = lambda: print("Skipping results URL setup for LabGUI")
-        self.setup_pie_chart = lambda: print("Skipping pie chart setup for LabGUI")
+        self.setup_qr_code_label = lambda _: print("Skipping QR code label setup for LabGUI") # use _: for the overwitten unused componentd with ui version arguments
+        self.setup_results_url = lambda _: print("Skipping results URL setup for LabGUI") # use _: for the overwitten unused componentd with ui version arguments
+        self.setup_pie_chart = lambda _: print("Skipping pie chart setup for LabGUI") # use _: for the overwitten unused componentd with ui version arguments
 
     def connect_maintenance_buttons(self):
         print("Skipping connect maintenance buttons.")
