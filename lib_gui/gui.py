@@ -279,6 +279,9 @@ class GUI(QtWidgets.QMainWindow):
     from .pages.order_page import get_prep
     from .pages.order_page import get_notes
     from .pages.order_page import commence_lab_app_scan
+    from .pages.order_page import sample_exists_in_file
+    from .pages.order_page import append_sample_to_file
+    from .pages.order_page import get_last_sample_from_file
 
     # Loading page methods (for loading sample)
     from .pages.load_page import switch_to_load_page

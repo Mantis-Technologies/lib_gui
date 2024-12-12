@@ -10,7 +10,16 @@ __email__ = "mike@cannacheckkiosk.com"
 
 from ..page import Page
 from lib_enums import Prep
+from PyQt5.QtWidgets import QMessageBox
+import os
 
+
+current_dir = os.path.dirname(os.path.realpath(__file__)) # this returns pages directory
+print(current_dir)
+parent_dir = os.path.dirname(current_dir)
+print(parent_dir)
+SAMPLE_FILE = os.path.join(parent_dir, "previous_samples.txt")
+print(SAMPLE_FILE)
 
 def commence_lab_app_scan(self):
     """commences scan, overwritten function. loading of sample complete, switch to scanning page"""
@@ -24,28 +33,63 @@ def switch_to_order_page(self):
     self.notes_entry.clear()
     self._switch_to_page(Page.ORDER)
 
+    # Display last used sample number if any
+    last_sample = get_last_sample_from_file()
+    if last_sample is not None:
+        self.previous_sample_lbl.setText(f"Previous sample number: {last_sample}")
+    else:
+        self.previous_sample_lbl.setText("Previous sample number: None")
+    self.previous_sample_lbl.show()
+
 
 def connect_order_buttons(self):
-    """Connects order buttons
+    """Connects order buttons.
 
-    Won't move to next screen unless there is an order num
+    On Next:
+    - If order_num exists and is in file, show warning dialog with Cancel and Continue.
+      Cancel = stop, Continue = proceed with commence_lab_app_scan().
+    - If order_num exists and not in file, add it to file and proceed.
     """
 
     self.connect_num_buttons()
     self.connect_del_btn()
 
-    # If there is no order number, do nothing
     def next_page():
-        """IF DEBUG MODE, CALL FINISHED LOADING FOR FAKE BACKEND, IF REAL KIOSK, REAL FINISHED LOAD"""
         try:
-            order_num = self.get_order_num()
+            order_num = self.get_order_num().strip()
+            print("Debug: order_num =", order_num)
             if order_num:
-                self.commence_lab_app_scan()
+                print("Debug: Checking file for sample:", order_num)
+                if sample_exists_in_file(order_num):
+                    print("Debug: sample found in file")
+                    # Show warning dialog
+                    msg = QMessageBox(self)
+                    msg.setIcon(QMessageBox.Warning)
+                    msg.setText("This sample number was already used!\nDo you want to continue or cancel?")
+                    msg.setWindowTitle("Warning")
+                    msg.setStandardButtons(QMessageBox.Cancel | QMessageBox.Yes)
+                    msg.button(QMessageBox.Yes).setText("Continue")
+                    response = msg.exec_()
 
+                    if response == QMessageBox.Cancel:
+                        # User chose to stop
+                        print("Debug: User canceled, not proceeding with scan")
+                        return
+                    # User chose Continue
+                    print("Debug: User chose to continue")
+                    self.commence_lab_app_scan()
+                else:
+                    print("Debug: sample not found in file")
+                    # Not in file, add it and commence scan
+                    append_sample_to_file(order_num)
+                    self.commence_lab_app_scan()
+            else:
+                print("Debug: No order number entered, do nothing")
         except Exception as e:
             print("Next page failed with ", str(e))
+
     self.order_num_next_btn.clicked.connect(next_page)
-    self.order_num_cancel_btn.clicked.connect(self.switch_to_order_page) # this was switch to start page. no more! MJM
+    self.order_num_cancel_btn.clicked.connect(self.switch_to_order_page)
 
 
 def connect_num_buttons(self):
@@ -121,7 +165,8 @@ def get_prep(self):
     """Gets the preparation method"""
 
     text = self.prep_combo_box.currentText()
-    if "mechanical grind" in text.lower():
+
+    if "mcr method - scissors" in text.lower():
         return Prep.MECHANICAL_GRIND
     elif "ground by hand" in text.lower():
         return Prep.HAND_GRIND
@@ -135,3 +180,34 @@ def get_notes(self):
     """Returns the notes that were input"""
 
     return self.notes_entry.toPlainText()
+
+#############################
+### File Handling Helpers ###
+#############################
+
+def sample_exists_in_file(sample_number: str) -> bool:
+    """Check if a sample_number exists in previous_samples.txt"""
+    print("Debug: Checking if sample exists in file:", sample_number)
+    if not os.path.exists(SAMPLE_FILE):
+        print("Debug: File does not exist")
+        return False
+    with open(SAMPLE_FILE, "r") as f:
+        lines = f.read().splitlines()
+    print("Debug: file lines =", lines)
+    return sample_number in lines
+
+def append_sample_to_file(sample_number: str):
+    """Append a new sample_number to the file"""
+    with open(SAMPLE_FILE, "a") as f:
+        f.write(sample_number + "\n")
+    print(f"Debug: Appended {sample_number} to {SAMPLE_FILE}")
+
+def get_last_sample_from_file() -> str:
+    """Get the last sample number from the file, or None if empty/no file"""
+    if not os.path.exists(SAMPLE_FILE):
+        return None
+    with open(SAMPLE_FILE, "r") as f:
+        lines = f.read().splitlines()
+    if lines:
+        return lines[-1]
+    return None
