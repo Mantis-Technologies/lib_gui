@@ -16,6 +16,9 @@ from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QLabel
 from io import BytesIO
 
+from .GetUiDirectoryUtilities import GetCannaCheckUiImagePath
+from PySide6.QtGui import QPixmap
+
 
 def switch_to_results_page(self):
     """Switches to the results page"""
@@ -72,6 +75,10 @@ def connect_results_buttons(self):
     """Connects results buttons"""
 
     self.finished_test_btn.clicked.connect(self.done_w_results)
+    surveyQRCodePath = GetCannaCheckUiImagePath("adobe-express-qr-code copy.png")
+    pixmap = QPixmap(surveyQRCodePath)  # Replace with the path to your image
+    # Set the pixmap to the QLabel
+    self.survey_label.setPixmap(pixmap)
 
 
 def FormatSlices(series, color: str):

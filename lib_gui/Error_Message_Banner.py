@@ -12,7 +12,7 @@ class Error_Message_Banner(QWidget):
         self.message_lbl = QLabel("Message_Here", self)
         self.message_lbl.setGeometry(0, 0, 980, 100)  # Position the label
         self.message_lbl.setStyleSheet(
-            "background-color: rgba(255, 255, 255, 0); color: white; font-size: 30px;")  # Style the label
+            "background-color: rgba(255, 255, 255, 0); color: white; font-size: 25px;")  # Style the label
         self.message_lbl.setAlignment(Qt.AlignCenter | Qt.AlignVCenter)  # Set text alignment to center
         self.background_color = QColor(169, 6, 10)
 

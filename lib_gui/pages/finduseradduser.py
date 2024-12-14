@@ -35,7 +35,7 @@ def handle_existing_user_button(self):
 
 
 def Get_User_Credentials_From_Existing_User_Input(self) -> {}:
-    existing_user_text = self.newUserEmailInput.text()
+    existing_user_text = self.existingUserInput.text()
     user_pin = self.user_pin_entry.text()
     user_credentials = {}
 
