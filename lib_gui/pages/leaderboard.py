@@ -18,6 +18,8 @@ import time
 import requests
 import os
 from datetime import datetime, timedelta
+from .GetUiDirectoryUtilities import GetCannaCheckUiImagePath
+from PySide6.QtGui import QPixmap
 
 # Get the current date
 current_date = datetime.now()
@@ -74,6 +76,11 @@ class LeaderboardPageTimeoutThread(QThread):
 def connect_leaderboard_buttons(self):
     """Connects Leaderboard buttons"""
     self.leaderboard_back_btn.clicked.connect(self.leaderboard_back_to_start_page)
+
+    leaderboardGraphicPath = GetCannaCheckUiImagePath("leaderboard_graphic.png")
+    pixmap = QPixmap(leaderboardGraphicPath)  # Replace with the path to your image
+    # Set the pixmap to the QLabel
+    self.leaderboard_graphic.setPixmap(pixmap)
 
 
 def reset_leaderboard_scroll(self):

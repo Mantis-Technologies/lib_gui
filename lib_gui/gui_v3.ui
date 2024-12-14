@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1080</width>
-    <height>1920</height>
+    <width>1076</width>
+    <height>1911</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -40,7 +40,7 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="currentIndex">
-     <number>16</number>
+     <number>13</number>
     </property>
     <widget class="QWidget" name="BootingScreen">
      <widget class="QLabel" name="label_2">
@@ -2725,7 +2725,7 @@ color: white;   </string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>CannaCheck_UI_images_1.2/happy_nug_tansparent.png</pixmap>
+       <pixmap>CannaCheck_UI_images_1.2/happy_nug_transparent.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -2748,7 +2748,7 @@ color: white;   </string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>CannaCheck_UI_images_1.2/grinder_tansparent.png</pixmap>
+       <pixmap>CannaCheck_UI_images_1.2/grinder_transparent.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -2771,7 +2771,7 @@ color: white;   </string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>CannaCheck_UI_images_1.2/petri_dish_tansparent.png</pixmap>
+       <pixmap>CannaCheck_UI_images_1.2/petri_dish_transparent.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>

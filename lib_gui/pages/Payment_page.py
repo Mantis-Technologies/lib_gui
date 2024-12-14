@@ -11,6 +11,8 @@ __email__ = "nickjl0809@gmail.com"
 from ..page import Page
 from PySide6.QtCore import QThread, Signal, Qt, QObject
 from PySide6.QtGui import QFont
+from .GetUiDirectoryUtilities import GetCannaCheckUiImagePath
+from PySide6.QtGui import QPixmap
 import time
 
 
@@ -53,10 +55,19 @@ class CheckPaymentTerminalSignalEmitter(QObject):
         self.signal.emit()
 
 def connect_payment_buttons(self):
+    price_frame_path = GetCannaCheckUiImagePath("frame_for_price.png")
+    pixmap = QPixmap(price_frame_path)  # Replace with the path to your image
+    # Set the pixmap to the QLabel
+    self.frame_for_price.setPixmap(pixmap)
+
+    cart_path = GetCannaCheckUiImagePath("cart_graphic.png")
+    pixmap = QPixmap(cart_path)  # Replace with the path to your image
+    # Set the pixmap to the QLabel
+    self.cart_label.setPixmap(pixmap)
+
     """Connects results buttons"""
 
     self.cancel_payment_btn.clicked.connect(self.cancel_payment)
-
     self.check_payment_terminal_connection_signal = CheckPaymentTerminalSignalEmitter()
     self.check_payment_terminal_connection_signal.signal.connect(self.Check_Payment_Terminal_Connection)
 

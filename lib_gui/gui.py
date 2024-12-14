@@ -15,7 +15,7 @@ import sys
 from PySide6 import QtWidgets
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtCore import Signal, Qt, QEvent
-from PySide6.QtWidgets import QApplication, QWidget, QStackedWidget
+from PySide6.QtWidgets import QApplication, QWidget, QStackedWidget, QLineEdit
 from PySide6.QtGui import QFont, QFontDatabase
 from PySide6.QtCore import QFile
 from PySide6.QtCore import QCoreApplication
@@ -33,7 +33,7 @@ class GUI(QtWidgets.QMainWindow):
         if "PYTEST_CURRENT_TEST" not in os.environ:
             self.app = QApplication(sys.argv)
         super(GUI, self).__init__()
-
+        self.load_custom_fonts()
         # If in debug mode, typing n moves to next screen
         self.debug = debug
         self.fake_backend = fake_backend
@@ -126,6 +126,9 @@ class GUI(QtWidgets.QMainWindow):
         self.setup_pie_chart(ui_version)
         # connect apply points page buttons
         self.connect_apply_points_page_buttons()
+
+        self.Load_Pixmaps_Scanning_Page()
+
         # Remove pointless info
         self.setWindowFlag(Qt.FramelessWindowHint)
         # This is only for when in use by a lab
@@ -193,17 +196,20 @@ class GUI(QtWidgets.QMainWindow):
         os.system('systemctl poweroff')
 
     def eventFilter(self, obj, event):
-        if not hasattr(self, 'keyboard'):
-            return super().eventFilter(obj, event)# early out
-        """Detects global clicks so user can close out of keyboard by clicking elsewhere"""
-        if event.type() == QEvent.MouseButtonPress and self.keyboard.isVisible():
-            # print("Mouse button press detected")  # Debug print
-            keyboard_rect = self.keyboard.rect()
-            globalPosition = event.globalPos()
-            keyboard_pos = self.keyboard.mapFromGlobal(globalPosition)
-            if not keyboard_rect.contains(keyboard_pos):
+        if event.type() == QEvent.MouseButtonPress and isinstance(obj, QLineEdit):
+            obj.mousePressEvent(event)
+        else:
+            if not hasattr(self, 'keyboard'):
+                return super().eventFilter(obj, event)# early out
+            """Detects global clicks so user can close out of keyboard by clicking elsewhere"""
+            if event.type() == QEvent.MouseButtonPress and self.keyboard.isVisible():
+             # print("Mouse button press detected")  # Debug print
+                keyboard_rect = self.keyboard.rect()
+                globalPosition = event.globalPos()
+                keyboard_pos = self.keyboard.mapFromGlobal(globalPosition)
+                if not keyboard_rect.contains(keyboard_pos):
                 # print("Hiding keyboard")  # Debug print
-                self.keyboard.hide()
+                    self.keyboard.hide()
         return super().eventFilter(obj, event)
 
         # Boot page methods
@@ -270,7 +276,7 @@ class GUI(QtWidgets.QMainWindow):
     from .pages.load_page import finished_load
 
     # Scanning page methods (while sample is being scanned)
-    from .pages.scanning_page import switch_to_scanning_page
+    from .pages.scanning_page import switch_to_scanning_page, Load_Pixmaps_Scanning_Page
 
     # Results page methods
     from .pages.results_page import switch_to_results_page
@@ -305,7 +311,7 @@ class GUI(QtWidgets.QMainWindow):
     # Find User / Add User Page
     from .pages.finduseradduser import (switch_to_finduseradduser_page, connect_finduseradduser_buttons,
                                         handle_skip_button, handle_existing_user_button, handle_new_user_button,
-                                        setup_finduser_adduser_page, show_keyboard, focus_widget, clear_text_fields,
+                                        setup_finduser_adduser_page, hide_keyboard_if_exists, show_keyboard, focus_widget, clear_text_fields,
                                         Get_User_Credentials_From_Existing_User_Input,
                                         Verify_New_User_information, Validate_new_user_input)
 

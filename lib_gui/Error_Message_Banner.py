@@ -1,5 +1,5 @@
 from PySide6.QtWidgets import QWidget, QLabel
-from PySide6.QtGui import QPainter, QPen, QBrush, QColor
+from PySide6.QtGui import QPainter, QPen, QBrush, QColor,QPolygon
 from PySide6.QtCore import Qt, QPoint
 
 
@@ -44,7 +44,8 @@ class Error_Message_Banner(QWidget):
         ]
 
         # Draw the custom shape
-        painter.drawPolygon(*points)
+        polygon = QPolygon(points)
+        painter.drawPolygon(polygon)
 
     def ShowMessage(self, message_to_show: str):
         self.message_lbl.setText(message_to_show)
