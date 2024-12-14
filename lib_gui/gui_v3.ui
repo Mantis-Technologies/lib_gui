@@ -40,7 +40,7 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="currentIndex">
-     <number>13</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="BootingScreen">
      <widget class="QLabel" name="label_2">
@@ -356,7 +356,7 @@ border-radius: 30px;
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../../Monolith_2024/Brand/Logos/Logo Files/For Web/png/White logo - no background-greenlogo.png</pixmap>
+       <pixmap>CannaCheck_UI_images_1.2/White logo - no background-greenlogo.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>

@@ -11,7 +11,8 @@ __email__ = "mike@cannacheckkiosk.com"
 from ..page import Page
 from datetime import datetime
 
-
+from .GetUiDirectoryUtilities import GetCannaCheckUiImagePath
+from PySide6.QtGui import QPixmap
 def switch_to_start_page(self):
     """Switches to the start page"""
 
@@ -33,4 +34,9 @@ def connect_start_buttons(self):
     # self.about_btn.clicked.connect(self.switch_to_about_page) No longer using About Page
     self.faq_btn.clicked.connect(self.switch_to_faq_page)
     self.leaderboard_btn.clicked.connect(self.switch_to_leaderboard_page)
+
+    logoPath = GetCannaCheckUiImagePath("White logo - no background-greenlogo.png")
+    pixmap = QPixmap(logoPath)  # Replace with the path to your image
+    # Set the pixmap to the QLabel
+    self.cannacheck_logo_label.setPixmap(pixmap)
 
