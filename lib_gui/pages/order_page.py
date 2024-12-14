@@ -10,16 +10,16 @@ __email__ = "mike@cannacheckkiosk.com"
 
 from ..page import Page
 from lib_enums import Prep
-from PyQt5.QtWidgets import QMessageBox
+from PyQt5.QtCore import QTimer
 import os
 
 
 current_dir = os.path.dirname(os.path.realpath(__file__)) # this returns pages directory
-print(current_dir)
+
 parent_dir = os.path.dirname(current_dir)
-print(parent_dir)
+
 SAMPLE_FILE = os.path.join(parent_dir, "previous_samples.txt")
-print(SAMPLE_FILE)
+
 
 def commence_lab_app_scan(self):
     """commences scan, overwritten function. loading of sample complete, switch to scanning page"""
@@ -61,23 +61,14 @@ def connect_order_buttons(self):
             if order_num:
                 print("Debug: Checking file for sample:", order_num)
                 if sample_exists_in_file(order_num):
-                    print("Debug: sample found in file")
-                    # Show warning dialog
-                    msg = QMessageBox(self)
-                    msg.setIcon(QMessageBox.Warning)
-                    msg.setText("This sample number was already used!\nDo you want to continue or cancel?")
-                    msg.setWindowTitle("Warning")
-                    msg.setStandardButtons(QMessageBox.Cancel | QMessageBox.Yes)
-                    msg.button(QMessageBox.Yes).setText("Continue")
-                    response = msg.exec_()
-
-                    if response == QMessageBox.Cancel:
-                        # User chose to stop
-                        print("Debug: User canceled, not proceeding with scan")
-                        return
-                    # User chose Continue
-                    print("Debug: User chose to continue")
-                    self.commence_lab_app_scan()
+                    # Show error message banner instead of a dialog
+                    print("Sample already in file.")
+                    self.ErrorMessageBanner.ShowMessage("Repeated sample ID! Please add notes and change the sample ID.")
+                    self.ErrorMessageBanner.show()
+                    # Hide banner after 4 seconds
+                    QTimer.singleShot(4000, lambda: self.ErrorMessageBanner.hide())
+                    # do not proceed with scan
+                    return
                 else:
                     print("Debug: sample not found in file")
                     # Not in file, add it and commence scan
