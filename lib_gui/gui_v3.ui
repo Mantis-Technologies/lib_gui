@@ -40,7 +40,7 @@
      <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>8</number>
     </property>
     <widget class="QWidget" name="BootingScreen">
      <widget class="QLabel" name="label_2">
@@ -1831,9 +1831,9 @@ color: white;   </string>
       <property name="geometry">
        <rect>
         <x>160</x>
-        <y>130</y>
+        <y>40</y>
         <width>751</width>
-        <height>261</height>
+        <height>351</height>
        </rect>
       </property>
       <property name="font">
@@ -1862,11 +1862,16 @@ color: white;   </string>
      <widget class="QLabel" name="all_sales_final">
       <property name="geometry">
        <rect>
-        <x>850</x>
-        <y>1040</y>
-        <width>111</width>
-        <height>16</height>
+        <x>760</x>
+        <y>1060</y>
+        <width>201</width>
+        <height>41</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>8514oem</family>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true"> QLabel {
@@ -1942,7 +1947,7 @@ color: white;   </string>
       <property name="font">
        <font>
         <family>Helvetica</family>
-        <pointsize>30</pointsize>
+        <pointsize>22</pointsize>
        </font>
       </property>
       <property name="styleSheet">
