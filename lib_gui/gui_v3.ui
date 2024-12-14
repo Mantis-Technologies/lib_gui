@@ -1831,7 +1831,7 @@ color: white;   </string>
       <property name="geometry">
        <rect>
         <x>160</x>
-        <y>40</y>
+        <y>100</y>
         <width>751</width>
         <height>351</height>
        </rect>
