@@ -48,7 +48,7 @@ class GUI(QtWidgets.QMainWindow):
 
     def load_ui(self, ui_filename):
         """Loads the appropriate UI based on the kiosk version."""
-
+        print(f"Loading ui {ui_filename}")
         # Save ui filename to a variable to be accessed elsewhere
         ui_version = ui_filename
 
