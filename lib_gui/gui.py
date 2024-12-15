@@ -300,19 +300,13 @@ class GUI(QtWidgets.QMainWindow):
     from .pages.confirmation_page import connect_confirmation_buttons, over_21_confirm
 
     # Order page methods
-    from .pages.order_page import switch_to_order_page
-    from .pages.order_page import connect_order_buttons
-    from .pages.order_page import connect_num_buttons
-    from .pages.order_page import connect_del_btn
+    from .pages.order_page import switch_to_order_page, connect_order_buttons, connect_num_buttons, connect_del_btn, initiate_test, Set_last_order_num_lbl
     from .pages.order_page import get_order_num
     from .pages.order_page import set_order_num
     from .pages.order_page import set_visibility_of_lab_items
     from .pages.order_page import get_prep
     from .pages.order_page import get_notes
     from .pages.order_page import commence_lab_app_scan
-    from .pages.order_page import sample_exists_in_file
-    from .pages.order_page import append_sample_to_file
-    from .pages.order_page import get_last_sample_from_file
 
     # Loading page methods (for loading sample)
     from .pages.load_page import switch_to_load_page
