@@ -9,7 +9,8 @@ __maintainer__ = "Justin Furuness"
 __email__ = "jfuruness@gmail.com"
 
 from ..page import Page
-
+from .GetUiDirectoryUtilities import GetCannaCheckUiImagePath
+from PySide6.QtGui import QPixmap
 
 def switch_to_load_page(self):
     """Switches to load page"""
@@ -31,6 +32,15 @@ def finished_load(self):
 
 def connect_load_buttons(self):
     """Connects load buttons"""
+    loadingGraphicImagePath = GetCannaCheckUiImagePath("CannaCheckKiosk_Sample_Door.png")
+    pixmap = QPixmap(loadingGraphicImagePath)  # Replace with the path to your image
+    # Set the pixmap to the QLabel
+    self.load_sample_graphic.setPixmap(pixmap)
+
+    arrowPath = GetCannaCheckUiImagePath("vecteezy_red-directional-arrow-on-transparent-background_16770572.png")
+    pixmap = QPixmap(arrowPath)  # Replace with the path to your image
+    # Set the pixmap to the QLabel
+    self.load_sample_arrow_png.setPixmap(pixmap)
 
     self.sample_loaded_btn.clicked.connect(self.finished_load)
     self.cancel_load_btn.clicked.connect(self.cancel_load)

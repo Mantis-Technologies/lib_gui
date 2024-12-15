@@ -9,7 +9,8 @@ __maintainer__ = "Michael Mahoney, Nicholas Lanotte"
 __email__ = "mike@cannacheckkiosk.com"
 
 from ..page import Page
-
+from .GetUiDirectoryUtilities import GetCannaCheckUiImagePath
+from PySide6.QtGui import QPixmap
 
 def switch_to_confirm_removal_page(self):
     """Switches to the confirm removal page"""
@@ -23,3 +24,13 @@ def confirm_removal(self):
 def connect_confirm_removal_buttons(self):
     """Connects the rescan page buttons"""
     self.confirm_removal_btn.clicked.connect(self.confirm_removal)
+
+    loadingGraphicImagePath = GetCannaCheckUiImagePath("CannaCheckKiosk_Sample_Door.png")
+    pixmap = QPixmap(loadingGraphicImagePath)  # Replace with the path to your image
+    # Set the pixmap to the QLabel
+    self.remove_sample_image.setPixmap(pixmap)
+
+    arrowPath = GetCannaCheckUiImagePath("vecteezy_red-directional-arrow-on-transparent-background_16770572.png")
+    pixmap = QPixmap(arrowPath)  # Replace with the path to your image
+    # Set the pixmap to the QLabel
+    self.arrow_label.setPixmap(pixmap)

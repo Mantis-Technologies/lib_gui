@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1455</width>
-    <height>1869</height>
+    <width>1080</width>
+    <height>1920</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -65,10 +65,10 @@
      <widget class="QLabel" name="label_20">
       <property name="geometry">
        <rect>
-        <x>140</x>
-        <y>760</y>
-        <width>751</width>
-        <height>291</height>
+        <x>90</x>
+        <y>600</y>
+        <width>900</width>
+        <height>600</height>
        </rect>
       </property>
       <property name="font">
@@ -186,7 +186,7 @@ color: white;</string>
       <property name="font">
        <font>
         <family>Montserrat</family>
-        <pointsize>25</pointsize>
+        <pointsize>20</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -197,7 +197,7 @@ color: white;</string>
         </string>
       </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string>00.00</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -279,9 +279,9 @@ border-radius: 30px;
       <property name="geometry">
        <rect>
         <x>324</x>
-        <y>810</y>
+        <y>760</y>
         <width>431</width>
-        <height>101</height>
+        <height>151</height>
        </rect>
       </property>
       <property name="font">
@@ -314,9 +314,9 @@ border-radius: 30px;
       <property name="geometry">
        <rect>
         <x>550</x>
-        <y>950</y>
-        <width>100</width>
-        <height>25</height>
+        <y>940</y>
+        <width>131</width>
+        <height>41</height>
        </rect>
       </property>
       <property name="font">
@@ -340,7 +340,7 @@ border-radius: 30px;
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>640</y>
+        <y>600</y>
         <width>981</width>
         <height>171</height>
        </rect>
@@ -356,7 +356,7 @@ border-radius: 30px;
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>../../../Monolith_2024/Brand/Logos/Logo Files/For Web/png/White logo - no background-greenlogo.png</pixmap>
+       <pixmap>CannaCheck_UI_images_1.2/White logo - no background-greenlogo.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -365,8 +365,8 @@ border-radius: 30px;
      <widget class="QLabel" name="trademark_1">
       <property name="geometry">
        <rect>
-        <x>970</x>
-        <y>660</y>
+        <x>980</x>
+        <y>630</y>
         <width>60</width>
         <height>16</height>
        </rect>
@@ -501,10 +501,10 @@ color: white;</string>
      <widget class="QLabel" name="age_question_label">
       <property name="geometry">
        <rect>
-        <x>210</x>
-        <y>700</y>
-        <width>621</width>
-        <height>221</height>
+        <x>215</x>
+        <y>650</y>
+        <width>650</width>
+        <height>450</height>
        </rect>
       </property>
       <property name="font">
@@ -1052,7 +1052,7 @@ color: white;</string>
        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
 &lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
 p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:60pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:60pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-family:'Ubuntu';&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
       <property name="placeholderText">
@@ -1348,7 +1348,7 @@ color: white;   </string>
         <x>320</x>
         <y>1030</y>
         <width>481</width>
-        <height>151</height>
+        <height>321</height>
        </rect>
       </property>
       <property name="font">
@@ -1671,9 +1671,9 @@ color: white;   </string>
       <property name="geometry">
        <rect>
         <x>20</x>
-        <y>1710</y>
+        <y>1690</y>
         <width>1041</width>
-        <height>101</height>
+        <height>221</height>
        </rect>
       </property>
       <property name="font">
@@ -1704,9 +1704,9 @@ color: white;   </string>
       <property name="geometry">
        <rect>
         <x>126</x>
-        <y>950</y>
+        <y>880</y>
         <width>331</width>
-        <height>61</height>
+        <height>131</height>
        </rect>
       </property>
       <property name="font">
@@ -1768,9 +1768,9 @@ color: white;   </string>
       <property name="geometry">
        <rect>
         <x>660</x>
-        <y>940</y>
+        <y>880</y>
         <width>301</width>
-        <height>81</height>
+        <height>161</height>
        </rect>
       </property>
       <property name="font">
@@ -1796,7 +1796,7 @@ color: white;   </string>
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLabel" name="label_23">
+     <widget class="QLabel" name="survey_label">
       <property name="geometry">
        <rect>
         <x>740</x>
@@ -1831,7 +1831,7 @@ color: white;   </string>
      <zorder>scan_qr_code_to_view_results</zorder>
      <zorder>do_not_confirm_unti_finished</zorder>
      <zorder>label_22</zorder>
-     <zorder>label_23</zorder>
+     <zorder>survey_label</zorder>
     </widget>
     <widget class="QWidget" name="ErrorPage">
      <widget class="QLabel" name="label_6">
@@ -1857,9 +1857,9 @@ color: white;   </string>
      <widget class="QLabel" name="error_message_label">
       <property name="geometry">
        <rect>
-        <x>210</x>
+        <x>90</x>
         <y>630</y>
-        <width>631</width>
+        <width>900</width>
         <height>561</height>
        </rect>
       </property>
@@ -1966,7 +1966,7 @@ color: white;   </string>
 }</string>
       </property>
       <property name="text">
-       <string>TextLabel</string>
+       <string>00.00</string>
       </property>
      </widget>
      <widget class="QLabel" name="included_tests_label">
@@ -1981,7 +1981,7 @@ color: white;   </string>
       <property name="font">
        <font>
         <family>Helvetica</family>
-        <pointsize>28</pointsize>
+        <pointsize>20</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -2031,9 +2031,9 @@ color: white;   </string>
       <property name="geometry">
        <rect>
         <x>160</x>
-        <y>130</y>
+        <y>100</y>
         <width>751</width>
-        <height>261</height>
+        <height>351</height>
        </rect>
       </property>
       <property name="font">
@@ -2062,11 +2062,16 @@ color: white;   </string>
      <widget class="QLabel" name="all_sales_final">
       <property name="geometry">
        <rect>
-        <x>850</x>
-        <y>1040</y>
-        <width>111</width>
-        <height>16</height>
+        <x>760</x>
+        <y>1060</y>
+        <width>201</width>
+        <height>41</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>8514oem</family>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true"> QLabel {
@@ -2087,6 +2092,11 @@ color: white;   </string>
         <width>931</width>
         <height>1491</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+       </font>
       </property>
       <property name="styleSheet">
        <string notr="true">background-color: 255, 255, 255, 0 ;
@@ -2137,7 +2147,7 @@ color: white;   </string>
       <property name="font">
        <font>
         <family>Helvetica</family>
-        <pointsize>30</pointsize>
+        <pointsize>22</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -2163,7 +2173,7 @@ color: white;   </string>
       <property name="font">
        <font>
         <family>Lato</family>
-        <pointsize>36</pointsize>
+        <pointsize>24</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -2219,10 +2229,10 @@ color: white;   </string>
      <widget class="QLabel" name="configuring_terminal_label">
       <property name="geometry">
        <rect>
-        <x>280</x>
-        <y>830</y>
-        <width>491</width>
-        <height>151</height>
+        <x>90</x>
+        <y>700</y>
+        <width>900</width>
+        <height>500</height>
        </rect>
       </property>
       <property name="font">
@@ -2368,7 +2378,7 @@ color: white;   </string>
       <property name="font">
        <font>
         <family>Montserrat</family>
-        <pointsize>24</pointsize>
+        <pointsize>20</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -2400,7 +2410,7 @@ color: white;   </string>
       <property name="font">
        <font>
         <family>Montserrat</family>
-        <pointsize>40</pointsize>
+        <pointsize>30</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -2424,9 +2434,9 @@ color: white;   </string>
       <property name="geometry">
        <rect>
         <x>370</x>
-        <y>1440</y>
+        <y>1470</y>
         <width>331</width>
-        <height>61</height>
+        <height>131</height>
        </rect>
       </property>
       <property name="font">
@@ -2457,7 +2467,7 @@ color: white;   </string>
       <property name="geometry">
        <rect>
         <x>380</x>
-        <y>1040</y>
+        <y>1080</y>
         <width>311</width>
         <height>391</height>
        </rect>
@@ -2607,7 +2617,7 @@ color: white;   </string>
       <property name="geometry">
        <rect>
         <x>580</x>
-        <y>1280</y>
+        <y>1650</y>
         <width>365</width>
         <height>131</height>
        </rect>
@@ -2615,7 +2625,7 @@ color: white;   </string>
       <property name="font">
        <font>
         <family>Montserrat</family>
-        <pointsize>40</pointsize>
+        <pointsize>30</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -2651,7 +2661,7 @@ border-radius: 60px;
       <property name="geometry">
        <rect>
         <x>170</x>
-        <y>1290</y>
+        <y>1650</y>
         <width>365</width>
         <height>131</height>
        </rect>
@@ -2659,7 +2669,7 @@ border-radius: 60px;
       <property name="font">
        <font>
         <family>Montserrat</family>
-        <pointsize>40</pointsize>
+        <pointsize>30</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -2686,10 +2696,10 @@ border-radius: 60px;
      <widget class="QLabel" name="disclaimer_heading">
       <property name="geometry">
        <rect>
-        <x>420</x>
+        <x>360</x>
         <y>130</y>
-        <width>271</width>
-        <height>51</height>
+        <width>350</width>
+        <height>60</height>
        </rect>
       </property>
       <property name="font">
@@ -2718,16 +2728,16 @@ border-radius: 60px;
      <widget class="QLabel" name="disclaimer_body">
       <property name="geometry">
        <rect>
-        <x>180</x>
+        <x>90</x>
         <y>240</y>
-        <width>751</width>
-        <height>981</height>
+        <width>900</width>
+        <height>1401</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Times New Roman</family>
-        <pointsize>15</pointsize>
+        <pointsize>10</pointsize>
         <italic>false</italic>
        </font>
       </property>
@@ -2862,7 +2872,7 @@ border-radius: 60px;
       <property name="font">
        <font>
         <family>Montserrat</family>
-        <pointsize>50</pointsize>
+        <pointsize>35</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -2882,13 +2892,13 @@ border-radius: 60px;
         <x>210</x>
         <y>350</y>
         <width>691</width>
-        <height>771</height>
+        <height>891</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Montserrat</family>
-        <pointsize>34</pointsize>
+        <pointsize>25</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -2911,8 +2921,8 @@ border-radius: 60px;
      <widget class="QLabel" name="happy_nug">
       <property name="geometry">
        <rect>
-        <x>590</x>
-        <y>370</y>
+        <x>600</x>
+        <y>450</y>
         <width>131</width>
         <height>101</height>
        </rect>
@@ -2925,7 +2935,7 @@ color: white;   </string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>CannaCheck_UI_images_1.2/happy_nug_tansparent.png</pixmap>
+       <pixmap>CannaCheck_UI_images_1.2/happy_nug_transparent.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -2935,7 +2945,7 @@ color: white;   </string>
       <property name="geometry">
        <rect>
         <x>610</x>
-        <y>650</y>
+        <y>730</y>
         <width>131</width>
         <height>111</height>
        </rect>
@@ -2948,7 +2958,7 @@ color: white;   </string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>CannaCheck_UI_images_1.2/grinder_tansparent.png</pixmap>
+       <pixmap>CannaCheck_UI_images_1.2/grinder_transparent.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -2958,7 +2968,7 @@ color: white;   </string>
       <property name="geometry">
        <rect>
         <x>620</x>
-        <y>890</y>
+        <y>950</y>
         <width>131</width>
         <height>111</height>
        </rect>
@@ -2971,7 +2981,7 @@ color: white;   </string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap>CannaCheck_UI_images_1.2/petri_dish_tansparent.png</pixmap>
+       <pixmap>CannaCheck_UI_images_1.2/petri_dish_transparent.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -3134,10 +3144,10 @@ border-radius: 60px;
      <widget class="QLabel" name="warning_label">
       <property name="geometry">
        <rect>
-        <x>220</x>
-        <y>320</y>
-        <width>641</width>
-        <height>541</height>
+        <x>90</x>
+        <y>100</y>
+        <width>900</width>
+        <height>821</height>
        </rect>
       </property>
       <property name="font">
@@ -3194,7 +3204,7 @@ color: white;   </string>
       <property name="geometry">
        <rect>
         <x>220</x>
-        <y>1360</y>
+        <y>1500</y>
         <width>640</width>
         <height>140</height>
        </rect>
@@ -3266,10 +3276,10 @@ color: white;   </string>
      <widget class="QLabel" name="remove_sample_text">
       <property name="geometry">
        <rect>
-        <x>190</x>
+        <x>90</x>
         <y>1080</y>
-        <width>661</width>
-        <height>171</height>
+        <width>900</width>
+        <height>381</height>
        </rect>
       </property>
       <property name="font">
@@ -3333,7 +3343,7 @@ color: white;   </string>
         <x>180</x>
         <y>160</y>
         <width>721</width>
-        <height>161</height>
+        <height>261</height>
        </rect>
       </property>
       <property name="font">
@@ -3380,8 +3390,8 @@ color: white;   </string>
      <widget class="QPushButton" name="exitMainenanceBtn">
       <property name="geometry">
        <rect>
-        <x>1670</x>
-        <y>1000</y>
+        <x>0</x>
+        <y>1700</y>
         <width>241</width>
         <height>71</height>
        </rect>
@@ -3486,7 +3496,7 @@ color: white;   </string>
       <property name="geometry">
        <rect>
         <x>280</x>
-        <y>350</y>
+        <y>400</y>
         <width>550</width>
         <height>60</height>
        </rect>
@@ -3511,7 +3521,7 @@ color: white;   </string>
       <property name="geometry">
        <rect>
         <x>280</x>
-        <y>440</y>
+        <y>490</y>
         <width>550</width>
         <height>60</height>
        </rect>
@@ -3533,7 +3543,7 @@ color: white;   </string>
       <property name="geometry">
        <rect>
         <x>280</x>
-        <y>530</y>
+        <y>580</y>
         <width>550</width>
         <height>60</height>
        </rect>
@@ -3555,7 +3565,7 @@ color: white;   </string>
       <property name="geometry">
        <rect>
         <x>280</x>
-        <y>630</y>
+        <y>690</y>
         <width>550</width>
         <height>60</height>
        </rect>
@@ -3626,9 +3636,9 @@ border-radius: 30px;
      <widget class="QPushButton" name="skip_button_finduseradduser">
       <property name="geometry">
        <rect>
-        <x>370</x>
+        <x>340</x>
         <y>1670</y>
-        <width>365</width>
+        <width>400</width>
         <height>131</height>
        </rect>
       </property>
@@ -3693,7 +3703,7 @@ border-radius: 60px;
       <property name="font">
        <font>
         <family>Montserrat</family>
-        <pointsize>45</pointsize>
+        <pointsize>35</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -3725,7 +3735,7 @@ border-radius: 60px;
       <property name="font">
        <font>
         <family>Montserrat</family>
-        <pointsize>45</pointsize>
+        <pointsize>30</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -3745,9 +3755,9 @@ border-radius: 60px;
      <widget class="QLabel" name="sign_up_label">
       <property name="geometry">
        <rect>
-        <x>320</x>
+        <x>90</x>
         <y>280</y>
-        <width>451</width>
+        <width>900</width>
         <height>61</height>
        </rect>
       </property>
@@ -3818,9 +3828,9 @@ border-radius: 60px;
      <widget class="QPushButton" name="faq_back_btn">
       <property name="geometry">
        <rect>
-        <x>350</x>
+        <x>340</x>
         <y>1660</y>
-        <width>365</width>
+        <width>400</width>
         <height>131</height>
        </rect>
       </property>
@@ -3874,16 +3884,16 @@ color: white;   </string>
      <widget class="QLabel" name="FAQS">
       <property name="geometry">
        <rect>
-        <x>400</x>
+        <x>90</x>
         <y>20</y>
-        <width>301</width>
+        <width>900</width>
         <height>131</height>
        </rect>
       </property>
       <property name="font">
        <font>
         <family>Montserrat</family>
-        <pointsize>50</pointsize>
+        <pointsize>30</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -3896,13 +3906,16 @@ color: white;   </string>
       <property name="text">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;h1&gt;FAQS&lt;/h1&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
      </widget>
      <widget class="QLabel" name="frequently_asked_questions">
       <property name="geometry">
        <rect>
-        <x>290</x>
+        <x>90</x>
         <y>140</y>
-        <width>491</width>
+        <width>900</width>
         <height>51</height>
        </rect>
       </property>
@@ -3921,6 +3934,9 @@ color: white;   </string>
       </property>
       <property name="text">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;h2&gt;Frequently Asked Questions&lt;/h2&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
      <zorder>label_17</zorder>
@@ -3986,9 +4002,9 @@ QPushButton:pressed
      <widget class="QLabel" name="leaderboard_header">
       <property name="geometry">
        <rect>
-        <x>410</x>
+        <x>90</x>
         <y>120</y>
-        <width>291</width>
+        <width>900</width>
         <height>51</height>
        </rect>
       </property>
@@ -4007,6 +4023,9 @@ QPushButton:pressed
       </property>
       <property name="text">
        <string>Leaderboards</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
      <widget class="QLabel" name="leaderboard_graphic">
@@ -4153,7 +4172,7 @@ border-radius: 30px;
       <property name="font">
        <font>
         <family>Lato</family>
-        <pointsize>30</pointsize>
+        <pointsize>25</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -4180,7 +4199,7 @@ color: white;</string>
       <property name="font">
        <font>
         <family>Lato</family>
-        <pointsize>30</pointsize>
+        <pointsize>25</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -4339,7 +4358,7 @@ QPushButton:pressed
       <property name="font">
        <font>
         <family>Montserrat</family>
-        <pointsize>50</pointsize>
+        <pointsize>30</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -4348,6 +4367,9 @@ color: white;</string>
       </property>
       <property name="text">
        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;h1&gt;Apply points?&lt;/h1&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
       </property>
      </widget>
     </widget>
@@ -4374,10 +4396,10 @@ color: white;</string>
      <widget class="QLabel" name="label_19">
       <property name="geometry">
        <rect>
-        <x>150</x>
-        <y>600</y>
-        <width>761</width>
-        <height>461</height>
+        <x>90</x>
+        <y>500</y>
+        <width>900</width>
+        <height>750</height>
        </rect>
       </property>
       <property name="font">

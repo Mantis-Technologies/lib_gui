@@ -9,14 +9,17 @@ __maintainer__ = "Michael Mahoney"
 __email__ = "mike@cannacheckkiosk.com"
 
 from ..page import Page
-from PyQt5 import QtWidgets
-from PyQt5.QtWidgets import QVBoxLayout, QTableWidget, QTableWidgetItem, QLabel, QWidget, QSpacerItem, QSizePolicy, QHBoxLayout
-from PyQt5.QtCore import QThread, pyqtSignal, Qt
-from PyQt5.QtGui import QColor, QFont, QPalette, QIcon, QPixmap, QImage
+from PySide6 import QtWidgets
+from PySide6.QtWidgets import QVBoxLayout, QTableWidget, QTableWidgetItem, QLabel, QWidget, QSpacerItem, QSizePolicy, \
+    QHBoxLayout
+from PySide6.QtCore import QThread, Signal, Qt
+from PySide6.QtGui import QColor, QFont, QPalette, QIcon, QPixmap, QImage
 import time
 import requests
 import os
 from datetime import datetime, timedelta
+from .GetUiDirectoryUtilities import GetCannaCheckUiImagePath
+from PySide6.QtGui import QPixmap
 
 # Get the current date
 current_date = datetime.now()
@@ -32,6 +35,7 @@ last_day_of_month = next_month - timedelta(days=next_month.day)
 first_day_str = first_day_of_month.strftime('%m/%d/%y')
 last_day_str = last_day_of_month.strftime('%m/%d/%y')
 
+
 def switch_to_leaderboard_page(self):
     """Switches to the FAQ page"""
     self._switch_to_page(Page.LEADERBOARD)
@@ -40,16 +44,19 @@ def switch_to_leaderboard_page(self):
     self.LeaderboardPageTimeoutThread.start()
     self.display_leaderboard()
 
+
 def leaderboard_back_to_start_page(self):
     self.LeaderboardPageTimeoutThread.keepRunning = False
     self.reset_leaderboard_scroll()
     self.switch_to_start_page()
 
-def LeaderboardPageTimeoutCallback(self, result):
+
+def LeaderboardPageTimeoutCallback(self):
     self.leaderboard_back_to_start_page()
 
+
 class LeaderboardPageTimeoutThread(QThread):
-    signal = pyqtSignal('PyQt_PyObject')
+    signal = Signal()
 
     def __init__(self, gui):
         QThread.__init__(self)
@@ -61,13 +68,20 @@ class LeaderboardPageTimeoutThread(QThread):
         while self.keepRunning and self.gui.keepThreadsRunning:
             maxSecondsToWait = maxSecondsToWait - 1
             if maxSecondsToWait == 0:
-                self.signal.emit(1)  # emit anything to trigger page change
+                self.signal.emit()  # emit anything to trigger page change
                 break
             time.sleep(1)
+
 
 def connect_leaderboard_buttons(self):
     """Connects Leaderboard buttons"""
     self.leaderboard_back_btn.clicked.connect(self.leaderboard_back_to_start_page)
+
+    leaderboardGraphicPath = GetCannaCheckUiImagePath("leaderboard_graphic.png")
+    pixmap = QPixmap(leaderboardGraphicPath)  # Replace with the path to your image
+    # Set the pixmap to the QLabel
+    self.leaderboard_graphic.setPixmap(pixmap)
+
 
 def reset_leaderboard_scroll(self):
     """Resets the leaderboard scroll position to the top"""
@@ -142,6 +156,7 @@ def setup_leaderboard_page(self, ui_version):
 
     self.ui.LeaderboardPage.setStyleSheet("background-color: #1b1b1b;")
 
+
 def setup_table(self, table):
     """Sets up the properties of a leaderboard table"""
     table.setRowCount(10)  # Assuming top 10 entries
@@ -207,6 +222,7 @@ def display_leaderboard(self):
         print(f"Failed to retrieve leaderboard data: {e}")
         # Handle the error (e.g., display an error message on the UI)
 
+
 def get_all_time_leaderboard_data(self, kiosk_id):
     # This method will be overridden in lib_kiosk
     pass
@@ -216,11 +232,13 @@ def get_monthly_leaderboard_data(self, kiosk_id):
     # This method will be overridden in lib_kiosk
     pass
 
+
 def get_relative_path(relative_path):
     # Adjust the base path to point to the lib_gui directory
     base_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), '..')
     full_path = os.path.normpath(os.path.join(base_path, relative_path))
     return full_path
+
 
 def populate_table(self, table, leaderboard_data):
     """Populates a leaderboard table with data"""
@@ -233,11 +251,17 @@ def populate_table(self, table, leaderboard_data):
         rank_label.setStyleSheet("background-color: #2e2e2e;")  # Set background color
 
         if idx == 0:
-            rank_label.setPixmap(QPixmap(get_relative_path("rank_medal_images/first_place_medal.png")).scaled(70, 70, Qt.KeepAspectRatio, Qt.SmoothTransformation))
+            rank_label.setPixmap(
+                QPixmap(get_relative_path("rank_medal_images/first_place_medal.png")).scaled(70, 70, Qt.KeepAspectRatio,
+                                                                                             Qt.SmoothTransformation))
         elif idx == 1:
-            rank_label.setPixmap(QPixmap(get_relative_path("rank_medal_images/second_place_medal.png")).scaled(70, 70, Qt.KeepAspectRatio, Qt.SmoothTransformation))
+            rank_label.setPixmap(QPixmap(get_relative_path("rank_medal_images/second_place_medal.png")).scaled(70, 70,
+                                                                                                               Qt.KeepAspectRatio,
+                                                                                                               Qt.SmoothTransformation))
         elif idx == 2:
-            rank_label.setPixmap(QPixmap(get_relative_path("rank_medal_images/third_place_medal.png")).scaled(70, 70, Qt.KeepAspectRatio, Qt.SmoothTransformation))
+            rank_label.setPixmap(
+                QPixmap(get_relative_path("rank_medal_images/third_place_medal.png")).scaled(70, 70, Qt.KeepAspectRatio,
+                                                                                             Qt.SmoothTransformation))
         else:
             rank_label.setText(f"#{idx + 1}")
             rank_label.setAlignment(Qt.AlignCenter)
@@ -263,4 +287,3 @@ def populate_table(self, table, leaderboard_data):
         table.setCellWidget(idx, 0, rank_label)
         table.setItem(idx, 1, user_item)
         table.setItem(idx, 2, thca_item)
-

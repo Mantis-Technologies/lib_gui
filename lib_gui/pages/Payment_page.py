@@ -9,8 +9,10 @@ __maintainer__ = "Nicholas Lanotte"
 __email__ = "nickjl0809@gmail.com"
 
 from ..page import Page
-from PyQt5.QtCore import QThread, pyqtSignal, Qt, QObject
-from PyQt5.QtGui import QFont
+from PySide6.QtCore import QThread, Signal, Qt, QObject
+from PySide6.QtGui import QFont
+from .GetUiDirectoryUtilities import GetCannaCheckUiImagePath
+from PySide6.QtGui import QPixmap
 import time
 
 
@@ -44,7 +46,7 @@ def cancel_payment(self):
 
 class CheckPaymentTerminalSignalEmitter(QObject):
     # Define the signal at the class level
-    signal = pyqtSignal()
+    signal = Signal()
 
     def __init__(self):
         super().__init__()
@@ -53,21 +55,30 @@ class CheckPaymentTerminalSignalEmitter(QObject):
         self.signal.emit()
 
 def connect_payment_buttons(self):
+    price_frame_path = GetCannaCheckUiImagePath("frame_for_price.png")
+    pixmap = QPixmap(price_frame_path)  # Replace with the path to your image
+    # Set the pixmap to the QLabel
+    self.frame_for_price.setPixmap(pixmap)
+
+    cart_path = GetCannaCheckUiImagePath("cart_graphic.png")
+    pixmap = QPixmap(cart_path)  # Replace with the path to your image
+    # Set the pixmap to the QLabel
+    self.cart_label.setPixmap(pixmap)
+
     """Connects results buttons"""
 
     self.cancel_payment_btn.clicked.connect(self.cancel_payment)
-
     self.check_payment_terminal_connection_signal = CheckPaymentTerminalSignalEmitter()
     self.check_payment_terminal_connection_signal.signal.connect(self.Check_Payment_Terminal_Connection)
 
 
-def PaymentApprovedCallback(self, result):
+def PaymentApprovedCallback(self):
     if self.PaymentTimeoutThread.keepRunning is True:
         self.PaymentTimeoutThread.keepRunning = False
         self.switch_to_instruction_page()
 
 
-def PaymentTimeoutCallback(self, result):
+def PaymentTimeoutCallback(self):
     self.cancel_payment()
 
 
@@ -80,7 +91,7 @@ def Send_CheckPayment_Terminal_Connection_Signal(self):
 
 
 class PaymentTimeoutThread(QThread):
-    signal = pyqtSignal('PyQt_PyObject')
+    signal = Signal()
 
     def __init__(self, gui):
         QThread.__init__(self)
@@ -92,13 +103,13 @@ class PaymentTimeoutThread(QThread):
         while self.keepRunning and self.gui.keepThreadsRunning:
             maxSecondsToWait = maxSecondsToWait - 1
             if maxSecondsToWait == 0:
-                self.signal.emit(1)  # emit anything to trigger page change
+                self.signal.emit()  # emit to trigger page change
                 break
             time.sleep(1)
 
 
 class CheckPaymentApprovedThread(QThread):
-    signal = pyqtSignal('PyQt_PyObject')
+    signal = Signal()
 
     def __init__(self, gui):
         QThread.__init__(self)
@@ -109,6 +120,6 @@ class CheckPaymentApprovedThread(QThread):
         while self.keepRunning and self.gui.keepThreadsRunning:
             isApproved, isActiveTransaction = self.gui.paymentTerminal.CheckIfTransactionIsFinished()
             if isApproved and isActiveTransaction:
-                self.signal.emit(1)  # emit anything to trigger page change
+                self.signal.emit()  # emit to trigger page change
                 break
             time.sleep(0.1)

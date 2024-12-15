@@ -12,10 +12,13 @@ __email__ = "mike@cannacheckkiosk.com"
 import os
 import sys
 
-from PyQt5 import QtWidgets, uic
-from PyQt5.QtCore import pyqtSignal, Qt, QEvent
-from PyQt5.QtWidgets import QApplication, QWidget
-from PyQt5.QtGui import QFont, QFontDatabase
+from PySide6 import QtWidgets
+from PySide6.QtUiTools import QUiLoader
+from PySide6.QtCore import Signal, Qt, QEvent
+from PySide6.QtWidgets import QApplication, QWidget, QStackedWidget, QLineEdit
+from PySide6.QtGui import QFont, QFontDatabase
+from PySide6.QtCore import QFile
+from PySide6.QtCore import QCoreApplication
 
 from .page import Page
 import time
@@ -25,12 +28,12 @@ class GUI(QtWidgets.QMainWindow):
 
     def __init__(self, debug=False, fake_backend: bool = False, fake_payment_terminal: bool = False):
         """Connects all buttons and switches to boot page"""
-
+        self.loader = QUiLoader()
         # Pytest cannot run if this is enabled
         if "PYTEST_CURRENT_TEST" not in os.environ:
             self.app = QApplication(sys.argv)
         super(GUI, self).__init__()
-
+        self.load_custom_fonts()
         # If in debug mode, typing n moves to next screen
         self.debug = debug
         self.fake_backend = fake_backend
@@ -38,6 +41,10 @@ class GUI(QtWidgets.QMainWindow):
         self.keepThreadsRunning = True
         self.button_delay_map = {} # stores key value pairs for button names and a time. Used to have button presses be ignored for set periods
 
+    def recursiveAddChildrenWidgets(self, parentWidget):
+        for widget in parentWidget.children():
+            setattr(self, widget.objectName(), widget)
+            self.recursiveAddChildrenWidgets(widget)
 
     def load_ui(self, ui_filename):
         """Loads the appropriate UI based on the kiosk version."""
@@ -51,8 +58,21 @@ class GUI(QtWidgets.QMainWindow):
         # Construct the full path to the .ui file based on the current directory
         ui_path = os.path.join(current_dir, ui_filename)
 
-        # Load the UI
-        self.ui = uic.loadUi(ui_path, self)
+        ##############################################################################
+        #The conversion to Pyside 6 has some differences from PyQt5 causing the main
+        # window to not be loaded directly. We need to load the ui, promote the widgets
+        # within and then resize the main window we made.
+        ui_file = QFile(ui_path)
+        ui_file.open(QFile.ReadOnly)
+        self.ui = self.loader.load(ui_file, self)
+        uiCentralWidget = self.ui.findChild(QWidget, "centralwidget")
+        self.recursiveAddChildrenWidgets(uiCentralWidget)
+        self.setCentralWidget(uiCentralWidget)
+        ui_file.close()
+        stackedWidgetSize = self.stackedWidget.size()
+        # make all widgets members of self for compatibility with pyqt5 code
+        self.resize(stackedWidgetSize.width(), stackedWidgetSize.height())
+        ###############################################################################
 
         # Connect buttons after the UI is loaded
         self.setup_connections(ui_version)
@@ -142,6 +162,8 @@ class GUI(QtWidgets.QMainWindow):
         # connect apply points page buttons
         self.connect_apply_points_page_buttons()
 
+        self.Load_Pixmaps_Scanning_Page()
+
         # Remove pointless info
         print("Initializing: Removing pointless info and setting frameless window hint")
         self.setWindowFlag(Qt.FramelessWindowHint)
@@ -160,9 +182,15 @@ class GUI(QtWidgets.QMainWindow):
         if not self.fake_payment_terminal and not self.fake_backend:
             print("Initializing: Showing fullscreen")
             self.showFullScreen()
-
+        else:
+            print("Showing UI not full screen")
+            self.show()
+        QCoreApplication.processEvents()
         # Move to the booting page
         self.switch_to_boot_page()
+
+    def process_events(self):
+        QCoreApplication.processEvents()
 
 
     def _switch_to_page(self, page: Page):
@@ -210,17 +238,20 @@ class GUI(QtWidgets.QMainWindow):
         os.system('systemctl poweroff')
 
     def eventFilter(self, obj, event):
-        if not hasattr(self, 'keyboard'):
-            return super().eventFilter(obj, event)# early out
-        """Detects global clicks so user can close out of keyboard by clicking elsewhere"""
-        if event.type() == QEvent.MouseButtonPress and self.keyboard.isVisible():
-            # print("Mouse button press detected")  # Debug print
-            keyboard_rect = self.keyboard.rect()
-            globalPosition = event.globalPos()
-            keyboard_pos = self.keyboard.mapFromGlobal(globalPosition)
-            if not keyboard_rect.contains(keyboard_pos):
+        if event.type() == QEvent.MouseButtonPress and isinstance(obj, QLineEdit):
+            obj.mousePressEvent(event)
+        else:
+            if not hasattr(self, 'keyboard'):
+                return super().eventFilter(obj, event)# early out
+            """Detects global clicks so user can close out of keyboard by clicking elsewhere"""
+            if event.type() == QEvent.MouseButtonPress and self.keyboard.isVisible():
+             # print("Mouse button press detected")  # Debug print
+                keyboard_rect = self.keyboard.rect()
+                globalPosition = event.globalPos()
+                keyboard_pos = self.keyboard.mapFromGlobal(globalPosition)
+                if not keyboard_rect.contains(keyboard_pos):
                 # print("Hiding keyboard")  # Debug print
-                self.keyboard.hide()
+                    self.keyboard.hide()
         return super().eventFilter(obj, event)
 
         # Boot page methods
@@ -290,7 +321,7 @@ class GUI(QtWidgets.QMainWindow):
     from .pages.load_page import finished_load
 
     # Scanning page methods (while sample is being scanned)
-    from .pages.scanning_page import switch_to_scanning_page
+    from .pages.scanning_page import switch_to_scanning_page, Load_Pixmaps_Scanning_Page
 
     # Results page methods
     from .pages.results_page import switch_to_results_page
@@ -325,7 +356,7 @@ class GUI(QtWidgets.QMainWindow):
     # Find User / Add User Page
     from .pages.finduseradduser import (switch_to_finduseradduser_page, connect_finduseradduser_buttons,
                                         handle_skip_button, handle_existing_user_button, handle_new_user_button,
-                                        setup_finduser_adduser_page, show_keyboard, focus_widget, clear_text_fields,
+                                        setup_finduser_adduser_page, hide_keyboard_if_exists, show_keyboard, focus_widget, clear_text_fields,
                                         Get_User_Credentials_From_Existing_User_Input,
                                         Verify_New_User_information, Validate_new_user_input)
 
