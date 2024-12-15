@@ -164,10 +164,6 @@ class GUI(QtWidgets.QMainWindow):
 
         self.Load_Pixmaps_Scanning_Page()
 
-        # Remove pointless info
-        print("Initializing: Removing pointless info and setting frameless window hint")
-        self.setWindowFlag(Qt.FramelessWindowHint)
-
         # This is only for when in use by a lab
         print("Initializing: Setting visibility of lab items to False")
         self.set_visibility_of_lab_items(visible=False)
@@ -184,6 +180,7 @@ class GUI(QtWidgets.QMainWindow):
             self.showFullScreen()
         else:
             print("Showing UI not full screen")
+            self.setWindowFlag(Qt.FramelessWindowHint)
             self.show()
         QCoreApplication.processEvents()
         # Move to the booting page
