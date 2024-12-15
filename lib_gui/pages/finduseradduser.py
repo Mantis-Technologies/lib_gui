@@ -9,12 +9,13 @@ __email__ = "mike@cannacheckkiosk.com"
 """This contains all the methods from the Find User/Add User page"""
 
 from ..page import Page
-from PyQt5.QtCore import Qt, QEvent, QTimer
-from PyQt5.QtWidgets import QLineEdit, QPushButton, QMessageBox, QVBoxLayout, QDialog
+from PySide6.QtCore import Qt, QEvent, QTimer, QObject
+from PySide6.QtWidgets import QLineEdit, QPushButton, QMessageBox, QVBoxLayout, QDialog
 import re
 from lib_keyboard.keyboard import CustomKeyboard
 from better_profanity import profanity
-
+from .GetUiDirectoryUtilities import GetCannaCheckUiImagePath
+from PySide6.QtGui import QPixmap
 
 def switch_to_finduseradduser_page(self):
     """Switches to the finduseradduser page"""
@@ -23,6 +24,7 @@ def switch_to_finduseradduser_page(self):
 
 def handle_skip_button(self):
     """Switches to the next page, the instruction page"""
+    self.hide_keyboard_if_exists()
     # override this function to add additional capability before switching the page
     self.switch_to_payment_page()
 
@@ -33,7 +35,7 @@ def handle_existing_user_button(self):
 
 
 def Get_User_Credentials_From_Existing_User_Input(self) -> {}:
-    existing_user_text = self.existing_user_input.text()
+    existing_user_text = self.existingUserInput.text()
     user_pin = self.user_pin_entry.text()
     user_credentials = {}
 
@@ -51,9 +53,9 @@ def Validate_new_user_input(self) -> ({}, str):
     """Checks if emails match, if they are valid emails, and ensures that the username is not profane.
        Returns username and email if valid."""
 
-    email = self.new_user_email_input.text()
-    confirm_email = self.confirm_email_input.text()
-    username = self.username_input.text()
+    email = self.newUserEmailInput.text()
+    confirm_email = self.confirmEmailInput.text()
+    username = self.usernameInput.text()
 
     # Email validation regex
     email_regex = r'^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$'
@@ -95,34 +97,28 @@ def connect_finduseradduser_buttons(self):
     self.existing_user_button.clicked.connect(self.handle_existing_user_button)
     self.new_user_button.clicked.connect(self.handle_new_user_button)
 
+    roundedSquarePath = GetCannaCheckUiImagePath("green_shape (3000 x 3000 px).png")
+    pixmap = QPixmap(roundedSquarePath)  # Replace with the path to your image
+    # Set the pixmap to the QLabel
+    self.green_rounded_square_png.setPixmap(pixmap)
 
 def setup_finduser_adduser_page(self):
-    # Get references to widgets
-    self.existing_user_input = self.findChild(QLineEdit, 'existingUserInput')
-    self.user_pin_entry = self.findChild(QLineEdit, 'user_pin_entry')
-    self.new_user_email_input = self.findChild(QLineEdit, 'newUserEmailInput')
-    self.confirm_email_input = self.findChild(QLineEdit, 'confirmEmailInput')
-    self.username_input = self.findChild(QLineEdit, 'usernameInput')
-
     # Set echo mode to Password to hide the PIN entry behind asterisks
     self.user_pin_entry.setEchoMode(QLineEdit.Password)
 
     # Connect the text boxes to show the keyboard
-    self.existing_user_input.mousePressEvent = lambda event: show_keyboard(self, event, self.existing_user_input)
-    self.user_pin_entry.mousePressEvent = lambda event: show_keyboard(self, event, self.user_pin_entry)
-    self.new_user_email_input.mousePressEvent = lambda event: show_keyboard(self, event, self.new_user_email_input)
-    self.confirm_email_input.mousePressEvent = lambda event: show_keyboard(self, event, self.confirm_email_input)
-    self.username_input.mousePressEvent = lambda event: show_keyboard(self, event, self.username_input)
-
-    # Connect the skip button to hide the keyboard
-    self.skip_button_finduseradduser.clicked.connect(lambda: hide_keyboard_if_exists(self))
+    self.existingUserInput.mousePressEvent = lambda event: (show_keyboard(self, event, self.existingUserInput), QLineEdit.mousePressEvent(self.existingUserInput, event))
+    self.user_pin_entry.mousePressEvent = lambda event: (show_keyboard(self, event, self.user_pin_entry), QLineEdit.mousePressEvent(self.user_pin_entry, event))
+    self.newUserEmailInput.mousePressEvent = lambda event: (show_keyboard(self, event, self.newUserEmailInput), QLineEdit.mousePressEvent(self.newUserEmailInput, event))
+    self.confirmEmailInput.mousePressEvent = lambda event: (show_keyboard(self, event, self.confirmEmailInput), QLineEdit.mousePressEvent(self.confirmEmailInput, event))
+    self.usernameInput.mousePressEvent = lambda event: (show_keyboard(self, event, self.usernameInput), QLineEdit.mousePressEvent(self.usernameInput, event))
 
 
 def show_keyboard(self, event, target_input):
     if not hasattr(self, 'keyboard'):
         self.keyboard = CustomKeyboard(target_input, self.centralWidget())
         self.keyboard.enterPressed.connect(self.keyboard.hide)
-        self.installEventFilter(self)  # detects clicks outside the keyboard
+        #self.installEventFilter(self)  # detects clicks outside the keyboard
     else:
         self.keyboard.target_input = target_input
 
@@ -139,33 +135,25 @@ def hide_keyboard_if_exists(self):
         self.keyboard.hide_keyboard()
 
 
-def eventFilter(self, obj, event):
-    """Detects mouse click outside the keyboard and hides keyboard"""
-    if event.type() == QEvent.MouseButtonPress:
-        if self.keyboard.isVisible() and not self.keyboard.geometry().contains(event.globalPos()):
-            self.keyboard.hide()
-    return super().eventFilter(obj, event)
-
-
 def focus_widget(self):
     """Returns which QLineEdit is currently clicked"""
-    if self.existing_user_input.hasFocus():
-        return self.existing_user_input
+    if self.existingUserInput.hasFocus():
+        return self.existingUserInput
     elif self.user_pin_entry.hasFocus():
         return self.user_pin_entry
-    elif self.new_user_email_input.hasFocus():
-        return self.new_user_email_input
-    elif self.confirm_email_input.hasFocus():
-        return self.confirm_email_input
-    elif self.username_input.hasFocus():
-        return self.username_input
+    elif self.newUserEmailInput.hasFocus():
+        return self.newUserEmailInput
+    elif self.confirmEmailInput.hasFocus():
+        return self.confirmEmailInput
+    elif self.usernameInput.hasFocus():
+        return self.usernameInput
     return None
 
 
 def clear_text_fields(self):
     """Clear all QLineEdit fields."""
-    self.existing_user_input.clear()
+    self.existingUserInput.clear()
     self.user_pin_entry.clear()
-    self.new_user_email_input.clear()
-    self.confirm_email_input.clear()
-    self.username_input.clear()
+    self.newUserEmailInput.clear()
+    self.confirmEmailInput.clear()
+    self.usernameInput.clear()

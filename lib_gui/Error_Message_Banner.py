@@ -1,6 +1,6 @@
-from PyQt5.QtWidgets import QWidget, QLabel
-from PyQt5.QtGui import QPainter, QPen, QBrush, QColor
-from PyQt5.QtCore import Qt, QPoint
+from PySide6.QtWidgets import QWidget, QLabel
+from PySide6.QtGui import QPainter, QPen, QBrush, QColor,QPolygon
+from PySide6.QtCore import Qt, QPoint
 
 
 class Error_Message_Banner(QWidget):
@@ -12,7 +12,7 @@ class Error_Message_Banner(QWidget):
         self.message_lbl = QLabel("Message_Here", self)
         self.message_lbl.setGeometry(0, 0, 980, 100)  # Position the label
         self.message_lbl.setStyleSheet(
-            "background-color: rgba(255, 255, 255, 0); color: white; font-size: 30px;")  # Style the label
+            "background-color: rgba(255, 255, 255, 0); color: white; font-size: 25px;")  # Style the label
         self.message_lbl.setAlignment(Qt.AlignCenter | Qt.AlignVCenter)  # Set text alignment to center
         self.background_color = QColor(169, 6, 10)
 
@@ -44,7 +44,8 @@ class Error_Message_Banner(QWidget):
         ]
 
         # Draw the custom shape
-        painter.drawPolygon(*points)
+        polygon = QPolygon(points)
+        painter.drawPolygon(polygon)
 
     def ShowMessage(self, message_to_show: str):
         self.message_lbl.setText(message_to_show)
