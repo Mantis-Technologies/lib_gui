@@ -18,8 +18,8 @@ class LabGUI(GUI):
         """Inits gui and modifies for Lab"""
         super(LabGUI, self).__init__(debug=debug, fake_backend=fake_backend, *args, **kwargs)
         # Override unnecessary components
-        print("LabGUI: Overriding unnecessary components")
-        self.override_unused_components()
+        #print("LabGUI: Overriding unnecessary components")
+        #self.override_unused_components()
 
 
     # Override unused methods
