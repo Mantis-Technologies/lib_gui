@@ -298,7 +298,7 @@ class GUI(QtWidgets.QMainWindow):
 
     # Order page methods
     from .pages.order_page import switch_to_order_page, connect_order_buttons, connect_num_buttons, connect_del_btn, initiate_test, Set_last_order_num_lbl
-    from .pages.order_page import get_order_num
+    from .pages.order_page import get_order_num, OnOrderPageShutDown
     from .pages.order_page import set_order_num
     from .pages.order_page import set_visibility_of_lab_items
     from .pages.order_page import get_prep

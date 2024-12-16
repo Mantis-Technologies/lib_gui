@@ -36,6 +36,10 @@ def initiate_test(self):
     pass
 
 
+def OnOrderPageShutDown(self):
+    pass
+
+
 def connect_order_buttons(self):
     """Connects order buttons."""
 
@@ -126,7 +130,7 @@ def get_prep(self):
     text = self.prep_combo_box.currentText()
 
     if "mcr method - scissors" in text.lower():
-        return Prep.HAND_GRIND # treat scissors as hand grind
+        return Prep.HAND_GRIND  # treat scissors as hand grind
     elif "mechanical grind" in text.lower():
         return Prep.MECHANICAL_GRIND
     elif "flower intact" in text.lower():

@@ -542,7 +542,7 @@ color: white;</string>
      <widget class="QLabel" name="enter_id_lbl">
       <property name="geometry">
        <rect>
-        <x>90</x>
+        <x>170</x>
         <y>20</y>
         <width>900</width>
         <height>101</height>
@@ -1096,6 +1096,7 @@ p, li { white-space: pre-wrap; }
       <property name="font">
        <font>
         <family>Noto Sans</family>
+        <pointsize>25</pointsize>
        </font>
       </property>
       <property name="styleSheet">
@@ -1219,6 +1220,43 @@ color: white;</string>
        <bool>true</bool>
       </property>
      </widget>
+     <widget class="QPushButton" name="Lab_ShutDown_Btn">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>40</y>
+        <width>120</width>
+        <height>120</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Century</family>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton
+{
+ border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 3px solid white;
+ color: rgb(169, 6, 10)
+}
+
+QPushButton:pressed
+{
+border-radius: 60px;
+ background-color: rgb(27, 27, 27);
+ border: 6px solid white;
+ color: rgb(169, 6, 10)
+}</string>
+      </property>
+      <property name="text">
+       <string>Shut
+Down</string>
+      </property>
+     </widget>
      <zorder>background_color_label</zorder>
      <zorder>enter_id_lbl</zorder>
      <zorder>order_num_entry</zorder>
@@ -1241,6 +1279,7 @@ color: white;</string>
      <zorder>prep_method_label</zorder>
      <zorder>tm_label_order_page</zorder>
      <zorder>previous_sample_lbl</zorder>
+     <zorder>Lab_ShutDown_Btn</zorder>
     </widget>
     <widget class="QWidget" name="LoadSampleScreen">
      <property name="styleSheet">
