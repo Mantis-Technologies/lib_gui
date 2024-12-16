@@ -386,5 +386,5 @@ class GUI(QtWidgets.QMainWindow):
 
     def run(self):
         """Runs the app"""
-        sys.exit(self.app.exec_())
+        self.app.exec_()
 
