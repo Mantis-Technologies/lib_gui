@@ -53,6 +53,7 @@ def connect_order_buttons(self):
 
     self.initiate_test_btn.clicked.connect(self.initiate_test)
     self.order_num_cancel_btn.clicked.connect(self.switch_to_order_page)
+    self.Lab_ShutDown_Btn.clicked.connect(self.OnOrderPageShutDown)
 
 
 def connect_num_buttons(self):
