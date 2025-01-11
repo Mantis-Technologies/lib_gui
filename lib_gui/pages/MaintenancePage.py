@@ -20,7 +20,6 @@ def connect_maintenance_buttons(self):
     self.exitMainenanceBtn.clicked.connect(self.switch_to_start_page)
     self.EjectSampleBtn.clicked.connect(self.MoveToEject)
     self.ResetSampleBtn.clicked.connect(self.HomeMotionSystem)
-    self.PrintLastReceiptBtn.clicked.connect(self.PrintLastReceipt)
 
 
 def HomeMotionSystem(self):

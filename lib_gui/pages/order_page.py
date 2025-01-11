@@ -3,13 +3,20 @@
 
 """This file contains methods for the order page"""
 
-__author__ = "Justin Furuness"
-__credits__ = ["Justin Furuness"]
-__maintainer__ = "Justin Furuness"
-__email__ = "jfuruness@gmail.com"
+__author__ = "Justin Furuness, Michael Mahoney"
+__credits__ = ["Justin Furuness", "Michael Mahoney"]
+__maintainer__ = "Michael Mahoney"
+__email__ = "mike@cannacheckkiosk.com"
 
 from ..page import Page
 from lib_enums import Prep
+from .GetUiDirectoryUtilities import GetCannaCheckUiImagePath
+from PySide6.QtGui import QPixmap
+
+
+def commence_lab_app_scan(self):
+    """commences scan, overwritten function. loading of sample complete, switch to scanning page"""
+    print("Commencing lab app scan")
 
 
 def switch_to_order_page(self):
@@ -20,25 +27,33 @@ def switch_to_order_page(self):
     self._switch_to_page(Page.ORDER)
 
 
-def connect_order_buttons(self):
-    """Connects order buttons
+def Set_last_order_num_lbl(self, label_str: str):
+    self.previous_sample_lbl.setText(label_str)
+    self.previous_sample_lbl.show()
 
-    Won't move to next screen unless there is an order num
-    """
+
+def initiate_test(self):
+    pass
+
+
+def OnOrderPageShutDown(self):
+    pass
+
+
+def connect_order_buttons(self):
+    """Connects order buttons."""
 
     self.connect_num_buttons()
     self.connect_del_btn()
 
-    # If there is no order number, do nothing
-    def next_page():
-        try:
-            order_num = self.get_order_num()
-            if order_num:
-                self.switch_to_payment_page()
-        except Exception as e:
-            print("order num failed with ", str(e))
-    self.order_num_next_btn.clicked.connect(next_page)
-    self.order_num_cancel_btn.clicked.connect(self.switch_to_start_page)
+    logoPath = GetCannaCheckUiImagePath("White logo - no background-greenlogo.png")
+    pixmap = QPixmap(logoPath)  # Replace with the path to your image
+    # Set the pixmap to the QLabel
+    self.cannacheck_logo_label_2.setPixmap(pixmap)
+
+    self.initiate_test_btn.clicked.connect(self.initiate_test)
+    self.order_num_cancel_btn.clicked.connect(self.switch_to_order_page)
+    self.Lab_ShutDown_Btn.clicked.connect(self.OnOrderPageShutDown)
 
 
 def connect_num_buttons(self):
@@ -110,20 +125,15 @@ def set_order_num(self, num: str):
     return self.order_num_entry.setText(num)
 
 
-def change_order_id_lbl(self):
-    """Changes order id for mcr lab techs"""
-
-    self.enter_id_lbl.setText("Enter sample ID")
-
-
 def get_prep(self):
     """Gets the preparation method"""
 
     text = self.prep_combo_box.currentText()
-    if "mechanical grind" in text.lower():
+
+    if "mcr method - scissors" in text.lower():
+        return Prep.HAND_GRIND  # treat scissors as hand grind
+    elif "mechanical grind" in text.lower():
         return Prep.MECHANICAL_GRIND
-    elif "ground by hand" in text.lower():
-        return Prep.HAND_GRIND
     elif "flower intact" in text.lower():
         return Prep.INTACT
     else:

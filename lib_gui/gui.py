@@ -48,7 +48,7 @@ class GUI(QtWidgets.QMainWindow):
 
     def load_ui(self, ui_filename):
         """Loads the appropriate UI based on the kiosk version."""
-
+        print(f"Loading ui {ui_filename}")
         # Save ui filename to a variable to be accessed elsewhere
         ui_version = ui_filename
 
@@ -83,39 +83,74 @@ class GUI(QtWidgets.QMainWindow):
     def setup_connections(self, ui_version):
         """Connects buttons and other widgets to their respective functions. Pass ui version to pages that need it"""
         # Connect start buttons
+        print("Initializing: Connecting start buttons")
         self.connect_start_buttons()
+
         # Connect confirmation buttons
+        print("Initializing: Connecting confirmation buttons")
         self.connect_confirmation_buttons()
+
         # Connect loading sample buttons
+        print("Initializing: Connecting loading sample buttons")
         self.connect_load_buttons()
+
         # Connect results buttons
+        print("Initializing: Connecting results buttons")
         self.connect_results_buttons()
+
         # Connect Order Buttons
+        print("Initializing: Connecting order buttons")
         self.connect_order_buttons()
+
         # Connect payment buttons
+        print("Initializing: Connecting payment buttons")
         self.connect_payment_buttons()
+
         # Connect find user add user buttons
+        print("Initializing: Connecting find user/add user buttons")
         self.connect_finduseradduser_buttons()
+
         # Connect find user add user input fields
+        print("Initializing: Setting up find user/add user page")
         self.setup_finduser_adduser_page()
+
         # Connect instruction page buttons
+        print("Initializing: Connecting instruction page buttons")
         self.connect_instruction_buttons()
+
+        # Connect about page buttons
+        # print("Initializing: Connecting about page buttons (skipped)")  # Commented out
+
         # Connect disclaimer page buttons
+        print("Initializing: Connecting disclaimer page buttons")
         self.connect_disclaimer_buttons()
+
         # Connect before proceeding page buttons
+        print("Initializing: Connecting before proceeding page buttons")
         self.connect_before_proceeding_buttons()
+
         # Connect rescan results page
+        print("Initializing: Connecting rescan results page")
         self.connect_rescan_buttons()
+
         # Connect confirm removal page
+        print("Initializing: Connecting confirm removal page")
         self.connect_confirm_removal_buttons()
+
         # Connect maintenance page buttons
+        print("Initializing: Connecting maintenance page buttons")
         self.connect_maintenance_buttons()
+
         # Connect FAQ page buttons
+        print("Initializing: Connecting FAQ page buttons")
         self.connect_faq_buttons()
+
         # Set up FAQ page
         self.setup_faq_page(ui_version)
         # Connect Leaderboard page buttons
+        print("Initializing: Connecting leaderboard page buttons")
         self.connect_leaderboard_buttons()
+
         # Setup the Leaderboard
         self.setup_leaderboard_page(ui_version)
         # Set up QR code label
@@ -129,21 +164,23 @@ class GUI(QtWidgets.QMainWindow):
 
         self.Load_Pixmaps_Scanning_Page()
 
-        # Remove pointless info
-        self.setWindowFlag(Qt.FramelessWindowHint)
         # This is only for when in use by a lab
+        print("Initializing: Setting visibility of lab items to False")
         self.set_visibility_of_lab_items(visible=False)
+
         # Connect keyboard shortcuts
+        print("Initializing: Connecting keyboard shortcuts")
         self.connect_shortcuts()
 
     def show_main_window(self):
         """Shows UI"""
         # Full-screen and other necessary setup
         if not self.fake_payment_terminal and not self.fake_backend:
-            print("Showing UI full screen")
+            print("Initializing: Showing fullscreen")
             self.showFullScreen()
         else:
             print("Showing UI not full screen")
+            self.setWindowFlag(Qt.FramelessWindowHint)
             self.show()
         QCoreApplication.processEvents()
         # Move to the booting page
@@ -155,6 +192,8 @@ class GUI(QtWidgets.QMainWindow):
 
     def _switch_to_page(self, page: Page):
         """Switches to a page"""
+
+        print(f"Switching to page: {page}")  # Debug print
 
         if not self.debug:
             # Remove cursor unless debugging
@@ -258,16 +297,13 @@ class GUI(QtWidgets.QMainWindow):
     from .pages.confirmation_page import connect_confirmation_buttons, over_21_confirm
 
     # Order page methods
-    from .pages.order_page import switch_to_order_page
-    from .pages.order_page import connect_order_buttons
-    from .pages.order_page import connect_num_buttons
-    from .pages.order_page import connect_del_btn
-    from .pages.order_page import get_order_num
+    from .pages.order_page import switch_to_order_page, connect_order_buttons, connect_num_buttons, connect_del_btn, initiate_test, Set_last_order_num_lbl
+    from .pages.order_page import get_order_num, OnOrderPageShutDown
     from .pages.order_page import set_order_num
-    from .pages.order_page import change_order_id_lbl
     from .pages.order_page import set_visibility_of_lab_items
     from .pages.order_page import get_prep
     from .pages.order_page import get_notes
+    from .pages.order_page import commence_lab_app_scan
 
     # Loading page methods (for loading sample)
     from .pages.load_page import switch_to_load_page
@@ -350,5 +386,5 @@ class GUI(QtWidgets.QMainWindow):
 
     def run(self):
         """Runs the app"""
-        sys.exit(self.app.exec_())
+        self.app.exec_()
 
