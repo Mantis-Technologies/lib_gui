@@ -12,6 +12,18 @@ from ..page import Page
 from lib_enums import Prep
 from .GetUiDirectoryUtilities import GetCannaCheckUiImagePath
 from PySide6.QtGui import QPixmap
+from PySide6.QtCore import Qt, QObject, Signal
+
+
+class UpdateLastScanSignalEmitter(QObject):
+    # Define the signal at the class level
+    signal = Signal(object)
+
+    def __init__(self):
+        super().__init__()
+
+    def emit_signal(self, last_scan):
+        self.signal.emit(last_scan)
 
 
 def commence_lab_app_scan(self):
@@ -54,6 +66,20 @@ def connect_order_buttons(self):
     self.initiate_test_btn.clicked.connect(self.initiate_test)
     self.order_num_cancel_btn.clicked.connect(self.switch_to_order_page)
     self.Lab_ShutDown_Btn.clicked.connect(self.OnOrderPageShutDown)
+
+    self.update_last_scan_signal = UpdateLastScanSignalEmitter()
+    self.update_last_scan_signal.signal.connect(self.Update_last_scan_callback)
+
+
+def Signal_Update_last_scan_and_switch_to_order_page(self, last_scan):
+    self.update_last_scan_signal.emit_signal(last_scan)
+
+
+def Update_last_scan_callback(self, last_scan):
+    self.Set_last_order_num_lbl(f"Previous sample number: {last_scan}")
+    self.order_num_entry.clear()
+    self.notes_entry.clear()
+    self._switch_to_page(Page.ORDER)
 
 
 def connect_num_buttons(self):

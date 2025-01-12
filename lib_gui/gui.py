@@ -303,7 +303,7 @@ class GUI(QtWidgets.QMainWindow):
     from .pages.order_page import set_visibility_of_lab_items
     from .pages.order_page import get_prep
     from .pages.order_page import get_notes
-    from .pages.order_page import commence_lab_app_scan
+    from .pages.order_page import commence_lab_app_scan, Signal_Update_last_scan_and_switch_to_order_page, Update_last_scan_callback
 
     # Loading page methods (for loading sample)
     from .pages.load_page import switch_to_load_page
