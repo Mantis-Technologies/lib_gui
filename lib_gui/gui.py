@@ -315,7 +315,7 @@ class GUI(QtWidgets.QMainWindow):
     from .pages.scanning_page import switch_to_scanning_page, Load_Pixmaps_Scanning_Page
 
     # Results page methods
-    from .pages.results_page import switch_to_results_page
+    from .pages.results_page import switch_to_results_page, SignalGenerateResults, GenerateResultsSignalCallback
     from .pages.results_page import set_results_labels
     from .pages.results_page import connect_results_buttons
     from .pages.results_page import done_w_results

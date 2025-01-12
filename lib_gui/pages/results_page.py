@@ -12,12 +12,23 @@ from ..page import Page
 # from lib_kiosk import app  # Import App class to access QR code image
 from PySide6.QtCharts import QChart, QChartView, QPieSeries, QPieSlice
 from PySide6.QtGui import QFont, QColor, QBrush, QPixmap, QPainter
-from PySide6.QtCore import Qt
+from PySide6.QtCore import Qt, QObject, Signal
 from PySide6.QtWidgets import QLabel
 from io import BytesIO
 
 from .GetUiDirectoryUtilities import GetCannaCheckUiImagePath
 from PySide6.QtGui import QPixmap
+
+
+class GenerateResultsSignalEmitter(QObject):
+    # Define the signal at the class level
+    signal = Signal(object)
+
+    def __init__(self):
+        super().__init__()
+
+    def emit_signal(self, data_object):
+        self.signal.emit(data_object)
 
 
 def switch_to_results_page(self):
@@ -79,6 +90,18 @@ def connect_results_buttons(self):
     pixmap = QPixmap(surveyQRCodePath)  # Replace with the path to your image
     # Set the pixmap to the QLabel
     self.survey_label.setPixmap(pixmap)
+
+    self.generate_results_signal = GenerateResultsSignalEmitter()
+    self.generate_results_signal.signal.connect(self.GenerateResultsSignalCallback)
+
+
+def SignalGenerateResults(self, data_object):
+    self.generate_results_signal.emit_signal(data_object)
+
+
+def GenerateResultsSignalCallback(self, data_object):
+    # override this function
+    pass
 
 
 def FormatSlices(series, color: str):
